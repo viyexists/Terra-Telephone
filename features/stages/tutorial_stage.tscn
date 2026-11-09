@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3rckugmiqiq6"]
+
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="1_yfkr1"]
+[ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/1771465766194_ncoxgcz.webp" id="2_dt4km"]
+[ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/1771466885033_wvow6ck.webp" id="3_73wb4"]
+
+[node name="TutorialStage" type="Node2D" unique_id=561291764]
+
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
+position = Vector2(504, 228)
+
+[node name="1771465766194Ncoxgcz" type="Sprite2D" parent="." unique_id=623532246]
+position = Vector2(1043, 84)
+texture = ExtResource("2_dt4km")
+
+[node name="1771466885033Wvow6Ck" type="Sprite2D" parent="." unique_id=1530197276]
+position = Vector2(-95, -155)
+texture = ExtResource("3_73wb4")
