@@ -6,7 +6,6 @@ func _ready() -> void:
 	play_idle_animation()
 
 func _physics_process(delta: float) -> void:
-
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed * delta
 	
@@ -21,6 +20,8 @@ func _physics_process(delta: float) -> void:
 		play_idle_animation()
 
 	move_and_slide()
+	
+	Global.player_position = self.global_position
 
 
 func play_idle_animation() -> void:

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cff753iwvfkfe"]
+
+[ext_resource type="Script" uid="uid://w80fcqeblnlk" path="res://features/environment/obstacle.gd" id="1_x8esk"]
+
+[node name="Obstacle" type="Node2D" unique_id=275115240]
+script = ExtResource("1_x8esk")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=338181175]
+position = Vector2(-69, 0)
+points = PackedVector2Array(151, 0, -3, -1)
+width = 2.0

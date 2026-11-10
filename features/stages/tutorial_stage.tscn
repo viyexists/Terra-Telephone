@@ -2,17 +2,38 @@
 
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="1_yfkr1"]
 [ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/1771465766194_ncoxgcz.webp" id="2_dt4km"]
+[ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
 [ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/1771466885033_wvow6ck.webp" id="3_73wb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
+size = Vector2(326, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08qqc"]
+size = Vector2(123, 39)
 
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
-position = Vector2(504, 228)
-
-[node name="1771465766194Ncoxgcz" type="Sprite2D" parent="." unique_id=623532246]
-position = Vector2(1043, 84)
-texture = ExtResource("2_dt4km")
+position = Vector2(470, 406)
 
 [node name="1771466885033Wvow6Ck" type="Sprite2D" parent="." unique_id=1530197276]
 position = Vector2(-95, -155)
 texture = ExtResource("3_73wb4")
+
+[node name="Obstacle" parent="." unique_id=275115240 instance=ExtResource("3_5ahaa")]
+position = Vector2(945, -19)
+
+[node name="1771465766194Ncoxgcz" type="Sprite2D" parent="Obstacle" unique_id=623532246]
+position = Vector2(18, -167)
+texture = ExtResource("2_dt4km")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Obstacle" unique_id=2091978076]
+position = Vector2(-27, -151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle/StaticBody2D2" unique_id=1352013357]
+position = Vector2(142, 110)
+shape = SubResource("RectangleShape2D_5ahaa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacle/StaticBody2D2" unique_id=2056025242]
+position = Vector2(-186.5, 119)
+shape = SubResource("RectangleShape2D_08qqc")

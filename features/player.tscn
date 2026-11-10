@@ -271,27 +271,38 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giy8y"]
-radius = 82.0
-height = 288.0
+radius = 60.0
+height = 120.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 91.0
+height = 356.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1646932784]
 script = ExtResource("1_yse43")
 
 [node name="PlayerBody" type="AnimatedSprite2D" parent="." unique_id=1439072725]
-position = Vector2(-30.999998, -38.999996)
+position = Vector2(-40, -254)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"walk"
 
 [node name="PlayerClothes" type="AnimatedSprite2D" parent="." unique_id=511453689]
-position = Vector2(-30.999998, -38.999996)
+position = Vector2(-40, -254)
 sprite_frames = SubResource("SpriteFrames_8vrlf")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
-position = Vector2(48, 50)
+position = Vector2(26, -48)
 shape = SubResource("CapsuleShape2D_giy8y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=702460402]
-position = Vector2(-39, 0)
+position = Vector2(-48, -215)
 zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1840734530]
+position = Vector2(-9, -215)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=377269835]
+position = Vector2(44, 52)
+shape = SubResource("CapsuleShape2D_1vivr")
