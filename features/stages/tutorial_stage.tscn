@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://blc3jux3gfjpa" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/grudging.webp" id="8_gn5yn"]
 [ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="9_b15jc"]
 [ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="11_btdku"]
+[ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -127,6 +128,7 @@ offset_left = 204.0
 offset_top = -631.5
 offset_right = 244.0
 offset_bottom = -591.5
+script = ExtResource("11_gn5yn")
 
 [node name="Label" type="Label" parent="Base/SpeechBubble" unique_id=1318694821]
 custom_maximum_size = Vector2(500, -1)
@@ -137,10 +139,13 @@ offset_right = 575.0
 offset_bottom = 148.0
 theme_override_fonts/font = ExtResource("11_btdku")
 theme_override_font_sizes/font_size = 70
-text = "Blahs asfas fawp awiapwod iwpaoidpa"
+horizontal_alignment = 1
 autowrap_mode = 3
+visible_characters_behavior = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Base" unique_id=1021004768]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base/StaticBody2D" unique_id=960506011]
 polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498, -427, -488, -673, -290, -663, -149, -552, -3, -338, 42, -88, 73, 264, 54)
+
+[connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]

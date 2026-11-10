@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if Global.player_position.y < self.global_position.y:
+	if Global.player.global_position.y < self.global_position.y:
 		self.z_index = 50
 	else:
 		self.z_index = -50
