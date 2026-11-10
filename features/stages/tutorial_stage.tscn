@@ -4,6 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/1771465766194_ncoxgcz.webp" id="2_dt4km"]
 [ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
 [ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/1771466885033_wvow6ck.webp" id="3_73wb4"]
+[ext_resource type="Texture2D" uid="uid://d2lop1g1vdg8k" path="res://assets/terra_assets/sprites/level/1774305043695_eal41px.webp" id="5_44kxp"]
+[ext_resource type="Script" uid="uid://bjo0gw5fabqb8" path="res://features/base.gd" id="5_fonbn"]
+[ext_resource type="Texture2D" uid="uid://c6t3f2iosybf1" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/angry1.webp" id="6_fonbn"]
+[ext_resource type="Texture2D" uid="uid://dc40l3x702eio" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/angry2.webp" id="7_btdku"]
+[ext_resource type="Texture2D" uid="uid://blc3jux3gfjpa" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/grudging.webp" id="8_gn5yn"]
+[ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="9_b15jc"]
+[ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="11_btdku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -11,19 +18,54 @@ size = Vector2(326, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08qqc"]
 size = Vector2(123, 39)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(205.5, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fonbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_btdku")
+}],
+"loop": 1,
+"name": &"angry",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gn5yn")
+}],
+"loop": 1,
+"name": &"grudging",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_b15jc")
+}],
+"loop": 1,
+"name": &"happy",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_arakc"]
+load_path = "res://.godot/imported/1774305043695_eal41px.webp-5b14d38ec9f0447940eb414a12748945.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 1188.33
+
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
 position = Vector2(470, 406)
 
-[node name="1771466885033Wvow6Ck" type="Sprite2D" parent="." unique_id=1530197276]
-position = Vector2(-95, -155)
-texture = ExtResource("3_73wb4")
-
 [node name="Obstacle" parent="." unique_id=275115240 instance=ExtResource("3_5ahaa")]
 position = Vector2(945, -19)
 
-[node name="1771465766194Ncoxgcz" type="Sprite2D" parent="Obstacle" unique_id=623532246]
+[node name="Bushes" type="Sprite2D" parent="Obstacle" unique_id=623532246]
 position = Vector2(18, -167)
 texture = ExtResource("2_dt4km")
 
@@ -37,3 +79,68 @@ shape = SubResource("RectangleShape2D_5ahaa")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacle/StaticBody2D2" unique_id=2056025242]
 position = Vector2(-186.5, 119)
 shape = SubResource("RectangleShape2D_08qqc")
+
+[node name="Obstacle2" parent="." unique_id=1722992084 instance=ExtResource("3_5ahaa")]
+
+[node name="Tree" type="Sprite2D" parent="Obstacle2" unique_id=1530197276]
+position = Vector2(4, -383)
+texture = ExtResource("3_73wb4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacle2" unique_id=856479529]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2/StaticBody2D" unique_id=1555157665]
+position = Vector2(-3, -14)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="Base" type="Node2D" parent="." unique_id=1292459075]
+position = Vector2(-1341, 723)
+script = ExtResource("5_fonbn")
+
+[node name="BalloonBack" type="Sprite2D" parent="Base" unique_id=1814354316]
+position = Vector2(0, -1217.5)
+texture = ExtResource("5_44kxp")
+
+[node name="Ratticus" type="AnimatedSprite2D" parent="Base" unique_id=345735977]
+position = Vector2(-57, -487.49988)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"angry"
+
+[node name="BalloonFront" type="Sprite2D" parent="Base" unique_id=1720758552]
+position = Vector2(0, -93.49988)
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("CompressedTexture2D_arakc")
+region_enabled = true
+region_rect = Rect2(0, 2262.881, 1818, 362.1189)
+
+[node name="Area2D" type="Area2D" parent="Base" unique_id=705035969]
+position = Vector2(0, -1217.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Area2D" unique_id=39063130]
+position = Vector2(-61, 789)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="SpeechBubble" type="Control" parent="Base" unique_id=1533157916]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 204.0
+offset_top = -631.5
+offset_right = 244.0
+offset_bottom = -591.5
+
+[node name="Label" type="Label" parent="Base/SpeechBubble" unique_id=1318694821]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 0
+offset_left = 75.0
+offset_top = -110.0
+offset_right = 575.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("11_btdku")
+theme_override_font_sizes/font_size = 70
+text = "Blahs asfas fawp awiapwod iwpaoidpa"
+autowrap_mode = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Base" unique_id=1021004768]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base/StaticBody2D" unique_id=960506011]
+polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498, -427, -488, -673, -290, -663, -149, -552, -3, -338, 42, -88, 73, 264, 54)

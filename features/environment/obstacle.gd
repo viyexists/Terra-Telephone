@@ -5,12 +5,13 @@
 ## player to collide with it.
 
 extends Node2D
+class_name Obstacle
 
 func _ready() -> void:
 	$Line2D.queue_free()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Global.player_position.y < self.global_position.y:
 		self.z_index = 50
 	else:
