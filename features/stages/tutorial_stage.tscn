@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://3rckugmiqiq6"]
 
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="1_yfkr1"]
-[ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/1771465766194_ncoxgcz.webp" id="2_dt4km"]
+[ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/Bush2.webp" id="2_dt4km"]
 [ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
-[ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/1771466885033_wvow6ck.webp" id="3_73wb4"]
-[ext_resource type="Texture2D" uid="uid://d2lop1g1vdg8k" path="res://assets/terra_assets/sprites/level/1774305043695_eal41px.webp" id="5_44kxp"]
+[ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/TreeWillow.webp" id="3_73wb4"]
+[ext_resource type="Texture2D" uid="uid://d2lop1g1vdg8k" path="res://assets/terra_assets/sprites/level/HotAirBalloon.webp" id="5_44kxp"]
 [ext_resource type="Script" uid="uid://bjo0gw5fabqb8" path="res://features/base.gd" id="5_fonbn"]
 [ext_resource type="Texture2D" uid="uid://c6t3f2iosybf1" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/angry1.webp" id="6_fonbn"]
 [ext_resource type="Texture2D" uid="uid://dc40l3x702eio" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/angry2.webp" id="7_btdku"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="9_b15jc"]
 [ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="11_btdku"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
+[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
+[ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
+[ext_resource type="Texture2D" uid="uid://dcpt3in7k7llw" path="res://assets/terra_assets/sprites/crops/soil-wet.webp" id="15_4ksmt"]
+[ext_resource type="Texture2D" uid="uid://cqoxjx8ocg0yi" path="res://assets/terra_assets/sprites/level/PlantCarrotStage2.webp" id="16_vl7si"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -57,6 +61,10 @@ load_path = "res://.godot/imported/1774305043695_eal41px.webp-5b14d38ec9f0447940
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
 radius = 1188.33
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 101.0
+height = 400.0
 
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 
@@ -147,5 +155,26 @@ visible_characters_behavior = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base/StaticBody2D" unique_id=960506011]
 polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498, -427, -488, -673, -290, -663, -149, -552, -3, -338, 42, -88, 73, 264, 54)
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1079961874]
+script = ExtResource("13_arakc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1206908772]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_b15jc")
+
+[node name="Area2D" type="Area2D" parent="Enemy" unique_id=1406809250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=944882926]
+position = Vector2(40, -4)
+shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="PlantSpot" type="Node2D" parent="." unique_id=487426316]
+
+[node name="Soil" type="Sprite2D" parent="PlantSpot" unique_id=374455091]
+texture = ExtResource("15_4ksmt")
+
+[node name="Soil2" type="Sprite2D" parent="PlantSpot" unique_id=404834440]
+texture = ExtResource("16_vl7si")
 
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
