@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://8uip4v5vhv3s"]
+
+[ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="1_ql3yh"]
+[ext_resource type="Texture2D" uid="uid://bs4wahqotuhr" path="res://assets/terra_assets/sprites/level/Rock1.webp" id="2_mi20x"]
+
+[node name="Rock1" unique_id=275115240 instance=ExtResource("1_ql3yh")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=1797050956]
+position = Vector2(0, -151)
+texture = ExtResource("2_mi20x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2" unique_id=2079631872]
+position = Vector2(0, -151)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=1399686952]
+polygon = PackedVector2Array(126, 2, 204, 80, 216, 144, -226, 158, -174, 68, -135, 8, -46, 60)

@@ -14,6 +14,12 @@
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
+[ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="15_4ksmt"]
+[ext_resource type="Script" uid="uid://bf6n80ux807ra" path="res://features/all_walls.gd" id="15_vl7si"]
+[ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="17_02irw"]
+[ext_resource type="Script" uid="uid://w80fcqeblnlk" path="res://features/environment/obstacle.gd" id="17_ufbuv"]
+[ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="18_ufbuv"]
+[ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="19_bl74p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -67,7 +73,7 @@ height = 400.0
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
-position = Vector2(470, 406)
+position = Vector2(1249, 1805)
 
 [node name="Obstacle" parent="." unique_id=275115240 instance=ExtResource("3_5ahaa")]
 position = Vector2(945, -19)
@@ -167,6 +173,223 @@ texture = ExtResource("13_b15jc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=944882926]
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="AllWalls" type="Node2D" parent="." unique_id=1537728336]
+script = ExtResource("15_vl7si")
+
+[node name="Wall" type="Node2D" parent="AllWalls" unique_id=1048418420]
+script = ExtResource("15_4ksmt")
+wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
+min_wall_scale = 2.0
+max_wall_scale = 3.4970000000000003
+
+[node name="Line2D" type="Line2D" parent="AllWalls/Wall" unique_id=1857195499]
+points = PackedVector2Array(-4510, 1290, -4130, 1539, -3815, 1644, -3278, 1880, -2648, 1998, -2465, 2024, -1482, 2247, -865, 2326, 459, 2536, 904, 2510, 1560, 2431, 2189, 2221, 3186, 2142, 3684, 1552, 3710, 1316, 3828, 858, 4038, 399, 4116, 320, 4510, -60, 4746, -794, 4601, -1332, 4339, -2000, 4012, -2839, 3264, -3115, 1481, -3324, 891, -3351, -105, -3324, -236, -3298, -525, -3272, -931, -3259, -1560, -3233, -2714, -2944, -3265, -2643, -3566, -2381, -3894, -1712, -4051, -1581, -4392, -1201, -4654, -506, -4707, 268, -4694, 753, -4615, 1107)
+
+[node name="@Node2D@49040" type="Node2D" parent="AllWalls/Wall" unique_id=1891666391 instance=ExtResource("18_ufbuv")]
+position = Vector2(-4510, 1290)
+scale = Vector2(2.5008786, 2.5008786)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49041" type="Node2D" parent="AllWalls/Wall" unique_id=726027000 instance=ExtResource("18_ufbuv")]
+position = Vector2(-4130, 1539)
+scale = Vector2(3.3592978, 3.3592978)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49042" type="Node2D" parent="AllWalls/Wall" unique_id=206392645 instance=ExtResource("19_bl74p")]
+position = Vector2(-3815, 1644)
+scale = Vector2(3.3639202, 3.3639202)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49043" type="Node2D" parent="AllWalls/Wall" unique_id=236631290 instance=ExtResource("17_02irw")]
+position = Vector2(-3278, 1880)
+scale = Vector2(3.2308633, 3.2308633)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49044" type="Node2D" parent="AllWalls/Wall" unique_id=1578750923 instance=ExtResource("19_bl74p")]
+position = Vector2(-2648, 1998)
+scale = Vector2(2.2722886, 2.2722886)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49045" type="Node2D" parent="AllWalls/Wall" unique_id=680069692 instance=ExtResource("19_bl74p")]
+position = Vector2(-2465, 2024)
+scale = Vector2(2.56626, 2.56626)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49046" type="Node2D" parent="AllWalls/Wall" unique_id=689034102 instance=ExtResource("17_02irw")]
+position = Vector2(-1482, 2247)
+scale = Vector2(2.1423116, 2.1423116)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49047" type="Node2D" parent="AllWalls/Wall" unique_id=1749927746 instance=ExtResource("17_02irw")]
+position = Vector2(-865, 2326)
+scale = Vector2(3.4727094, 3.4727094)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49048" type="Node2D" parent="AllWalls/Wall" unique_id=775295209 instance=ExtResource("19_bl74p")]
+position = Vector2(459, 2536)
+scale = Vector2(3.3421266, 3.3421266)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49049" type="Node2D" parent="AllWalls/Wall" unique_id=1674743456 instance=ExtResource("18_ufbuv")]
+position = Vector2(904, 2510)
+scale = Vector2(2.0701919, 2.0701919)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49050" type="Node2D" parent="AllWalls/Wall" unique_id=1012514488 instance=ExtResource("19_bl74p")]
+position = Vector2(1560, 2431)
+scale = Vector2(2.6237454, 2.6237454)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49051" type="Node2D" parent="AllWalls/Wall" unique_id=12608354 instance=ExtResource("18_ufbuv")]
+position = Vector2(2189, 2221)
+scale = Vector2(2.201622, 2.201622)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49052" type="Node2D" parent="AllWalls/Wall" unique_id=1443921111 instance=ExtResource("19_bl74p")]
+position = Vector2(3186, 2142)
+scale = Vector2(2.0691626, 2.0691626)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49053" type="Node2D" parent="AllWalls/Wall" unique_id=2081207561 instance=ExtResource("17_02irw")]
+position = Vector2(3684, 1552)
+scale = Vector2(2.7156932, 2.7156932)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49054" type="Node2D" parent="AllWalls/Wall" unique_id=445576045 instance=ExtResource("18_ufbuv")]
+position = Vector2(3710, 1316)
+scale = Vector2(2.3400238, 2.3400238)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49055" type="Node2D" parent="AllWalls/Wall" unique_id=944119965 instance=ExtResource("19_bl74p")]
+position = Vector2(3828, 858)
+scale = Vector2(3.4151108, 3.4151108)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49056" type="Node2D" parent="AllWalls/Wall" unique_id=285232758 instance=ExtResource("19_bl74p")]
+position = Vector2(4038, 399)
+scale = Vector2(2.3230126, 2.3230126)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49057" type="Node2D" parent="AllWalls/Wall" unique_id=514842506 instance=ExtResource("18_ufbuv")]
+position = Vector2(4116, 320)
+scale = Vector2(2.972309, 2.972309)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49058" type="Node2D" parent="AllWalls/Wall" unique_id=367161055 instance=ExtResource("17_02irw")]
+position = Vector2(4510, -60)
+scale = Vector2(2.9332554, 2.9332554)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49059" type="Node2D" parent="AllWalls/Wall" unique_id=1504277545 instance=ExtResource("18_ufbuv")]
+position = Vector2(4746, -794)
+scale = Vector2(3.1853008, 3.1853008)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49060" type="Node2D" parent="AllWalls/Wall" unique_id=1671312604 instance=ExtResource("18_ufbuv")]
+position = Vector2(4601, -1332)
+scale = Vector2(2.201244, 2.201244)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49061" type="Node2D" parent="AllWalls/Wall" unique_id=1208208821 instance=ExtResource("19_bl74p")]
+position = Vector2(4339, -2000)
+scale = Vector2(2.770451, 2.770451)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49062" type="Node2D" parent="AllWalls/Wall" unique_id=1970545220 instance=ExtResource("18_ufbuv")]
+position = Vector2(4012, -2839)
+scale = Vector2(2.899786, 2.899786)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49063" type="Node2D" parent="AllWalls/Wall" unique_id=1545797528 instance=ExtResource("19_bl74p")]
+position = Vector2(3264, -3115)
+scale = Vector2(2.1131678, 2.1131678)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49064" type="Node2D" parent="AllWalls/Wall" unique_id=1674392536 instance=ExtResource("18_ufbuv")]
+position = Vector2(1481, -3324)
+scale = Vector2(2.0030956, 2.0030956)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49065" type="Node2D" parent="AllWalls/Wall" unique_id=1604894475 instance=ExtResource("17_02irw")]
+position = Vector2(891, -3351)
+scale = Vector2(2.5549772, 2.5549772)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49066" type="Node2D" parent="AllWalls/Wall" unique_id=2122208233 instance=ExtResource("18_ufbuv")]
+position = Vector2(-105, -3324)
+scale = Vector2(3.4417746, 3.4417746)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49067" type="Node2D" parent="AllWalls/Wall" unique_id=2125944235 instance=ExtResource("17_02irw")]
+position = Vector2(-236, -3298)
+scale = Vector2(2.2054143, 2.2054143)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49068" type="Node2D" parent="AllWalls/Wall" unique_id=388084378 instance=ExtResource("18_ufbuv")]
+position = Vector2(-525, -3272)
+scale = Vector2(3.2958314, 3.2958314)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49069" type="Node2D" parent="AllWalls/Wall" unique_id=1086006536 instance=ExtResource("17_02irw")]
+position = Vector2(-931, -3259)
+scale = Vector2(2.1118212, 2.1118212)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49070" type="Node2D" parent="AllWalls/Wall" unique_id=980424938 instance=ExtResource("17_02irw")]
+position = Vector2(-1560, -3233)
+scale = Vector2(2.7800581, 2.7800581)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49071" type="Node2D" parent="AllWalls/Wall" unique_id=946131987 instance=ExtResource("17_02irw")]
+position = Vector2(-2714, -2944)
+scale = Vector2(2.8420496, 2.8420496)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49072" type="Node2D" parent="AllWalls/Wall" unique_id=1052847985 instance=ExtResource("19_bl74p")]
+position = Vector2(-3265, -2643)
+scale = Vector2(2.5677538, 2.5677538)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49073" type="Node2D" parent="AllWalls/Wall" unique_id=1667002516 instance=ExtResource("17_02irw")]
+position = Vector2(-3566, -2381)
+scale = Vector2(2.766482, 2.766482)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49074" type="Node2D" parent="AllWalls/Wall" unique_id=246450306 instance=ExtResource("17_02irw")]
+position = Vector2(-3894, -1712)
+scale = Vector2(2.749078, 2.749078)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49075" type="Node2D" parent="AllWalls/Wall" unique_id=578652121 instance=ExtResource("19_bl74p")]
+position = Vector2(-4051, -1581)
+scale = Vector2(2.6682734, 2.6682734)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49076" type="Node2D" parent="AllWalls/Wall" unique_id=2144253859 instance=ExtResource("19_bl74p")]
+position = Vector2(-4392, -1201)
+scale = Vector2(3.1027505, 3.1027505)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49077" type="Node2D" parent="AllWalls/Wall" unique_id=1247477746 instance=ExtResource("17_02irw")]
+position = Vector2(-4654, -506)
+scale = Vector2(2.955388, 2.955388)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49078" type="Node2D" parent="AllWalls/Wall" unique_id=773120228 instance=ExtResource("17_02irw")]
+position = Vector2(-4707, 268)
+scale = Vector2(2.9755642, 2.9755642)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49079" type="Node2D" parent="AllWalls/Wall" unique_id=1315658546 instance=ExtResource("19_bl74p")]
+position = Vector2(-4694, 753)
+scale = Vector2(3.2493813, 3.2493813)
+script = ExtResource("17_ufbuv")
+
+[node name="@Node2D@49080" type="Node2D" parent="AllWalls/Wall" unique_id=1591291979 instance=ExtResource("19_bl74p")]
+position = Vector2(-4615, 1107)
+scale = Vector2(2.7081323, 2.7081323)
+script = ExtResource("17_ufbuv")
 
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
