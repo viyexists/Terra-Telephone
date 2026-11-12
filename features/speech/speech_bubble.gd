@@ -11,7 +11,7 @@ var _is_done_saying: bool = true
 ## This function displays the message in a text bubble.
 ## It can be used one after the other as it will wait for a previous
 ## message to be complete before starting itself.
-func say(message: String) -> void:
+func say(message: String, interrupt_previous_messages: bool = false) -> void:
 	var this_message_no: int = _no_of_messages + 1
 	_no_of_messages += 1
 	var message_complete_no: int

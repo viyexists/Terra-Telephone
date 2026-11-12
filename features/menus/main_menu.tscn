@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://kh52hsi3iwr6"]
 
+[ext_resource type="Texture2D" uid="uid://bhahtqvrgslmu" path="res://assets/terra_assets/loginscreen/terra-logo-with-banner-q80.webp" id="1_ds2v8"]
+[ext_resource type="Script" uid="uid://boyk1ggruugu2" path="res://features/menus/main_menu.gd" id="1_ilxdq"]
+
 [node name="MainMenu" type="Control" unique_id=954692551]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ilxdq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1587812138]
+layout_mode = 0
+offset_right = 928.0
+offset_bottom = 650.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=368237714]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+texture = ExtResource("1_ds2v8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=935498284]
+layout_mode = 2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1235242870]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=654488649]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=461405245]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1573343929]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1720906221]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1041964552]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=752287077]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

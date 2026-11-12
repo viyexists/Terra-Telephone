@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Enemy
 
 @export var speed: float = 8000
+@export var damage: float = 1
 
 const ATTACK_COOLDOWN: float = 1
 var cur_attack_cooldown: float = ATTACK_COOLDOWN
@@ -14,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	# Damage
 	
 	if _player_in_area and cur_attack_cooldown <= 0:
-		Global.player.take_damage(5)
+		Global.player.take_damage(damage)
 		cur_attack_cooldown = ATTACK_COOLDOWN
 	cur_attack_cooldown -= delta
 	
