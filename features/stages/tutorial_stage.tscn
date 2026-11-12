@@ -14,8 +14,6 @@
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
-[ext_resource type="Texture2D" uid="uid://dcpt3in7k7llw" path="res://assets/terra_assets/sprites/crops/soil-wet.webp" id="15_4ksmt"]
-[ext_resource type="Texture2D" uid="uid://cqoxjx8ocg0yi" path="res://assets/terra_assets/sprites/level/PlantCarrotStage2.webp" id="16_vl7si"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -157,6 +155,7 @@ visible_characters_behavior = 1
 polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498, -427, -488, -673, -290, -663, -149, -552, -3, -338, 42, -88, 73, 264, 54)
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1079961874]
+z_index = 60
 script = ExtResource("13_arakc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1206908772]
@@ -169,12 +168,6 @@ texture = ExtResource("13_b15jc")
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
 
-[node name="PlantSpot" type="Node2D" parent="." unique_id=487426316]
-
-[node name="Soil" type="Sprite2D" parent="PlantSpot" unique_id=374455091]
-texture = ExtResource("15_4ksmt")
-
-[node name="Soil2" type="Sprite2D" parent="PlantSpot" unique_id=404834440]
-texture = ExtResource("16_vl7si")
-
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_exited"]

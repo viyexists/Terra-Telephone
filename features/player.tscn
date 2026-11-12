@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bp2he7kreksn5" path="res://assets/terra_assets/sprites/player/idle-clothes-sheet.webp" id="4_gj24u"]
 [ext_resource type="Texture2D" uid="uid://cgf2jhoru700j" path="res://assets/terra_assets/sprites/player/walk-clothes-sheet.webp" id="5_ray8b"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giy8y"]
+radius = 60.0
+height = 120.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 91.0
+height = 356.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_03h53")
 region = Rect2(0, 0, 720, 540)
@@ -270,26 +278,8 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giy8y"]
-radius = 60.0
-height = 120.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
-radius = 91.0
-height = 356.0
-
 [node name="Player" type="CharacterBody2D" unique_id=1646932784]
 script = ExtResource("1_yse43")
-
-[node name="PlayerBody" type="AnimatedSprite2D" parent="." unique_id=1439072725]
-position = Vector2(-40, -254)
-sprite_frames = SubResource("SpriteFrames_1vivr")
-animation = &"walk"
-
-[node name="PlayerClothes" type="AnimatedSprite2D" parent="." unique_id=511453689]
-position = Vector2(-40, -254)
-sprite_frames = SubResource("SpriteFrames_8vrlf")
-animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
 position = Vector2(26, -48)
@@ -306,3 +296,15 @@ position = Vector2(-9, -215)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=377269835]
 position = Vector2(44, 52)
 shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1457726866]
+
+[node name="PlayerBody" type="AnimatedSprite2D" parent="Sprite" unique_id=1439072725]
+position = Vector2(-40, -254)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"walk"
+
+[node name="PlayerClothes" type="AnimatedSprite2D" parent="Sprite" unique_id=511453689]
+position = Vector2(-40, -254)
+sprite_frames = SubResource("SpriteFrames_8vrlf")
+animation = &"walk"
