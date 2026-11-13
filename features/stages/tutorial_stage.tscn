@@ -569,6 +569,10 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1606, -1998)
 scale = Vector2(0.5, 0.5)
 
+[node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
+
+[node name="Seed" type="Node2D" parent="Seeds" unique_id=662793703]
+
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_exited"]

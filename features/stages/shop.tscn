@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://dav02t6nte0ep"]
+
+[ext_resource type="Texture2D" uid="uid://bexajkliwn3uv" path="res://assets/terra_assets/sprites/level/HeidiStall.webp" id="1_0yecm"]
+[ext_resource type="Script" uid="uid://dmsp4jbjt5538" path="res://features/stages/shop.gd" id="1_tldte"]
+[ext_resource type="Texture2D" uid="uid://bjen6c0cghuyu" path="res://assets/terra_assets/sprites/level/Shop.webp" id="2_tldte"]
+[ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="4_u0hag"]
+[ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="5_2p4ce"]
+
+[sub_resource type="Animation" id="Animation_tldte"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-876, 291)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeidiStall:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-546.99994, 356)]
+}
+
+[sub_resource type="Animation" id="Animation_dfc5n"]
+resource_name = "opening_animation"
+length = 2.4666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2333333, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-876, 291), Vector2(563, 291), Vector2(540, 291)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeidiStall:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 2.2333333, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-546.99994, 356), Vector2(-546.99994, 356), Vector2(881.0002, 356), Vector2(850, 356)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0hag"]
+_data = {
+&"RESET": SubResource("Animation_tldte"),
+&"opening_animation": SubResource("Animation_dfc5n")
+}
+
+[node name="Shop" type="Node2D" unique_id=1334315400]
+script = ExtResource("1_tldte")
+
+[node name="Shop" type="Sprite2D" parent="." unique_id=936601678]
+position = Vector2(-876, 291)
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("2_tldte")
+
+[node name="HeidiStall" type="Sprite2D" parent="." unique_id=533698807]
+position = Vector2(-546.99994, 356)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("1_0yecm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=173916583]
+libraries/ = SubResource("AnimationLibrary_u0hag")
+
+[node name="SpeechBubble" type="Control" parent="." unique_id=1507305518]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 481.0
+offset_top = 242.0
+offset_right = 521.0
+offset_bottom = 282.0
+script = ExtResource("4_u0hag")
+
+[node name="Label" type="Label" parent="SpeechBubble" unique_id=126182913]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 0
+offset_left = 75.0
+offset_top = -110.0
+offset_right = 575.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("5_2p4ce")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters_behavior = 1
+
+[node name="UI" type="Control" parent="." unique_id=265345435]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContinueButton" type="Button" parent="UI" unique_id=264961239]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 22.0
+offset_right = 1114.0
+offset_bottom = 53.0
+text = "Continue to the next day"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=365072483]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 426.0
+offset_right = 648.0
+offset_bottom = 614.0
+
+[node name="Option1" type="Control" parent="UI/HBoxContainer" unique_id=1365080179]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/Option1" unique_id=1609640472]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Option1" unique_id=1349698937]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 1"
+
+[node name="Option2" type="Control" parent="UI/HBoxContainer" unique_id=588975895]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/Option2" unique_id=1602399795]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Option2" unique_id=1325231767]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 2"
+
+[node name="Option3" type="Control" parent="UI/HBoxContainer" unique_id=526843700]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/Option3" unique_id=2034678356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Option3" unique_id=1798307684]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 3"
+
+[connection signal="pressed" from="UI/ContinueButton" to="." method="_on_continue_button_pressed"]
