@@ -11,6 +11,11 @@ const Y_POSITION_DIVISOR: float = 25
 @export_range(0.1, 5) var min_wall_scale: float = 0.7
 @export_range(0.1, 5) var max_wall_scale: float = 1.3
 
+func _ready() -> void:
+	# If not in editor
+	if Engine.is_editor_hint() == false:
+		get_node("Line2D").queue_free()
+
 func _process(_delta: float) -> void:
 	if activate_wall_creator == true and confirm_modification == true:
 		activate_wall_creator = false
