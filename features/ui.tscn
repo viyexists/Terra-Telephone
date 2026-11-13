@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c4jsmi6g3y3v2"]
+
+[ext_resource type="Script" uid="uid://bn3awuvae34d8" path="res://features/ui.gd" id="1_3ucda"]
+
+[node name="UI" type="CanvasLayer" unique_id=372593172]
+script = ExtResource("1_3ucda")
+
+[node name="Label" type="Label" parent="." unique_id=2138045594]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins: "

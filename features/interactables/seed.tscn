@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bfccrxeehyra2"]
+
+[ext_resource type="Texture2D" uid="uid://ds4ig2x5wcpla" path="res://assets/terra_assets/sprites/level/1792381810538_ycagxnm.webp" id="1_mn5s2"]
+[ext_resource type="Script" uid="uid://c7n0p135422uj" path="res://features/interactables/seed.gd" id="1_ufnyq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 208.5042
+
+[node name="Seed" type="Node2D" unique_id=1413849496]
+script = ExtResource("1_ufnyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=300784389]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_mn5s2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=80258255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1749066669]
+shape = SubResource("CircleShape2D_1vivr")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

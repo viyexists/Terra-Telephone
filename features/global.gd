@@ -9,7 +9,17 @@ var stages: Array[String] = [
 ]
 
 
-var coins: float = 0
+var coins: float = 10
+
+var seeds_collected: int = 3
+var seeds_per_stage: Array[int] = [
+	3,
+]
+
 
 func coin_collected(value: float = 1) -> void:
 	coins += value
+
+
+func seed_collected() -> void:
+	seeds_collected += 1

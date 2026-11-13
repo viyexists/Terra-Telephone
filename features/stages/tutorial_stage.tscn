@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://3rckugmiqiq6"]
 
+[ext_resource type="PackedScene" uid="uid://c4jsmi6g3y3v2" path="res://features/ui.tscn" id="1_bl74p"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="1_yfkr1"]
 [ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/Bush2.webp" id="2_dt4km"]
 [ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
@@ -20,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="18_ufbuv"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="19_bl74p"]
 [ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="21_bl74p"]
+[ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="22_7efr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -71,6 +73,8 @@ radius = 101.0
 height = 400.0
 
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
+
+[node name="UI" parent="." unique_id=372593172 instance=ExtResource("1_bl74p")]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
 position = Vector2(-214, 927)
@@ -572,7 +576,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
 
-[node name="Seed" type="Node2D" parent="Seeds" unique_id=662793703]
+[node name="Seed" parent="Seeds" unique_id=1413849496 instance=ExtResource("22_7efr7")]
 
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]

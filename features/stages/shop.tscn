@@ -113,6 +113,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="CoinLabel" type="Label" parent="UI" unique_id=292227640]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="ContinueButton" type="Button" parent="UI" unique_id=264961239]
 layout_mode = 0
 offset_left = 914.0
@@ -132,6 +137,7 @@ offset_bottom = 614.0
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 script = ExtResource("6_2p4ce")
+cost = 5.0
 option_image = ExtResource("7_5pagp")
 
 [node name="Button" type="Button" parent="UI/OptionsContainer/Option1" unique_id=1609640472]
@@ -174,6 +180,7 @@ mouse_filter = 2
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 script = ExtResource("6_2p4ce")
+cost = 2.0
 
 [node name="Button" type="Button" parent="UI/OptionsContainer/Option2" unique_id=1602399795]
 layout_mode = 1

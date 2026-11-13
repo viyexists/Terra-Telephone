@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var options_container: HBoxContainer = $UI/OptionsContainer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +12,10 @@ func _ready() -> void:
 		var option: Control = $UI/OptionsContainer.get_child(i)
 		var button: Button = option.get_child(0)
 		button.pressed.connect(option_chosen.bind(i))
+
+
+func _process(_delta: float) -> void:
+	$UI/CoinLabel.text = "Coins: " + str(Global.coins)
 
 
 func opening_animation() -> void:
@@ -28,4 +34,7 @@ func _on_continue_button_pressed() -> void:
 
 
 func option_chosen(index: int) -> void:
-	pass
+	var cur_option: Control = options_container.get_child(index)
+	Global.coins -= cur_option.cost
+	cur_option.disabled = true
+	
