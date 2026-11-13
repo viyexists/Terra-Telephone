@@ -7,12 +7,14 @@
 extends Node2D
 class_name Obstacle
 
+var original_z_index: int = 50
+
 func _ready() -> void:
 	$Line2D.queue_free()
 
 
 func _physics_process(_delta: float) -> void:
 	if Global.player.global_position.y < self.global_position.y:
-		self.z_index = 50
+		self.z_index = Global.player.z_index + original_z_index
 	else:
-		self.z_index = -50
+		self.z_index = Global.player.z_index - original_z_index

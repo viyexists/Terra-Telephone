@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+const Y_POSITION_DIVISOR: float = 25
+
 @export var activate_wall_creator: bool = false
 @export var clear_walls: bool = false
 @export var confirm_modification: bool = false
@@ -35,6 +37,8 @@ func create_walls() -> void:
 		var cur_wall: Obstacle = wall_variants.pick_random().instantiate()
 		cur_wall.position = point
 		cur_wall.scale = Vector2.ONE * randf_range(min_wall_scale, max_wall_scale)
+		cur_wall.original_z_index = int(cur_wall.position.y / Y_POSITION_DIVISOR)
+		
 		add_child(cur_wall)
 		cur_wall.owner = get_tree().edited_scene_root
 		
