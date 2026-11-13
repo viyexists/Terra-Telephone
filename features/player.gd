@@ -67,6 +67,8 @@ func die() -> void:
 	tween.parallel().tween_property($Sprite, "position", Vector2(1000, 1000), 1)
 	await tween.finished
 	self.hide()
+	add_sibling(load("res://features/stages/death.tscn").instantiate())
+	self.set_physics_process(false)
 
 # TODO
 func respawn() -> void:

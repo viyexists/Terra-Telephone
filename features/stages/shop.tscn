@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bjen6c0cghuyu" path="res://assets/terra_assets/sprites/level/Shop.webp" id="2_tldte"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="4_u0hag"]
 [ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="5_2p4ce"]
+[ext_resource type="Script" uid="uid://be7h2rnk4qypr" path="res://features/stages/shop_option.gd" id="6_2p4ce"]
+[ext_resource type="Texture2D" uid="uid://f8bbifwd6qlb" path="res://assets/terra_assets/sprites/level/Egg.webp" id="7_5pagp"]
 
 [sub_resource type="Animation" id="Animation_tldte"]
 length = 0.001
@@ -100,7 +102,7 @@ offset_top = -110.0
 offset_right = 575.0
 offset_bottom = 148.0
 theme_override_fonts/font = ExtResource("5_2p4ce")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters_behavior = 1
@@ -119,18 +121,20 @@ offset_right = 1114.0
 offset_bottom = 53.0
 text = "Continue to the next day"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=365072483]
+[node name="OptionsContainer" type="HBoxContainer" parent="UI" unique_id=365072483]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 426.0
 offset_right = 648.0
 offset_bottom = 614.0
 
-[node name="Option1" type="Control" parent="UI/HBoxContainer" unique_id=1365080179]
+[node name="Option1" type="Control" parent="UI/OptionsContainer" unique_id=1365080179]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+script = ExtResource("6_2p4ce")
+option_image = ExtResource("7_5pagp")
 
-[node name="Button" type="Button" parent="UI/HBoxContainer/Option1" unique_id=1609640472]
+[node name="Button" type="Button" parent="UI/OptionsContainer/Option1" unique_id=1609640472]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,7 +142,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Option1" unique_id=1349698937]
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option1" unique_id=1349698937]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -148,12 +152,30 @@ offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Option 1"
+horizontal_alignment = 1
 
-[node name="Option2" type="Control" parent="UI/HBoxContainer" unique_id=588975895]
+[node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option1" unique_id=687517364]
+custom_maximum_size = Vector2(180, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Option2" type="Control" parent="UI/OptionsContainer" unique_id=588975895]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+script = ExtResource("6_2p4ce")
 
-[node name="Button" type="Button" parent="UI/HBoxContainer/Option2" unique_id=1602399795]
+[node name="Button" type="Button" parent="UI/OptionsContainer/Option2" unique_id=1602399795]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,7 +183,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Option2" unique_id=1325231767]
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option2" unique_id=1325231767]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -171,12 +193,26 @@ offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Option 2"
+horizontal_alignment = 1
 
-[node name="Option3" type="Control" parent="UI/HBoxContainer" unique_id=526843700]
+[node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option2" unique_id=1366704231]
+custom_maximum_size = Vector2(180, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Option3" type="Control" parent="UI/OptionsContainer" unique_id=526843700]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+script = ExtResource("6_2p4ce")
 
-[node name="Button" type="Button" parent="UI/HBoxContainer/Option3" unique_id=2034678356]
+[node name="Button" type="Button" parent="UI/OptionsContainer/Option3" unique_id=2034678356]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,7 +220,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Option3" unique_id=1798307684]
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option3" unique_id=1798307684]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -194,5 +230,18 @@ offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Option 3"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option3" unique_id=1281937366]
+custom_maximum_size = Vector2(180, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="UI/ContinueButton" to="." method="_on_continue_button_pressed"]

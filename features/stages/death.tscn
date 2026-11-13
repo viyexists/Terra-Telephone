@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d37vh07cvte1w"]
+
+[ext_resource type="Script" uid="uid://bief6sede3g1o" path="res://features/stages/death.gd" id="1_enxef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Death" type="CanvasLayer" unique_id=594509251]
+script = ExtResource("1_enxef")
+
+[node name="BlackBackground" type="Panel" parent="." unique_id=1191316138]
+offset_left = -64.0
+offset_top = -39.0
+offset_right = 1243.0
+offset_bottom = 698.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="Label" type="Label" parent="." unique_id=651602323]
+offset_left = 513.0
+offset_top = 244.0
+offset_right = 656.0
+offset_bottom = 267.0
+text = "You were caught..."
+
+[node name="RestartButton" type="Button" parent="." unique_id=1113691947]
+offset_left = 539.0
+offset_top = 281.0
+offset_right = 620.0
+offset_bottom = 312.0
+text = "Try Again"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

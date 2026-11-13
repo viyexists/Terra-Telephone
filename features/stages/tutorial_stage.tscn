@@ -163,6 +163,7 @@ polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498,
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1079961874]
 z_index = 60
 script = ExtResource("13_arakc")
+damage = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1206908772]
 scale = Vector2(0.1, 0.1)
