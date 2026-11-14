@@ -10,6 +10,7 @@ extends CharacterBody2D
 func _ready() -> void:
 	play_idle_animation()
 	Global.player = self
+	Global.player_immune = false
 
 func _physics_process(delta: float) -> void:
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
@@ -49,6 +50,8 @@ func flip_sprite(flipped: bool) -> void:
 
 
 func take_damage(damage_taken: float) -> void:
+	if Global.player_immune:
+		return
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1.0, 0.586, 0.525, 1.0), 0.1)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)

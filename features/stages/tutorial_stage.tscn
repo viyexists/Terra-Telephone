@@ -77,7 +77,7 @@ height = 400.0
 [node name="UI" parent="." unique_id=372593172 instance=ExtResource("1_bl74p")]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
-position = Vector2(-214, 927)
+position = Vector2(-1362, 1000)
 
 [node name="Obstacle" parent="." unique_id=275115240 instance=ExtResource("3_5ahaa")]
 position = Vector2(945, -19)
@@ -166,6 +166,7 @@ polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498,
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1079961874]
 z_index = 60
+position = Vector2(-5828, 513)
 script = ExtResource("13_arakc")
 damage = 2.0
 
@@ -577,6 +578,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
 
 [node name="Seed" parent="Seeds" unique_id=1413849496 instance=ExtResource("22_7efr7")]
+position = Vector2(2622, 2071)
 
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]

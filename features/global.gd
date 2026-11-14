@@ -2,6 +2,9 @@ extends Node
 
 var player: CharacterBody2D
 
+## Is the player immune to damage?
+var player_immune: bool = false
+
 var current_stage: int = 0
 
 var stages: Array[String] = [
@@ -9,11 +12,11 @@ var stages: Array[String] = [
 ]
 
 
-var coins: float = 10
+var coins: float = 0
 
-var seeds_collected: int = 3
+var seeds_collected: int = 0
 var seeds_per_stage: Array[int] = [
-	3,
+	1,
 ]
 
 
