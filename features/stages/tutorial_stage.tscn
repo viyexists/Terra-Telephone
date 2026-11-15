@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://blc3jux3gfjpa" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/grudging.webp" id="8_gn5yn"]
 [ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="9_b15jc"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
+[ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="12_7efr7"]
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="15_4ksmt"]
@@ -143,6 +144,7 @@ offset_left = 204.0
 offset_top = -631.5
 offset_right = 244.0
 offset_bottom = -591.5
+theme = ExtResource("12_7efr7")
 script = ExtResource("11_gn5yn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Base" unique_id=1021004768]

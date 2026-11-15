@@ -31,6 +31,7 @@ enabled=PackedStringArray("res://.godot/scenetime/plugin.cfg", "res://addons/god
 
 [gui]
 
+theme/custom="uid://bslva4sc3tbty"
 theme/custom_font="uid://bd3pnhvp8f5yx"
 
 [input]

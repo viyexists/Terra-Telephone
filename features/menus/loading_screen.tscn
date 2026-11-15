@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c1ok6nkcjamhp"]
+
+[ext_resource type="Script" uid="uid://cicj48tcylijc" path="res://features/menus/loading_screen.gd" id="1_e1jdc"]
+
+[node name="LoadingScreen" type="Node2D" unique_id=1424163682]
+script = ExtResource("1_e1jdc")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=280165518]
+offset_right = 1148.0
+offset_bottom = 24.0
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="." unique_id=528762687]
+offset_left = 6.0
+offset_right = 82.0
+offset_bottom = 20.0
+text = "Now loading..."

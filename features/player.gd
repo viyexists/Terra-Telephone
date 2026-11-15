@@ -11,6 +11,7 @@ func _ready() -> void:
 	play_idle_animation()
 	Global.player = self
 	Global.player_immune = false
+	$ArrowToBase.hide()
 	
 	
 func _process(_delta: float) -> void:
@@ -51,6 +52,12 @@ func flip_sprite(flipped: bool) -> void:
 		player_body.flip_h = false
 		player_clothes.flip_h = false
 
+
+func toggle_base_arrow(on: bool) -> void:
+	if on:
+		$ArrowToBase.show()
+	else:
+		$ArrowToBase.hide()
 
 
 func take_damage(damage_taken: float) -> void:
