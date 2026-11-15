@@ -11,6 +11,10 @@ func _ready() -> void:
 	play_idle_animation()
 	Global.player = self
 	Global.player_immune = false
+	
+	
+func _process(_delta: float) -> void:
+	$ArrowToBase.look_at(Global.base_position)
 
 func _physics_process(delta: float) -> void:
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")

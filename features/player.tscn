@@ -308,3 +308,14 @@ animation = &"walk"
 position = Vector2(-40, -254)
 sprite_frames = SubResource("SpriteFrames_8vrlf")
 animation = &"walk"
+
+[node name="ArrowToBase" type="Node2D" parent="." unique_id=706496138]
+position = Vector2(29, -462)
+
+[node name="Arrow" type="Label" parent="ArrowToBase" unique_id=238373559]
+offset_left = -54.0
+offset_top = -132.0
+offset_right = 62.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 200
+text = ">"

@@ -1,13 +1,16 @@
 extends CanvasLayer
 
 @onready var black_background: Panel = $BlackBackground
-@onready var continue_button: Button = $ContinueButton
-@onready var label: Label = $Label
+@onready var continue_button: Button = $VBoxContainer/ContinueButton
+@onready var label: Label = $VBoxContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label.text += "Ratticus has taken " + str(int(round(Global.coins / 2))) + " coins from you as tax."
+	label.text += "Ratticus has taken " + str(int(round(Global.coins / 2))) + " coins from you as tax."
 	Global.coins -= round(Global.coins / 2)
+	
+	$VBoxContainer.position.x = (Global.screen_size.x / 2) - ($VBoxContainer.size.x / 2)
+	
 	black_background.modulate.a = 0
 	label.modulate.a = 0
 	continue_button.modulate.a = 0

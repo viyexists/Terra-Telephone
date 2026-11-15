@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://cjml3xae06gtc"
+Items="*uid://dmth655r264rg"
 
 [display]
 
@@ -68,3 +69,4 @@ right={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.2997993, 0.5111771, 0.20044002, 1)

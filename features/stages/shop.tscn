@@ -4,9 +4,12 @@
 [ext_resource type="Script" uid="uid://dmsp4jbjt5538" path="res://features/stages/shop.gd" id="1_tldte"]
 [ext_resource type="Texture2D" uid="uid://bjen6c0cghuyu" path="res://assets/terra_assets/sprites/level/Shop.webp" id="2_tldte"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="4_u0hag"]
-[ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="5_2p4ce"]
 [ext_resource type="Script" uid="uid://be7h2rnk4qypr" path="res://features/stages/shop_option.gd" id="6_2p4ce"]
+[ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="6_04lra"]
 [ext_resource type="Texture2D" uid="uid://f8bbifwd6qlb" path="res://assets/terra_assets/sprites/level/Egg.webp" id="7_5pagp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pagp"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_tldte"]
 length = 0.001
@@ -72,6 +75,13 @@ _data = {
 [node name="Shop" type="Node2D" unique_id=1334315400]
 script = ExtResource("1_tldte")
 
+[node name="BlackBackground" type="Panel" parent="." unique_id=435513912]
+offset_left = -64.0
+offset_top = -39.0
+offset_right = 1243.0
+offset_bottom = 698.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pagp")
+
 [node name="Shop" type="Sprite2D" parent="." unique_id=936601678]
 position = Vector2(-876, 291)
 scale = Vector2(0.69, 0.69)
@@ -92,26 +102,15 @@ offset_left = 481.0
 offset_top = 242.0
 offset_right = 521.0
 offset_bottom = 282.0
+theme = ExtResource("6_04lra")
 script = ExtResource("4_u0hag")
-
-[node name="Label" type="Label" parent="SpeechBubble" unique_id=126182913]
-custom_maximum_size = Vector2(500, -1)
-layout_mode = 0
-offset_left = 75.0
-offset_top = -110.0
-offset_right = 575.0
-offset_bottom = 148.0
-theme_override_fonts/font = ExtResource("5_2p4ce")
-theme_override_font_sizes/font_size = 35
-horizontal_alignment = 1
-autowrap_mode = 3
-visible_characters_behavior = 1
 
 [node name="UI" type="Control" parent="." unique_id=265345435]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("6_04lra")
 
 [node name="CoinLabel" type="Label" parent="UI" unique_id=292227640]
 layout_mode = 0
@@ -148,18 +147,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/OptionsContainer/Option1" unique_id=1349698937]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Option 1"
-horizontal_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option1" unique_id=687517364]
 custom_maximum_size = Vector2(180, 180)
 layout_mode = 1
@@ -176,6 +163,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option1" unique_id=1349698937]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 1"
+horizontal_alignment = 1
+
 [node name="Option2" type="Control" parent="UI/OptionsContainer" unique_id=588975895]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
@@ -190,18 +189,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/OptionsContainer/Option2" unique_id=1325231767]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Option 2"
-horizontal_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option2" unique_id=1366704231]
 custom_maximum_size = Vector2(180, 180)
 layout_mode = 1
@@ -213,6 +200,18 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option2" unique_id=1325231767]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 2"
+horizontal_alignment = 1
 
 [node name="Option3" type="Control" parent="UI/OptionsContainer" unique_id=526843700]
 custom_minimum_size = Vector2(200, 200)
@@ -227,18 +226,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/OptionsContainer/Option3" unique_id=1798307684]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Option 3"
-horizontal_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="UI/OptionsContainer/Option3" unique_id=1281937366]
 custom_maximum_size = Vector2(180, 180)
 layout_mode = 1
@@ -250,5 +237,17 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Label" type="Label" parent="UI/OptionsContainer/Option3" unique_id=1798307684]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Option 3"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="UI/ContinueButton" to="." method="_on_continue_button_pressed"]

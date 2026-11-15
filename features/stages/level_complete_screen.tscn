@@ -15,20 +15,23 @@ offset_right = 1243.0
 offset_bottom = 698.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Label" type="Label" parent="." unique_id=651602323]
-offset_left = 459.0
-offset_top = 244.0
-offset_right = 709.0
-offset_bottom = 293.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=254983225]
+offset_left = 299.0
+offset_top = 234.0
+offset_right = 854.0
+offset_bottom = 417.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=651602323]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "You have collected all the seeds!
 "
 horizontal_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="." unique_id=1113691947]
-offset_left = 539.0
-offset_top = 338.0
-offset_right = 620.0
-offset_bottom = 369.0
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1113691947]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Continue"
 
-[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

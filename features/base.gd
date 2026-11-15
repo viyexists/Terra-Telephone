@@ -3,6 +3,8 @@ extends Obstacle
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.base_position = self.global_position
+	
 	$Ratticus.play("angry")
 	$SpeechBubble.say("YOU REMEMBER YOUR MISSION, RIGHT?")
 	$SpeechBubble.say("GET THE SEEDS. AVOID THE ENEMY.")

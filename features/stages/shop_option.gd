@@ -6,10 +6,7 @@ extends Control
 @export var option_image: Texture2D
 @export var disabled: bool = false
 
-func _ready() -> void:
-	$Label.text = option_name
+func update_option() -> void:
+	$Label.text = option_name + "\nCost: " + str(cost)
 	$TextureRect.texture = option_image
-
-func _process(_delta: float) -> void:
-	if disabled:
-		$Button.disabled = true
+	$Button.disabled = disabled

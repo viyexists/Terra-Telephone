@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://boyk1ggruugu2" path="res://features/menus/main_menu.gd" id="1_ilxdq"]
 [ext_resource type="Texture2D" uid="uid://gwvtmumck33u" path="res://assets/terrafried_logo/Terrrafried_Logo.png" id="2_ilxdq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg1c1"]
+
 [node name="MainMenu" type="Control" unique_id=954692551]
 layout_mode = 3
 anchors_preset = 15
@@ -13,6 +15,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7xcpl")
 script = ExtResource("1_ilxdq")
+
+[node name="Panel" type="Panel" parent="." unique_id=809920755]
+layout_mode = 0
+offset_left = -65.0
+offset_top = -57.0
+offset_right = 1262.0
+offset_bottom = 703.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tg1c1")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=368237714]
 custom_minimum_size = Vector2(200, 350)
