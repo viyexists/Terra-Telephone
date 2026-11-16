@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c4jsmi6g3y3v2"]
 
 [ext_resource type="Script" uid="uid://bn3awuvae34d8" path="res://features/ui.gd" id="1_3ucda"]
+[ext_resource type="Texture2D" uid="uid://cx7pm22nm31vg" path="res://assets/terra_modified/CideryGlassClean.png" id="2_gf4mj"]
+[ext_resource type="Texture2D" uid="uid://cduu5jh88n6n5" path="res://assets/custom/Cider.png" id="3_7guks"]
 
 [node name="UI" type="CanvasLayer" unique_id=372593172]
 script = ExtResource("1_3ucda")
@@ -25,9 +27,13 @@ text = "Coins: "
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=1822653483]
-offset_left = 1117.0
-offset_top = 97.0
-offset_right = 1142.0
-offset_bottom = 497.0
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=181274438]
+offset_left = 1006.0
+offset_top = 488.0
+offset_right = 1983.0
+offset_bottom = 1557.0
+scale = Vector2(0.14, 0.14)
+value = 100.0
 fill_mode = 3
+texture_over = ExtResource("2_gf4mj")
+texture_progress = ExtResource("3_7guks")
