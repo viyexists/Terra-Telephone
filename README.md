@@ -10,7 +10,7 @@ After you collect all the seeds, return to Ratticus and get some upgrades from H
 
 ## How to play
 
-This game can be played at [itch.io](https://viywolf.itch.io/terrafried-blarghs-revenge-featuring-john). It is available as a web playable.
+This game can be played at [itch.io](https://viywolf.itch.io/terrafried-blarghs-revenge-featuring-john). It is available as a web playable and windows executable.
 
 
 ## Credits
