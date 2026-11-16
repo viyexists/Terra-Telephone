@@ -76,6 +76,7 @@ _data = {
 script = ExtResource("1_tldte")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=435513912]
+visible = false
 offset_left = -64.0
 offset_top = -39.0
 offset_right = 1243.0
@@ -116,13 +117,15 @@ theme = ExtResource("6_04lra")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
 
 [node name="ContinueButton" type="Button" parent="UI" unique_id=264961239]
 layout_mode = 0
-offset_left = 914.0
-offset_top = 22.0
-offset_right = 1114.0
-offset_bottom = 53.0
+offset_left = 878.0
+offset_top = 13.0
+offset_right = 1139.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 24
 text = "Continue to the next day"
 
 [node name="OptionsContainer" type="HBoxContainer" parent="UI" unique_id=365072483]
@@ -172,6 +175,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Option 1"
 horizontal_alignment = 1
 
@@ -210,6 +214,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Option 2"
 horizontal_alignment = 1
 
@@ -247,6 +252,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Option 3"
 horizontal_alignment = 1
 
