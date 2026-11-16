@@ -6,19 +6,16 @@ Holds functions for camera effects. E.g. camera shake.
 @onready var noise = FastNoiseLite.new()
 var noise_y = 0
 
-
+## Camera shaking parameters
 @export_category('Shake')
-"""
-Handles camera shaking
-"""
-# How quickly shaking disappears
+## How quickly shaking disappears
 @export var decay:float = 0.8
-# maximum camera offsert in px
-@export var max_offset:Vector2i=Vector2i(100,75)
-# maximum rotation of camera in radians
+## Maximum camera offsert in px
+@export var max_offset:Vector2i=Vector2i(200,150)
+## Maximum rotation of camera in radians
 @export var max_roll:float = 0.1
 var trauma:float=0.0
-var trauma_power = 2.0
+var trauma_power = 3.0
 
 
 func _ready() -> void:
@@ -31,9 +28,8 @@ func _process(delta: float) -> void:
 		_shake()
 
 func add_trauma(amount:float=1.0)->void:
-	"""
-	Adds trauma, and starts camera shake
-	"""
+	## Adds trauma, and starts camera shake
+
 	print('Adding trauma ', amount)
 	trauma = min(trauma+amount,1.0)
 

@@ -6,7 +6,7 @@ signal end_stage
 var max_health: float = 10
 
 ## How fast the player walks. This is occasionally modified by external sources.
-@export var speed: float = 4e4
+@export var speed: float = 5.5
 @export var health: float
 
 # The player body and clothes are separate sprites.
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	if is_controls_inverted:
 		input_direction *= -1
 	
-	velocity = input_direction * speed * delta
+	velocity = input_direction * speed * delta * 1e4
 	
 	if input_direction.x > 0:
 		flip_sprite(false)
@@ -97,7 +97,7 @@ func take_damage(damage_taken: float) -> void:
 	tween.tween_property(self, "modulate", Color(1.0, 0.534, 0.469, 1.0), 0.1)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	
-	$Camera2D.add_trauma(5)
+	$Camera2D.add_trauma(10)
 	
 	health -= damage_taken
 	if health <= 0:
