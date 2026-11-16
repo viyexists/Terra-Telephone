@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b3g2rfm5ic1oi" path="res://assets/terra_assets/sprites/player/walk-body-sheet.webp" id="3_q1etv"]
 [ext_resource type="Texture2D" uid="uid://bp2he7kreksn5" path="res://assets/terra_assets/sprites/player/idle-clothes-sheet.webp" id="4_gj24u"]
 [ext_resource type="Texture2D" uid="uid://cgf2jhoru700j" path="res://assets/terra_assets/sprites/player/walk-clothes-sheet.webp" id="5_ray8b"]
+[ext_resource type="Script" uid="uid://cytnb3ejsh4ci" path="res://features/attacks.gd" id="7_q1etv"]
+[ext_resource type="PackedScene" uid="uid://dam1aix5m0j01" path="res://features/entities/rotten_tomato.tscn" id="8_gj24u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giy8y"]
 radius = 60.0
@@ -279,7 +281,7 @@ animations = [{
 "speed": 16.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1646932784]
+[node name="Player" type="CharacterBody2D" unique_id=1646932784 groups=["enemies", "player"]]
 script = ExtResource("1_yse43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
@@ -329,3 +331,8 @@ offset_right = 177.0
 offset_bottom = -334.0
 theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
+
+[node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701]
+position = Vector2(195, -205)
+script = ExtResource("7_q1etv")
+tomato = ExtResource("8_gj24u")
