@@ -1,5 +1,7 @@
 extends Obstacle
 
+## This is so when you first spawn in next to the balloon, it doesn't trigger the dialogue
+var first_time_in_range: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +14,9 @@ func _ready() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if first_time_in_range:
+		first_time_in_range = false
+		return
 	if body == Global.player:
 		if Global.seeds_collected >= Global.seeds_per_stage[Global.current_stage]:
 			print("saj")
@@ -19,6 +24,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			# Play an animation
 			add_sibling(load("res://features/stages/level_complete_screen.tscn").instantiate())
 			Global.player_immune = true
+			await get_tree().create_timer(3).timeout
+			self.queue_free()
 		else:
 			$SpeechBubble.say("PONCHO! WHAT ARE YOU DOING? GET ME THE SEEDS, QUICK!!")
 			$SpeechBubble.say("WELL WHAT ARE YOU WAITING FOR?")

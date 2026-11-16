@@ -1,17 +1,18 @@
-extends Node2D
+extends CanvasLayer
 
-var scene_to_change_to: String = "res://features/stages/tutorial_stage.tscn"
+var scene_to_change_to: String #= "res://features/stages/tutorial_stage.tscn"
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.z_index = 100
+	print("now loading " + scene_to_change_to)
+	self.layer = 100
 	ResourceLoader.load_threaded_request(scene_to_change_to)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var progress: Array
 	ResourceLoader.load_threaded_get_status(scene_to_change_to, progress)
 	progress_bar.value = progress[0]
@@ -19,7 +20,8 @@ func _process(delta: float) -> void:
 		var scene = ResourceLoader.load_threaded_get(scene_to_change_to).instantiate()
 		scene.z_index = 0
 		add_sibling(scene)
+		$ProgressBar.hide()
 		var tween := get_tree().create_tween()
-		tween.tween_property(self, "modulate:a", 0, 2.5)
+		tween.tween_property($BlackBackground, "modulate:a", 0, 1.5)
 		await tween.finished
 		queue_free()

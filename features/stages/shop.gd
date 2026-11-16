@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 @onready var options_container: HBoxContainer = $UI/OptionsContainer
 
@@ -42,8 +42,8 @@ func opening_animation() -> void:
 func _on_continue_button_pressed() -> void:
 	Global.current_stage += 1
 	Global.current_stage %= Global.stages.size()
-	# Do a loading thingy here cause it takes some time
-	get_tree().change_scene_to_file(Global.stages[Global.current_stage])
+	Global.load_new_scene(Global.stages[Global.current_stage], self)
+	self.queue_free()
 
 
 func option_chosen(index: int) -> void:

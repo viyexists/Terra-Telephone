@@ -36,3 +36,11 @@ func coin_collected(value: float = 1) -> void:
 
 func seed_collected() -> void:
 	seeds_collected += 1
+
+
+func load_new_scene(scene_to_load: String, scene_came_from: Node) -> void:
+	var loading_screen: CanvasLayer = load("res://features/menus/loading_screen.tscn").instantiate()
+	loading_screen.scene_to_change_to = scene_to_load
+	get_tree().change_scene_to_node(loading_screen)
+	scene_came_from.queue_free()
+	

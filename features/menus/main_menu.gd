@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://features/stages/tutorial_stage.tscn")
+	Global.load_new_scene("res://features/stages/tutorial_stage.tscn", self)
 
 
 func _on_settings_button_pressed() -> void:

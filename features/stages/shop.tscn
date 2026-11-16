@@ -72,7 +72,7 @@ _data = {
 &"opening_animation": SubResource("Animation_dfc5n")
 }
 
-[node name="Shop" type="Node2D" unique_id=1334315400]
+[node name="Shop" type="CanvasLayer" unique_id=706738740]
 script = ExtResource("1_tldte")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=435513912]
