@@ -12,10 +12,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
+		self.look_at(get_global_mouse_position())
 		attack(current_attack)
 
 func attack(a)->void:
 	print('attack: ', a)
 	var t = tomato.instantiate()
-	t.transform = self.transform
-	add_sibling(t)
+	t.transform = self.global_transform
+	get_parent().add_sibling(t)

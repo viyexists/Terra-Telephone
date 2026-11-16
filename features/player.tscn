@@ -333,6 +333,6 @@ theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
 
 [node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701]
-position = Vector2(195, -205)
+position = Vector2(35, -209)
 script = ExtResource("7_q1etv")
 tomato = ExtResource("8_gj24u")
