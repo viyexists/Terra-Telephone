@@ -22,6 +22,7 @@ The logo was made by Viy.
 
 All other assets are from Terra by Hack Club.
 
+Some assets from Terra may have been modified.
 
 ## Terra Telephone
 
@@ -42,6 +43,10 @@ DO NOT READ BELOW IF YOU ARE PARTICIPATING AND IT IS NOT YOUR TURN.
 	- Less tax
 	- Inverted controls
 - Made a basic tutorial level
+
+### Week 2 Features (Niko)
+- Stylised some UI (health bar is now a glass of cider)
+- Added an 'attack'. Poncho can throw rotten tomatoes at enemies to knock them back
 
 ### What's next?
 

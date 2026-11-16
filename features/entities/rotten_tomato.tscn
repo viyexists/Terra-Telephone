@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dam1aix5m0j01"]
+
+[ext_resource type="Texture2D" uid="uid://dbt50oxfj80vl" path="res://assets/custom/RottenTomato.png" id="1_8t1ow"]
+[ext_resource type="Texture2D" uid="uid://tq0cf5q68wdw" path="res://assets/custom/RottenTomatoPiece.png" id="2_noe88"]
+
+[node name="Node2D" type="Node2D" unique_id=420590898]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=968915381]
+texture = ExtResource("1_8t1ow")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1017739796]
+emitting = false
+texture = ExtResource("2_noe88")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+initial_velocity_max = 1000.0
+angle_min = -720.0
+angle_max = -720.0

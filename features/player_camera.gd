@@ -11,7 +11,7 @@ var noise_y = 0
 ## How quickly shaking disappears
 @export var decay:float = 0.8
 ## Maximum camera offsert in px
-@export var max_offset:Vector2i=Vector2i(200,150)
+@export var max_offset:Vector2i=Vector2i(100,80)
 ## Maximum rotation of camera in radians
 @export var max_roll:float = 0.1
 var trauma:float=0.0
