@@ -18,7 +18,8 @@ func _process(_delta: float) -> void:
 	progress_bar.value = progress[0]
 	if is_equal_approx(progress[0], 1.0):
 		var scene = ResourceLoader.load_threaded_get(scene_to_change_to).instantiate()
-		scene.z_index = 0
+		if scene is Node2D:
+			scene.z_index = 0
 		add_sibling(scene)
 		$ProgressBar.hide()
 		var tween := get_tree().create_tween()

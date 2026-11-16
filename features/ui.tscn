@@ -21,3 +21,10 @@ text = "Coins: "
 
 [node name="SeedsLabel" type="Label" parent="VBoxContainer" unique_id=237563246]
 layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1822653483]
+offset_left = 1117.0
+offset_top = 97.0
+offset_right = 1142.0
+offset_bottom = 497.0
+fill_mode = 3

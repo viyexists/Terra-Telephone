@@ -12,6 +12,9 @@ var _player_in_area: bool = false
 
 func _physics_process(delta: float) -> void:
 	
+	if Global.player == null:
+		return
+	
 	# Damage
 	
 	if _player_in_area and cur_attack_cooldown <= 0:

@@ -1,16 +1,16 @@
 extends Node
 
 enum{
-	NAME, COST, IMAGE_PATH, ITEM_EFFECT
+	ID, NAME, COST, IMAGE_PATH, ITEM_EFFECT
 }
 
 var all_items: Array[Array] = [
-	# Name: String, cost: float, sprite: String, item effect: String
-	["Egg", 5.0, "res://assets/terra_assets/sprites/level/Egg.webp", "slowness"],
-	["Clover", 2.0, "res://assets/terra_assets/sprites/level/PlantClover2.webp", "less tax"],
-	["Mushroom", 3.0, "res://assets/terra_assets/sprites/level/Mushroom1.webp", "nothing"],
-	["Blue Mushroom", 9.0, "res://assets/terra_assets/sprites/level/Mushroom4.webp", "super speed"],
-	["Puffball Mushroom", 6.5, "res://assets/terra_assets/sprites/level/Mushroom7.webp", "inverted controls"]
+	# ID: int Name: String, cost: float, sprite: String, item effect: String
+	[0, "Egg", 5.0, "res://assets/terra_assets/sprites/level/Egg.webp", "slowness"],
+	[1, "Clover", 2.0, "res://assets/terra_assets/sprites/level/PlantClover2.webp", "less tax"],
+	[2, "Mushroom", 3.0, "res://assets/terra_assets/sprites/level/Mushroom1.webp", "nothing"],
+	[3, "Blue Mushroom", 9.0, "res://assets/terra_assets/sprites/level/Mushroom4.webp", "super speed"],
+	[4, "Puffball Mushroom", 6.5, "res://assets/terra_assets/sprites/level/Mushroom7.webp", "inverted controls"]
 ]
 
-var bought_items: Array = []
+var bought_items: Array[int] = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]

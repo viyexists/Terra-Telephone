@@ -6,17 +6,21 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	var tax: float = round(Global.coins / 2)
 	var did_item_reduce_tax: bool = false
 	for item in Items.bought_items:
-		if item[Items.ITEM_EFFECT] == "less tax":
+		var current_item: Array = Items.all_items[int(item)]
+		if current_item[Items.ITEM_EFFECT] == "less tax":
 			tax -= 1
 			did_item_reduce_tax = true
 	Global.coins -= tax
 	
+	var coin_plural: String = "coins"
+	if abs(tax) == 1.0:
+		coin_plural = "coin"
+	
 	if tax > 0:
-		label.text += "Ratticus has taken " + str(tax) + " coins from you as tax."
+		label.text += "Ratticus has taken " + str(tax) + " " + coin_plural + " from you as tax."
 	else:
 		label.text += "Ratticus tried to take tax from you, but "
 		if tax == 0 and did_item_reduce_tax:
@@ -24,7 +28,7 @@ func _ready() -> void:
 		elif tax == 0:
 			label.text += "you were too broke..."
 		elif tax < 0:
-			label.text += "ended up giving you " + str(-tax) + " coins instead...?"
+			label.text += "ended up giving you " + str(-tax) + " " + coin_plural + " instead...?"
 	
 	# Added wait a frame so the label size updates
 	# and it formats it correctly or something?

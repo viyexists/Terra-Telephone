@@ -27,6 +27,7 @@ func _randomise_shop_items() -> void:
 		option.option_name = random_item[Items.NAME]
 		option.cost = random_item[Items.COST]
 		option.option_image = load(random_item[Items.IMAGE_PATH])
+		option.option_id = random_item[Items.ID]
 
 
 func opening_animation() -> void:
@@ -52,6 +53,6 @@ func option_chosen(index: int) -> void:
 		print("Not enough coins to buy this")
 		return
 	Global.coins -= cur_option.cost
-	Items.bought_items.push_back(cur_option.option_name)
+	Items.bought_items.push_back(cur_option.option_id)
 	cur_option.disabled = true
 	

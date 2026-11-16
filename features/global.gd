@@ -21,13 +21,17 @@ var coins: float = 0
 ## Seeds collected on the current stage
 var seeds_collected: int = 0
 var seeds_per_stage: Array[int] = [
-	1,
+	3,
 ]
 
 var screen_size: Vector2
 
 func _ready() -> void:
 	screen_size = get_viewport().get_visible_rect().size
+
+
+func _process(_delta: float) -> void:
+	current_stage %= stages.size()
 
 
 func coin_collected(value: float = 1) -> void:

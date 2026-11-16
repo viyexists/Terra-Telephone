@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
+## Sent when we want to delete this stage e.g death or continuing
+signal end_stage
+
+var max_health: float = 10
+
 @export var speed: float = 4e4
-@export var health: float = 10
+@export var health: float
 
 @onready var player_body: AnimatedSprite2D = $Sprite/PlayerBody
 @onready var player_clothes: AnimatedSprite2D = $Sprite/PlayerClothes
@@ -12,14 +17,15 @@ func _ready() -> void:
 	play_idle_animation()
 	Global.player = self
 	Global.player_immune = false
+	health = max_health
 	$ArrowToBase.hide()
 	
 	for item in Items.bought_items:
-		if item[Items.ITEM_EFFECT] == "slowness":
+		if Items.all_items[int(item)][Items.ITEM_EFFECT] == "slowness":
 			speed /= 2
-		elif item[Items.ITEM_EFFECT] == "super speed":
+		elif Items.all_items[int(item)][Items.ITEM_EFFECT] == "super speed":
 			speed *= 2
-		elif item[Items.ITEM_EFFECT] == "inverted controls":
+		elif Items.all_items[int(item)][Items.ITEM_EFFECT] == "inverted controls":
 			is_controls_inverted = true
 	
 	
@@ -76,6 +82,7 @@ func toggle_base_arrow(on: bool) -> void:
 func take_damage(damage_taken: float) -> void:
 	if Global.player_immune:
 		return
+	# Take damage effect
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1.0, 0.586, 0.525, 1.0), 0.1)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
@@ -85,7 +92,7 @@ func take_damage(damage_taken: float) -> void:
 	if health <= 0:
 		die()
 
-# TODO make a proper death loop
+
 func die() -> void:
 	$Hitbox.set_deferred("monitoring", false)
 	$Hitbox.set_deferred("monitorable", false)
@@ -96,6 +103,10 @@ func die() -> void:
 	self.hide()
 	add_sibling(load("res://features/stages/death.tscn").instantiate())
 	self.set_physics_process(false)
+	end_stage.emit()
+	Global.coins = 0
+	Items.bought_items.clear()
+	
 
 # TODO
 func respawn() -> void:

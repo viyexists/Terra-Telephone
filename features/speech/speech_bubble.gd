@@ -39,7 +39,6 @@ func say(message: String, interrupt_previous_messages: bool = false) -> void:
 		if this_message_no != 1:
 			while message_complete_no != this_message_no - 1:
 				message_complete_no = await self._is_message_complete
-				print(message)
 				if interrupt:
 					return
 					
@@ -61,9 +60,11 @@ func say(message: String, interrupt_previous_messages: bool = false) -> void:
 	label.show()
 	
 	while label.visible_characters < len(label.text):
+		print("aaa")
 		if interrupt:
 			return
-		if label.is_queued_for_deletion() == false:
+		await get_tree().process_frame
+		if label != null:
 			label.visible_characters += 1
 			await get_tree().create_timer(TIME_FOR_CHARACTER_TO_APPEAR).timeout
 		
