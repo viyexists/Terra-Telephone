@@ -40,6 +40,7 @@ func coin_collected(value: float = 1) -> void:
 
 func seed_collected() -> void:
 	seeds_collected += 1
+	Global.player.show_seed_collected()
 
 
 func load_new_scene(scene_to_load: String, scene_came_from: Node) -> void:

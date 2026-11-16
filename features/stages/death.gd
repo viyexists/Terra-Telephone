@@ -17,3 +17,4 @@ func _ready() -> void:
 
 func _on_restart_button_pressed() -> void:
 	Global.load_new_scene("res://features/menus/main_menu.tscn", self)
+	queue_free()

@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func _on_player_end_stage() -> void:
+	add_sibling(load("res://features/stages/death.tscn").instantiate())
 	await get_tree().create_timer(3).timeout
 	self.queue_free()
 	

@@ -13,4 +13,4 @@ var all_items: Array[Array] = [
 	[4, "Puffball Mushroom", 6.5, "res://assets/terra_assets/sprites/level/Mushroom7.webp", "inverted controls"]
 ]
 
-var bought_items: Array[int] = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+var bought_items: Array[int] = []

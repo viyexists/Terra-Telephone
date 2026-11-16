@@ -13,12 +13,15 @@ var max_health: float = 10
 
 var is_controls_inverted: bool = false
 
+var is_dead: bool = false
+
 func _ready() -> void:
 	play_idle_animation()
 	Global.player = self
 	Global.player_immune = false
 	health = max_health
 	$ArrowToBase.hide()
+	$SeedLabel.hide()
 	
 	for item in Items.bought_items:
 		if Items.all_items[int(item)][Items.ITEM_EFFECT] == "slowness":
@@ -94,6 +97,9 @@ func take_damage(damage_taken: float) -> void:
 
 
 func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
 	$Hitbox.set_deferred("monitoring", false)
 	$Hitbox.set_deferred("monitorable", false)
 	var tween := get_tree().create_tween()
@@ -101,7 +107,6 @@ func die() -> void:
 	tween.parallel().tween_property($Sprite, "position", Vector2(1000, 1000), 1)
 	await tween.finished
 	self.hide()
-	add_sibling(load("res://features/stages/death.tscn").instantiate())
 	self.set_physics_process(false)
 	end_stage.emit()
 	Global.coins = 0
@@ -116,3 +121,8 @@ func respawn() -> void:
 	$Sprite.position = Vector2.ZERO
 	$Sprite.rotation = 0
 	self.show()
+
+func show_seed_collected() -> void:
+	$SeedLabel.show()
+	await get_tree().create_timer(2).timeout
+	$SeedLabel.hide()

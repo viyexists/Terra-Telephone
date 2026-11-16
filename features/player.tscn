@@ -319,3 +319,11 @@ offset_right = 62.0
 offset_bottom = 108.0
 theme_override_font_sizes/font_size = 200
 text = ">"
+
+[node name="SeedLabel" type="Label" parent="." unique_id=1339469464]
+offset_left = -82.0
+offset_top = -394.0
+offset_right = 177.0
+offset_bottom = -334.0
+theme_override_font_sizes/font_size = 50
+text = "Seed collected!"
