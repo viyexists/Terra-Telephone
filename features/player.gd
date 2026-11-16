@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 ## Sent when we want to delete this stage e.g death or continuing

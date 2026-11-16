@@ -1,3 +1,4 @@
+class_name Base
 extends Obstacle
 
 ## Sent when we want to move on e.g got all seeds

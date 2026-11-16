@@ -122,37 +122,49 @@ shape = SubResource("CapsuleShape2D_1vivr")
 position = Vector2(37, -5)
 shape = SubResource("CapsuleShape2D_klosm")
 
-[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=2022869801 groups=["enemies"]]
+[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=1206686102 groups=["enemies"]]
 z_index = 60
-position = Vector2(10804, 361)
+position = Vector2(3871, -6101)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("13_arakc")
 damage = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2" unique_id=719295615]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2" unique_id=982792428]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("13_b15jc")
 
-[node name="Area2D" type="Area2D" parent="Enemies/Enemy2" unique_id=1448008804]
+[node name="Area2D" type="Area2D" parent="Enemies/Enemy2" unique_id=1358500030]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2/Area2D" unique_id=152628877]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2/Area2D" unique_id=738167158]
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
 
-[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=444604347 groups=["enemies"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2" unique_id=333553908]
+position = Vector2(37, -5)
+shape = SubResource("CapsuleShape2D_klosm")
+
+[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1688668849 groups=["enemies"]]
 z_index = 60
-position = Vector2(7025, -8781)
+position = Vector2(9096, 194)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("13_arakc")
 damage = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3" unique_id=832606899]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3" unique_id=1737910078]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("13_b15jc")
 
-[node name="Area2D" type="Area2D" parent="Enemies/Enemy3" unique_id=1746963656]
+[node name="Area2D" type="Area2D" parent="Enemies/Enemy3" unique_id=653283230]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3/Area2D" unique_id=1548997712]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3/Area2D" unique_id=688367724]
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3" unique_id=1305095977]
+position = Vector2(37, -5)
+shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="Base" type="Node2D" parent="." unique_id=1292459075]
 position = Vector2(-1341, 723)
