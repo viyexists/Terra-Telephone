@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coie5erfqfrlj" path="res://features/player.gd" id="1_yse43"]
 [ext_resource type="Texture2D" uid="uid://dswx082iocr4l" path="res://assets/terra_assets/sprites/player/idle-body-sheet.webp" id="2_03h53"]
+[ext_resource type="Script" uid="uid://7fftmjh1k61w" path="res://features/player_camera.gd" id="2_q1etv"]
 [ext_resource type="Texture2D" uid="uid://b3g2rfm5ic1oi" path="res://assets/terra_assets/sprites/player/walk-body-sheet.webp" id="3_q1etv"]
 [ext_resource type="Texture2D" uid="uid://bp2he7kreksn5" path="res://assets/terra_assets/sprites/player/idle-clothes-sheet.webp" id="4_gj24u"]
 [ext_resource type="Texture2D" uid="uid://cgf2jhoru700j" path="res://assets/terra_assets/sprites/player/walk-clothes-sheet.webp" id="5_ray8b"]
@@ -289,6 +290,7 @@ shape = SubResource("CapsuleShape2D_giy8y")
 position = Vector2(-48, -215)
 zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
+script = ExtResource("2_q1etv")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1840734530]
 position = Vector2(-9, -215)

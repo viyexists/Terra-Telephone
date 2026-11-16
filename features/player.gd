@@ -96,6 +96,9 @@ func take_damage(damage_taken: float) -> void:
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	tween.tween_property(self, "modulate", Color(1.0, 0.534, 0.469, 1.0), 0.1)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
+	
+	$Camera2D.add_trauma(5)
+	
 	health -= damage_taken
 	if health <= 0:
 		die()
