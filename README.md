@@ -4,13 +4,13 @@ This is a game where you have to collect all the seeds without getting caught by
 
 After you collect all the seeds, return to Ratticus and get some upgrades from Heidi, and begin all over again.
 
-![]()
+![](https://github.com/viyexists/Terra-Telephone/blob/main/assets/screenshots/in_game.png)
 
-![]()
+![](https://github.com/viyexists/Terra-Telephone/blob/main/assets/screenshots/shop.png)
 
 ## How to play
 
-This game can be played at [itch.io](https://viywolf.itch.io/terrafried-blarghs-revenge-featuring-john).
+This game can be played at [itch.io](https://viywolf.itch.io/terrafried-blarghs-revenge-featuring-john). It is available as a web playable.
 
 
 ## Credits
