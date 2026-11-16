@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var black_background: Panel = $BlackBackground
-@onready var restart_button: Button = $RestartButton
-@onready var label: Label = $Label
+@onready var restart_button: Button = $VBoxContainer/RestartButton
+@onready var label: Label = $VBoxContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +15,5 @@ func _ready() -> void:
 	tween.tween_property(restart_button, "modulate:a", 1, 1)
 	
 
-
 func _on_restart_button_pressed() -> void:
-	# TODO Don't go back to the tutorial
-	get_tree().change_scene_to_file("res://features/stages/tutorial_stage.tscn")
+	Global.load_new_scene("res://features/menus/main_menu.tscn", self)

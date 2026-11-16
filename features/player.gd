@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var player_body: AnimatedSprite2D = $Sprite/PlayerBody
 @onready var player_clothes: AnimatedSprite2D = $Sprite/PlayerClothes
 
+var is_controls_inverted: bool = false
 
 func _ready() -> void:
 	play_idle_animation()
@@ -13,12 +14,24 @@ func _ready() -> void:
 	Global.player_immune = false
 	$ArrowToBase.hide()
 	
+	for item in Items.bought_items:
+		if item[Items.ITEM_EFFECT] == "slowness":
+			speed /= 2
+		elif item[Items.ITEM_EFFECT] == "super speed":
+			speed *= 2
+		elif item[Items.ITEM_EFFECT] == "inverted controls":
+			is_controls_inverted = true
+	
 	
 func _process(_delta: float) -> void:
 	$ArrowToBase.look_at(Global.base_position)
 
 func _physics_process(delta: float) -> void:
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
+	
+	if is_controls_inverted:
+		input_direction *= -1
+	
 	velocity = input_direction * speed * delta
 	
 	if input_direction.x > 0:

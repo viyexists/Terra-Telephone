@@ -15,18 +15,21 @@ offset_right = 1243.0
 offset_bottom = 698.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Label" type="Label" parent="." unique_id=651602323]
-offset_left = 513.0
-offset_top = 244.0
-offset_right = 656.0
-offset_bottom = 267.0
-text = "You were caught..."
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=355814771]
+offset_left = 299.0
+offset_top = 234.0
+offset_right = 854.0
+offset_bottom = 417.0
 
-[node name="RestartButton" type="Button" parent="." unique_id=1113691947]
-offset_left = 539.0
-offset_top = 281.0
-offset_right = 620.0
-offset_bottom = 312.0
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=204790176]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "You were caught..."
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1113691947]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Try Again"
 
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

@@ -2,7 +2,7 @@ extends Node
 
 var player: CharacterBody2D
 
-## Is the player immune to damage?
+## Is the player immune to damage? Used when the level ends so the player doesn't die when they finish.
 var player_immune: bool = false
 
 var current_stage: int = 0

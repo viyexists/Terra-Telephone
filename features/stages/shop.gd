@@ -52,5 +52,6 @@ func option_chosen(index: int) -> void:
 		print("Not enough coins to buy this")
 		return
 	Global.coins -= cur_option.cost
+	Items.bought_items.push_back(cur_option.option_name)
 	cur_option.disabled = true
 	

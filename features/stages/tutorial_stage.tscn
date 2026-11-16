@@ -566,7 +566,16 @@ scale = Vector2(0.5, 0.5)
 [node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
 
 [node name="Seed" parent="Seeds" unique_id=1413849496 instance=ExtResource("22_7efr7")]
-position = Vector2(2622, 2071)
+position = Vector2(-1229, 1914)
+
+[node name="Seed2" parent="Seeds" unique_id=1960651934 instance=ExtResource("22_7efr7")]
+position = Vector2(2287, 1963)
+
+[node name="Seed3" parent="Seeds" unique_id=2063699347 instance=ExtResource("22_7efr7")]
+position = Vector2(2090, -2066)
+
+[node name="Seed4" parent="Seeds" unique_id=673912765 instance=ExtResource("22_7efr7")]
+position = Vector2(-2510, -1613)
 
 [connection signal="body_entered" from="Base/Area2D" to="Base" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
