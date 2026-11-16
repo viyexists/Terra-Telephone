@@ -7,6 +7,8 @@
 extends Node2D
 class_name Obstacle
 
+## This is so when the player moves it doesn't mess
+## up the z ordering of this node too much
 var original_z_index: int = 50
 
 func _ready() -> void:

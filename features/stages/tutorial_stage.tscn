@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="15_4ksmt"]
-[ext_resource type="Script" uid="uid://bf6n80ux807ra" path="res://features/all_walls.gd" id="15_vl7si"]
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="17_02irw"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="18_ufbuv"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="19_bl74p"]
@@ -88,6 +87,7 @@ size = Vector2(242, 61)
 size = Vector2(2219, 263)
 
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
+process_mode = 1
 script = ExtResource("1_7vrav")
 
 [node name="UI" parent="." unique_id=372593172 instance=ExtResource("1_bl74p")]
@@ -189,7 +189,6 @@ script = ExtResource("11_gn5yn")
 polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498, -427, -488, -673, -290, -663, -149, -552, -3, -338, 42, -88, 73, 264, 54)
 
 [node name="AllWalls" type="Node2D" parent="." unique_id=1537728336]
-script = ExtResource("15_vl7si")
 
 [node name="Wall" type="Node2D" parent="AllWalls" unique_id=1048418420]
 script = ExtResource("15_4ksmt")

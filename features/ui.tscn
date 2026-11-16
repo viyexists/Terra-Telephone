@@ -6,9 +6,10 @@
 script = ExtResource("1_3ucda")
 
 [node name="AllSeedsCollectedLabel" type="Label" parent="." unique_id=1049158346]
-offset_left = 389.0
-offset_right = 731.0
-offset_bottom = 20.0
+offset_left = 283.0
+offset_right = 966.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 32
 text = "All seeds have been collected! Return to the hot air balloon."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1062941418]
@@ -17,10 +18,12 @@ offset_bottom = 40.0
 
 [node name="CoinsLabel" type="Label" parent="VBoxContainer" unique_id=2138045594]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Coins: "
 
 [node name="SeedsLabel" type="Label" parent="VBoxContainer" unique_id=237563246]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1822653483]
 offset_left = 1117.0

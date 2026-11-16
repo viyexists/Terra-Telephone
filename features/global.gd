@@ -6,10 +6,12 @@ var player: CharacterBody2D
 var player_immune: bool = false
 
 var current_stage: int = 0
+var current_stage_node: Node
 
 ## The location of the place to return to
 ## used for the arrow to point towards
 var base_position: Vector2
+
 
 var stages: Array[String] = [
 	"res://features/stages/tutorial_stage.tscn",

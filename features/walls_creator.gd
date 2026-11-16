@@ -1,3 +1,26 @@
+## This script is used in the _editor only_ to create walls quicker.
+
+"""
+
+					How To Use
+Add a Line2D named Line2D as a child to this node (which should be Node2D)
+Arrange the line so each point is where you want a wall to be.
+Then, tick the boolean "Activate Wall Creator" and "Confirm Modification" in the inspector
+and a bunch of Node2Ds will be added as a child to this node.
+Tick "Clear Walls" and "Confirm Modification" to delete all walls.
+Note: Changes are not undoable. Unless you use git I guess.
+
+You may have to redo this multiple times or change the min/max wall scale
+to ensure that there are no gaps in the wall.
+This doesn't support separated walls, so use a separate node for each wall.
+
+You don't have to use rocks, you can also make your own obstacles and add it to the wall variants
+array to use those instead (e.g, bush walls, trees, etc).
+Make sure any new nodes you make have a collision shape so the
+player cannot walk through them.
+
+"""
+
 @tool
 extends Node2D
 

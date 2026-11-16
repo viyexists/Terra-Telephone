@@ -5,12 +5,16 @@ signal end_stage
 
 var max_health: float = 10
 
+## How fast the player walks. This is occasionally modified by external sources.
 @export var speed: float = 4e4
 @export var health: float
 
+# The player body and clothes are separate sprites.
 @onready var player_body: AnimatedSprite2D = $Sprite/PlayerBody
 @onready var player_clothes: AnimatedSprite2D = $Sprite/PlayerClothes
 
+## If the controls are inverted, up is down, right is left, etc.
+## This is caused when you obtain a certain item.
 var is_controls_inverted: bool = false
 
 var is_dead: bool = false
@@ -23,6 +27,7 @@ func _ready() -> void:
 	$ArrowToBase.hide()
 	$SeedLabel.hide()
 	
+	# Applying the shop item effects
 	for item in Items.bought_items:
 		if Items.all_items[int(item)][Items.ITEM_EFFECT] == "slowness":
 			speed /= 2
