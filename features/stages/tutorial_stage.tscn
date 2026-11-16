@@ -32,6 +32,10 @@
 radius = 101.0
 height = 400.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
+radius = 100.0
+height = 400.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
@@ -99,6 +103,8 @@ position = Vector2(-1362, 1000)
 [node name="Enemy" type="CharacterBody2D" parent="Enemies" unique_id=1079961874 groups=["enemies"]]
 z_index = 60
 position = Vector2(-5828, 513)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("13_arakc")
 damage = 2.0
 
@@ -111,6 +117,10 @@ texture = ExtResource("13_b15jc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy/Area2D" unique_id=944882926]
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy" unique_id=617709038]
+position = Vector2(37, -5)
+shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=2022869801 groups=["enemies"]]
 z_index = 60
@@ -501,7 +511,7 @@ z_index = 86
 position = Vector2(1040, 2157)
 scale = Vector2(3.2238345, 3.2238345)
 
-[node name="@Node2D@72543" parent="AllWalls/Wall3" unique_id=2032440892 instance=ExtResource("19_bl74p")]
+[node name="_Node2D_72543" parent="AllWalls/Wall3" unique_id=2032440892 instance=ExtResource("19_bl74p")]
 z_index = 62
 position = Vector2(1008, 1572)
 scale = Vector2(2.1939993, 2.1939993)

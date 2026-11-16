@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var speed = 6.0
+@export var knockback_modifier = 10
+
 var target: Vector2
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Sprite2D.rotate(0.01)
+	$Sprite2D.rotate(0.25*delta)
 	
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta * 400
@@ -21,7 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		return
 	if body.is_in_group("enemies"):
-		body.knockback = self.global_position.direction_to(body.global_position) * 100
+		body.knockback = self.global_position.direction_to(body.global_position) * knockback_modifier
+		print('hit enemy, applying knockback: ', body.knockback)
 	$CPUParticles2D.emitting = true
 	$Sprite2D.hide()
 	

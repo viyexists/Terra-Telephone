@@ -11,6 +11,7 @@ texture = ExtResource("2_dfphl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2" unique_id=2118570412]
 position = Vector2(0, -79.5)
+collision_layer = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=1914658042]
 polygon = PackedVector2Array(50, -85.5, 198, 69, -201, 87, -170, 24, -4, -36.5)

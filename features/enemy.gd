@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var speed: float = 8000
+@export var speed: float = 0.8
 @export var damage: float = 1
 
 const ATTACK_COOLDOWN: float = 1
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_resistance)
 	velocity += knockback * delta
 
-	
+	velocity *= 10000
 	move_and_slide()
 
 

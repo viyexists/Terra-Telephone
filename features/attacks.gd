@@ -19,4 +19,4 @@ func attack(a)->void:
 	print('attack: ', a)
 	var t = tomato.instantiate()
 	t.transform = self.global_transform
-	get_parent().add_sibling(t)
+	Global.current_stage_node.add_child(t)
