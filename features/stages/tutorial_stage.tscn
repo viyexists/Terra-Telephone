@@ -63,7 +63,6 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_arakc"]
-load_path = "res://.godot/imported/1774305043695_eal41px.webp-5b14d38ec9f0447940eb414a12748945.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
 radius = 1188.33
@@ -97,7 +96,7 @@ position = Vector2(-1362, 1000)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=289992110]
 
-[node name="Enemy" type="CharacterBody2D" parent="Enemies" unique_id=1079961874]
+[node name="Enemy" type="CharacterBody2D" parent="Enemies" unique_id=1079961874 groups=["enemies"]]
 z_index = 60
 position = Vector2(-5828, 513)
 script = ExtResource("13_arakc")
@@ -113,7 +112,7 @@ texture = ExtResource("13_b15jc")
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
 
-[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=2022869801]
+[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=2022869801 groups=["enemies"]]
 z_index = 60
 position = Vector2(10804, 361)
 script = ExtResource("13_arakc")
@@ -129,7 +128,7 @@ texture = ExtResource("13_b15jc")
 position = Vector2(40, -4)
 shape = SubResource("CapsuleShape2D_1vivr")
 
-[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=444604347]
+[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=444604347 groups=["enemies"]]
 z_index = 60
 position = Vector2(7025, -8781)
 script = ExtResource("13_arakc")

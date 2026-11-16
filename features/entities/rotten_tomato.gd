@@ -21,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		return
 	if body.is_in_group("enemies"):
-		pass
+		body.knockback = self.global_position.direction_to(body.global_position) * 100
 	$CPUParticles2D.emitting = true
 	$Sprite2D.hide()
 	

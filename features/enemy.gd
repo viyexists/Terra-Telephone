@@ -8,6 +8,11 @@ const ATTACK_COOLDOWN: float = 1
 var cur_attack_cooldown: float = ATTACK_COOLDOWN
 var _player_in_area: bool = false
 
+var knockback = Vector2.ZERO
+
+## How quickly the enemy recovers from knockback
+@export var knockback_resistance = 1
+
 # Note that the shark has a z index of 60
 
 func _physics_process(delta: float) -> void:
@@ -25,6 +30,11 @@ func _physics_process(delta: float) -> void:
 	# Movement
 	var player_relative_direction: Vector2 = (Global.player.global_position - self.global_position).normalized()
 	self.velocity = player_relative_direction * delta * speed
+	
+	# Knockback
+	knockback = knockback.move_toward(Vector2.ZERO, knockback_resistance)
+	velocity += knockback * delta
+
 	
 	move_and_slide()
 
