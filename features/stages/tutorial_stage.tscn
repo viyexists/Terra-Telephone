@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://3rckugmiqiq6"]
 
 [ext_resource type="Script" uid="uid://cvvsqrq8xugdd" path="res://features/stages/tutorial_stage.gd" id="1_7vrav"]
-[ext_resource type="PackedScene" uid="uid://c4jsmi6g3y3v2" path="res://features/ui.tscn" id="1_bl74p"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="1_yfkr1"]
 [ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/Bush2.webp" id="2_dt4km"]
 [ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
@@ -14,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="9_b15jc"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="11_gn5yn"]
 [ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="12_7efr7"]
-[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/enemy.gd" id="13_arakc"]
+[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="13_arakc"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="15_4ksmt"]
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="17_02irw"]
@@ -92,8 +91,6 @@ size = Vector2(2219, 263)
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 process_mode = 1
 script = ExtResource("1_7vrav")
-
-[node name="UI" parent="." unique_id=372593172 instance=ExtResource("1_bl74p")]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
 position = Vector2(-1362, 1000)
@@ -203,6 +200,7 @@ offset_right = 244.0
 offset_bottom = -591.5
 theme = ExtResource("12_7efr7")
 script = ExtResource("11_gn5yn")
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Base" unique_id=1021004768]
 

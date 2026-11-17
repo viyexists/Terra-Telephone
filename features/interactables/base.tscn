@@ -9,6 +9,14 @@
 [ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="7_j3i8o"]
 [ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="8_wn4q5"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
+radius = 326.0
+height = 1520.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ambiy"]
+radius = 492.99997
+height = 1936.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o3rc"]
 animations = [{
 "frames": [{
@@ -41,16 +49,23 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6gvq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ambiy"]
-radius = 492.99997
-height = 1936.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
-radius = 326.0
-height = 1520.0
-
 [node name="Base" type="Node2D" unique_id=847110166]
 script = ExtResource("1_vbhb5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=920715895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=331918325]
+position = Vector2(0, -299)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_klosm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=482368553]
+position = Vector2(0, -1217.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1877895195]
+position = Vector2(0, 917.645)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ambiy")
 
 [node name="BalloonBack" type="Sprite2D" parent="." unique_id=1658000714]
 position = Vector2(73, -1213.5)
@@ -63,19 +78,11 @@ sprite_frames = SubResource("SpriteFrames_8o3rc")
 animation = &"angry"
 
 [node name="BalloonFront" type="Sprite2D" parent="." unique_id=1700123810]
-position = Vector2(72.99999, -89.49988)
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(72.99999, -89.49991)
+scale = Vector2(0.9999997, 0.9999997)
 texture = SubResource("CompressedTexture2D_r6gvq")
 region_enabled = true
 region_rect = Rect2(0, 2262.881, 1818, 362.1189)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=482368553]
-position = Vector2(0, -1217.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1877895195]
-position = Vector2(0, 917.645)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_ambiy")
 
 [node name="SpeechBubble" type="Control" parent="." unique_id=1041672001]
 layout_mode = 3
@@ -87,12 +94,5 @@ offset_bottom = -591.5
 theme = ExtResource("7_j3i8o")
 script = ExtResource("8_wn4q5")
 metadata/_edit_use_anchors_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=920715895]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=331918325]
-position = Vector2(0, -299)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_klosm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

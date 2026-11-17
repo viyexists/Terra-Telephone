@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bh44tu64e5g4g"]
+
+[ext_resource type="Script" uid="uid://baliwsi8vvqi5" path="res://features/levels/_level.gd" id="1_qyk5v"]
+[ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="2_gcp4q"]
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="3_qyk5v"]
+[ext_resource type="Script" uid="uid://yyl714ghqqwh" path="res://features/environment/walls.gd" id="4_aad7h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qyk5v"]
+load_path = "res://.godot/imported/Rock1.webp-a79c23993c6b318e3b2c5d3d9121ae1a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aad7h"]
+load_path = "res://.godot/imported/Rock2.webp-d03342aa0854c0870436375ab3ae2b84.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxfmk"]
+load_path = "res://.godot/imported/Rock3.webp-e25e1e06d7b7d3126fc1586ad947b2c9.ctex"
+
+[node name="1" type="Node2D" unique_id=296359183 node_paths=PackedStringArray("player", "base")]
+script = ExtResource("1_qyk5v")
+player = NodePath("Player")
+base = NodePath("Base")
+
+[node name="Base" parent="." unique_id=847110166 instance=ExtResource("2_gcp4q")]
+
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_qyk5v")]
+position = Vector2(-48, 323)
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=1797186821]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=986127505]
+position = Vector2(33, 4362)
+build_mode = 1
+polygon = PackedVector2Array(47, 0, 4568, 226, 7464, -926, 7903, -2352, 9438, -5554, 9691, -10029, 9513, -13709, 7779, -15508, 5772, -16793, 2271, -17917, -2884, -18270, -5823, -17563, -9821, -16279, -12005, -13452, -14414, -12521, -15715, -10610, -16309, -5937, -15699, -4010, -12696, -2452, -9291, -1553, -6256, -1408, -4169, -1890, -3068, -1153, -2578, -1453, -1666, -523, -878, -107, -31, -3, 13, 2)
+
+[node name="Walls" type="Line2D" parent="." unique_id=76205991]
+points = PackedVector2Array(63, 2554, 327, 2570, 1611, 2421, 2068, 1884, 2813, 1216, 3296, 416)
+width = 0.0
+script = ExtResource("4_aad7h")
+wall_sprites = Array[CompressedTexture2D]([])
+
+[node name="Rock1-0" type="Sprite2D" parent="Walls" unique_id=1895848703]
+position = Vector2(-2488, 3406)
+scale = Vector2(3.843158, 2.9029412)
+texture = SubResource("CompressedTexture2D_qyk5v")
+
+[node name="Rock2-0" type="Sprite2D" parent="Walls" unique_id=1615700550]
+position = Vector2(-1712.0001, 3639)
+scale = Vector2(2.494975, 2.4949746)
+texture = SubResource("CompressedTexture2D_aad7h")
+
+[node name="Rock3-0" type="Sprite2D" parent="Walls" unique_id=1029594172]
+position = Vector2(-717, 3752)
+scale = Vector2(3.7239997, 3.724)
+texture = SubResource("CompressedTexture2D_nxfmk")
+
+[node name="Rock1-1" type="Sprite2D" parent="Walls" unique_id=1468634613]
+position = Vector2(79, 3585)
+rotation = -3.1415927
+scale = Vector2(2.627947, -3.3167517)
+texture = SubResource("CompressedTexture2D_qyk5v")
