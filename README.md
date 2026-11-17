@@ -50,6 +50,7 @@ Documentation for code can be found in the code comments, or for more detailed e
 ### Week 2 Features (Niko)
 - Stylised some UI (health bar is now a glass of cider)
 - Added an 'attack'. Poncho can throw rotten tomatoes at enemies to knock them back
+- (for devs) Level creation tools (auto wall generation)
 
 ### What's next?
 

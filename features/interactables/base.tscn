@@ -53,6 +53,7 @@ animations = [{
 script = ExtResource("1_vbhb5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=920715895]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=331918325]
 position = Vector2(0, -299)

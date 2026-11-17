@@ -27,3 +27,4 @@ func generate_wall():
 		s.scale += Vector2(randf_range(-0.2,0.2),randf_range(-0.2,0.2))
 		s.scale *= Vector2((-1 if randi_range(0,1) else 1),1)
 		self.add_child(s)
+		s.owner = self
