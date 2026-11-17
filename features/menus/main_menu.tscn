@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="1_7xcpl"]
 [ext_resource type="Script" uid="uid://boyk1ggruugu2" path="res://features/menus/main_menu.gd" id="1_ilxdq"]
 [ext_resource type="Texture2D" uid="uid://gwvtmumck33u" path="res://assets/terrafried_logo/Terrrafried_Logo.png" id="2_ilxdq"]
-[ext_resource type="PackedScene" uid="uid://bh44tu64e5g4g" path="res://features/levels/1.tscn" id="3_82xxc"]
+[ext_resource type="PackedScene" uid="uid://3rckugmiqiq6" path="res://features/stages/tutorial_stage.tscn" id="3_82xxc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg1c1"]
 

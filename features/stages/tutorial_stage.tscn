@@ -209,7 +209,7 @@ polygon = PackedVector2Array(660, 45, 848, -213, 794, -434, 502, -486, -3, -498,
 
 [node name="AllWalls" type="Node2D" parent="." unique_id=1537728336]
 
-[node name="Wall" type="Node2D" parent="AllWalls" unique_id=1048418420]
+[node name="Wall" type="Line2D" parent="AllWalls" unique_id=1655896603]
 script = ExtResource("15_4ksmt")
 wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
 min_wall_scale = 2.0
@@ -443,7 +443,7 @@ z_index = -93
 position = Vector2(3878, -2326)
 scale = Vector2(3.3563898, 3.3563898)
 
-[node name="Wall2" type="Node2D" parent="AllWalls" unique_id=17680550]
+[node name="Wall2" type="Line2D" parent="AllWalls" unique_id=772967901]
 script = ExtResource("15_4ksmt")
 wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
 min_wall_scale = 2.0
@@ -487,7 +487,7 @@ z_index = -44
 position = Vector2(212, -1122)
 scale = Vector2(2.209886, 2.209886)
 
-[node name="Wall3" type="Node2D" parent="AllWalls" unique_id=1862194599]
+[node name="Wall3" type="Line2D" parent="AllWalls" unique_id=1690604066]
 script = ExtResource("15_4ksmt")
 wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
 min_wall_scale = 2.0

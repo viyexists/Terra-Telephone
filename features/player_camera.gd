@@ -15,7 +15,7 @@ var noise_y = 0
 ## Maximum rotation of camera in radians
 @export var max_roll:float = 0.1
 var trauma:float=0.0
-var trauma_power = 3.0
+var trauma_power = 2.0
 
 
 func _ready() -> void:
