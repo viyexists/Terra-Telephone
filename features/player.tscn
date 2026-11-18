@@ -15,8 +15,8 @@ radius = 60.0
 height = 120.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
-radius = 91.0
-height = 356.0
+radius = 90.0
+height = 360.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_03h53")
@@ -282,10 +282,19 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_ray8b"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_klosm"]
+gradient = SubResource("Gradient_ray8b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.3)
+metadata/_snap_enabled = true
+
 [node name="Player" type="CharacterBody2D" unique_id=1646932784 groups=["enemies", "player"]]
 script = ExtResource("1_yse43")
-
-[node name="UI" parent="." unique_id=372593172 instance=ExtResource("2_ray8b")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
 position = Vector2(26, -48)
@@ -293,26 +302,25 @@ shape = SubResource("CapsuleShape2D_giy8y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=702460402]
 position = Vector2(-48, -215)
-zoom = Vector2(0.24, 0.24)
+zoom = Vector2(0.25, 0.25)
 position_smoothing_enabled = true
 script = ExtResource("2_q1etv")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1840734530]
-position = Vector2(-9, -215)
+position = Vector2(0, -180)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=377269835]
-position = Vector2(44, 52)
 shape = SubResource("CapsuleShape2D_1vivr")
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1457726866]
 
 [node name="PlayerBody" type="AnimatedSprite2D" parent="Sprite" unique_id=1439072725]
-position = Vector2(-40, -254)
+position = Vector2(-82, -254)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"walk"
 
 [node name="PlayerClothes" type="AnimatedSprite2D" parent="Sprite" unique_id=511453689]
-position = Vector2(-40, -254)
+position = Vector2(-82, -254)
 sprite_frames = SubResource("SpriteFrames_8vrlf")
 animation = &"walk"
 
@@ -326,6 +334,7 @@ offset_right = 62.0
 offset_bottom = 108.0
 theme_override_font_sizes/font_size = 200
 text = ">"
+metadata/_edit_use_anchors_ = true
 
 [node name="SeedLabel" type="Label" parent="." unique_id=1339469464]
 offset_left = -82.0
@@ -334,8 +343,23 @@ offset_right = 177.0
 offset_bottom = -334.0
 theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
+metadata/_edit_use_anchors_ = true
 
-[node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701]
-position = Vector2(35, -209)
+[node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701 node_paths=PackedStringArray("attack_marker")]
+position = Vector2(0, -180)
 script = ExtResource("7_q1etv")
 tomato = ExtResource("8_gj24u")
+attack_marker = NodePath("../Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216263171]
+position = Vector2(0, -180)
+texture = SubResource("GradientTexture2D_klosm")
+
+[node name="UI" parent="." unique_id=1434014047 instance=ExtResource("2_ray8b")]
+z_index = 4096
+offset_left = -2352.0
+offset_top = -1511.0
+offset_right = -1200.0
+offset_bottom = -863.0
+scale = Vector2(4, 4)
+metadata/_edit_use_anchors_ = true

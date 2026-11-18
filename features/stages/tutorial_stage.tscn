@@ -93,7 +93,7 @@ process_mode = 1
 script = ExtResource("1_7vrav")
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
-position = Vector2(-1362, 1000)
+position = Vector2(-1336, 1259.55)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=289992110]
 
