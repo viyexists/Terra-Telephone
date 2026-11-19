@@ -17,7 +17,7 @@ class_name EntitySpawner
 @export_range(0, 100,1) var max_entities: int = 1
 ## Amount of entities spawned at once
 @export_range(0, 100,1) var amount: int = 1:
-	set(a): amount = min(max_entities, amount)
+	set(a): amount = min(max_entities, a)
 
 var cooldown: Timer
 var total_spawns = 0
