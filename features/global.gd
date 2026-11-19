@@ -17,10 +17,13 @@ var stages: Array[String] = [
 	"res://features/stages/tutorial_stage.tscn",
 ]
 
-var levels: Dictionary[String, String] = {
-	'Tutorial' : "res://features/stages/tutorial_stage.tscn",
-	'Arrival' : "res://features/levels/1.tscn"
-}
+## level/stage array. Stores the available levels and their status
+## A locked stage needs its previous stages completed first.
+var levels: Array[Array] = [
+	# ['LEVEL NAME' , "res://path/to/level/scene", UNLOCKED?]
+	['Tutorial' , "res://features/stages/tutorial_stage.tscn", true],
+	['Arrival' , "res://features/levels/1.tscn", false]
+]
 
 var coins: float = 0
 

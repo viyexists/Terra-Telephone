@@ -11,6 +11,12 @@ func _ready() -> void:
 	Global.seeds_collected = 0
 	Global.current_stage_node = self
 	
+	# since we assign the the player and base vars, and this script is shared,
+	# we cant use godot's inbuilt signal connection and have to manually connect 
+	# to the signals
+	player.connect('end_stage', _on_player_end_stage)
+	base.connect('end_stage', _on_base_end_stage)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -20,5 +26,9 @@ func _process(delta: float) -> void:
 
 func _on_player_end_stage() -> void:
 	add_sibling(load("res://features/stages/death.tscn").instantiate())
+	await get_tree().create_timer(3).timeout
+	self.queue_free()
+
+func _on_base_end_stage() -> void:
 	await get_tree().create_timer(3).timeout
 	self.queue_free()
