@@ -53,7 +53,7 @@ For particularly complicated systems please refer to the `./docs`
 - Added an 'attack'. Poncho can throw rotten tomatoes at enemies to knock them back
 - (for devs) Level creation tools (auto wall generation)
 - Level selection screen & Level system (stages)
-- 
+- Added entity spawners.
 
 ### What's next?
 

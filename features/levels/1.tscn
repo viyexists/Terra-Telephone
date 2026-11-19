@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bh44tu64e5g4g"]
 
 [ext_resource type="Script" uid="uid://baliwsi8vvqi5" path="res://features/levels/_level.gd" id="1_qyk5v"]
+[ext_resource type="PackedScene" uid="uid://8o0mlwhnv3y4" path="res://features/entities/entity_spawner.tscn" id="2_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="2_gcp4q"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="3_qyk5v"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="4_aad7h"]
@@ -12,6 +13,10 @@
 script = ExtResource("1_qyk5v")
 player = NodePath("Player")
 base = NodePath("Base")
+
+[node name="EntitySpawner" parent="." unique_id=35382311 instance=ExtResource("2_8kuq6")]
+position = Vector2(-2638, -322)
+max_num = 1
 
 [node name="WallCreator" type="Line2D" parent="." unique_id=342593926]
 position = Vector2(-5242, 831)
