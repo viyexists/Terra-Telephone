@@ -8,6 +8,9 @@ var player_immune: bool = false
 var current_stage: int = 0
 var current_stage_node: Node
 
+var next_stage:
+	get: return current_stage + 1
+
 ## The location of the place to return to
 ## used for the arrow to point towards
 var base_position: Vector2

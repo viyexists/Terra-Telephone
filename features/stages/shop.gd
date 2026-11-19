@@ -43,8 +43,8 @@ func opening_animation() -> void:
 
 func _on_continue_button_pressed() -> void:
 	Global.current_stage += 1
-	Global.current_stage %= Global.stages.size()
-	Global.load_new_scene(Global.stages[Global.current_stage], self)
+	Global.current_stage %= Global.levels.size()
+	Global.load_new_scene(Global.levels[Global.next_stage][1], self)
 	self.queue_free()
 
 
