@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var coins_label: Label = $VBoxContainer/CoinsLabel
 @onready var seeds_label: Label = $VBoxContainer/SeedsLabel

@@ -16,17 +16,10 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 metadata/_snap_enabled = true
 
-[node name="UI" type="Control" unique_id=1434014047]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="UI" type="CanvasLayer" unique_id=948076409]
 script = ExtResource("1_3ucda")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=444955372]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,7 +28,6 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_klosm")
 
 [node name="AllSeedsCollectedLabel" type="Label" parent="." unique_id=1049158346]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -47,7 +39,6 @@ theme_override_font_sizes/font_size = 32
 text = "All seeds have been collected! Return to the hot air balloon."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1062941418]
-layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -61,7 +52,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=181274438]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

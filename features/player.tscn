@@ -282,17 +282,6 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_ray8b"]
-interpolation_mode = 1
-colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_klosm"]
-gradient = SubResource("Gradient_ray8b")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.3)
-metadata/_snap_enabled = true
-
 [node name="Player" type="CharacterBody2D" unique_id=1646932784 groups=["enemies", "player"]]
 script = ExtResource("1_yse43")
 
@@ -349,17 +338,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, -180)
 script = ExtResource("7_q1etv")
 tomato = ExtResource("8_gj24u")
-attack_marker = NodePath("../Sprite2D")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216263171]
-position = Vector2(0, -180)
-texture = SubResource("GradientTexture2D_klosm")
+attack_marker = NodePath("")
 
 [node name="UI" parent="." unique_id=1434014047 instance=ExtResource("2_ray8b")]
-z_index = 4096
-offset_left = -2352.0
-offset_top = -1511.0
-offset_right = -1200.0
-offset_bottom = -863.0
-scale = Vector2(4, 4)
 metadata/_edit_use_anchors_ = true
