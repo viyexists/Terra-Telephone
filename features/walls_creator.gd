@@ -40,7 +40,7 @@ const Y_POSITION_DIVISOR: float = 25
 func _ready() -> void:
 	# If not in editor
 	if Engine.is_editor_hint() == false:
-		self.width = 0
+		self_modulate.a = 0.0
 		
 func create_walls() -> void:
 	if wall_variants.size() == 0:

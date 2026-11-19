@@ -17,6 +17,10 @@ var stages: Array[String] = [
 	"res://features/stages/tutorial_stage.tscn",
 ]
 
+var levels: Dictionary[String, String] = {
+	'Tutorial' : "res://features/stages/tutorial_stage.tscn",
+	'Arrival' : "res://features/levels/1.tscn"
+}
 
 var coins: float = 0
 
