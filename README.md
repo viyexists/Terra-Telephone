@@ -33,7 +33,8 @@ Once everyone has gone, we will see what strange additions people have made and 
 DO NOT READ BELOW IF YOU ARE PARTICIPATING AND IT IS NOT YOUR TURN.
 
 ### Note for participants
-Documentation for code can be found in the code comments, or for more detailed explanations, please check the `docs` folder
+Documentation for code can be found in the code comments.
+For particularly complicated systems please refer to the `./docs`
 
 ### Week 1 Features (Viy)
 - Added the base features such as walking and obstacles
