@@ -32,6 +32,7 @@ var coins: float = 0
 
 ## Seeds collected on the current stage
 var seeds_collected: int = 0
+var seeds_this_stage:int = 0
 var seeds_per_stage: Array[int] = [
 	3,
 ]

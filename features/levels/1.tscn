@@ -9,894 +9,849 @@
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="5_8w6ul"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="6_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="7_qk0jo"]
+[ext_resource type="PackedScene" uid="uid://bc21ffv7ellnt" path="res://features/environment/tree_willow.tscn" id="11_kjatm"]
+[ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="11_w6toh"]
+[ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="12_ggwjl"]
+[ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="13_s6eo5"]
+[ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="14_0irvv"]
 
 [node name="1" type="Node2D" unique_id=296359183 node_paths=PackedStringArray("player", "base")]
 script = ExtResource("1_qyk5v")
 player = NodePath("Player")
 base = NodePath("Base")
 
-[node name="EntitySpawner" parent="." unique_id=35382311 instance=ExtResource("2_8kuq6")]
-position = Vector2(-3322, -62)
-entity = ExtResource("3_qk0jo")
-
-[node name="WallCreator" type="Line2D" parent="." unique_id=342593926]
-position = Vector2(-5242, 831)
-points = PackedVector2Array(2293, 401, 2530.1475, 451.38696, 2726, 493, 2850, 551, 3081, 599, 3289.8447, 600.8706, 3388, 612, 3646.754, 638.1477, 3863, 660, 4054.2263, 673.312, 4322.2803, 691.9724, 4605.9956, 711.72314, 4926, 734, 5225.4556, 734, 5496.0933, 734, 5796.332, 734, 6154, 734, 6575.048, 648.6262, 6805, 602, 6896, 286, 6925.4043, 81.13599, 6986, -181, 7004.633, -490.29932, 7018.4307, -719.34717, 7031, -928, 7043, -1161, 6927.745, -1628.7261, 6854, -1928, 6302, -2159, 6001.598, -2225.478, 5671.5615, -2298.514, 5222, -2398, 4819, -2447, 4242, -2513, 3920, -2571, 3545.083, -2624.4883, 3170, -2678, 2816, -2851, 2293, -2994, 2056.2253, -3078.048, 1800, -3169, 1615, -3253, 1445, -3512, 1407, -3651, 1386, -3861, 1406.6494, -4054.4287, 1435, -4320, 1514.5603, -4502.384, 1606, -4712, 1675, -4829, 1841.344, -5040.585, 1926.6311, -5149.067, 2037.7496, -5290.406, 2153, -5437, 2400.5254, -5609.518, 2582, -5736, 3390, -5905, 4317, -5915, 4820.4727, -5833.063, 5294, -5756, 5876.2373, -5632.089, 6245.1543, -5553.577, 6511, -5497, 6735.4844, -5467.9404, 6991.4863, -5434.8013, 7297.2485, -5395.22, 7575.122, -5359.2495, 7747, -5337, 8106.962, -5373.832, 8386.621, -5402.4463, 8815.084, -5446.2856, 9213, -5487, 9648.863, -5604.8154, 10001, -5700, 10189.238, -5873.289, 10341, -6013, 10531.244, -6294.413, 10654, -6476, 10810.377, -6756.4355, 10954, -7014, 11051, -7159, 11165, -7491, 11288, -7982, 11295, -8240, 11254, -8540, 11213.023, -8806.832, 11168, -9100, 11188.463, -9487.199, 11207, -9838, 11176.195, -10209.787, 11149, -10538, 11010, -10976, 10857, -11354, 10693.379, -11730.36, 10569.521, -12015.254, 10402.682, -12399.012, 10274, -12695, 10135.416, -13127.6875, 10032.112, -13450.222, 9963, -13666, 9497, -14074, 9120.155, -14227.284, 8875, -14327, 8427.947, -14518.596, 7923, -14735, 7334.1406, -14920.248, 6874, -15065, 5922, -15376, 5666.3223, -15430.247, 5281, -15512, 4286.4697, -15703.928, 3571, -15842, 3116.8647, -15966.497, 2823.6904, -16046.866, 2502.7463, -16134.848, 2152, -16231, 1743.5342, -16308.437, 1319.1255, -16388.895, 1091.6233, -16432.023, 617, -16522, -39.6062, -16570.809, -306.062, -16590.615, -957, -16639, -1510.7075, -16628.97, -2006, -16620, -2302.0608, -16541.32, -2958, -16367, -3320.7993, -16258.916, -3871, -16095, -4143.083, -15940.605, -4590, -15687, -4822.6094, -15524.145, -5367, -15143, -5689.266, -14928.248, -6009.8496, -14714.617, -6533, -14366, -6829.917, -14131.98, -7175, -13860, -7431.4814, -13699.905, -7952, -13375, -8415.632, -13171.52, -8631, -13077, -9137, -12811, -9393.666, -12688.957, -9953, -12423, -10361, -12131, -10441, -11948, -10750, -11276, -10811.028, -10816.898, -10905, -10110, -10910, -9942, -10866, -9547, -10787.718, -9293.509, -10716.619, -9063.286, -10649.608, -8846.299, -10614, -8731, -10526.172, -8632.263, -10422.35, -8515.546, -10261.747, -8334.997, -10147, -8206, -9906.418, -8029.3535, -9713.925, -7888.017, -9561.972, -7776.4463, -9380.433, -7643.1523, -9195, -7507, -8959.59, -7346.4795, -8788.796, -7230.0205, -8568.555, -7079.844, -8340, -6924, -8124.8584, -6860.216, -7873.562, -6785.7134, -7586.3315, -6700.5576, -7291, -6613, -7025.3555, -6486.237, -6669.784, -6316.5605, -6436, -6205, -6092, -6014, -5839.8696, -5920.5313, -5581, -5797, -5317.634, -5592.6953, -4979, -5330, -4819.3906, -5071.8086, -4571, -4670, -4449.0015, -4459.8135, -4221, -4067, -4171.6406, -3869.2434, -4066, -3446, -4030.9448, -3139.9458, -3988, -2765, -3982.8372, -2653.5625, -3975.6262, -2497.93, -3969.58, -2367.435, -3964, -2247, -3988.0002, -2163.0173, -3988, -2085, -3981.8704, -2011.1238, -3974.7297, -1925.0681, -3966.1018, -1821.0873, -3930, -1386, -3580, -978, -2939, -725, -1987, -609, -1034, -492, -587, -162, -513, 134, -413, 382, -272.70703, 562.5239, -141, 732, 99.795044, 774.9358, 403, 829, 547.65, 847.71094, 733.7346, 871.78174, 1006, 907, 1511, 926, 1783, 849, 1997, 810)
-closed = true
-script = ExtResource("4_aad7h")
-wall_variants = Array[PackedScene]([ExtResource("5_8w6ul"), ExtResource("6_8kuq6"), ExtResource("7_qk0jo")])
-max_wall_scale = 3.669
-metadata/_custom_type_script = "uid://du03pqqpwdkty"
-
-[node name="@Node2D@112877" parent="WallCreator" unique_id=275115240 instance=ExtResource("6_8kuq6")]
-position = Vector2(2293, 401)
-scale = Vector2(2.730389, 2.730389)
-
-[node name="@Node2D@112878" parent="WallCreator" unique_id=643173075 instance=ExtResource("5_8w6ul")]
-position = Vector2(2530.1475, 451.38696)
-scale = Vector2(1.191779, 1.191779)
-
-[node name="@Node2D@112879" parent="WallCreator" unique_id=745565696 instance=ExtResource("6_8kuq6")]
-position = Vector2(2726, 493)
-scale = Vector2(2.6596043, 2.6596043)
-
-[node name="@Node2D@112880" parent="WallCreator" unique_id=1756902642 instance=ExtResource("7_qk0jo")]
-position = Vector2(2850, 551)
-scale = Vector2(3.0884287, 3.0884287)
-
-[node name="@Node2D@112881" parent="WallCreator" unique_id=1418083848 instance=ExtResource("5_8w6ul")]
-position = Vector2(3081, 599)
-scale = Vector2(1.8399705, 1.8399705)
-
-[node name="@Node2D@112882" parent="WallCreator" unique_id=1688826058 instance=ExtResource("5_8w6ul")]
-position = Vector2(3289.8447, 600.8706)
-scale = Vector2(1.2625002, 1.2625002)
-
-[node name="@Node2D@112883" parent="WallCreator" unique_id=468214113 instance=ExtResource("7_qk0jo")]
-position = Vector2(3388, 612)
-scale = Vector2(1.1559091, 1.1559091)
-
-[node name="@Node2D@112884" parent="WallCreator" unique_id=1190507098 instance=ExtResource("5_8w6ul")]
-position = Vector2(3646.754, 638.1477)
-scale = Vector2(1.9800371, 1.9800371)
-
-[node name="@Node2D@112885" parent="WallCreator" unique_id=1873100847 instance=ExtResource("5_8w6ul")]
-position = Vector2(3863, 660)
-scale = Vector2(3.4234185, 3.4234185)
-
-[node name="@Node2D@112886" parent="WallCreator" unique_id=1331735325 instance=ExtResource("7_qk0jo")]
-position = Vector2(4054.2263, 673.312)
-scale = Vector2(1.0888109, 1.0888109)
-
-[node name="@Node2D@112887" parent="WallCreator" unique_id=2053627868 instance=ExtResource("7_qk0jo")]
-position = Vector2(4322.2803, 691.9724)
-scale = Vector2(3.4866135, 3.4866135)
-
-[node name="@Node2D@112888" parent="WallCreator" unique_id=1677568580 instance=ExtResource("6_8kuq6")]
-position = Vector2(4605.9956, 711.72314)
-scale = Vector2(1.6998476, 1.6998476)
-
-[node name="@Node2D@112889" parent="WallCreator" unique_id=1291559302 instance=ExtResource("6_8kuq6")]
-position = Vector2(4926, 734)
-scale = Vector2(0.7864359, 0.7864359)
-
-[node name="@Node2D@112890" parent="WallCreator" unique_id=1581803547 instance=ExtResource("5_8w6ul")]
-position = Vector2(5225.4556, 734)
-scale = Vector2(2.947533, 2.947533)
-
-[node name="@Node2D@112891" parent="WallCreator" unique_id=1384135282 instance=ExtResource("5_8w6ul")]
-position = Vector2(5496.0933, 734)
-scale = Vector2(2.1482809, 2.1482809)
-
-[node name="@Node2D@112892" parent="WallCreator" unique_id=1836161164 instance=ExtResource("6_8kuq6")]
-position = Vector2(5796.332, 734)
-scale = Vector2(1.2208499, 1.2208499)
-
-[node name="@Node2D@112893" parent="WallCreator" unique_id=608955017 instance=ExtResource("7_qk0jo")]
-position = Vector2(6154, 734)
-scale = Vector2(3.5999746, 3.5999746)
-
-[node name="@Node2D@112894" parent="WallCreator" unique_id=903177637 instance=ExtResource("5_8w6ul")]
-position = Vector2(6575.048, 648.6262)
-scale = Vector2(3.230881, 3.230881)
-
-[node name="@Node2D@112895" parent="WallCreator" unique_id=1710978560 instance=ExtResource("7_qk0jo")]
-position = Vector2(6805, 602)
-scale = Vector2(2.4235046, 2.4235046)
-
-[node name="@Node2D@112896" parent="WallCreator" unique_id=2101215787 instance=ExtResource("6_8kuq6")]
-position = Vector2(6896, 286)
-scale = Vector2(0.8417477, 0.8417477)
-
-[node name="@Node2D@112897" parent="WallCreator" unique_id=29402526 instance=ExtResource("7_qk0jo")]
-position = Vector2(6925.4043, 81.13599)
-scale = Vector2(1.3988575, 1.3988575)
-
-[node name="@Node2D@112898" parent="WallCreator" unique_id=1354402059 instance=ExtResource("6_8kuq6")]
-position = Vector2(6986, -181)
-scale = Vector2(2.9806573, 2.9806573)
-
-[node name="@Node2D@112899" parent="WallCreator" unique_id=1499579851 instance=ExtResource("5_8w6ul")]
-position = Vector2(7004.633, -490.29932)
-scale = Vector2(3.637021, 3.637021)
-
-[node name="@Node2D@112900" parent="WallCreator" unique_id=59529805 instance=ExtResource("5_8w6ul")]
-position = Vector2(7018.4307, -719.34717)
-scale = Vector2(3.1794434, 3.1794434)
-
-[node name="@Node2D@112901" parent="WallCreator" unique_id=1615583357 instance=ExtResource("5_8w6ul")]
-position = Vector2(7031, -928)
-scale = Vector2(2.0656383, 2.0656383)
-
-[node name="@Node2D@112902" parent="WallCreator" unique_id=2142148489 instance=ExtResource("6_8kuq6")]
-position = Vector2(7043, -1161)
-scale = Vector2(0.87123483, 0.87123483)
-
-[node name="@Node2D@112903" parent="WallCreator" unique_id=1597150405 instance=ExtResource("7_qk0jo")]
-position = Vector2(6927.745, -1628.7261)
-scale = Vector2(0.74071115, 0.74071115)
-
-[node name="@Node2D@112904" parent="WallCreator" unique_id=1490479915 instance=ExtResource("5_8w6ul")]
-position = Vector2(6854, -1928)
-scale = Vector2(2.8125803, 2.8125803)
-
-[node name="@Node2D@112905" parent="WallCreator" unique_id=1108184930 instance=ExtResource("7_qk0jo")]
-position = Vector2(6302, -2159)
-scale = Vector2(1.6722716, 1.6722716)
-
-[node name="@Node2D@112906" parent="WallCreator" unique_id=546941615 instance=ExtResource("7_qk0jo")]
-position = Vector2(6001.598, -2225.478)
-scale = Vector2(1.1525182, 1.1525182)
-
-[node name="@Node2D@112907" parent="WallCreator" unique_id=288609656 instance=ExtResource("7_qk0jo")]
-position = Vector2(5671.5615, -2298.514)
-scale = Vector2(1.7708446, 1.7708446)
-
-[node name="@Node2D@112908" parent="WallCreator" unique_id=215935280 instance=ExtResource("7_qk0jo")]
-position = Vector2(5222, -2398)
-scale = Vector2(3.180148, 3.180148)
-
-[node name="@Node2D@112909" parent="WallCreator" unique_id=1704711889 instance=ExtResource("6_8kuq6")]
-position = Vector2(4819, -2447)
-scale = Vector2(3.2255466, 3.2255466)
-
-[node name="@Node2D@112910" parent="WallCreator" unique_id=1024460897 instance=ExtResource("5_8w6ul")]
-position = Vector2(4242, -2513)
-scale = Vector2(2.2742755, 2.2742755)
-
-[node name="@Node2D@112911" parent="WallCreator" unique_id=1764180561 instance=ExtResource("5_8w6ul")]
-position = Vector2(3920, -2571)
-scale = Vector2(0.8253971, 0.8253971)
-
-[node name="@Node2D@112912" parent="WallCreator" unique_id=548823323 instance=ExtResource("7_qk0jo")]
-position = Vector2(3170, -2678)
-scale = Vector2(1.2575428, 1.2575428)
-
-[node name="@Node2D@112913" parent="WallCreator" unique_id=1712779894 instance=ExtResource("7_qk0jo")]
-position = Vector2(2816, -2851)
-scale = Vector2(1.0718683, 1.0718683)
-
-[node name="@Node2D@112914" parent="WallCreator" unique_id=754345531 instance=ExtResource("5_8w6ul")]
-position = Vector2(2293, -2994)
-scale = Vector2(1.490375, 1.490375)
-
-[node name="@Node2D@112915" parent="WallCreator" unique_id=301054703 instance=ExtResource("5_8w6ul")]
-position = Vector2(2056.2253, -3078.048)
-scale = Vector2(2.5369437, 2.5369437)
-
-[node name="@Node2D@112916" parent="WallCreator" unique_id=1665037421 instance=ExtResource("5_8w6ul")]
-position = Vector2(1800, -3169)
-scale = Vector2(1.8190019, 1.8190019)
-
-[node name="@Node2D@112917" parent="WallCreator" unique_id=951699965 instance=ExtResource("6_8kuq6")]
-position = Vector2(1615, -3253)
-scale = Vector2(2.9711387, 2.9711387)
-
-[node name="@Node2D@112918" parent="WallCreator" unique_id=1082180417 instance=ExtResource("6_8kuq6")]
-position = Vector2(1445, -3512)
-scale = Vector2(3.0098271, 3.0098271)
-
-[node name="@Node2D@112919" parent="WallCreator" unique_id=907115533 instance=ExtResource("6_8kuq6")]
-position = Vector2(1407, -3651)
-scale = Vector2(3.4534886, 3.4534886)
-
-[node name="@Node2D@112920" parent="WallCreator" unique_id=932786088 instance=ExtResource("5_8w6ul")]
-position = Vector2(1386, -3861)
-scale = Vector2(1.722067, 1.722067)
-
-[node name="@Node2D@112921" parent="WallCreator" unique_id=208904875 instance=ExtResource("6_8kuq6")]
-position = Vector2(1406.6494, -4054.4287)
-scale = Vector2(1.3823625, 1.3823625)
-
-[node name="@Node2D@112922" parent="WallCreator" unique_id=2103741658 instance=ExtResource("7_qk0jo")]
-position = Vector2(1435, -4320)
-scale = Vector2(3.2582188, 3.2582188)
-
-[node name="@Node2D@112923" parent="WallCreator" unique_id=1740915616 instance=ExtResource("6_8kuq6")]
-position = Vector2(1514.5603, -4502.384)
-scale = Vector2(1.9552292, 1.9552292)
-
-[node name="@Node2D@112924" parent="WallCreator" unique_id=1050670619 instance=ExtResource("5_8w6ul")]
-position = Vector2(1606, -4712)
-scale = Vector2(3.488795, 3.488795)
-
-[node name="@Node2D@112925" parent="WallCreator" unique_id=1690021594 instance=ExtResource("6_8kuq6")]
-position = Vector2(1675, -4829)
-scale = Vector2(3.0539467, 3.0539467)
-
-[node name="@Node2D@112926" parent="WallCreator" unique_id=1370531428 instance=ExtResource("7_qk0jo")]
-position = Vector2(1841.344, -5040.585)
-scale = Vector2(1.8442822, 1.8442822)
-
-[node name="@Node2D@112927" parent="WallCreator" unique_id=1374281241 instance=ExtResource("7_qk0jo")]
-position = Vector2(1926.6311, -5149.067)
-scale = Vector2(3.4446647, 3.4446647)
-
-[node name="@Node2D@112928" parent="WallCreator" unique_id=1972932258 instance=ExtResource("5_8w6ul")]
-position = Vector2(2037.7496, -5290.406)
-scale = Vector2(2.7716467, 2.7716467)
-
-[node name="@Node2D@112929" parent="WallCreator" unique_id=1213181619 instance=ExtResource("6_8kuq6")]
-position = Vector2(2153, -5437)
-scale = Vector2(1.6632017, 1.6632017)
-
-[node name="@Node2D@112930" parent="WallCreator" unique_id=640439528 instance=ExtResource("5_8w6ul")]
-position = Vector2(2400.5254, -5609.518)
-scale = Vector2(3.476652, 3.476652)
-
-[node name="@Node2D@112931" parent="WallCreator" unique_id=1532092166 instance=ExtResource("6_8kuq6")]
-position = Vector2(2582, -5736)
-scale = Vector2(2.2936032, 2.2936032)
-
-[node name="@Node2D@112932" parent="WallCreator" unique_id=2084640444 instance=ExtResource("7_qk0jo")]
-position = Vector2(3390, -5905)
-scale = Vector2(1.2991687, 1.2991687)
-
-[node name="@Node2D@112933" parent="WallCreator" unique_id=1558916940 instance=ExtResource("7_qk0jo")]
-position = Vector2(4317, -5915)
-scale = Vector2(1.8855509, 1.8855509)
-
-[node name="@Node2D@112934" parent="WallCreator" unique_id=1097135209 instance=ExtResource("7_qk0jo")]
-position = Vector2(4820.4727, -5833.063)
-scale = Vector2(2.328249, 2.328249)
-
-[node name="@Node2D@112935" parent="WallCreator" unique_id=644709736 instance=ExtResource("6_8kuq6")]
-position = Vector2(5294, -5756)
-scale = Vector2(1.0842435, 1.0842435)
-
-[node name="@Node2D@112936" parent="WallCreator" unique_id=288121181 instance=ExtResource("5_8w6ul")]
-position = Vector2(5876.2373, -5632.089)
-scale = Vector2(3.5563056, 3.5563056)
-
-[node name="@Node2D@112937" parent="WallCreator" unique_id=1291912312 instance=ExtResource("5_8w6ul")]
-position = Vector2(6245.1543, -5553.577)
-scale = Vector2(2.5673976, 2.5673976)
-
-[node name="@Node2D@112938" parent="WallCreator" unique_id=692941807 instance=ExtResource("6_8kuq6")]
-position = Vector2(6511, -5497)
-scale = Vector2(1.0998861, 1.0998861)
-
-[node name="@Node2D@112939" parent="WallCreator" unique_id=591806155 instance=ExtResource("7_qk0jo")]
-position = Vector2(6735.4844, -5467.9404)
-scale = Vector2(1.5181494, 1.5181494)
-
-[node name="@Node2D@112940" parent="WallCreator" unique_id=1388366363 instance=ExtResource("7_qk0jo")]
-position = Vector2(6991.4863, -5434.8013)
-scale = Vector2(3.083695, 3.083695)
-
-[node name="@Node2D@112941" parent="WallCreator" unique_id=43110858 instance=ExtResource("7_qk0jo")]
-position = Vector2(7297.2485, -5395.22)
-scale = Vector2(1.6837105, 1.6837105)
-
-[node name="@Node2D@112942" parent="WallCreator" unique_id=2114051107 instance=ExtResource("5_8w6ul")]
-position = Vector2(7575.122, -5359.2495)
-scale = Vector2(3.5249214, 3.5249214)
-
-[node name="@Node2D@112943" parent="WallCreator" unique_id=1205828718 instance=ExtResource("6_8kuq6")]
-position = Vector2(7747, -5337)
-scale = Vector2(1.0354679, 1.0354679)
-
-[node name="@Node2D@112944" parent="WallCreator" unique_id=591860658 instance=ExtResource("7_qk0jo")]
-position = Vector2(8106.962, -5373.832)
-scale = Vector2(3.2813578, 3.2813578)
-
-[node name="@Node2D@112945" parent="WallCreator" unique_id=164744885 instance=ExtResource("7_qk0jo")]
-position = Vector2(8386.621, -5402.4463)
-scale = Vector2(2.4108584, 2.4108584)
-
-[node name="@Node2D@112946" parent="WallCreator" unique_id=1875270663 instance=ExtResource("6_8kuq6")]
-position = Vector2(8815.084, -5446.2856)
-scale = Vector2(2.9932392, 2.9932392)
-
-[node name="@Node2D@112947" parent="WallCreator" unique_id=1017001113 instance=ExtResource("5_8w6ul")]
-position = Vector2(9213, -5487)
-scale = Vector2(1.7662311, 1.7662311)
-
-[node name="@Node2D@112948" parent="WallCreator" unique_id=245531037 instance=ExtResource("5_8w6ul")]
-position = Vector2(9648.863, -5604.8154)
-scale = Vector2(1.3557031, 1.3557031)
-
-[node name="@Node2D@112949" parent="WallCreator" unique_id=2008040493 instance=ExtResource("7_qk0jo")]
-position = Vector2(10001, -5700)
-scale = Vector2(3.3132215, 3.3132215)
-
-[node name="@Node2D@112950" parent="WallCreator" unique_id=516067943 instance=ExtResource("5_8w6ul")]
-position = Vector2(10189.238, -5873.289)
-scale = Vector2(1.7967811, 1.7967811)
-
-[node name="@Node2D@112951" parent="WallCreator" unique_id=1604930058 instance=ExtResource("7_qk0jo")]
-position = Vector2(10341, -6013)
-scale = Vector2(3.3838782, 3.3838782)
-
-[node name="@Node2D@112952" parent="WallCreator" unique_id=1030754931 instance=ExtResource("5_8w6ul")]
-position = Vector2(10531.244, -6294.413)
-scale = Vector2(0.7067748, 0.7067748)
-
-[node name="@Node2D@112953" parent="WallCreator" unique_id=485342038 instance=ExtResource("6_8kuq6")]
-position = Vector2(10654, -6476)
-scale = Vector2(0.9621891, 0.9621891)
-
-[node name="@Node2D@112954" parent="WallCreator" unique_id=1163439332 instance=ExtResource("6_8kuq6")]
-position = Vector2(10810.377, -6756.4355)
-scale = Vector2(2.4513235, 2.4513235)
-
-[node name="@Node2D@112955" parent="WallCreator" unique_id=98509758 instance=ExtResource("6_8kuq6")]
-position = Vector2(10954, -7014)
-scale = Vector2(1.4684346, 1.4684346)
-
-[node name="@Node2D@112956" parent="WallCreator" unique_id=1450299405 instance=ExtResource("5_8w6ul")]
-position = Vector2(11051, -7159)
-scale = Vector2(1.7578733, 1.7578733)
-
-[node name="@Node2D@112957" parent="WallCreator" unique_id=1291605822 instance=ExtResource("6_8kuq6")]
-position = Vector2(11165, -7491)
-scale = Vector2(0.7981532, 0.7981532)
-
-[node name="@Node2D@112958" parent="WallCreator" unique_id=1671665989 instance=ExtResource("7_qk0jo")]
-position = Vector2(11288, -7982)
-scale = Vector2(2.5440352, 2.5440352)
-
-[node name="@Node2D@112959" parent="WallCreator" unique_id=668184402 instance=ExtResource("7_qk0jo")]
-position = Vector2(11295, -8240)
-scale = Vector2(3.3154247, 3.3154247)
-
-[node name="@Node2D@112960" parent="WallCreator" unique_id=2043523522 instance=ExtResource("7_qk0jo")]
-position = Vector2(11254, -8540)
-scale = Vector2(2.1988323, 2.1988323)
-
-[node name="@Node2D@112961" parent="WallCreator" unique_id=1518643204 instance=ExtResource("6_8kuq6")]
-position = Vector2(11213.023, -8806.832)
-scale = Vector2(3.1907814, 3.1907814)
-
-[node name="@Node2D@112962" parent="WallCreator" unique_id=242276209 instance=ExtResource("7_qk0jo")]
-position = Vector2(11168, -9100)
-scale = Vector2(3.313339, 3.313339)
-
-[node name="@Node2D@112963" parent="WallCreator" unique_id=1246390702 instance=ExtResource("5_8w6ul")]
-position = Vector2(11188.463, -9487.199)
-scale = Vector2(1.793686, 1.793686)
-
-[node name="@Node2D@112964" parent="WallCreator" unique_id=2111729908 instance=ExtResource("7_qk0jo")]
-position = Vector2(11207, -9838)
-scale = Vector2(1.5133046, 1.5133046)
-
-[node name="@Node2D@112965" parent="WallCreator" unique_id=2042766022 instance=ExtResource("6_8kuq6")]
-position = Vector2(11176.195, -10209.787)
-scale = Vector2(1.8175621, 1.8175621)
-
-[node name="@Node2D@112966" parent="WallCreator" unique_id=598183024 instance=ExtResource("6_8kuq6")]
-position = Vector2(11149, -10538)
-scale = Vector2(2.3032916, 2.3032916)
-
-[node name="@Node2D@112967" parent="WallCreator" unique_id=819428160 instance=ExtResource("6_8kuq6")]
-position = Vector2(11010, -10976)
-scale = Vector2(2.2668266, 2.2668266)
-
-[node name="@Node2D@112968" parent="WallCreator" unique_id=188836310 instance=ExtResource("5_8w6ul")]
-position = Vector2(10857, -11354)
-scale = Vector2(2.3170674, 2.3170674)
-
-[node name="@Node2D@112969" parent="WallCreator" unique_id=624971436 instance=ExtResource("7_qk0jo")]
-position = Vector2(10693.379, -11730.36)
-scale = Vector2(3.0119164, 3.0119164)
-
-[node name="@Node2D@112970" parent="WallCreator" unique_id=1193210956 instance=ExtResource("6_8kuq6")]
-position = Vector2(10569.521, -12015.254)
-scale = Vector2(0.9192766, 0.9192766)
-
-[node name="@Node2D@112971" parent="WallCreator" unique_id=1118475177 instance=ExtResource("7_qk0jo")]
-position = Vector2(10402.682, -12399.012)
-scale = Vector2(1.6493368, 1.6493368)
-
-[node name="@Node2D@112972" parent="WallCreator" unique_id=1694250777 instance=ExtResource("7_qk0jo")]
-position = Vector2(10274, -12695)
-scale = Vector2(0.83542824, 0.83542824)
-
-[node name="@Node2D@112973" parent="WallCreator" unique_id=656270985 instance=ExtResource("7_qk0jo")]
-position = Vector2(10135.416, -13127.6875)
-scale = Vector2(1.3369886, 1.3369886)
-
-[node name="@Node2D@112974" parent="WallCreator" unique_id=1068084595 instance=ExtResource("6_8kuq6")]
-position = Vector2(10032.112, -13450.222)
-scale = Vector2(0.921163, 0.921163)
-
-[node name="@Node2D@112975" parent="WallCreator" unique_id=1163539182 instance=ExtResource("6_8kuq6")]
-position = Vector2(9963, -13666)
-scale = Vector2(2.1883743, 2.1883743)
-
-[node name="@Node2D@112976" parent="WallCreator" unique_id=746382339 instance=ExtResource("5_8w6ul")]
-position = Vector2(9497, -14074)
-scale = Vector2(2.8126621, 2.8126621)
-
-[node name="@Node2D@112977" parent="WallCreator" unique_id=1826931362 instance=ExtResource("7_qk0jo")]
-position = Vector2(9120.155, -14227.284)
-scale = Vector2(1.9432784, 1.9432784)
-
-[node name="@Node2D@112978" parent="WallCreator" unique_id=1562145464 instance=ExtResource("5_8w6ul")]
-position = Vector2(8875, -14327)
-scale = Vector2(2.9004433, 2.9004433)
-
-[node name="@Node2D@112979" parent="WallCreator" unique_id=579578329 instance=ExtResource("6_8kuq6")]
-position = Vector2(8427.947, -14518.596)
-scale = Vector2(2.3171008, 2.3171008)
-
-[node name="@Node2D@112980" parent="WallCreator" unique_id=1984258280 instance=ExtResource("7_qk0jo")]
-position = Vector2(7923, -14735)
-scale = Vector2(1.9232167, 1.9232167)
-
-[node name="@Node2D@112981" parent="WallCreator" unique_id=1471918770 instance=ExtResource("6_8kuq6")]
-position = Vector2(7334.1406, -14920.248)
-scale = Vector2(0.91912585, 0.91912585)
-
-[node name="@Node2D@112982" parent="WallCreator" unique_id=914619946 instance=ExtResource("5_8w6ul")]
-position = Vector2(6874, -15065)
-scale = Vector2(2.5239313, 2.5239313)
-
-[node name="@Node2D@112983" parent="WallCreator" unique_id=374091153 instance=ExtResource("5_8w6ul")]
-position = Vector2(5922, -15376)
-scale = Vector2(3.182917, 3.182917)
-
-[node name="@Node2D@112984" parent="WallCreator" unique_id=167317876 instance=ExtResource("6_8kuq6")]
-position = Vector2(5666.3223, -15430.247)
-scale = Vector2(0.977652, 0.977652)
-
-[node name="@Node2D@112985" parent="WallCreator" unique_id=1530673070 instance=ExtResource("5_8w6ul")]
-position = Vector2(5281, -15512)
-scale = Vector2(2.4575717, 2.4575717)
-
-[node name="@Node2D@112986" parent="WallCreator" unique_id=619113764 instance=ExtResource("7_qk0jo")]
-position = Vector2(4286.4697, -15703.928)
-scale = Vector2(2.7450922, 2.7450922)
-
-[node name="@Node2D@112987" parent="WallCreator" unique_id=74563388 instance=ExtResource("6_8kuq6")]
-position = Vector2(3571, -15842)
-scale = Vector2(3.052609, 3.052609)
-
-[node name="@Node2D@112988" parent="WallCreator" unique_id=137047058 instance=ExtResource("7_qk0jo")]
-position = Vector2(3116.8647, -15966.497)
-scale = Vector2(1.2252641, 1.2252641)
-
-[node name="@Node2D@112989" parent="WallCreator" unique_id=1865926330 instance=ExtResource("6_8kuq6")]
-position = Vector2(2823.6904, -16046.866)
-scale = Vector2(2.3464634, 2.3464634)
-
-[node name="@Node2D@112990" parent="WallCreator" unique_id=1553390593 instance=ExtResource("7_qk0jo")]
-position = Vector2(2502.7463, -16134.848)
-scale = Vector2(3.6320887, 3.6320887)
-
-[node name="@Node2D@112991" parent="WallCreator" unique_id=2025579132 instance=ExtResource("6_8kuq6")]
-position = Vector2(2152, -16231)
-scale = Vector2(1.2914433, 1.2914433)
-
-[node name="@Node2D@112992" parent="WallCreator" unique_id=676859033 instance=ExtResource("5_8w6ul")]
-position = Vector2(1743.5342, -16308.437)
-scale = Vector2(2.3550465, 2.3550465)
-
-[node name="@Node2D@112993" parent="WallCreator" unique_id=923125067 instance=ExtResource("6_8kuq6")]
-position = Vector2(1319.1255, -16388.895)
-scale = Vector2(1.1773838, 1.1773838)
-
-[node name="@Node2D@112994" parent="WallCreator" unique_id=244344136 instance=ExtResource("6_8kuq6")]
-position = Vector2(1091.6233, -16432.023)
-scale = Vector2(2.4272888, 2.4272888)
-
-[node name="@Node2D@112995" parent="WallCreator" unique_id=1771678590 instance=ExtResource("6_8kuq6")]
-position = Vector2(617, -16522)
-scale = Vector2(3.2391932, 3.2391932)
-
-[node name="@Node2D@112996" parent="WallCreator" unique_id=1727864627 instance=ExtResource("6_8kuq6")]
-position = Vector2(-39.6062, -16570.809)
-scale = Vector2(0.9084038, 0.9084038)
-
-[node name="@Node2D@112997" parent="WallCreator" unique_id=653385402 instance=ExtResource("6_8kuq6")]
-position = Vector2(-306.062, -16590.615)
-scale = Vector2(2.307818, 2.307818)
-
-[node name="@Node2D@112998" parent="WallCreator" unique_id=292667807 instance=ExtResource("5_8w6ul")]
-position = Vector2(-957, -16639)
-scale = Vector2(3.1618986, 3.1618986)
-
-[node name="@Node2D@112999" parent="WallCreator" unique_id=965694971 instance=ExtResource("5_8w6ul")]
-position = Vector2(-1510.7075, -16628.97)
-scale = Vector2(2.116588, 2.116588)
-
-[node name="@Node2D@113000" parent="WallCreator" unique_id=910991370 instance=ExtResource("5_8w6ul")]
-position = Vector2(-2006, -16620)
-scale = Vector2(1.4121585, 1.4121585)
-
-[node name="@Node2D@113001" parent="WallCreator" unique_id=504205796 instance=ExtResource("7_qk0jo")]
-position = Vector2(-2302.0608, -16541.32)
-scale = Vector2(1.7793183, 1.7793183)
-
-[node name="@Node2D@113002" parent="WallCreator" unique_id=2078426785 instance=ExtResource("6_8kuq6")]
-position = Vector2(-2958, -16367)
-scale = Vector2(2.2507226, 2.2507226)
-
-[node name="@Node2D@113003" parent="WallCreator" unique_id=1497101858 instance=ExtResource("7_qk0jo")]
-position = Vector2(-3320.7993, -16258.916)
-scale = Vector2(2.4620748, 2.4620748)
-
-[node name="@Node2D@113004" parent="WallCreator" unique_id=874203419 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3871, -16095)
-scale = Vector2(2.118266, 2.118266)
-
-[node name="@Node2D@113005" parent="WallCreator" unique_id=1442609608 instance=ExtResource("7_qk0jo")]
-position = Vector2(-4143.083, -15940.605)
-scale = Vector2(2.4931438, 2.4931438)
-
-[node name="@Node2D@113006" parent="WallCreator" unique_id=1587407420 instance=ExtResource("7_qk0jo")]
-position = Vector2(-4590, -15687)
-scale = Vector2(2.9371347, 2.9371347)
-
-[node name="@Node2D@113007" parent="WallCreator" unique_id=980889576 instance=ExtResource("7_qk0jo")]
-position = Vector2(-4822.6094, -15524.145)
-scale = Vector2(3.2663455, 3.2663455)
-
-[node name="@Node2D@113008" parent="WallCreator" unique_id=1617358764 instance=ExtResource("5_8w6ul")]
-position = Vector2(-5367, -15143)
-scale = Vector2(3.3089285, 3.3089285)
-
-[node name="@Node2D@113009" parent="WallCreator" unique_id=551018764 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5689.266, -14928.248)
-scale = Vector2(1.8511419, 1.8511419)
-
-[node name="@Node2D@113010" parent="WallCreator" unique_id=1365139737 instance=ExtResource("7_qk0jo")]
-position = Vector2(-6009.8496, -14714.617)
-scale = Vector2(1.6983246, 1.6983246)
-
-[node name="@Node2D@113011" parent="WallCreator" unique_id=1919299962 instance=ExtResource("7_qk0jo")]
-position = Vector2(-6533, -14366)
-scale = Vector2(2.0332966, 2.0332966)
-
-[node name="@Node2D@113012" parent="WallCreator" unique_id=580921605 instance=ExtResource("6_8kuq6")]
-position = Vector2(-6829.917, -14131.98)
-scale = Vector2(0.9166365, 0.9166365)
-
-[node name="@Node2D@113013" parent="WallCreator" unique_id=761154479 instance=ExtResource("6_8kuq6")]
-position = Vector2(-7175, -13860)
-scale = Vector2(3.3361957, 3.3361957)
-
-[node name="@Node2D@113014" parent="WallCreator" unique_id=1553805215 instance=ExtResource("7_qk0jo")]
-position = Vector2(-7431.4814, -13699.905)
-scale = Vector2(1.9058884, 1.9058884)
-
-[node name="@Node2D@113015" parent="WallCreator" unique_id=2021930312 instance=ExtResource("5_8w6ul")]
-position = Vector2(-7952, -13375)
-scale = Vector2(2.2094169, 2.2094169)
-
-[node name="@Node2D@113016" parent="WallCreator" unique_id=1165482266 instance=ExtResource("7_qk0jo")]
-position = Vector2(-8415.632, -13171.52)
-scale = Vector2(2.9166925, 2.9166925)
-
-[node name="@Node2D@113017" parent="WallCreator" unique_id=239414430 instance=ExtResource("7_qk0jo")]
-position = Vector2(-8631, -13077)
-scale = Vector2(3.4436922, 3.4436922)
-
-[node name="@Node2D@113018" parent="WallCreator" unique_id=137904876 instance=ExtResource("5_8w6ul")]
-position = Vector2(-9137, -12811)
-scale = Vector2(3.4120092, 3.4120092)
-
-[node name="@Node2D@113019" parent="WallCreator" unique_id=990077685 instance=ExtResource("5_8w6ul")]
-position = Vector2(-9393.666, -12688.957)
-scale = Vector2(1.9603328, 1.9603328)
-
-[node name="@Node2D@113020" parent="WallCreator" unique_id=1531626177 instance=ExtResource("6_8kuq6")]
-position = Vector2(-9953, -12423)
-scale = Vector2(3.3441808, 3.3441808)
-
-[node name="@Node2D@113021" parent="WallCreator" unique_id=671667089 instance=ExtResource("7_qk0jo")]
-position = Vector2(-10361, -12131)
-scale = Vector2(3.1174855, 3.1174855)
-
-[node name="@Node2D@113022" parent="WallCreator" unique_id=1983810756 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10441, -11948)
-scale = Vector2(0.73673373, 0.73673373)
-
-[node name="@Node2D@113023" parent="WallCreator" unique_id=1631025281 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10750, -11276)
-scale = Vector2(2.5655754, 2.5655754)
-
-[node name="@Node2D@113024" parent="WallCreator" unique_id=412801492 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10811.028, -10816.898)
-scale = Vector2(1.3381915, 1.3381915)
-
-[node name="@Node2D@113025" parent="WallCreator" unique_id=2131495069 instance=ExtResource("7_qk0jo")]
-position = Vector2(-10905, -10110)
-scale = Vector2(2.4491217, 2.4491217)
-
-[node name="@Node2D@113026" parent="WallCreator" unique_id=527621420 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10910, -9942)
-scale = Vector2(2.2214777, 2.2214777)
-
-[node name="@Node2D@113027" parent="WallCreator" unique_id=500953541 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10866, -9547)
-scale = Vector2(1.6130234, 1.6130234)
-
-[node name="@Node2D@113028" parent="WallCreator" unique_id=1516750314 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10787.718, -9293.509)
-scale = Vector2(2.565889, 2.565889)
-
-[node name="@Node2D@113029" parent="WallCreator" unique_id=345110423 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10716.619, -9063.286)
-scale = Vector2(0.7653515, 0.7653515)
-
-[node name="@Node2D@113030" parent="WallCreator" unique_id=223837881 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10649.608, -8846.299)
-scale = Vector2(3.2630825, 3.2630825)
-
-[node name="@Node2D@113031" parent="WallCreator" unique_id=1330124113 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10614, -8731)
-scale = Vector2(1.653434, 1.653434)
-
-[node name="@Node2D@113032" parent="WallCreator" unique_id=848778818 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10526.172, -8632.263)
-scale = Vector2(1.8582602, 1.8582602)
-
-[node name="@Node2D@113033" parent="WallCreator" unique_id=648602975 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10422.35, -8515.546)
-scale = Vector2(3.0877395, 3.0877395)
-
-[node name="@Node2D@113034" parent="WallCreator" unique_id=354322797 instance=ExtResource("5_8w6ul")]
-position = Vector2(-10261.747, -8334.997)
-scale = Vector2(2.1657975, 2.1657975)
-
-[node name="@Node2D@113035" parent="WallCreator" unique_id=424815666 instance=ExtResource("6_8kuq6")]
-position = Vector2(-10147, -8206)
-scale = Vector2(2.024509, 2.024509)
-
-[node name="@Node2D@113036" parent="WallCreator" unique_id=414324649 instance=ExtResource("5_8w6ul")]
-position = Vector2(-9906.418, -8029.3535)
-scale = Vector2(1.8049866, 1.8049866)
-
-[node name="@Node2D@113037" parent="WallCreator" unique_id=187597371 instance=ExtResource("5_8w6ul")]
-position = Vector2(-9713.925, -7888.017)
-scale = Vector2(3.5044544, 3.5044544)
-
-[node name="@Node2D@113038" parent="WallCreator" unique_id=1224170570 instance=ExtResource("6_8kuq6")]
-position = Vector2(-9561.972, -7776.4463)
-scale = Vector2(2.8961241, 2.8961241)
-
-[node name="@Node2D@113039" parent="WallCreator" unique_id=769532215 instance=ExtResource("6_8kuq6")]
-position = Vector2(-9380.433, -7643.1523)
-scale = Vector2(1.1758305, 1.1758305)
-
-[node name="@Node2D@113040" parent="WallCreator" unique_id=149485798 instance=ExtResource("7_qk0jo")]
-position = Vector2(-9195, -7507)
-scale = Vector2(3.5512114, 3.5512114)
-
-[node name="@Node2D@113041" parent="WallCreator" unique_id=800449504 instance=ExtResource("7_qk0jo")]
-position = Vector2(-8959.59, -7346.4795)
-scale = Vector2(1.5373296, 1.5373296)
-
-[node name="@Node2D@113042" parent="WallCreator" unique_id=583288857 instance=ExtResource("6_8kuq6")]
-position = Vector2(-8788.796, -7230.0205)
-scale = Vector2(3.4971046, 3.4971046)
-
-[node name="@Node2D@113043" parent="WallCreator" unique_id=1069017971 instance=ExtResource("6_8kuq6")]
-position = Vector2(-8568.555, -7079.844)
-scale = Vector2(1.4693196, 1.4693196)
-
-[node name="@Node2D@113044" parent="WallCreator" unique_id=966938611 instance=ExtResource("7_qk0jo")]
-position = Vector2(-8340, -6924)
-scale = Vector2(3.5562243, 3.5562243)
-
-[node name="@Node2D@113045" parent="WallCreator" unique_id=957689387 instance=ExtResource("6_8kuq6")]
-position = Vector2(-8124.8584, -6860.216)
-scale = Vector2(1.8311949, 1.8311949)
-
-[node name="@Node2D@113046" parent="WallCreator" unique_id=897188411 instance=ExtResource("7_qk0jo")]
-position = Vector2(-7873.562, -6785.7134)
-scale = Vector2(2.1086254, 2.1086254)
-
-[node name="@Node2D@113047" parent="WallCreator" unique_id=1696286186 instance=ExtResource("5_8w6ul")]
-position = Vector2(-7586.3315, -6700.5576)
-scale = Vector2(1.7014337, 1.7014337)
-
-[node name="@Node2D@113048" parent="WallCreator" unique_id=198399999 instance=ExtResource("6_8kuq6")]
-position = Vector2(-7291, -6613)
-scale = Vector2(2.263843, 2.263843)
-
-[node name="@Node2D@113049" parent="WallCreator" unique_id=1428635517 instance=ExtResource("7_qk0jo")]
-position = Vector2(-7025.3555, -6486.237)
-scale = Vector2(2.0841782, 2.0841782)
-
-[node name="@Node2D@113050" parent="WallCreator" unique_id=2114080568 instance=ExtResource("5_8w6ul")]
-position = Vector2(-6669.784, -6316.5605)
-scale = Vector2(1.1074395, 1.1074395)
-
-[node name="@Node2D@113051" parent="WallCreator" unique_id=1823678365 instance=ExtResource("7_qk0jo")]
-position = Vector2(-6436, -6205)
-scale = Vector2(1.300799, 1.300799)
-
-[node name="@Node2D@113052" parent="WallCreator" unique_id=1227995187 instance=ExtResource("7_qk0jo")]
-position = Vector2(-6092, -6014)
-scale = Vector2(0.92491925, 0.92491925)
-
-[node name="@Node2D@113053" parent="WallCreator" unique_id=492610167 instance=ExtResource("5_8w6ul")]
-position = Vector2(-5839.8696, -5920.5313)
-scale = Vector2(1.9139318, 1.9139318)
-
-[node name="@Node2D@113054" parent="WallCreator" unique_id=520117443 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5581, -5797)
-scale = Vector2(2.314276, 2.314276)
-
-[node name="@Node2D@113055" parent="WallCreator" unique_id=150804803 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5317.634, -5592.6953)
-scale = Vector2(2.4595983, 2.4595983)
-
-[node name="@Node2D@113056" parent="WallCreator" unique_id=1046410084 instance=ExtResource("7_qk0jo")]
-position = Vector2(-4979, -5330)
-scale = Vector2(2.8391874, 2.8391874)
-
-[node name="@Node2D@113057" parent="WallCreator" unique_id=1440841283 instance=ExtResource("6_8kuq6")]
-position = Vector2(-4819.3906, -5071.8086)
-scale = Vector2(3.0720131, 3.0720131)
-
-[node name="@Node2D@113058" parent="WallCreator" unique_id=1671742174 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4571, -4670)
-scale = Vector2(1.5171963, 1.5171963)
-
-[node name="@Node2D@113059" parent="WallCreator" unique_id=978316860 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4449.0015, -4459.8135)
-scale = Vector2(3.1496828, 3.1496828)
-
-[node name="@Node2D@113060" parent="WallCreator" unique_id=422293883 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4221, -4067)
-scale = Vector2(1.3304241, 1.3304241)
-
-[node name="@Node2D@113061" parent="WallCreator" unique_id=3221322 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4171.6406, -3869.2434)
-scale = Vector2(3.0112097, 3.0112097)
-
-[node name="@Node2D@113062" parent="WallCreator" unique_id=591782375 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4066, -3446)
-scale = Vector2(3.5695858, 3.5695858)
-
-[node name="@Node2D@113063" parent="WallCreator" unique_id=1060337269 instance=ExtResource("6_8kuq6")]
-position = Vector2(-4030.9448, -3139.9458)
-scale = Vector2(1.0275477, 1.0275477)
-
-[node name="@Node2D@113064" parent="WallCreator" unique_id=832880672 instance=ExtResource("5_8w6ul")]
-position = Vector2(-3988, -2765)
-scale = Vector2(1.1998588, 1.1998588)
-
-[node name="@Node2D@113065" parent="WallCreator" unique_id=1017094844 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3982.8372, -2653.5625)
-scale = Vector2(2.655032, 2.655032)
-
-[node name="@Node2D@113066" parent="WallCreator" unique_id=2048326582 instance=ExtResource("5_8w6ul")]
-position = Vector2(-3975.6262, -2497.93)
-scale = Vector2(3.0068994, 3.0068994)
-
-[node name="@Node2D@113067" parent="WallCreator" unique_id=148546206 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3969.58, -2367.435)
-scale = Vector2(3.2796614, 3.2796614)
-
-[node name="@Node2D@113068" parent="WallCreator" unique_id=1746394429 instance=ExtResource("5_8w6ul")]
-position = Vector2(-3964, -2247)
-scale = Vector2(1.7366287, 1.7366287)
-
-[node name="@Node2D@113069" parent="WallCreator" unique_id=422447469 instance=ExtResource("5_8w6ul")]
-position = Vector2(-3988.0002, -2163.0173)
-scale = Vector2(2.9557557, 2.9557557)
-
-[node name="@Node2D@113070" parent="WallCreator" unique_id=138946952 instance=ExtResource("7_qk0jo")]
-position = Vector2(-3988, -2085)
-scale = Vector2(2.325633, 2.325633)
-
-[node name="@Node2D@113071" parent="WallCreator" unique_id=614715809 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3981.8704, -2011.1238)
-scale = Vector2(2.3441281, 2.3441281)
-
-[node name="@Node2D@113072" parent="WallCreator" unique_id=1381916292 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3974.7297, -1925.0681)
-scale = Vector2(0.70895946, 0.70895946)
-
-[node name="@Node2D@113073" parent="WallCreator" unique_id=259649150 instance=ExtResource("7_qk0jo")]
-position = Vector2(-3966.1018, -1821.0873)
-scale = Vector2(1.712063, 1.712063)
-
-[node name="@Node2D@113074" parent="WallCreator" unique_id=1111603206 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3930, -1386)
-scale = Vector2(1.715057, 1.715057)
-
-[node name="@Node2D@113075" parent="WallCreator" unique_id=1494074003 instance=ExtResource("7_qk0jo")]
-position = Vector2(-3580, -978)
-scale = Vector2(2.7761073, 2.7761073)
-
-[node name="@Node2D@113076" parent="WallCreator" unique_id=1823136894 instance=ExtResource("7_qk0jo")]
-position = Vector2(-2939, -725)
-scale = Vector2(1.3878227, 1.3878227)
-
-[node name="@Node2D@113077" parent="WallCreator" unique_id=1550919601 instance=ExtResource("7_qk0jo")]
-position = Vector2(-1987, -609)
-scale = Vector2(3.375324, 3.375324)
-
-[node name="@Node2D@113078" parent="WallCreator" unique_id=1243473606 instance=ExtResource("5_8w6ul")]
-position = Vector2(-1034, -492)
-scale = Vector2(1.1117674, 1.1117674)
-
-[node name="@Node2D@113079" parent="WallCreator" unique_id=1698449692 instance=ExtResource("7_qk0jo")]
-position = Vector2(-587, -162)
-scale = Vector2(2.54869, 2.54869)
-
-[node name="@Node2D@113080" parent="WallCreator" unique_id=122994256 instance=ExtResource("7_qk0jo")]
-position = Vector2(-513, 134)
-scale = Vector2(2.7964466, 2.7964466)
-
-[node name="@Node2D@113081" parent="WallCreator" unique_id=967378650 instance=ExtResource("5_8w6ul")]
-position = Vector2(-413, 382)
-scale = Vector2(1.6318357, 1.6318357)
-
-[node name="@Node2D@113082" parent="WallCreator" unique_id=1776640182 instance=ExtResource("7_qk0jo")]
-position = Vector2(-272.70703, 562.5239)
-scale = Vector2(1.902003, 1.902003)
-
-[node name="@Node2D@113083" parent="WallCreator" unique_id=16312441 instance=ExtResource("6_8kuq6")]
-position = Vector2(-141, 732)
-scale = Vector2(2.288423, 2.288423)
-
-[node name="@Node2D@113084" parent="WallCreator" unique_id=26017329 instance=ExtResource("6_8kuq6")]
-position = Vector2(99.795044, 774.9358)
-scale = Vector2(3.032668, 3.032668)
-
-[node name="@Node2D@113085" parent="WallCreator" unique_id=822766727 instance=ExtResource("6_8kuq6")]
-position = Vector2(403, 829)
-scale = Vector2(2.5112133, 2.5112133)
-
-[node name="@Node2D@113086" parent="WallCreator" unique_id=1584682610 instance=ExtResource("7_qk0jo")]
-position = Vector2(547.65, 847.71094)
-scale = Vector2(3.2924235, 3.2924235)
-
-[node name="@Node2D@113087" parent="WallCreator" unique_id=1761900515 instance=ExtResource("6_8kuq6")]
-position = Vector2(733.7346, 871.78174)
-scale = Vector2(1.3171104, 1.3171104)
-
-[node name="@Node2D@113088" parent="WallCreator" unique_id=1999143552 instance=ExtResource("7_qk0jo")]
-position = Vector2(1006, 907)
-scale = Vector2(3.2822683, 3.2822683)
-
-[node name="@Node2D@113089" parent="WallCreator" unique_id=1307472053 instance=ExtResource("5_8w6ul")]
-position = Vector2(1511, 926)
-scale = Vector2(2.0794597, 2.0794597)
-
-[node name="@Node2D@113090" parent="WallCreator" unique_id=2146121900 instance=ExtResource("5_8w6ul")]
-position = Vector2(1783, 849)
-scale = Vector2(3.3068237, 3.3068237)
-
-[node name="@Node2D@113091" parent="WallCreator" unique_id=309717506 instance=ExtResource("6_8kuq6")]
-position = Vector2(1997, 810)
-scale = Vector2(1.9770488, 1.9770488)
-
 [node name="Base" parent="." unique_id=847110166 instance=ExtResource("2_gcp4q")]
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_qyk5v")]
 position = Vector2(-48, 323)
 
-[node name="Border" type="StaticBody2D" parent="." unique_id=1797186821]
-visible = false
+[node name="Border" type="Line2D" parent="." unique_id=531812087]
+position = Vector2(14, 1591)
+points = PackedVector2Array(0, 0, -306, -15, -699, 90, -924, 172, -1435, 199, -1816, 199, -2245, 193, -2885, 206, -3737, 77, -4261, -168, -4744, -427, -4989.74, -684.7572, -5153, -856, -5320.592, -1159.2622, -5405, -1312, -5388, -1594, -5521, -1871, -5529, -2106, -5529, -2435.1255, -5529, -2563, -5523, -2656, -5529, -2833, -5523, -2994, -5499, -3192, -5411, -3445, -5372, -3769, -5222, -4039, -5042, -4293, -4847, -4578, -4533, -4998, -4278, -5267, -4173, -5470, -4098, -5612, -3978, -5717, -3701, -5837, -3439, -6009, -3139, -6114, -2772, -6271, -2353, -6413, -2016, -6518, -1446, -6743, -1079, -6915, -917, -7000, -760, -7115, -554, -7404, -224, -7635, 105, -7832, 526, -8022, 1119, -8178, 1218, -8178, 1391, -8154, 1704, -8055, 2067, -7897.9995, 2157, -7808, 2240, -7552, 2281, -7379, 2297, -7223, 2273, -6876, 2215, -6555, 2190, -6357, 2145.4814, -6046.838, 2099, -5723, 2157, -5492, 2273, -5014, 2685, -4750, 3253, -4569, 3912, -4462, 4646, -4487, 4992, -4866, 5107, -5080, 5140, -5311, 5208.89, -5608.8276, 5239, -5739, 5370.865, -6078.082, 5470, -6333, 5659, -6440, 6104, -6701, 6447, -6717, 6713, -6568, 7000.7813, -6467.834, 7256, -6379, 7742, -6425, 8110, -6333, 8253, -6011, 8365.285, -5700.533, 8453, -5458, 8479, -5217, 8415.805, -4958.502, 8397, -4706, 8273.718, -4555.749, 8141, -4394, 7977, -4240, 7639, -4194, 7327, -4169, 6992.7925, -3992.0305, 6785, -3882, 6812.5547, -3583.027, 6834.0625, -3349.6387, 6852, -3155, 6863, -2822, 6786.289, -2546.0479, 6714, -2286, 6673, -1924, 6665, -1784, 6607, -1413, 6500, -1149, 6401, -1050, 6327, -894, 6014, -605, 5750, -457, 5536, -333, 4728, -111, 4555, -70, 4308, 29, 4242, 62, 4168, 70, 4053, 103, 3805, 178, 3459, 219, 3303, 235, 2882, 334, 2709, 334, 2404, 408, 2174, 449, 1704, 548, 1514, 639, 1267, 631, 938, 581, 575, 466, 188, 342, 23, 186)
+script = ExtResource("4_aad7h")
+wall_variants = Array[PackedScene]([ExtResource("5_8w6ul"), ExtResource("6_8kuq6"), ExtResource("7_qk0jo")])
+min_wall_scale = 1.447
+max_wall_scale = 3.775
+metadata/_custom_type_script = "uid://du03pqqpwdkty"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=986127505]
-position = Vector2(25, 5131)
+[node name="@StaticBody2D@264449" type="StaticBody2D" parent="Border" unique_id=554930087]
+
+[node name="@CollisionPolygon2D@264450" type="CollisionPolygon2D" parent="Border/@StaticBody2D@264449" unique_id=1144525675]
 build_mode = 1
-polygon = PackedVector2Array(1557, -5490, 1195, -5557, 738, -6119, 360, -6507, -123, -6462, -104, -6847, -1089, -6964, -1315, -7435, -1064, -7860, -247, -7994, 805, -8038, 2685, -7932, 3845, -8484, 4838, -9972, 5215, -10679, 5470, -11026, 5780, -12692, 5487, -12742, 5878, -13305, 5408, -14337, 5943, -15342, 5656, -15387, 5292, -15599, 5753.33, -15988.492, 5220, -16115, 5516, -16411, 4873, -16419, 4928, -16631, 4632, -16639, 4865, -17007, 4391, -17032, 4091, -17210, 4197, -17430, 3305, -17443, 3309, -17548, 2949, -17667, 2260, -17798, 1135, -17772, 1013, -17523, -683, -16952, -692, -16855, -1664, -16808, -1453, -17168, -2637, -17121, -2489, -17447, -2954, -17675, -4058, -17684, -5246, -17718, -5136, -17371, -5881, -17354, -6819, -16551, -7272, -16610, -8253, -15819, -8552, -15201, -8979, -15059, -8792, -14699, -9062, -14729, -8859, -14257, -9541, -14302, -9519, -13051, -10185, -12040, -11122, -11837, -12275, -11470, -12740, -11006, -13257, -10684, -13130, -10287, -13077, -9680, -12650, -8721, -12208, -8294, -11422, -8498, -10969, -8606, -10443, -8407, -8503, -9386, -7207, -10954, -6718, -11271, -5748, -11181, -6667, -9458, -6981, -8320, -6891, -7125, -5860, -6539, -4068, -5402, -1812, -4394, -543, -4213, 131, -4324, 1030, -4165, 1373, -4455, 1637, -4922)
+
+[node name="@StaticBody2D@264562" type="StaticBody2D" parent="Border" unique_id=1645143505]
+
+[node name="@CollisionPolygon2D@264563" type="CollisionPolygon2D" parent="Border/@StaticBody2D@264562" unique_id=1586327641]
+build_mode = 1
+
+[node name="@StaticBody2D@264677" type="StaticBody2D" parent="Border" unique_id=1441074688]
+
+[node name="@CollisionPolygon2D@264678" type="CollisionPolygon2D" parent="Border/@StaticBody2D@264677" unique_id=352930899]
+build_mode = 1
+
+[node name="@StaticBody2D@264796" type="StaticBody2D" parent="Border" unique_id=2124306692]
+
+[node name="@CollisionPolygon2D@264797" type="CollisionPolygon2D" parent="Border/@StaticBody2D@264796" unique_id=233492602]
+build_mode = 1
+
+[node name="@StaticBody2D@264905" type="StaticBody2D" parent="Border" unique_id=1382487025]
+
+[node name="@CollisionPolygon2D@264906" type="CollisionPolygon2D" parent="Border/@StaticBody2D@264905" unique_id=2128062055]
+build_mode = 1
+
+[node name="@StaticBody2D@265017" type="StaticBody2D" parent="Border" unique_id=1880763104]
+
+[node name="@CollisionPolygon2D@265018" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265017" unique_id=519746211]
+build_mode = 1
+
+[node name="@StaticBody2D@265132" type="StaticBody2D" parent="Border" unique_id=1047492806]
+
+[node name="@CollisionPolygon2D@265133" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265132" unique_id=1830027292]
+build_mode = 1
+
+[node name="@StaticBody2D@265265" type="StaticBody2D" parent="Border" unique_id=2099389560]
+
+[node name="@CollisionPolygon2D@265266" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265265" unique_id=1008453214]
+build_mode = 1
+
+[node name="@StaticBody2D@265395" type="StaticBody2D" parent="Border" unique_id=1537347724]
+
+[node name="@CollisionPolygon2D@265396" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265395" unique_id=2107239613]
+build_mode = 1
+
+[node name="@StaticBody2D@265528" type="StaticBody2D" parent="Border" unique_id=162498854]
+
+[node name="@CollisionPolygon2D@265529" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265528" unique_id=236120708]
+build_mode = 1
+
+[node name="@StaticBody2D@265658" type="StaticBody2D" parent="Border" unique_id=209697877]
+
+[node name="@CollisionPolygon2D@265659" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265658" unique_id=1826752787]
+build_mode = 1
+
+[node name="@StaticBody2D@265791" type="StaticBody2D" parent="Border" unique_id=62843580]
+
+[node name="@CollisionPolygon2D@265792" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265791" unique_id=1033374063]
+build_mode = 1
+
+[node name="@StaticBody2D@265921" type="StaticBody2D" parent="Border" unique_id=1799070110]
+
+[node name="@CollisionPolygon2D@265922" type="CollisionPolygon2D" parent="Border/@StaticBody2D@265921" unique_id=752430204]
+build_mode = 1
+
+[node name="@Node2D@265923" parent="Border" unique_id=275115240 instance=ExtResource("5_8w6ul")]
+scale = Vector2(2.9050972, 2.9050972)
+
+[node name="@Node2D@265924" parent="Border" unique_id=501665509 instance=ExtResource("5_8w6ul")]
+position = Vector2(-306, -15)
+scale = Vector2(1.9588517, 1.9588517)
+
+[node name="@Node2D@265925" parent="Border" unique_id=1992070909 instance=ExtResource("5_8w6ul")]
+position = Vector2(-699, 90)
+scale = Vector2(2.261002, 2.261002)
+
+[node name="@Node2D@265926" parent="Border" unique_id=660792489 instance=ExtResource("5_8w6ul")]
+position = Vector2(-924, 172)
+scale = Vector2(1.7622199, 1.7622199)
+
+[node name="@Node2D@265927" parent="Border" unique_id=451034007 instance=ExtResource("6_8kuq6")]
+position = Vector2(-1435, 199)
+scale = Vector2(3.6283314, 3.6283314)
+
+[node name="@Node2D@265928" parent="Border" unique_id=1402242876 instance=ExtResource("7_qk0jo")]
+position = Vector2(-1816, 199)
+scale = Vector2(2.2378893, 2.2378893)
+
+[node name="@Node2D@265929" parent="Border" unique_id=378542828 instance=ExtResource("7_qk0jo")]
+position = Vector2(-2245, 193)
+scale = Vector2(3.269498, 3.269498)
+
+[node name="@Node2D@265930" parent="Border" unique_id=888500720 instance=ExtResource("6_8kuq6")]
+position = Vector2(-2885, 206)
+scale = Vector2(2.618156, 2.618156)
+
+[node name="@Node2D@265931" parent="Border" unique_id=79007500 instance=ExtResource("5_8w6ul")]
+position = Vector2(-3737, 77)
+scale = Vector2(3.7247767, 3.7247767)
+
+[node name="@Node2D@265932" parent="Border" unique_id=1024594716 instance=ExtResource("7_qk0jo")]
+position = Vector2(-4261, -168)
+scale = Vector2(3.3371763, 3.3371763)
+
+[node name="@Node2D@265933" parent="Border" unique_id=1273355963 instance=ExtResource("5_8w6ul")]
+position = Vector2(-4744, -427)
+scale = Vector2(2.170548, 2.170548)
+
+[node name="@Node2D@265934" parent="Border" unique_id=767532413 instance=ExtResource("6_8kuq6")]
+position = Vector2(-4989.74, -684.7572)
+scale = Vector2(2.7155018, 2.7155018)
+
+[node name="@Node2D@265935" parent="Border" unique_id=2075468099 instance=ExtResource("5_8w6ul")]
+position = Vector2(-5153, -856)
+scale = Vector2(2.846834, 2.846834)
+
+[node name="@Node2D@265936" parent="Border" unique_id=873477233 instance=ExtResource("5_8w6ul")]
+position = Vector2(-5320.592, -1159.2622)
+scale = Vector2(3.5617175, 3.5617175)
+
+[node name="@Node2D@265937" parent="Border" unique_id=278888405 instance=ExtResource("5_8w6ul")]
+position = Vector2(-5405, -1312)
+scale = Vector2(2.8120773, 2.8120773)
+
+[node name="@Node2D@265938" parent="Border" unique_id=1342910083 instance=ExtResource("6_8kuq6")]
+position = Vector2(-5388, -1594)
+scale = Vector2(2.3992007, 2.3992007)
+
+[node name="@Node2D@265939" parent="Border" unique_id=829133524 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5521, -1871)
+scale = Vector2(2.3548665, 2.3548665)
+
+[node name="@Node2D@265940" parent="Border" unique_id=2139919437 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5529, -2106)
+scale = Vector2(3.3425677, 3.3425677)
+
+[node name="@Node2D@265941" parent="Border" unique_id=1311118326 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5529, -2435.1255)
+scale = Vector2(2.9020412, 2.9020412)
+
+[node name="@Node2D@265942" parent="Border" unique_id=925966374 instance=ExtResource("5_8w6ul")]
+position = Vector2(-5529, -2563)
+scale = Vector2(3.5249624, 3.5249624)
+
+[node name="@Node2D@265943" parent="Border" unique_id=980805469 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5523, -2656)
+scale = Vector2(2.8085945, 2.8085945)
+
+[node name="@Node2D@265944" parent="Border" unique_id=93968782 instance=ExtResource("6_8kuq6")]
+position = Vector2(-5529, -2833)
+scale = Vector2(3.3372734, 3.3372734)
+
+[node name="@Node2D@265945" parent="Border" unique_id=1620105818 instance=ExtResource("6_8kuq6")]
+position = Vector2(-5523, -2994)
+scale = Vector2(1.4719409, 1.4719409)
+
+[node name="@Node2D@265946" parent="Border" unique_id=1541521576 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5499, -3192)
+scale = Vector2(2.8770194, 2.8770194)
+
+[node name="@Node2D@265947" parent="Border" unique_id=1054582532 instance=ExtResource("6_8kuq6")]
+position = Vector2(-5411, -3445)
+scale = Vector2(3.5706298, 3.5706298)
+
+[node name="@Node2D@265948" parent="Border" unique_id=2134400967 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5372, -3769)
+scale = Vector2(3.1376758, 3.1376758)
+
+[node name="@Node2D@265949" parent="Border" unique_id=45384657 instance=ExtResource("7_qk0jo")]
+position = Vector2(-5222, -4039)
+scale = Vector2(3.3049326, 3.3049326)
+
+[node name="@Node2D@265950" parent="Border" unique_id=798651734 instance=ExtResource("6_8kuq6")]
+position = Vector2(-5042, -4293)
+scale = Vector2(1.4901569, 1.4901569)
+
+[node name="@Node2D@265951" parent="Border" unique_id=101992205 instance=ExtResource("6_8kuq6")]
+position = Vector2(-4847, -4578)
+scale = Vector2(2.9615283, 2.9615283)
+
+[node name="@Node2D@265952" parent="Border" unique_id=154339050 instance=ExtResource("5_8w6ul")]
+position = Vector2(-4533, -4998)
+scale = Vector2(2.0481737, 2.0481737)
+
+[node name="@Node2D@265953" parent="Border" unique_id=2207090 instance=ExtResource("7_qk0jo")]
+position = Vector2(-4278, -5267)
+scale = Vector2(2.7446408, 2.7446408)
+
+[node name="@Node2D@265954" parent="Border" unique_id=2122099136 instance=ExtResource("6_8kuq6")]
+position = Vector2(-4173, -5470)
+scale = Vector2(2.4333475, 2.4333475)
+
+[node name="@Node2D@265955" parent="Border" unique_id=213132741 instance=ExtResource("5_8w6ul")]
+position = Vector2(-4098, -5612)
+scale = Vector2(2.2482224, 2.2482224)
+
+[node name="@Node2D@265956" parent="Border" unique_id=1755916300 instance=ExtResource("6_8kuq6")]
+position = Vector2(-3978, -5717)
+scale = Vector2(1.9356465, 1.9356465)
+
+[node name="@Node2D@265957" parent="Border" unique_id=415768891 instance=ExtResource("6_8kuq6")]
+position = Vector2(-3701, -5837)
+scale = Vector2(2.727283, 2.727283)
+
+[node name="@Node2D@265958" parent="Border" unique_id=664200136 instance=ExtResource("5_8w6ul")]
+position = Vector2(-3439, -6009)
+scale = Vector2(2.945247, 2.945247)
+
+[node name="@Node2D@265959" parent="Border" unique_id=694663761 instance=ExtResource("6_8kuq6")]
+position = Vector2(-3139, -6114)
+scale = Vector2(3.3475175, 3.3475175)
+
+[node name="@Node2D@265960" parent="Border" unique_id=782104157 instance=ExtResource("6_8kuq6")]
+position = Vector2(-2772, -6271)
+scale = Vector2(1.6386921, 1.6386921)
+
+[node name="@Node2D@265961" parent="Border" unique_id=319546364 instance=ExtResource("5_8w6ul")]
+position = Vector2(-2353, -6413)
+scale = Vector2(2.0061421, 2.0061421)
+
+[node name="@Node2D@265962" parent="Border" unique_id=1719555667 instance=ExtResource("6_8kuq6")]
+position = Vector2(-2016, -6518)
+scale = Vector2(2.0767694, 2.0767694)
+
+[node name="@Node2D@265963" parent="Border" unique_id=1130817886 instance=ExtResource("7_qk0jo")]
+position = Vector2(-1446, -6743)
+scale = Vector2(3.4615653, 3.4615653)
+
+[node name="@Node2D@265964" parent="Border" unique_id=1598075302 instance=ExtResource("7_qk0jo")]
+position = Vector2(-1079, -6915)
+scale = Vector2(1.8367274, 1.8367274)
+
+[node name="@Node2D@265965" parent="Border" unique_id=290591657 instance=ExtResource("7_qk0jo")]
+position = Vector2(-917, -7000)
+scale = Vector2(3.2536483, 3.2536483)
+
+[node name="@Node2D@265966" parent="Border" unique_id=32496501 instance=ExtResource("6_8kuq6")]
+position = Vector2(-760, -7115)
+scale = Vector2(1.5012274, 1.5012274)
+
+[node name="@Node2D@265967" parent="Border" unique_id=1507584179 instance=ExtResource("7_qk0jo")]
+position = Vector2(-554, -7404)
+scale = Vector2(2.2866766, 2.2866766)
+
+[node name="@Node2D@265968" parent="Border" unique_id=1851986372 instance=ExtResource("6_8kuq6")]
+position = Vector2(-224, -7635)
+scale = Vector2(1.9899964, 1.9899964)
+
+[node name="@Node2D@265969" parent="Border" unique_id=1236524850 instance=ExtResource("6_8kuq6")]
+position = Vector2(105, -7832)
+scale = Vector2(2.7675395, 2.7675395)
+
+[node name="@Node2D@265970" parent="Border" unique_id=82881668 instance=ExtResource("5_8w6ul")]
+position = Vector2(526, -8022)
+scale = Vector2(3.2484393, 3.2484393)
+
+[node name="@Node2D@265971" parent="Border" unique_id=847886962 instance=ExtResource("6_8kuq6")]
+position = Vector2(1119, -8178)
+scale = Vector2(3.0842257, 3.0842257)
+
+[node name="@Node2D@265972" parent="Border" unique_id=349383709 instance=ExtResource("7_qk0jo")]
+position = Vector2(1218, -8178)
+scale = Vector2(2.623877, 2.623877)
+
+[node name="@Node2D@265973" parent="Border" unique_id=822973368 instance=ExtResource("5_8w6ul")]
+position = Vector2(1391, -8154)
+scale = Vector2(1.9103662, 1.9103662)
+
+[node name="@Node2D@265974" parent="Border" unique_id=895628191 instance=ExtResource("6_8kuq6")]
+position = Vector2(1704, -8055)
+scale = Vector2(2.9001205, 2.9001205)
+
+[node name="@Node2D@265975" parent="Border" unique_id=1337994859 instance=ExtResource("5_8w6ul")]
+position = Vector2(2067, -7897.9995)
+scale = Vector2(3.5613966, 3.5613966)
+
+[node name="@Node2D@265976" parent="Border" unique_id=776388162 instance=ExtResource("7_qk0jo")]
+position = Vector2(2157, -7808)
+scale = Vector2(1.9371572, 1.9371572)
+
+[node name="@Node2D@265977" parent="Border" unique_id=223474744 instance=ExtResource("7_qk0jo")]
+position = Vector2(2240, -7552)
+scale = Vector2(3.175297, 3.175297)
+
+[node name="@Node2D@265978" parent="Border" unique_id=1808595488 instance=ExtResource("7_qk0jo")]
+position = Vector2(2281, -7379)
+scale = Vector2(1.7500861, 1.7500861)
+
+[node name="@Node2D@265979" parent="Border" unique_id=1474813437 instance=ExtResource("7_qk0jo")]
+position = Vector2(2297, -7223)
+scale = Vector2(2.071326, 2.071326)
+
+[node name="@Node2D@265980" parent="Border" unique_id=929422655 instance=ExtResource("6_8kuq6")]
+position = Vector2(2273, -6876)
+scale = Vector2(3.0804973, 3.0804973)
+
+[node name="@Node2D@265981" parent="Border" unique_id=1094477151 instance=ExtResource("6_8kuq6")]
+position = Vector2(2215, -6555)
+scale = Vector2(1.6227788, 1.6227788)
+
+[node name="@Node2D@265982" parent="Border" unique_id=474137985 instance=ExtResource("7_qk0jo")]
+position = Vector2(2190, -6357)
+scale = Vector2(3.4574199, 3.4574199)
+
+[node name="@Node2D@265983" parent="Border" unique_id=1087653333 instance=ExtResource("5_8w6ul")]
+position = Vector2(2145.4814, -6046.838)
+scale = Vector2(2.4929771, 2.4929771)
+
+[node name="@Node2D@265984" parent="Border" unique_id=753187321 instance=ExtResource("6_8kuq6")]
+position = Vector2(2099, -5723)
+scale = Vector2(2.5009074, 2.5009074)
+
+[node name="@Node2D@265985" parent="Border" unique_id=618318206 instance=ExtResource("7_qk0jo")]
+position = Vector2(2157, -5492)
+scale = Vector2(2.0055282, 2.0055282)
+
+[node name="@Node2D@265986" parent="Border" unique_id=1087722604 instance=ExtResource("5_8w6ul")]
+position = Vector2(2273, -5014)
+scale = Vector2(2.543005, 2.543005)
+
+[node name="@Node2D@265987" parent="Border" unique_id=359573868 instance=ExtResource("6_8kuq6")]
+position = Vector2(2685, -4750)
+scale = Vector2(3.7332199, 3.7332199)
+
+[node name="@Node2D@265988" parent="Border" unique_id=192954333 instance=ExtResource("7_qk0jo")]
+position = Vector2(3253, -4569)
+scale = Vector2(2.9694896, 2.9694896)
+
+[node name="@Node2D@265989" parent="Border" unique_id=1874623061 instance=ExtResource("6_8kuq6")]
+position = Vector2(3912, -4462)
+scale = Vector2(2.9719841, 2.9719841)
+
+[node name="@Node2D@265990" parent="Border" unique_id=654235974 instance=ExtResource("5_8w6ul")]
+position = Vector2(4646, -4487)
+scale = Vector2(3.6751585, 3.6751585)
+
+[node name="@Node2D@265991" parent="Border" unique_id=1100593342 instance=ExtResource("7_qk0jo")]
+position = Vector2(4992, -4866)
+scale = Vector2(3.3959813, 3.3959813)
+
+[node name="@Node2D@265992" parent="Border" unique_id=1733939177 instance=ExtResource("5_8w6ul")]
+position = Vector2(5107, -5080)
+scale = Vector2(3.3363006, 3.3363006)
+
+[node name="@Node2D@265993" parent="Border" unique_id=288484167 instance=ExtResource("5_8w6ul")]
+position = Vector2(5140, -5311)
+scale = Vector2(2.5487897, 2.5487897)
+
+[node name="@Node2D@265994" parent="Border" unique_id=83057392 instance=ExtResource("5_8w6ul")]
+position = Vector2(5208.89, -5608.8276)
+scale = Vector2(1.7557782, 1.7557782)
+
+[node name="@Node2D@265995" parent="Border" unique_id=274425864 instance=ExtResource("7_qk0jo")]
+position = Vector2(5239, -5739)
+scale = Vector2(2.2362022, 2.2362022)
+
+[node name="@Node2D@265996" parent="Border" unique_id=1815435877 instance=ExtResource("6_8kuq6")]
+position = Vector2(5370.865, -6078.082)
+scale = Vector2(1.6309538, 1.6309538)
+
+[node name="@Node2D@265997" parent="Border" unique_id=1994950940 instance=ExtResource("7_qk0jo")]
+position = Vector2(5470, -6333)
+scale = Vector2(3.0635102, 3.0635102)
+
+[node name="@Node2D@265998" parent="Border" unique_id=1871257303 instance=ExtResource("5_8w6ul")]
+position = Vector2(5659, -6440)
+scale = Vector2(3.561535, 3.561535)
+
+[node name="@Node2D@265999" parent="Border" unique_id=1866879938 instance=ExtResource("6_8kuq6")]
+position = Vector2(6104, -6701)
+scale = Vector2(2.4597533, 2.4597533)
+
+[node name="@Node2D@266000" parent="Border" unique_id=1170871547 instance=ExtResource("5_8w6ul")]
+position = Vector2(6447, -6717)
+scale = Vector2(3.0298142, 3.0298142)
+
+[node name="@Node2D@266001" parent="Border" unique_id=689044684 instance=ExtResource("6_8kuq6")]
+position = Vector2(6713, -6568)
+scale = Vector2(3.491844, 3.491844)
+
+[node name="@Node2D@266002" parent="Border" unique_id=215002370 instance=ExtResource("7_qk0jo")]
+position = Vector2(7000.7813, -6467.834)
+scale = Vector2(2.578724, 2.578724)
+
+[node name="@Node2D@266003" parent="Border" unique_id=1511271665 instance=ExtResource("7_qk0jo")]
+position = Vector2(7256, -6379)
+scale = Vector2(3.2770958, 3.2770958)
+
+[node name="@Node2D@266004" parent="Border" unique_id=827786231 instance=ExtResource("6_8kuq6")]
+position = Vector2(7742, -6425)
+scale = Vector2(2.0247762, 2.0247762)
+
+[node name="@Node2D@266005" parent="Border" unique_id=308615500 instance=ExtResource("5_8w6ul")]
+position = Vector2(8110, -6333)
+scale = Vector2(1.9693851, 1.9693851)
+
+[node name="@Node2D@266006" parent="Border" unique_id=1673441554 instance=ExtResource("7_qk0jo")]
+position = Vector2(8253, -6011)
+scale = Vector2(2.6641874, 2.6641874)
+
+[node name="@Node2D@266007" parent="Border" unique_id=1858797776 instance=ExtResource("6_8kuq6")]
+position = Vector2(8365.285, -5700.533)
+scale = Vector2(3.5095186, 3.5095186)
+
+[node name="@Node2D@266008" parent="Border" unique_id=356263678 instance=ExtResource("6_8kuq6")]
+position = Vector2(8453, -5458)
+scale = Vector2(3.5966322, 3.5966322)
+
+[node name="@Node2D@266009" parent="Border" unique_id=2074195250 instance=ExtResource("6_8kuq6")]
+position = Vector2(8479, -5217)
+scale = Vector2(3.136447, 3.136447)
+
+[node name="@Node2D@266010" parent="Border" unique_id=1175060552 instance=ExtResource("6_8kuq6")]
+position = Vector2(8415.805, -4958.502)
+scale = Vector2(3.4063716, 3.4063716)
+
+[node name="@Node2D@266011" parent="Border" unique_id=1552509410 instance=ExtResource("5_8w6ul")]
+position = Vector2(8397, -4706)
+scale = Vector2(1.8611269, 1.8611269)
+
+[node name="@Node2D@266012" parent="Border" unique_id=677109611 instance=ExtResource("5_8w6ul")]
+position = Vector2(8273.718, -4555.749)
+scale = Vector2(3.766659, 3.766659)
+
+[node name="@Node2D@266013" parent="Border" unique_id=1564922012 instance=ExtResource("7_qk0jo")]
+position = Vector2(8141, -4394)
+scale = Vector2(1.5508832, 1.5508832)
+
+[node name="@Node2D@266014" parent="Border" unique_id=293146698 instance=ExtResource("5_8w6ul")]
+position = Vector2(7977, -4240)
+scale = Vector2(1.8424002, 1.8424002)
+
+[node name="@Node2D@266015" parent="Border" unique_id=1340610100 instance=ExtResource("7_qk0jo")]
+position = Vector2(7639, -4194)
+scale = Vector2(1.4486556, 1.4486556)
+
+[node name="@Node2D@266016" parent="Border" unique_id=225785900 instance=ExtResource("5_8w6ul")]
+position = Vector2(7327, -4169)
+scale = Vector2(2.4625385, 2.4625385)
+
+[node name="@Node2D@266017" parent="Border" unique_id=1490384532 instance=ExtResource("7_qk0jo")]
+position = Vector2(6992.7925, -3992.0305)
+scale = Vector2(3.7116592, 3.7116592)
+
+[node name="@Node2D@266018" parent="Border" unique_id=270052888 instance=ExtResource("7_qk0jo")]
+position = Vector2(6785, -3882)
+scale = Vector2(2.6205776, 2.6205776)
+
+[node name="@Node2D@266019" parent="Border" unique_id=1708812239 instance=ExtResource("7_qk0jo")]
+position = Vector2(6812.5547, -3583.027)
+scale = Vector2(2.119942, 2.119942)
+
+[node name="@Node2D@266020" parent="Border" unique_id=1893532206 instance=ExtResource("6_8kuq6")]
+position = Vector2(6834.0625, -3349.6387)
+scale = Vector2(1.54041, 1.54041)
+
+[node name="@Node2D@266021" parent="Border" unique_id=382511299 instance=ExtResource("7_qk0jo")]
+position = Vector2(6852, -3155)
+scale = Vector2(1.6168509, 1.6168509)
+
+[node name="@Node2D@266022" parent="Border" unique_id=585172267 instance=ExtResource("5_8w6ul")]
+position = Vector2(6863, -2822)
+scale = Vector2(3.6539967, 3.6539967)
+
+[node name="@Node2D@266023" parent="Border" unique_id=1035263813 instance=ExtResource("6_8kuq6")]
+position = Vector2(6786.289, -2546.0479)
+scale = Vector2(2.6166387, 2.6166387)
+
+[node name="@Node2D@266024" parent="Border" unique_id=1226512318 instance=ExtResource("7_qk0jo")]
+position = Vector2(6714, -2286)
+scale = Vector2(2.4642076, 2.4642076)
+
+[node name="@Node2D@266025" parent="Border" unique_id=100963036 instance=ExtResource("6_8kuq6")]
+position = Vector2(6673, -1924)
+scale = Vector2(1.8358836, 1.8358836)
+
+[node name="@Node2D@266026" parent="Border" unique_id=1687794802 instance=ExtResource("6_8kuq6")]
+position = Vector2(6665, -1784)
+scale = Vector2(1.6842103, 1.6842103)
+
+[node name="@Node2D@266027" parent="Border" unique_id=1161641323 instance=ExtResource("5_8w6ul")]
+position = Vector2(6607, -1413)
+scale = Vector2(2.134968, 2.134968)
+
+[node name="@Node2D@266028" parent="Border" unique_id=1161118589 instance=ExtResource("7_qk0jo")]
+position = Vector2(6500, -1149)
+scale = Vector2(3.5664942, 3.5664942)
+
+[node name="@Node2D@266029" parent="Border" unique_id=1431259320 instance=ExtResource("6_8kuq6")]
+position = Vector2(6401, -1050)
+scale = Vector2(2.5324583, 2.5324583)
+
+[node name="@Node2D@266030" parent="Border" unique_id=2002036762 instance=ExtResource("7_qk0jo")]
+position = Vector2(6327, -894)
+scale = Vector2(2.1622033, 2.1622033)
+
+[node name="@Node2D@266031" parent="Border" unique_id=851365180 instance=ExtResource("5_8w6ul")]
+position = Vector2(6014, -605)
+scale = Vector2(3.48446, 3.48446)
+
+[node name="@Node2D@266032" parent="Border" unique_id=1136014848 instance=ExtResource("7_qk0jo")]
+position = Vector2(5750, -457)
+scale = Vector2(1.5052873, 1.5052873)
+
+[node name="@Node2D@266033" parent="Border" unique_id=1410440791 instance=ExtResource("5_8w6ul")]
+position = Vector2(5536, -333)
+scale = Vector2(2.341115, 2.341115)
+
+[node name="@Node2D@266034" parent="Border" unique_id=2030757137 instance=ExtResource("5_8w6ul")]
+position = Vector2(4728, -111)
+scale = Vector2(3.708559, 3.708559)
+
+[node name="@Node2D@266035" parent="Border" unique_id=772698406 instance=ExtResource("7_qk0jo")]
+position = Vector2(4555, -70)
+scale = Vector2(2.4446394, 2.4446394)
+
+[node name="@Node2D@266036" parent="Border" unique_id=1268469030 instance=ExtResource("6_8kuq6")]
+position = Vector2(4308, 29)
+scale = Vector2(3.757363, 3.757363)
+
+[node name="@Node2D@266037" parent="Border" unique_id=922725679 instance=ExtResource("6_8kuq6")]
+position = Vector2(4242, 62)
+scale = Vector2(2.2624662, 2.2624662)
+
+[node name="@Node2D@266038" parent="Border" unique_id=19481435 instance=ExtResource("5_8w6ul")]
+position = Vector2(4168, 70)
+scale = Vector2(3.530435, 3.530435)
+
+[node name="@Node2D@266039" parent="Border" unique_id=1463309153 instance=ExtResource("6_8kuq6")]
+position = Vector2(4053, 103)
+scale = Vector2(3.4007518, 3.4007518)
+
+[node name="@Node2D@266040" parent="Border" unique_id=1991325360 instance=ExtResource("7_qk0jo")]
+position = Vector2(3805, 178)
+scale = Vector2(2.1255224, 2.1255224)
+
+[node name="@Node2D@266041" parent="Border" unique_id=559328542 instance=ExtResource("6_8kuq6")]
+position = Vector2(3459, 219)
+scale = Vector2(1.7360257, 1.7360257)
+
+[node name="@Node2D@266042" parent="Border" unique_id=1826617205 instance=ExtResource("6_8kuq6")]
+position = Vector2(3303, 235)
+scale = Vector2(2.516133, 2.516133)
+
+[node name="@Node2D@266043" parent="Border" unique_id=515507283 instance=ExtResource("6_8kuq6")]
+position = Vector2(2882, 334)
+scale = Vector2(3.2078528, 3.2078528)
+
+[node name="@Node2D@266044" parent="Border" unique_id=896548507 instance=ExtResource("6_8kuq6")]
+position = Vector2(2709, 334)
+scale = Vector2(2.9166303, 2.9166303)
+
+[node name="@Node2D@266045" parent="Border" unique_id=1003691342 instance=ExtResource("6_8kuq6")]
+position = Vector2(2404, 408)
+scale = Vector2(2.944259, 2.944259)
+
+[node name="@Node2D@266046" parent="Border" unique_id=1370610991 instance=ExtResource("7_qk0jo")]
+position = Vector2(2174, 449)
+scale = Vector2(1.6711144, 1.6711144)
+
+[node name="@Node2D@266047" parent="Border" unique_id=314637528 instance=ExtResource("7_qk0jo")]
+position = Vector2(1704, 548)
+scale = Vector2(2.9202237, 2.9202237)
+
+[node name="@Node2D@266048" parent="Border" unique_id=411814479 instance=ExtResource("7_qk0jo")]
+position = Vector2(1514, 639)
+scale = Vector2(2.945887, 2.945887)
+
+[node name="@Node2D@266049" parent="Border" unique_id=67995284 instance=ExtResource("5_8w6ul")]
+position = Vector2(1267, 631)
+scale = Vector2(3.1733253, 3.1733253)
+
+[node name="@Node2D@266050" parent="Border" unique_id=300121511 instance=ExtResource("5_8w6ul")]
+position = Vector2(938, 581)
+scale = Vector2(2.8068469, 2.8068469)
+
+[node name="@Node2D@266051" parent="Border" unique_id=1417828463 instance=ExtResource("6_8kuq6")]
+position = Vector2(575, 466)
+scale = Vector2(2.1095977, 2.1095977)
+
+[node name="@Node2D@266052" parent="Border" unique_id=1629666180 instance=ExtResource("6_8kuq6")]
+position = Vector2(188, 342)
+scale = Vector2(1.5379378, 1.5379378)
+
+[node name="@Node2D@266053" parent="Border" unique_id=211618238 instance=ExtResource("7_qk0jo")]
+position = Vector2(23, 186)
+scale = Vector2(2.1722744, 2.1722744)
+
+[node name="@StaticBody2D@266054" type="StaticBody2D" parent="Border" unique_id=1063314763]
+
+[node name="@CollisionPolygon2D@266055" type="CollisionPolygon2D" parent="Border/@StaticBody2D@266054" unique_id=1232653283]
+build_mode = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1321423134]
+
+[node name="EntitySpawner" parent="Enemies" unique_id=35382311 instance=ExtResource("2_8kuq6")]
+position = Vector2(-4058, 81)
+entity = ExtResource("3_qk0jo")
+
+[node name="Trees" type="Line2D" parent="." unique_id=1731811310]
+position = Vector2(0, 14)
+points = PackedVector2Array(-848, 77, -2098, 454, -3433, -279, -1752, -823, -4158, -1523, -3202, -3196, -2790, -1812, -886, -2298, -1587, -3682, 644, -3699, 885, -5545, -952, -4902, 1660, -2941, 3295, -2929, 2602, -1482, 1462, -2034, 1594, -411, 1874, 974, 457, -2413, 3275, 224, 5591, -238, 5319, -1779, 4107, -2051, 5600, -4076, 5937, -4597, 6533, -4869, 6799, -4709, 7114, -4779, 7484, -4667, 7568, -4377, 7536, -3501)
+script = ExtResource("4_aad7h")
+wall_variants = Array[PackedScene]([ExtResource("11_kjatm"), ExtResource("11_w6toh"), ExtResource("12_ggwjl")])
+min_wall_scale = 1.067
+max_wall_scale = 1.352
+metadata/_custom_type_script = "uid://du03pqqpwdkty"
+
+[node name="@Node2D@306873" parent="Trees" unique_id=2062598587 instance=ExtResource("11_kjatm")]
+position = Vector2(-848, 77)
+scale = Vector2(1.3440362, 1.3440362)
+
+[node name="@Node2D@306874" parent="Trees" unique_id=481236492 instance=ExtResource("12_ggwjl")]
+position = Vector2(-2098, 454)
+scale = Vector2(1.3223575, 1.3223575)
+
+[node name="@Node2D@306875" parent="Trees" unique_id=188295904 instance=ExtResource("12_ggwjl")]
+position = Vector2(-3433, -279)
+scale = Vector2(1.1773131, 1.1773131)
+
+[node name="@Node2D@306876" parent="Trees" unique_id=1121991105 instance=ExtResource("12_ggwjl")]
+position = Vector2(-1752, -823)
+scale = Vector2(1.2234213, 1.2234213)
+
+[node name="@Node2D@306877" parent="Trees" unique_id=812500957 instance=ExtResource("11_w6toh")]
+position = Vector2(-4158, -1523)
+scale = Vector2(1.1443245, 1.1443245)
+
+[node name="@Node2D@306878" parent="Trees" unique_id=1168338652 instance=ExtResource("11_kjatm")]
+position = Vector2(-3202, -3196)
+scale = Vector2(1.2781365, 1.2781365)
+
+[node name="@Node2D@306879" parent="Trees" unique_id=1200233162 instance=ExtResource("12_ggwjl")]
+position = Vector2(-2790, -1812)
+scale = Vector2(1.2734151, 1.2734151)
+
+[node name="@Node2D@306880" parent="Trees" unique_id=1991383540 instance=ExtResource("12_ggwjl")]
+position = Vector2(-886, -2298)
+scale = Vector2(1.2944999, 1.2944999)
+
+[node name="@Node2D@306881" parent="Trees" unique_id=1960999192 instance=ExtResource("11_w6toh")]
+position = Vector2(-1587, -3682)
+scale = Vector2(1.2277015, 1.2277015)
+
+[node name="@Node2D@306882" parent="Trees" unique_id=875554853 instance=ExtResource("11_w6toh")]
+position = Vector2(644, -3699)
+scale = Vector2(1.2837098, 1.2837098)
+
+[node name="@Node2D@306883" parent="Trees" unique_id=615628676 instance=ExtResource("11_kjatm")]
+position = Vector2(885, -5545)
+scale = Vector2(1.2489637, 1.2489637)
+
+[node name="@Node2D@306884" parent="Trees" unique_id=995413163 instance=ExtResource("12_ggwjl")]
+position = Vector2(-952, -4902)
+scale = Vector2(1.0672556, 1.0672556)
+
+[node name="@Node2D@306885" parent="Trees" unique_id=1167858789 instance=ExtResource("12_ggwjl")]
+position = Vector2(1660, -2941)
+scale = Vector2(1.1507398, 1.1507398)
+
+[node name="@Node2D@306886" parent="Trees" unique_id=736904887 instance=ExtResource("12_ggwjl")]
+position = Vector2(3295, -2929)
+scale = Vector2(1.2253554, 1.2253554)
+
+[node name="@Node2D@306887" parent="Trees" unique_id=1151315805 instance=ExtResource("12_ggwjl")]
+position = Vector2(2602, -1482)
+scale = Vector2(1.2948031, 1.2948031)
+
+[node name="@Node2D@306888" parent="Trees" unique_id=504569145 instance=ExtResource("11_w6toh")]
+position = Vector2(1462, -2034)
+scale = Vector2(1.2791188, 1.2791188)
+
+[node name="@Node2D@306889" parent="Trees" unique_id=349282599 instance=ExtResource("12_ggwjl")]
+position = Vector2(1594, -411)
+scale = Vector2(1.1220609, 1.1220609)
+
+[node name="@Node2D@306890" parent="Trees" unique_id=1921600655 instance=ExtResource("11_kjatm")]
+position = Vector2(1874, 974)
+scale = Vector2(1.0964642, 1.0964642)
+
+[node name="@Node2D@306891" parent="Trees" unique_id=1697663108 instance=ExtResource("11_w6toh")]
+position = Vector2(457, -2413)
+scale = Vector2(1.1914656, 1.1914656)
+
+[node name="@Node2D@306892" parent="Trees" unique_id=1406475575 instance=ExtResource("12_ggwjl")]
+position = Vector2(3275, 224)
+scale = Vector2(1.2638497, 1.2638497)
+
+[node name="@Node2D@306893" parent="Trees" unique_id=1664297618 instance=ExtResource("12_ggwjl")]
+position = Vector2(5591, -238)
+scale = Vector2(1.3486643, 1.3486643)
+
+[node name="@Node2D@306894" parent="Trees" unique_id=1789464446 instance=ExtResource("11_w6toh")]
+position = Vector2(5319, -1779)
+scale = Vector2(1.123373, 1.123373)
+
+[node name="@Node2D@306895" parent="Trees" unique_id=219346540 instance=ExtResource("12_ggwjl")]
+position = Vector2(4107, -2051)
+scale = Vector2(1.3222095, 1.3222095)
+
+[node name="@Node2D@306896" parent="Trees" unique_id=1884571101 instance=ExtResource("11_kjatm")]
+position = Vector2(5600, -4076)
+scale = Vector2(1.0685757, 1.0685757)
+
+[node name="@Node2D@306897" parent="Trees" unique_id=700018967 instance=ExtResource("11_kjatm")]
+position = Vector2(5937, -4597)
+scale = Vector2(1.298968, 1.298968)
+
+[node name="@Node2D@306898" parent="Trees" unique_id=122484642 instance=ExtResource("11_w6toh")]
+position = Vector2(6533, -4869)
+scale = Vector2(1.3468024, 1.3468024)
+
+[node name="@Node2D@306899" parent="Trees" unique_id=2000721595 instance=ExtResource("11_kjatm")]
+position = Vector2(6799, -4709)
+scale = Vector2(1.2003487, 1.2003487)
+
+[node name="@Node2D@306900" parent="Trees" unique_id=2127962182 instance=ExtResource("12_ggwjl")]
+position = Vector2(7114, -4779)
+scale = Vector2(1.1755701, 1.1755701)
+
+[node name="@Node2D@306901" parent="Trees" unique_id=2049496805 instance=ExtResource("11_kjatm")]
+position = Vector2(7484, -4667)
+scale = Vector2(1.3047322, 1.3047322)
+
+[node name="@Node2D@306902" parent="Trees" unique_id=1910387532 instance=ExtResource("11_w6toh")]
+position = Vector2(7568, -4377)
+scale = Vector2(1.2623535, 1.2623535)
+
+[node name="@Node2D@306903" parent="Trees" unique_id=2069446067 instance=ExtResource("11_w6toh")]
+position = Vector2(7536, -3501)
+scale = Vector2(1.3117597, 1.3117597)
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1586696746]
+
+[node name="Coins" type="Node2D" parent="Interactables" unique_id=954935803]
+
+[node name="Collectable" parent="Interactables/Coins" unique_id=2052972169 instance=ExtResource("13_s6eo5")]
+position = Vector2(6264, -4375)
+
+[node name="Collectable2" parent="Interactables/Coins" unique_id=741079846 instance=ExtResource("13_s6eo5")]
+position = Vector2(6590, -4521)
+
+[node name="Collectable3" parent="Interactables/Coins" unique_id=529771834 instance=ExtResource("13_s6eo5")]
+position = Vector2(6955, -4410)
+
+[node name="Collectable4" parent="Interactables/Coins" unique_id=977128204 instance=ExtResource("13_s6eo5")]
+position = Vector2(6083, -4049)
+
+[node name="Collectable5" parent="Interactables/Coins" unique_id=1937623555 instance=ExtResource("13_s6eo5")]
+position = Vector2(6319, -3648)
+
+[node name="Collectable6" parent="Interactables/Coins" unique_id=1545911170 instance=ExtResource("13_s6eo5")]
+position = Vector2(6833, -3615)
+
+[node name="Collectable7" parent="Interactables/Coins" unique_id=768753948 instance=ExtResource("13_s6eo5")]
+position = Vector2(7050, -4031)
+
+[node name="Collectable8" parent="Interactables/Coins" unique_id=1666756597 instance=ExtResource("13_s6eo5")]
+position = Vector2(1145, -5290)
+
+[node name="Collectable9" parent="Interactables/Coins" unique_id=1244482098 instance=ExtResource("13_s6eo5")]
+position = Vector2(210, -5553)
+
+[node name="Collectable10" parent="Interactables/Coins" unique_id=1916063993 instance=ExtResource("13_s6eo5")]
+position = Vector2(-900, -4691)
+
+[node name="Collectable11" parent="Interactables/Coins" unique_id=1870521202 instance=ExtResource("13_s6eo5")]
+position = Vector2(-136, -3837)
+
+[node name="Collectable12" parent="Interactables/Coins" unique_id=98726703 instance=ExtResource("13_s6eo5")]
+position = Vector2(1182, -4136)
+
+[node name="Collectable13" parent="Interactables/Coins" unique_id=1655015664 instance=ExtResource("13_s6eo5")]
+position = Vector2(5715, -3043)
+
+[node name="Collectable14" parent="Interactables/Coins" unique_id=792798038 instance=ExtResource("13_s6eo5")]
+position = Vector2(4658, -2458)
+
+[node name="Collectable15" parent="Interactables/Coins" unique_id=1741083285 instance=ExtResource("13_s6eo5")]
+position = Vector2(5393, -46)
+
+[node name="Collectable16" parent="Interactables/Coins" unique_id=354833225 instance=ExtResource("13_s6eo5")]
+position = Vector2(3924, -1477)
+
+[node name="Collectable17" parent="Interactables/Coins" unique_id=1705096306 instance=ExtResource("13_s6eo5")]
+position = Vector2(2778, 793)
+
+[node name="Collectable18" parent="Interactables/Coins" unique_id=90689869 instance=ExtResource("13_s6eo5")]
+position = Vector2(-173, -2773)
+
+[node name="Collectable19" parent="Interactables/Coins" unique_id=438489689 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2144, -3117)
+
+[node name="Collectable20" parent="Interactables/Coins" unique_id=1889726744 instance=ExtResource("13_s6eo5")]
+position = Vector2(-1455, -1866)
+
+[node name="Collectable21" parent="Interactables/Coins" unique_id=990609093 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2174, 763)
+
+[node name="Collectable22" parent="Interactables/Coins" unique_id=139289971 instance=ExtResource("13_s6eo5")]
+position = Vector2(-4092, -992)
+
+[node name="Collectable23" parent="Interactables/Coins" unique_id=5557256 instance=ExtResource("13_s6eo5")]
+position = Vector2(-4120, -283)
+
+[node name="Collectable24" parent="Interactables/Coins" unique_id=937357951 instance=ExtResource("13_s6eo5")]
+position = Vector2(-3861, -671)
+
+[node name="Collectable25" parent="Interactables/Coins" unique_id=1698123549 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2989, -1262)
+
+[node name="Seeds" type="Node2D" parent="Interactables" unique_id=272689731]
+
+[node name="Seed" parent="Interactables/Seeds" unique_id=1413849496 instance=ExtResource("14_0irvv")]
+position = Vector2(6582, -4034)
+
+[node name="Seed2" parent="Interactables/Seeds" unique_id=1297449906 instance=ExtResource("14_0irvv")]
+position = Vector2(1494, -5752)
+
+[node name="Seed3" parent="Interactables/Seeds" unique_id=534061377 instance=ExtResource("14_0irvv")]
+position = Vector2(-4513, -678)

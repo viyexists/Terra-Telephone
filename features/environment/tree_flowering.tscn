@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ddwwkynm5ln1t"]
+
+[ext_resource type="Script" uid="uid://w80fcqeblnlk" path="res://features/environment/obstacle.gd" id="1_t1vax"]
+[ext_resource type="Texture2D" uid="uid://bwtfaagcxkkvn" path="res://assets/terra_assets/sprites/level/TreeFlowering.webp" id="2_ukdp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjsud"]
+size = Vector2(205.5, 20)
+
+[node name="TreeFlowering" type="Node2D" unique_id=275115240]
+script = ExtResource("1_t1vax")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1506657549]
+position = Vector2(-63, -266.99997)
+scale = Vector2(0.41362917, 0.41362914)
+texture = ExtResource("2_ukdp4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1581015726]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1714204292]
+position = Vector2(-3, -14)
+shape = SubResource("RectangleShape2D_mjsud")

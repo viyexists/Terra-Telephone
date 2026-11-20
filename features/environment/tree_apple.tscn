@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dadnvegoeuodn"]
+
+[ext_resource type="Script" uid="uid://w80fcqeblnlk" path="res://features/environment/obstacle.gd" id="1_qwlyi"]
+[ext_resource type="Texture2D" uid="uid://daihfij2ldjsq" path="res://assets/terra_assets/sprites/level/TreeApple.webp" id="2_e8x5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjsud"]
+size = Vector2(205.5, 20)
+
+[node name="TreeApple" type="Node2D" unique_id=275115240]
+script = ExtResource("1_qwlyi")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1506657549]
+position = Vector2(7, -316)
+texture = ExtResource("2_e8x5s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1581015726]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1714204292]
+position = Vector2(-3, -14)
+shape = SubResource("RectangleShape2D_mjsud")

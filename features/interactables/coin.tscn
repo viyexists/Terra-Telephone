@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ccsn53kk55mv5" path="res://features/interactables/coin.gd" id="1_hwavq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 299.08194
+radius = 123.08
 
 [sub_resource type="Animation" id="Animation_hwavq"]
 length = 0.001
@@ -68,10 +68,11 @@ _data = {
 &"float": SubResource("Animation_o2q8c")
 }
 
-[node name="Collectable" type="Node2D" unique_id=2052972169]
+[node name="Coin" type="Node2D" unique_id=2052972169]
 script = ExtResource("1_hwavq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1803890556]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_7yo2t")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1404951969]

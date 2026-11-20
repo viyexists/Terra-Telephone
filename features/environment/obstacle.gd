@@ -11,11 +11,7 @@ class_name Obstacle
 ## up the z ordering of this node too much
 var original_z_index: int = 50
 
-func _ready() -> void:
-	$Line2D.queue_free()
-
-
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.player.global_position.y < self.global_position.y:
 		self.z_index = Global.player.z_index + original_z_index
 	else:

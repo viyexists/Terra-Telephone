@@ -29,8 +29,8 @@ func _ready() -> void:
 		spawn_entity()
 		cooldown = Timer.new()
 		cooldown.connect('timeout', spawn_entity)
-		add_sibling(cooldown)
-		cooldown.start(spawn_rate)
+		add_sibling.call_deferred(cooldown)
+		cooldown.start.call_deferred(spawn_rate)
 		
 		
 func spawn_entity()->bool:
@@ -47,14 +47,12 @@ func spawn_entity()->bool:
 				var spawned = 0
 				while spawned < amount and len(get_children()) < max_entities:
 					var e = entity.instantiate()
-					e.modulate.a = 0.5
 					add_child(e)
 					total_spawns += 1
 				return spawned != 0
 			else:
 				# Continous spawning of single entities
 				var e = entity.instantiate()
-				e.modulate.a = 0.5
 				add_child(e)
 				total_spawns += 1
 				return true

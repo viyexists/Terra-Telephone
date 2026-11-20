@@ -9,12 +9,12 @@ func _ready() -> void:
 		b.connect('pressed', func():_load_level(i ,Global.levels[i][1]))
 		b.custom_minimum_size = Vector2(80,80)
 		b.text = '%s - %s' % [i+1, Global.levels[i][0]]
-		b.disabled = not Global.levels[i][2]
+		b.disabled = not (Global.levels[i][2] or bypass_level_lock)
 		%ButtonContainer.add_child(b)
 		i += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _load_level(level_idx, level_path)->void:

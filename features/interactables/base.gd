@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == Global.player:
-		if Global.seeds_collected >= Global.seeds_per_stage[Global.current_stage] and ended_stage == false:
+		if Global.seeds_collected >= Global.seeds_this_stage and ended_stage == false:
 			ended_stage = true
 			await $SpeechBubble.say("FINALLY, YOU GOT THE SEEDS. LET'S LEAVE, QUICK", true)
 			get_parent().add_sibling(load("res://features/stages/level_complete_screen.tscn").instantiate())

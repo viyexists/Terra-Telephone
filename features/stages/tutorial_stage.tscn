@@ -435,87 +435,66 @@ scale = Vector2(2.766021, 2.766021)
 
 [node name="Collectable" parent="Collectables" unique_id=2052972169 instance=ExtResource("21_bl74p")]
 position = Vector2(-666, 1214)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable2" parent="Collectables" unique_id=463659931 instance=ExtResource("21_bl74p")]
 position = Vector2(-15, 1162)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable3" parent="Collectables" unique_id=1340909447 instance=ExtResource("21_bl74p")]
 position = Vector2(170, 659)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable4" parent="Collectables" unique_id=1151724874 instance=ExtResource("21_bl74p")]
 position = Vector2(451, 215)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable5" parent="Collectables" unique_id=273579544 instance=ExtResource("21_bl74p")]
 position = Vector2(1413, 119)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable6" parent="Collectables" unique_id=1592041026 instance=ExtResource("21_bl74p")]
 position = Vector2(2020, 252)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable7" parent="Collectables" unique_id=1072334587 instance=ExtResource("21_bl74p")]
 position = Vector2(2168, 770)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable8" parent="Collectables" unique_id=1886158335 instance=ExtResource("21_bl74p")]
 position = Vector2(2168, 1392)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable9" parent="Collectables" unique_id=1977028799 instance=ExtResource("21_bl74p")]
 position = Vector2(333, -377)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable10" parent="Collectables" unique_id=1826851521 instance=ExtResource("21_bl74p")]
 position = Vector2(-59, -873)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable11" parent="Collectables" unique_id=1071805493 instance=ExtResource("21_bl74p")]
 position = Vector2(-518, -1043)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable12" parent="Collectables" unique_id=772268014 instance=ExtResource("21_bl74p")]
 position = Vector2(-474, -1687)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable13" parent="Collectables" unique_id=1686921873 instance=ExtResource("21_bl74p")]
 position = Vector2(-148, -1946)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable14" parent="Collectables" unique_id=1196588008 instance=ExtResource("21_bl74p")]
 position = Vector2(488, -2050)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable15" parent="Collectables" unique_id=462596547 instance=ExtResource("21_bl74p")]
 position = Vector2(1036, -1976)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable16" parent="Collectables" unique_id=1001203660 instance=ExtResource("21_bl74p")]
 position = Vector2(1606, -1998)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable17" parent="Collectables" unique_id=78998746 instance=ExtResource("21_bl74p")]
 position = Vector2(1606, -1998)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable18" parent="Collectables" unique_id=1246908100 instance=ExtResource("21_bl74p")]
 position = Vector2(-876, -2303)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable19" parent="Collectables" unique_id=353157479 instance=ExtResource("21_bl74p")]
 position = Vector2(-1408, -2392)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable20" parent="Collectables" unique_id=129325898 instance=ExtResource("21_bl74p")]
 position = Vector2(-1920, -2362)
-scale = Vector2(0.5, 0.5)
 
 [node name="Collectable21" parent="Collectables" unique_id=1715041342 instance=ExtResource("21_bl74p")]
 position = Vector2(-2344, -2017)
-scale = Vector2(0.5, 0.5)
 
 [node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
 

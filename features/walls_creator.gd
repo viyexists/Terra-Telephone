@@ -25,7 +25,7 @@ class_name WallCreator
 extends Line2D
 
 const Y_POSITION_DIVISOR: float = 25
-
+@export var generate_physical_border := true
 @export_tool_button("Activate Wall Creator") var activate_wall_creator:
 	get: return func(): create_walls()
 @export_tool_button("Clear Walls") var clear_walls:
@@ -61,15 +61,19 @@ func create_walls() -> void:
 		add_child(cur_wall)
 		cur_wall.owner = get_tree().edited_scene_root
 	
-	var border = StaticBody2D.new()
-	var border_collision = CollisionPolygon2D.new()
-	border_collision.polygon.append_array(points)
-	border_collision.build_mode =CollisionPolygon2D.BUILD_SEGMENTS
-	add_child(border)
-	border.owner = get_tree().edited_scene_root
+	if generate_physical_border:
+		if $Border:
+			await $Border.free()
+		var border = StaticBody2D.new()
+		var border_collision = CollisionPolygon2D.new()
+		border_collision.polygon.append_array(points)
+		border_collision.build_mode =CollisionPolygon2D.BUILD_SEGMENTS
+		add_child(border)
+		border.owner = get_tree().edited_scene_root
 
-	border.add_child(border_collision)
-	border_collision.owner = get_tree().edited_scene_root
+		border.add_child(border_collision, true)
+		border_collision.owner = get_tree().edited_scene_root
+		border.name = 'Border'
 		
 
 func remove_obstacles() -> void:

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-signal attack
+signal attacking
 
 ## The type of enemy
 @export var type:String = 'blargh'
@@ -82,7 +82,7 @@ func default_bite(attack)->void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area == Global.player.get_node("Hitbox"):
 		_player_in_area = true
-		attack.emit()
+		attacking.emit()
 		attempt_attack()
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
