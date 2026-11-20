@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c7n0p135422uj" path="res://features/interactables/seed.gd" id="1_ufnyq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 208.5042
+radius = 141.83
 
 [node name="Seed" type="Node2D" unique_id=1413849496]
 script = ExtResource("1_ufnyq")

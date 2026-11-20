@@ -291,10 +291,10 @@ shape = SubResource("CapsuleShape2D_giy8y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=702460402]
 position = Vector2(-48, -215)
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 script = ExtResource("2_q1etv")
-max_offset = Vector2i(50, 20)
+max_offset = Vector2i(30, 10)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1840734530]
 position = Vector2(0, -180)

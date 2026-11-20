@@ -74,11 +74,13 @@ func play_walk_animation() -> void:
 
 func flip_sprite(flipped: bool) -> void:
 	if flipped:
-		player_body.flip_h = true
-		player_clothes.flip_h = true
+		#player_body.flip_h = true
+		#player_clothes.flip_h = true
+		$Sprite.scale.x = -1
 	else:
-		player_body.flip_h = false
-		player_clothes.flip_h = false
+		#player_body.flip_h = false
+		#player_clothes.flip_h = false
+		$Sprite.scale.x = 1
 
 
 func toggle_base_arrow(on: bool) -> void:
@@ -98,7 +100,7 @@ func take_damage(damage_taken: float) -> void:
 	tween.tween_property(self, "modulate", Color(1.0, 0.534, 0.469, 1.0), 0.1)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	
-	$Camera2D.add_trauma(10)
+	$Camera2D.add_trauma(5)
 	
 	health -= damage_taken
 	if health <= 0:

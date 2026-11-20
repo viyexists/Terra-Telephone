@@ -49,7 +49,7 @@ func say(message: String, interrupt_previous_messages: bool = false) -> void:
 		
 	_is_done_saying = false
 	var label := Label.new()
-	label.add_theme_font_size_override("font_size", 36)
+	label.add_theme_font_size_override("font_size", 64)
 	label.z_index = 5
 	label.visible_characters = -1
 	label.text = message

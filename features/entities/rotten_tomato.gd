@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Sprite2D.rotate(2*delta)
+	$Sprite2D.rotate(12*delta)
 	
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta * 400

@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		_shake()
+	position_smoothing_enabled = trauma == 0.0
 
 func add_trauma(amount:float=1.0)->void:
 	## Adds trauma, and starts camera shake
