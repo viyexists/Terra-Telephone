@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	
 
 func attack(a)->void:
-	print('attack: ', a)
 	var t = tomato.instantiate()
 	t.global_position = self.global_position
 	t.source = self.global_position

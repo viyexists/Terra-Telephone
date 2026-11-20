@@ -28,8 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		return
 	if body.is_in_group("enemies"):
-		body.knockback = self.global_position.direction_to(body.global_position) * knockback_modifier
-		print('hit enemy, applying knockback: ', body.knockback)
+		body._knockback = self.global_position.direction_to(body.global_position) * knockback_modifier
 	_start_break()
 		
 func _start_break()->void:

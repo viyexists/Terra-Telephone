@@ -9,7 +9,7 @@ var current_stage: int = 0
 var current_stage_node: Node
 
 var next_stage:
-	get: return current_stage + 1
+	get: return (current_stage + 1) % len(levels)
 
 ## The location of the place to return to
 ## used for the arrow to point towards

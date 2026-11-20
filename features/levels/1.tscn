@@ -18,7 +18,6 @@ base = NodePath("Base")
 [node name="EntitySpawner" parent="." unique_id=35382311 instance=ExtResource("2_8kuq6")]
 position = Vector2(-3322, -62)
 entity = ExtResource("3_qk0jo")
-amount = null
 
 [node name="WallCreator" type="Line2D" parent="." unique_id=342593926]
 position = Vector2(-5242, 831)

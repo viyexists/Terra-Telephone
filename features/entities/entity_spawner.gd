@@ -25,11 +25,12 @@ var total_spawns = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-			spawn_entity()
-			cooldown = Timer.new()
-			cooldown.connect('timeout', spawn_entity)
-			add_sibling(cooldown)
-			cooldown.start(spawn_rate)
+		update_entity_display(null)
+		spawn_entity()
+		cooldown = Timer.new()
+		cooldown.connect('timeout', spawn_entity)
+		add_sibling(cooldown)
+		cooldown.start(spawn_rate)
 		
 		
 func spawn_entity()->bool:

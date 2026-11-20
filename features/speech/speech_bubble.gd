@@ -63,7 +63,7 @@ func say(message: String, interrupt_previous_messages: bool = false) -> void:
 		if interrupt:
 			return
 		await get_tree().process_frame
-		if label != null and label.is_queued_for_deletion() == false:
+		if label != null and not label.is_queued_for_deletion():
 			label.visible_characters += 1
 			
 		await get_tree().create_timer(TIME_FOR_CHARACTER_TO_APPEAR).timeout

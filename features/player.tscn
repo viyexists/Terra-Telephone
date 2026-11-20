@@ -294,6 +294,7 @@ position = Vector2(-48, -215)
 zoom = Vector2(0.25, 0.25)
 position_smoothing_enabled = true
 script = ExtResource("2_q1etv")
+max_offset = Vector2i(50, 20)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1840734530]
 position = Vector2(0, -180)
@@ -334,11 +335,10 @@ theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
 metadata/_edit_use_anchors_ = true
 
-[node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701 node_paths=PackedStringArray("attack_marker")]
+[node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701]
 position = Vector2(0, -180)
 script = ExtResource("7_q1etv")
 tomato = ExtResource("8_gj24u")
-attack_marker = NodePath("")
 
 [node name="UI" parent="." unique_id=1434014047 instance=ExtResource("2_ray8b")]
 metadata/_edit_use_anchors_ = true
