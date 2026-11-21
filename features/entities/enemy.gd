@@ -55,6 +55,8 @@ func _physics_process(delta: float) -> void:
 	var player_relative_direction: Vector2 = (Global.player.global_position - self.global_position).normalized()
 	self.velocity = player_relative_direction * delta * speed
 	
+	$Sprite.scale.x = 1 if velocity.x >= 0 else -1
+	
 	# Knockback
 	_knockback = _knockback.move_toward(Vector2.ZERO, knockback_resistance)
 	velocity += _knockback * delta

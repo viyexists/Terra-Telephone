@@ -633,6 +633,14 @@ build_mode = 1
 position = Vector2(-4058, 81)
 entity = ExtResource("3_qk0jo")
 
+[node name="EntitySpawner2" parent="Enemies" unique_id=752078732 instance=ExtResource("2_8kuq6")]
+position = Vector2(1445, -6008)
+entity = ExtResource("3_qk0jo")
+
+[node name="EntitySpawner3" parent="Enemies" unique_id=1251449838 instance=ExtResource("2_8kuq6")]
+position = Vector2(7273, -4518)
+entity = ExtResource("3_qk0jo")
+
 [node name="Trees" type="Line2D" parent="." unique_id=1731811310]
 position = Vector2(0, 14)
 points = PackedVector2Array(-848, 77, -2098, 454, -3433, -279, -1752, -823, -4158, -1523, -3202, -3196, -2790, -1812, -886, -2298, -1587, -3682, 644, -3699, 885, -5545, -952, -4902, 1660, -2941, 3295, -2929, 2602, -1482, 1462, -2034, 1594, -411, 1874, 974, 457, -2413, 3275, 224, 5591, -238, 5319, -1779, 4107, -2051, 5600, -4076, 5937, -4597, 6533, -4869, 6799, -4709, 7114, -4779, 7484, -4667, 7568, -4377, 7536, -3501)

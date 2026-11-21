@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b1ri8c7s0g7pr" path="res://assets/terra_assets/sprites/level/TreeWillow.webp" id="3_73wb4"]
 [ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/enemy.tscn" id="3_hr7bp"]
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="6_ufbuv"]
-[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="13_arakc"]
-[ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="13_b15jc"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="15_4ksmt"]
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="17_02irw"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="18_ufbuv"]
@@ -20,14 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://bwtfaagcxkkvn" path="res://assets/terra_assets/sprites/level/TreeFlowering.webp" id="24_hr7bp"]
 [ext_resource type="Texture2D" uid="uid://dvu8xuy0dks3s" path="res://assets/terra_assets/sprites/level/TreeOrange2.webp" id="25_7vrav"]
 [ext_resource type="Texture2D" uid="uid://cgnrvn033awf2" path="res://assets/terra_assets/sprites/level/River.webp" id="27_8o28k"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
-radius = 101.0
-height = 400.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
-radius = 100.0
-height = 400.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ahaa"]
 size = Vector2(326, 39)
@@ -56,52 +46,14 @@ position = Vector2(-1336, 1259.55)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=289992110]
 
-[node name="Enemy" parent="Enemies" unique_id=2017245619 instance=ExtResource("3_hr7bp")]
+[node name="Enemy2" parent="Enemies" unique_id=2017245619 instance=ExtResource("3_hr7bp")]
+position = Vector2(3291, -6143)
+
+[node name="Enemy" parent="Enemies" unique_id=1658103323 instance=ExtResource("3_hr7bp")]
 position = Vector2(-5828, 513)
 
-[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=1206686102 groups=["enemies"]]
-z_index = 60
-position = Vector2(3871, -6101)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("13_arakc")
-damage = 2.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2" unique_id=982792428]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_b15jc")
-
-[node name="Area2D" type="Area2D" parent="Enemies/Enemy2" unique_id=1358500030]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2/Area2D" unique_id=738167158]
-position = Vector2(40, -4)
-shape = SubResource("CapsuleShape2D_1vivr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2" unique_id=333553908]
-position = Vector2(37, -5)
-shape = SubResource("CapsuleShape2D_klosm")
-
-[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1688668849 groups=["enemies"]]
-z_index = 60
-position = Vector2(9096, 194)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("13_arakc")
-damage = 2.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3" unique_id=1737910078]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_b15jc")
-
-[node name="Area2D" type="Area2D" parent="Enemies/Enemy3" unique_id=653283230]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3/Area2D" unique_id=688367724]
-position = Vector2(40, -4)
-shape = SubResource("CapsuleShape2D_1vivr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3" unique_id=1305095977]
-position = Vector2(37, -5)
-shape = SubResource("CapsuleShape2D_klosm")
+[node name="Enemy3" parent="Enemies" unique_id=1189896235 instance=ExtResource("3_hr7bp")]
+position = Vector2(7519, -440)
 
 [node name="Base" parent="." unique_id=847110166 instance=ExtResource("6_ufbuv")]
 position = Vector2(-1351.0001, 845.00006)
@@ -114,9 +66,6 @@ script = ExtResource("15_4ksmt")
 wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
 min_wall_scale = 2.0
 max_wall_scale = 3.4970000000000003
-
-[node name="Line2D" type="Line2D" parent="AllWalls/Wall" unique_id=1857195499]
-points = PackedVector2Array(3545, -2493, 2734, -2874, 1781, -3065, 1149, -3125, -102, -3184, -1354, -3089, -2033, -2874, -2498, -2708, -2998, -2422, -3427, -2064, -3578.7314, -1818.7827, -3737, -1563, -3880, -1039, -3928, -479, -3945.4956, -170.64746, -3976, 367, -3964, 618, -3893.2378, 1050.7256, -3848.9587, 1321.501, -3773, 1786, -3487, 2370, -2987, 2906, -2319, 3240, -1485, 3395, -686, 3561, 160, 3764, 780, 3824, 1542, 3883, 2555, 3800, 3330, 3597, 4188, 3275, 4617, 2977, 4796, 2465, 4975, 1893, 4991.129, 1420.5459, 4999, 1190, 4975, 582, 4917.835, 95.42041, 4891, -133, 4796, -920, 4655.87, -1403.9039, 4582, -1659, 4266.172, -2025.6761, 4141, -2171, 3878, -2326)
 
 [node name="Rock2" parent="AllWalls/Wall" unique_id=1026113039 instance=ExtResource("18_ufbuv")]
 z_index = -99
@@ -349,9 +298,6 @@ wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufb
 min_wall_scale = 2.0
 max_wall_scale = 3.4970000000000003
 
-[node name="Line2D" type="Line2D" parent="AllWalls/Wall2" unique_id=811815154]
-points = PackedVector2Array(4322, -799, 3731, -764, 2934, -817, 1994, -880, 1000, -979, 624, -1095, 212, -1122)
-
 [node name="@Node2D@65358" parent="AllWalls/Wall2" unique_id=302109682 instance=ExtResource("19_bl74p")]
 z_index = -31
 position = Vector2(4322, -799)
@@ -392,9 +338,6 @@ script = ExtResource("15_4ksmt")
 wall_variants = Array[PackedScene]([ExtResource("17_02irw"), ExtResource("18_ufbuv"), ExtResource("19_bl74p")])
 min_wall_scale = 2.0
 max_wall_scale = 3.4970000000000003
-
-[node name="Line2D" type="Line2D" parent="AllWalls/Wall3" unique_id=218850985]
-points = PackedVector2Array(1148, 3457, 1127, 3164, 1094, 2839, 1083, 2428, 1040, 2157, 1008, 1572, 1105, 1171)
 
 [node name="Rock2" parent="AllWalls/Wall3" unique_id=1833565553 instance=ExtResource("18_ufbuv")]
 z_index = 138
@@ -839,8 +782,4 @@ flip_h = true
 polygon = PackedVector2Array(2713.7322, -3805.064, 2814.649, -4206.2383, 2909.5544, -4678.545, 2859.7588, -5090.798, 2529.679, -5454.369, 2209.087, -6131.8755, 2015.1212, -6657.119, 2017.9484, -6956.714, 2104.5273, -6956.9453, 2213.0178, -6476.6343, 2377.167, -6087.625, 2562.4106, -5653.95, 2955.7097, -5084.9326, 3092.77, -4546.023, 2846.4963, -3724.5674, 2678.4106, -3494.0632, 2546.9126, -3550.2617)
 
 [connection signal="end_stage" from="Player" to="." method="_on_player_end_stage"]
-[connection signal="area_entered" from="Enemies/Enemy2/Area2D" to="Enemies/Enemy2" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Enemies/Enemy2/Area2D" to="Enemies/Enemy2" method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Enemies/Enemy3/Area2D" to="Enemies/Enemy3" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Enemies/Enemy3/Area2D" to="Enemies/Enemy3" method="_on_area_2d_area_exited"]
 [connection signal="end_stage" from="Base" to="." method="_on_base_end_stage"]
