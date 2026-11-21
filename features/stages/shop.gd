@@ -49,10 +49,7 @@ func _on_continue_button_pressed() -> void:
 
 func option_chosen(index: int) -> void:
 	var cur_option: Control = options_container.get_child(index)
-	if cur_option.cost > Global.coins:
-		print("Not enough coins to buy this")
-		return
-	Global.coins -= cur_option.cost
-	Items.bought_items.push_back(cur_option.option_id)
-	cur_option.disabled = true
+	if Items.buy(cur_option.option_id):
+		cur_option.disabled = true
+	print("Not enough coins to buy this")
 	

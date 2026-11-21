@@ -5,6 +5,8 @@ var player: CharacterBody2D
 ## Is the player immune to damage? Used when the level ends so the player doesn't die when they finish.
 var player_immune: bool = false
 
+var player_inventory: Array[int]
+
 var current_stage: int = 0
 var current_stage_node: Node
 
@@ -20,6 +22,7 @@ var stages: Array[String] = [
 	"res://features/stages/tutorial_stage.tscn",
 ]
 
+
 ## level/stage array. Stores the available levels and their status
 ## A locked stage needs its previous stages completed first.
 var levels: Array[Array] = [
@@ -27,6 +30,7 @@ var levels: Array[Array] = [
 	['Tutorial' , "res://features/stages/tutorial_stage.tscn", true],
 	['Arrival' , "res://features/levels/1.tscn", false]
 ]
+
 
 var coins: float = 0
 

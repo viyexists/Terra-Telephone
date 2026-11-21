@@ -7,6 +7,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	$AllSeedsCollectedLabel.hide()
+	Items.connect('item_bought', _on_item_bought)
 
 
 func _process(_delta: float) -> void:
@@ -16,3 +17,15 @@ func _process(_delta: float) -> void:
 	if Global.seeds_collected >= Global.seeds_per_stage[Global.current_stage]:
 		$AllSeedsCollectedLabel.show()
 		Global.player.toggle_base_arrow(true)
+
+	$Inventory.visible = Input.is_action_pressed("show_items")
+
+func _on_item_bought(id:int)->void:
+	var t = TextureRect.new()
+	t.texture = load(Items.all_items[id][3])
+	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	t.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
+	t.size = Vector2(80,80)
+	t.custom_maximum_size = Vector2(80,80)
+	t.custom_minimum_size = Vector2(80,80)
+	$Inventory/GridContainer.add_child(t)
