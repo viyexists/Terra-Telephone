@@ -18,9 +18,9 @@ var all_items: Array[Array] = [
 var bought_items: Array[int] = []
 
 ## Attempt to buy an item. True is successful, False otherwise
-func buy(item_id:int)->bool:
+func buy(item_id:int, free:bool=false)->bool:
 	var item = all_items[item_id]
-	if item[COST] <= Global.coins:
+	if item[COST] <= Global.coins or free:
 		Global.coins -= item[COST]
 		bought_items.push_back(item_id)
 		item_bought.emit(item_id)
