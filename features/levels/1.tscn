@@ -29,6 +29,7 @@ position = Vector2(-48, 323)
 position = Vector2(14, 1591)
 points = PackedVector2Array(0, 0, -306, -15, -699, 90, -924, 172, -1435, 199, -1816, 199, -2245, 193, -2885, 206, -3737, 77, -4261, -168, -4744, -427, -4989.74, -684.7572, -5153, -856, -5320.592, -1159.2622, -5405, -1312, -5388, -1594, -5521, -1871, -5529, -2106, -5529, -2435.1255, -5529, -2563, -5523, -2656, -5529, -2833, -5523, -2994, -5499, -3192, -5411, -3445, -5372, -3769, -5222, -4039, -5042, -4293, -4847, -4578, -4533, -4998, -4278, -5267, -4173, -5470, -4098, -5612, -3978, -5717, -3701, -5837, -3439, -6009, -3139, -6114, -2772, -6271, -2353, -6413, -2016, -6518, -1446, -6743, -1079, -6915, -917, -7000, -760, -7115, -554, -7404, -224, -7635, 105, -7832, 526, -8022, 1119, -8178, 1218, -8178, 1391, -8154, 1704, -8055, 2067, -7897.9995, 2157, -7808, 2240, -7552, 2281, -7379, 2297, -7223, 2273, -6876, 2215, -6555, 2190, -6357, 2145.4814, -6046.838, 2099, -5723, 2157, -5492, 2273, -5014, 2685, -4750, 3253, -4569, 3912, -4462, 4646, -4487, 4992, -4866, 5107, -5080, 5140, -5311, 5208.89, -5608.8276, 5239, -5739, 5370.865, -6078.082, 5470, -6333, 5659, -6440, 6104, -6701, 6447, -6717, 6713, -6568, 7000.7813, -6467.834, 7256, -6379, 7742, -6425, 8110, -6333, 8253, -6011, 8365.285, -5700.533, 8453, -5458, 8479, -5217, 8415.805, -4958.502, 8397, -4706, 8273.718, -4555.749, 8141, -4394, 7977, -4240, 7639, -4194, 7327, -4169, 6992.7925, -3992.0305, 6785, -3882, 6812.5547, -3583.027, 6834.0625, -3349.6387, 6852, -3155, 6863, -2822, 6786.289, -2546.0479, 6714, -2286, 6673, -1924, 6665, -1784, 6607, -1413, 6500, -1149, 6401, -1050, 6327, -894, 6014, -605, 5750, -457, 5536, -333, 4728, -111, 4555, -70, 4308, 29, 4242, 62, 4168, 70, 4053, 103, 3805, 178, 3459, 219, 3303, 235, 2882, 334, 2709, 334, 2404, 408, 2174, 449, 1704, 548, 1514, 639, 1267, 631, 938, 581, 575, 466, 188, 342, 23, 186)
 script = ExtResource("4_aad7h")
+lock_walls = null
 wall_variants = Array[PackedScene]([ExtResource("5_8w6ul"), ExtResource("6_8kuq6"), ExtResource("7_qk0jo")])
 min_wall_scale = 1.447
 max_wall_scale = 3.775
@@ -110,17 +111,9 @@ scale = Vector2(1.9588517, 1.9588517)
 position = Vector2(-699, 90)
 scale = Vector2(2.261002, 2.261002)
 
-[node name="@Node2D@265926" parent="Border" unique_id=660792489 instance=ExtResource("5_8w6ul")]
-position = Vector2(-924, 172)
-scale = Vector2(1.7622199, 1.7622199)
-
 [node name="@Node2D@265927" parent="Border" unique_id=451034007 instance=ExtResource("6_8kuq6")]
 position = Vector2(-1435, 199)
 scale = Vector2(3.6283314, 3.6283314)
-
-[node name="@Node2D@265928" parent="Border" unique_id=1402242876 instance=ExtResource("7_qk0jo")]
-position = Vector2(-1816, 199)
-scale = Vector2(2.2378893, 2.2378893)
 
 [node name="@Node2D@265929" parent="Border" unique_id=378542828 instance=ExtResource("7_qk0jo")]
 position = Vector2(-2245, 193)
@@ -143,68 +136,28 @@ position = Vector2(-4744, -427)
 scale = Vector2(2.170548, 2.170548)
 
 [node name="@Node2D@265934" parent="Border" unique_id=767532413 instance=ExtResource("6_8kuq6")]
-position = Vector2(-4989.74, -684.7572)
+position = Vector2(-5180, -740)
 scale = Vector2(2.7155018, 2.7155018)
-
-[node name="@Node2D@265935" parent="Border" unique_id=2075468099 instance=ExtResource("5_8w6ul")]
-position = Vector2(-5153, -856)
-scale = Vector2(2.846834, 2.846834)
 
 [node name="@Node2D@265936" parent="Border" unique_id=873477233 instance=ExtResource("5_8w6ul")]
 position = Vector2(-5320.592, -1159.2622)
 scale = Vector2(3.5617175, 3.5617175)
 
-[node name="@Node2D@265937" parent="Border" unique_id=278888405 instance=ExtResource("5_8w6ul")]
-position = Vector2(-5405, -1312)
-scale = Vector2(2.8120773, 2.8120773)
-
-[node name="@Node2D@265938" parent="Border" unique_id=1342910083 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5388, -1594)
-scale = Vector2(2.3992007, 2.3992007)
-
 [node name="@Node2D@265939" parent="Border" unique_id=829133524 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5521, -1871)
+position = Vector2(-5743, -2029.9999)
 scale = Vector2(2.3548665, 2.3548665)
-
-[node name="@Node2D@265940" parent="Border" unique_id=2139919437 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5529, -2106)
-scale = Vector2(3.3425677, 3.3425677)
-
-[node name="@Node2D@265941" parent="Border" unique_id=1311118326 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5529, -2435.1255)
-scale = Vector2(2.9020412, 2.9020412)
 
 [node name="@Node2D@265942" parent="Border" unique_id=925966374 instance=ExtResource("5_8w6ul")]
 position = Vector2(-5529, -2563)
 scale = Vector2(3.5249624, 3.5249624)
 
-[node name="@Node2D@265943" parent="Border" unique_id=980805469 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5523, -2656)
-scale = Vector2(2.8085945, 2.8085945)
-
-[node name="@Node2D@265944" parent="Border" unique_id=93968782 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5529, -2833)
-scale = Vector2(3.3372734, 3.3372734)
-
-[node name="@Node2D@265945" parent="Border" unique_id=1620105818 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5523, -2994)
-scale = Vector2(1.4719409, 1.4719409)
-
 [node name="@Node2D@265946" parent="Border" unique_id=1541521576 instance=ExtResource("7_qk0jo")]
 position = Vector2(-5499, -3192)
 scale = Vector2(2.8770194, 2.8770194)
 
-[node name="@Node2D@265947" parent="Border" unique_id=1054582532 instance=ExtResource("6_8kuq6")]
-position = Vector2(-5411, -3445)
-scale = Vector2(3.5706298, 3.5706298)
-
 [node name="@Node2D@265948" parent="Border" unique_id=2134400967 instance=ExtResource("7_qk0jo")]
 position = Vector2(-5372, -3769)
 scale = Vector2(3.1376758, 3.1376758)
-
-[node name="@Node2D@265949" parent="Border" unique_id=45384657 instance=ExtResource("7_qk0jo")]
-position = Vector2(-5222, -4039)
-scale = Vector2(3.3049326, 3.3049326)
 
 [node name="@Node2D@265950" parent="Border" unique_id=798651734 instance=ExtResource("6_8kuq6")]
 position = Vector2(-5042, -4293)
@@ -218,33 +171,17 @@ scale = Vector2(2.9615283, 2.9615283)
 position = Vector2(-4533, -4998)
 scale = Vector2(2.0481737, 2.0481737)
 
-[node name="@Node2D@265953" parent="Border" unique_id=2207090 instance=ExtResource("7_qk0jo")]
-position = Vector2(-4278, -5267)
-scale = Vector2(2.7446408, 2.7446408)
-
 [node name="@Node2D@265954" parent="Border" unique_id=2122099136 instance=ExtResource("6_8kuq6")]
 position = Vector2(-4173, -5470)
 scale = Vector2(2.4333475, 2.4333475)
-
-[node name="@Node2D@265955" parent="Border" unique_id=213132741 instance=ExtResource("5_8w6ul")]
-position = Vector2(-4098, -5612)
-scale = Vector2(2.2482224, 2.2482224)
 
 [node name="@Node2D@265956" parent="Border" unique_id=1755916300 instance=ExtResource("6_8kuq6")]
 position = Vector2(-3978, -5717)
 scale = Vector2(1.9356465, 1.9356465)
 
-[node name="@Node2D@265957" parent="Border" unique_id=415768891 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3701, -5837)
-scale = Vector2(2.727283, 2.727283)
-
 [node name="@Node2D@265958" parent="Border" unique_id=664200136 instance=ExtResource("5_8w6ul")]
 position = Vector2(-3439, -6009)
 scale = Vector2(2.945247, 2.945247)
-
-[node name="@Node2D@265959" parent="Border" unique_id=694663761 instance=ExtResource("6_8kuq6")]
-position = Vector2(-3139, -6114)
-scale = Vector2(3.3475175, 3.3475175)
 
 [node name="@Node2D@265960" parent="Border" unique_id=782104157 instance=ExtResource("6_8kuq6")]
 position = Vector2(-2772, -6271)
@@ -254,25 +191,13 @@ scale = Vector2(1.6386921, 1.6386921)
 position = Vector2(-2353, -6413)
 scale = Vector2(2.0061421, 2.0061421)
 
-[node name="@Node2D@265962" parent="Border" unique_id=1719555667 instance=ExtResource("6_8kuq6")]
-position = Vector2(-2016, -6518)
-scale = Vector2(2.0767694, 2.0767694)
-
 [node name="@Node2D@265963" parent="Border" unique_id=1130817886 instance=ExtResource("7_qk0jo")]
 position = Vector2(-1446, -6743)
 scale = Vector2(3.4615653, 3.4615653)
 
-[node name="@Node2D@265964" parent="Border" unique_id=1598075302 instance=ExtResource("7_qk0jo")]
-position = Vector2(-1079, -6915)
-scale = Vector2(1.8367274, 1.8367274)
-
 [node name="@Node2D@265965" parent="Border" unique_id=290591657 instance=ExtResource("7_qk0jo")]
 position = Vector2(-917, -7000)
 scale = Vector2(3.2536483, 3.2536483)
-
-[node name="@Node2D@265966" parent="Border" unique_id=32496501 instance=ExtResource("6_8kuq6")]
-position = Vector2(-760, -7115)
-scale = Vector2(1.5012274, 1.5012274)
 
 [node name="@Node2D@265967" parent="Border" unique_id=1507584179 instance=ExtResource("7_qk0jo")]
 position = Vector2(-554, -7404)
@@ -294,17 +219,9 @@ scale = Vector2(3.2484393, 3.2484393)
 position = Vector2(1119, -8178)
 scale = Vector2(3.0842257, 3.0842257)
 
-[node name="@Node2D@265972" parent="Border" unique_id=349383709 instance=ExtResource("7_qk0jo")]
-position = Vector2(1218, -8178)
-scale = Vector2(2.623877, 2.623877)
-
 [node name="@Node2D@265973" parent="Border" unique_id=822973368 instance=ExtResource("5_8w6ul")]
 position = Vector2(1391, -8154)
 scale = Vector2(1.9103662, 1.9103662)
-
-[node name="@Node2D@265974" parent="Border" unique_id=895628191 instance=ExtResource("6_8kuq6")]
-position = Vector2(1704, -8055)
-scale = Vector2(2.9001205, 2.9001205)
 
 [node name="@Node2D@265975" parent="Border" unique_id=1337994859 instance=ExtResource("5_8w6ul")]
 position = Vector2(2067, -7897.9995)
@@ -317,10 +234,6 @@ scale = Vector2(1.9371572, 1.9371572)
 [node name="@Node2D@265977" parent="Border" unique_id=223474744 instance=ExtResource("7_qk0jo")]
 position = Vector2(2240, -7552)
 scale = Vector2(3.175297, 3.175297)
-
-[node name="@Node2D@265978" parent="Border" unique_id=1808595488 instance=ExtResource("7_qk0jo")]
-position = Vector2(2281, -7379)
-scale = Vector2(1.7500861, 1.7500861)
 
 [node name="@Node2D@265979" parent="Border" unique_id=1474813437 instance=ExtResource("7_qk0jo")]
 position = Vector2(2297, -7223)
@@ -346,10 +259,6 @@ scale = Vector2(2.4929771, 2.4929771)
 position = Vector2(2099, -5723)
 scale = Vector2(2.5009074, 2.5009074)
 
-[node name="@Node2D@265985" parent="Border" unique_id=618318206 instance=ExtResource("7_qk0jo")]
-position = Vector2(2157, -5492)
-scale = Vector2(2.0055282, 2.0055282)
-
 [node name="@Node2D@265986" parent="Border" unique_id=1087722604 instance=ExtResource("5_8w6ul")]
 position = Vector2(2273, -5014)
 scale = Vector2(2.543005, 2.543005)
@@ -370,21 +279,9 @@ scale = Vector2(2.9719841, 2.9719841)
 position = Vector2(4646, -4487)
 scale = Vector2(3.6751585, 3.6751585)
 
-[node name="@Node2D@265991" parent="Border" unique_id=1100593342 instance=ExtResource("7_qk0jo")]
-position = Vector2(4992, -4866)
-scale = Vector2(3.3959813, 3.3959813)
-
-[node name="@Node2D@265992" parent="Border" unique_id=1733939177 instance=ExtResource("5_8w6ul")]
-position = Vector2(5107, -5080)
-scale = Vector2(3.3363006, 3.3363006)
-
 [node name="@Node2D@265993" parent="Border" unique_id=288484167 instance=ExtResource("5_8w6ul")]
 position = Vector2(5140, -5311)
 scale = Vector2(2.5487897, 2.5487897)
-
-[node name="@Node2D@265994" parent="Border" unique_id=83057392 instance=ExtResource("5_8w6ul")]
-position = Vector2(5208.89, -5608.8276)
-scale = Vector2(1.7557782, 1.7557782)
 
 [node name="@Node2D@265995" parent="Border" unique_id=274425864 instance=ExtResource("7_qk0jo")]
 position = Vector2(5239, -5739)
@@ -393,10 +290,6 @@ scale = Vector2(2.2362022, 2.2362022)
 [node name="@Node2D@265996" parent="Border" unique_id=1815435877 instance=ExtResource("6_8kuq6")]
 position = Vector2(5370.865, -6078.082)
 scale = Vector2(1.6309538, 1.6309538)
-
-[node name="@Node2D@265997" parent="Border" unique_id=1994950940 instance=ExtResource("7_qk0jo")]
-position = Vector2(5470, -6333)
-scale = Vector2(3.0635102, 3.0635102)
 
 [node name="@Node2D@265998" parent="Border" unique_id=1871257303 instance=ExtResource("5_8w6ul")]
 position = Vector2(5659, -6440)
@@ -426,10 +319,6 @@ scale = Vector2(3.2770958, 3.2770958)
 position = Vector2(7742, -6425)
 scale = Vector2(2.0247762, 2.0247762)
 
-[node name="@Node2D@266005" parent="Border" unique_id=308615500 instance=ExtResource("5_8w6ul")]
-position = Vector2(8110, -6333)
-scale = Vector2(1.9693851, 1.9693851)
-
 [node name="@Node2D@266006" parent="Border" unique_id=1673441554 instance=ExtResource("7_qk0jo")]
 position = Vector2(8253, -6011)
 scale = Vector2(2.6641874, 2.6641874)
@@ -437,18 +326,6 @@ scale = Vector2(2.6641874, 2.6641874)
 [node name="@Node2D@266007" parent="Border" unique_id=1858797776 instance=ExtResource("6_8kuq6")]
 position = Vector2(8365.285, -5700.533)
 scale = Vector2(3.5095186, 3.5095186)
-
-[node name="@Node2D@266008" parent="Border" unique_id=356263678 instance=ExtResource("6_8kuq6")]
-position = Vector2(8453, -5458)
-scale = Vector2(3.5966322, 3.5966322)
-
-[node name="@Node2D@266009" parent="Border" unique_id=2074195250 instance=ExtResource("6_8kuq6")]
-position = Vector2(8479, -5217)
-scale = Vector2(3.136447, 3.136447)
-
-[node name="@Node2D@266010" parent="Border" unique_id=1175060552 instance=ExtResource("6_8kuq6")]
-position = Vector2(8415.805, -4958.502)
-scale = Vector2(3.4063716, 3.4063716)
 
 [node name="@Node2D@266011" parent="Border" unique_id=1552509410 instance=ExtResource("5_8w6ul")]
 position = Vector2(8397, -4706)
@@ -458,17 +335,9 @@ scale = Vector2(1.8611269, 1.8611269)
 position = Vector2(8273.718, -4555.749)
 scale = Vector2(3.766659, 3.766659)
 
-[node name="@Node2D@266013" parent="Border" unique_id=1564922012 instance=ExtResource("7_qk0jo")]
-position = Vector2(8141, -4394)
-scale = Vector2(1.5508832, 1.5508832)
-
 [node name="@Node2D@266014" parent="Border" unique_id=293146698 instance=ExtResource("5_8w6ul")]
 position = Vector2(7977, -4240)
 scale = Vector2(1.8424002, 1.8424002)
-
-[node name="@Node2D@266015" parent="Border" unique_id=1340610100 instance=ExtResource("7_qk0jo")]
-position = Vector2(7639, -4194)
-scale = Vector2(1.4486556, 1.4486556)
 
 [node name="@Node2D@266016" parent="Border" unique_id=225785900 instance=ExtResource("5_8w6ul")]
 position = Vector2(7327, -4169)
@@ -477,10 +346,6 @@ scale = Vector2(2.4625385, 2.4625385)
 [node name="@Node2D@266017" parent="Border" unique_id=1490384532 instance=ExtResource("7_qk0jo")]
 position = Vector2(6992.7925, -3992.0305)
 scale = Vector2(3.7116592, 3.7116592)
-
-[node name="@Node2D@266018" parent="Border" unique_id=270052888 instance=ExtResource("7_qk0jo")]
-position = Vector2(6785, -3882)
-scale = Vector2(2.6205776, 2.6205776)
 
 [node name="@Node2D@266019" parent="Border" unique_id=1708812239 instance=ExtResource("7_qk0jo")]
 position = Vector2(6812.5547, -3583.027)
@@ -510,10 +375,6 @@ scale = Vector2(2.4642076, 2.4642076)
 position = Vector2(6673, -1924)
 scale = Vector2(1.8358836, 1.8358836)
 
-[node name="@Node2D@266026" parent="Border" unique_id=1687794802 instance=ExtResource("6_8kuq6")]
-position = Vector2(6665, -1784)
-scale = Vector2(1.6842103, 1.6842103)
-
 [node name="@Node2D@266027" parent="Border" unique_id=1161641323 instance=ExtResource("5_8w6ul")]
 position = Vector2(6607, -1413)
 scale = Vector2(2.134968, 2.134968)
@@ -522,21 +383,9 @@ scale = Vector2(2.134968, 2.134968)
 position = Vector2(6500, -1149)
 scale = Vector2(3.5664942, 3.5664942)
 
-[node name="@Node2D@266029" parent="Border" unique_id=1431259320 instance=ExtResource("6_8kuq6")]
-position = Vector2(6401, -1050)
-scale = Vector2(2.5324583, 2.5324583)
-
-[node name="@Node2D@266030" parent="Border" unique_id=2002036762 instance=ExtResource("7_qk0jo")]
-position = Vector2(6327, -894)
-scale = Vector2(2.1622033, 2.1622033)
-
 [node name="@Node2D@266031" parent="Border" unique_id=851365180 instance=ExtResource("5_8w6ul")]
 position = Vector2(6014, -605)
 scale = Vector2(3.48446, 3.48446)
-
-[node name="@Node2D@266032" parent="Border" unique_id=1136014848 instance=ExtResource("7_qk0jo")]
-position = Vector2(5750, -457)
-scale = Vector2(1.5052873, 1.5052873)
 
 [node name="@Node2D@266033" parent="Border" unique_id=1410440791 instance=ExtResource("5_8w6ul")]
 position = Vector2(5536, -333)
@@ -545,14 +394,6 @@ scale = Vector2(2.341115, 2.341115)
 [node name="@Node2D@266034" parent="Border" unique_id=2030757137 instance=ExtResource("5_8w6ul")]
 position = Vector2(4728, -111)
 scale = Vector2(3.708559, 3.708559)
-
-[node name="@Node2D@266035" parent="Border" unique_id=772698406 instance=ExtResource("7_qk0jo")]
-position = Vector2(4555, -70)
-scale = Vector2(2.4446394, 2.4446394)
-
-[node name="@Node2D@266036" parent="Border" unique_id=1268469030 instance=ExtResource("6_8kuq6")]
-position = Vector2(4308, 29)
-scale = Vector2(3.757363, 3.757363)
 
 [node name="@Node2D@266037" parent="Border" unique_id=922725679 instance=ExtResource("6_8kuq6")]
 position = Vector2(4242, 62)
@@ -578,16 +419,8 @@ scale = Vector2(1.7360257, 1.7360257)
 position = Vector2(3303, 235)
 scale = Vector2(2.516133, 2.516133)
 
-[node name="@Node2D@266043" parent="Border" unique_id=515507283 instance=ExtResource("6_8kuq6")]
-position = Vector2(2882, 334)
-scale = Vector2(3.2078528, 3.2078528)
-
-[node name="@Node2D@266044" parent="Border" unique_id=896548507 instance=ExtResource("6_8kuq6")]
-position = Vector2(2709, 334)
-scale = Vector2(2.9166303, 2.9166303)
-
 [node name="@Node2D@266045" parent="Border" unique_id=1003691342 instance=ExtResource("6_8kuq6")]
-position = Vector2(2404, 408)
+position = Vector2(2439, 376)
 scale = Vector2(2.944259, 2.944259)
 
 [node name="@Node2D@266046" parent="Border" unique_id=1370610991 instance=ExtResource("7_qk0jo")]
@@ -595,12 +428,8 @@ position = Vector2(2174, 449)
 scale = Vector2(1.6711144, 1.6711144)
 
 [node name="@Node2D@266047" parent="Border" unique_id=314637528 instance=ExtResource("7_qk0jo")]
-position = Vector2(1704, 548)
+position = Vector2(1591.0001, 635)
 scale = Vector2(2.9202237, 2.9202237)
-
-[node name="@Node2D@266048" parent="Border" unique_id=411814479 instance=ExtResource("7_qk0jo")]
-position = Vector2(1514, 639)
-scale = Vector2(2.945887, 2.945887)
 
 [node name="@Node2D@266049" parent="Border" unique_id=67995284 instance=ExtResource("5_8w6ul")]
 position = Vector2(1267, 631)
@@ -611,12 +440,8 @@ position = Vector2(938, 581)
 scale = Vector2(2.8068469, 2.8068469)
 
 [node name="@Node2D@266051" parent="Border" unique_id=1417828463 instance=ExtResource("6_8kuq6")]
-position = Vector2(575, 466)
+position = Vector2(373, 350)
 scale = Vector2(2.1095977, 2.1095977)
-
-[node name="@Node2D@266052" parent="Border" unique_id=1629666180 instance=ExtResource("6_8kuq6")]
-position = Vector2(188, 342)
-scale = Vector2(1.5379378, 1.5379378)
 
 [node name="@Node2D@266053" parent="Border" unique_id=211618238 instance=ExtResource("7_qk0jo")]
 position = Vector2(23, 186)
@@ -645,6 +470,7 @@ entity = ExtResource("3_qk0jo")
 position = Vector2(0, 14)
 points = PackedVector2Array(-848, 77, -2098, 454, -3433, -279, -1752, -823, -4158, -1523, -3202, -3196, -2790, -1812, -886, -2298, -1587, -3682, 644, -3699, 885, -5545, -952, -4902, 1660, -2941, 3295, -2929, 2602, -1482, 1462, -2034, 1594, -411, 1874, 974, 457, -2413, 3275, 224, 5591, -238, 5319, -1779, 4107, -2051, 5600, -4076, 5937, -4597, 6533, -4869, 6799, -4709, 7114, -4779, 7484, -4667, 7568, -4377, 7536, -3501)
 script = ExtResource("4_aad7h")
+lock_walls = null
 wall_variants = Array[PackedScene]([ExtResource("11_kjatm"), ExtResource("11_w6toh"), ExtResource("12_ggwjl")])
 min_wall_scale = 1.067
 max_wall_scale = 1.352

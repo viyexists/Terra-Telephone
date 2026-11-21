@@ -51,5 +51,6 @@ func option_chosen(index: int) -> void:
 	var cur_option: Control = options_container.get_child(index)
 	if Items.buy(cur_option.option_id):
 		cur_option.disabled = true
+		return
 	print("Not enough coins to buy this")
 	

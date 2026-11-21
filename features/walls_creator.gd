@@ -26,6 +26,7 @@ extends Line2D
 
 const Y_POSITION_DIVISOR: float = 25
 @export var generate_physical_border := true
+@export var lock_walls := true
 @export_tool_button("Activate Wall Creator") var activate_wall_creator:
 	get: return func(): create_walls()
 @export_tool_button("Clear Walls") var clear_walls:
@@ -43,6 +44,8 @@ func _ready() -> void:
 		self_modulate.a = 0.0
 		
 func create_walls() -> void:
+	if lock_walls:
+		return
 	if wall_variants.size() == 0:
 		printerr("No obstacles added to the wall variants array. Add obstacles from the scene tree.")
 		return
@@ -77,6 +80,8 @@ func create_walls() -> void:
 		
 
 func remove_obstacles() -> void:
+	if lock_walls:
+		return
 	for child in get_children():
 		if child is Obstacle:
 			child.queue_free()
