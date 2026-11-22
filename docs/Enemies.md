@@ -9,8 +9,9 @@
 ## Adding a sprite
 1. Add a new `Node2D` and name it `Sprite`
 2. Add a `Sprite2D` node to `Sprite` and set the txture to the enemy texture.
-3. You may need to scale the Sprite2D to make sure it fits with everything else. 
-4. **DO NOT TRANSFORM THE `Sprite` NODE, ONLY THE `Sprite2D` NODE**
+3. Try to put the center of mass for the sprite at 0,0 (just so knockback looks correct)
+4. You may need to scale the Sprite2D to make sure it fits with everything else. 
+5. **DO NOT TRANSFORM THE `Sprite` NODE, ONLY THE `Sprite2D` NODE**
 
 ## Adding attacks
 1. Add an `EnemyAttack` node to the root enemy node

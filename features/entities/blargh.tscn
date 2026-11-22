@@ -22,13 +22,12 @@ attack_list = [NodePath("EnemyAttack")]
 [node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1911799841]
-position = Vector2(-1.1920929e-07, -152.99998)
+position = Vector2(-7.1054274e-15, -3.0517578e-05)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_uvn5v")
 offset = Vector2(-409.99997, -19.999998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342753885]
-position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="EnemyAttack" type="Area2D" parent="." unique_id=1922626169]
@@ -36,5 +35,4 @@ script = ExtResource("3_uvn5v")
 metadata/_custom_type_script = "uid://cxgiurreftj86"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAttack" unique_id=2125391100]
-position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_ambiy")

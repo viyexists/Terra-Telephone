@@ -26,23 +26,19 @@ attack_list = [NodePath("EnvelopeAttackArea")]
 [node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1911799841]
-position = Vector2(87.99999, -165.00002)
 scale = Vector2(0.22391303, 0.22391303)
 texture = ExtResource("2_q28n6")
-offset = Vector2(-409.99997, -19.999998)
+offset = Vector2(-16.990234, -28.932066)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=56251580]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2060330838]
-position = Vector2(0, -163)
 shape = SubResource("CapsuleShape2D_1vivr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342753885]
-position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="EnvelopeAttackArea" type="Area2D" parent="." unique_id=579712234]
-position = Vector2(0, -160)
 script = ExtResource("3_q28n6")
 envelope = ExtResource("4_f7mul")
 

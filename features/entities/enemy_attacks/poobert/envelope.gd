@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body == Global.player:
 		Global.player.take_damage(damage)
-	if body.is_in_group("enemies"):
+	elif body.is_in_group("enemies"):
 		return
 		#body._knockback = self.global_position.direction_to(body.global_position) * knockback_modifier
 	_start_break()
