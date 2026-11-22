@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dwjs4jcnwy3ty"]
+
+[ext_resource type="Script" uid="uid://jrhtdmq0io84" path="res://features/environment/carrot_plant.gd" id="1_3n3sh"]
+[ext_resource type="Texture2D" uid="uid://c2qsa750t6f65" path="res://assets/terra_assets/sprites/level/PlantCarrotStage3.webp" id="2_fjm6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klosm"]
+radius = 138.0
+
+[node name="CarrotPlant" type="Node2D" unique_id=1877583749]
+script = ExtResource("1_3n3sh")
+metadata/_custom_type_script = "uid://w80fcqeblnlk"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148060390]
+scale = Vector2(0.13745558, 0.13745558)
+texture = ExtResource("2_fjm6g")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1900286670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1440688322]
+shape = SubResource("CircleShape2D_klosm")
+
+[node name="Label" type="Label" parent="." unique_id=1374548858]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_top = -89.665
+offset_right = 66.5
+offset_bottom = -69.665
+grow_horizontal = 2
+text = "Press Space to harvest"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
