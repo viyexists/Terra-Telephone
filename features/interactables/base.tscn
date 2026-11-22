@@ -90,9 +90,6 @@ offset_top = -601.0
 offset_right = 271.775
 offset_bottom = -513.0
 script = ExtResource("9_6pfoq")
-TIME_FOR_CHARACTER_TO_APPEAR = null
-TIME_UNTIL_SPEECH_BUBBLE_GONE = null
-TEXT_BACKGROUND_MARGIN = null
 metadata/_custom_type_script = "uid://bhrsaynny18uu"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -8,6 +8,7 @@ signal message_completed
 var TIME_FOR_CHARACTER_TO_APPEAR: float = 0.03
 var TIME_UNTIL_SPEECH_BUBBLE_GONE: float = 3.0
 var TEXT_BACKGROUND_MARGIN: float = 30
+var FONT_SIZE: int = 64
 
 var timer: Timer
 var label: Label
@@ -32,7 +33,7 @@ func _ready():
 	# configuring label/text
 	label = Label.new()
 	label.hide()
-	label.add_theme_font_size_override("font_size", 64)
+	label.add_theme_font_size_override("font_size", FONT_SIZE)
 	label.z_index = 5
 	label.text = message
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER

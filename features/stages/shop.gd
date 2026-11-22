@@ -37,8 +37,8 @@ func opening_animation() -> void:
 	$UI.show()
 	var tween := get_tree().create_tween()
 	tween.tween_property($BlackBackground, "modulate:a", 0, 0.5)
-	$SpeechBubble.say("Hello!")
-	$SpeechBubble.say("Welcome to my shop! What would you like today?")
+	$SpeechEngine.say("Hello!")
+	$SpeechEngine.say("Welcome to my shop! What would you like today?")
 
 
 func _on_continue_button_pressed() -> void:
