@@ -67,10 +67,14 @@ For particularly complicated systems please refer to the `./docs`
 
 ### What's next?
 
+Broken things
+- Camera shake, located in the `player_camera.gd` script. It does actually work, but for some reason the offset is really large and the camera ends up teleporting everywhere instead of a nice shake.
+
 Here's some ideas that could be added next (these do not have to be added if you don't want to!)
 - Diverse enemy types with abilities
 - Player can attack (add more attacks?)
 - More shop items
-- More stages
+- More stages/levels
 - More interactables (maybe some items that give you temporary abilities when you pick it up?)
 - Player abilities? (invisibility, dash)
+- Collectables and achievements?

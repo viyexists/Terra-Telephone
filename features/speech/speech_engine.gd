@@ -69,10 +69,12 @@ func _on_message_completed()->void:
 	_next_message()
 	
 func _set_font_size(s):
-	get_child(0).free()
-	var b = SpeechBubble.new()
-	b._static = true
-	b.message = "Message will appear here"
-	b.FONT_SIZE = FONT_SIZE
-	add_child(b)
+	if Engine.is_editor_hint():
+		if get_child_count() > 0:
+			get_child(0).free()
+		var b = SpeechBubble.new()
+		b._static = true
+		b.message = "Message will appear here"
+		b.FONT_SIZE = FONT_SIZE
+		add_child(b)
 	return s

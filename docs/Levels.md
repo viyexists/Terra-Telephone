@@ -13,3 +13,6 @@ You need to append your level to the `levels` variable, in the format `["your_le
 `unlocked?` - specifies wheter a player has unlocked this level. default should be `false` (unless youre making a tutorial) 
 
 The other in which the levels appear in this array determins their other in the level selection and future gameplay. The tutorial should alwyas be at the top, since it is the first stage a player should play.
+
+
+To playtest your levels faster, go the the LevelSelect scene and tick the `Bypass Level Lock` property. Make sure to reset it when exporting for production.

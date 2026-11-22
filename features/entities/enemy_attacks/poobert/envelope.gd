@@ -10,10 +10,12 @@ var target: Vector2
 var tracer: Line2D
 var lifetime: float = 1.0
 
+var breaking:= false
+
 func _ready() -> void:
 	look_at(target)
-	await  get_tree().create_timer(lifetime).timeout
-	self.queue_free()
+	await get_tree().create_timer(lifetime).timeout
+	_start_break()
 
 func _process(delta:float) -> void:
 	$Sprite2D.rotate(12*delta)
@@ -22,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta * 400
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body == Global.player:
 		Global.player.take_damage(damage)
 	if body.is_in_group("enemies"):
 		return
@@ -30,10 +32,13 @@ func _on_body_entered(body: Node2D) -> void:
 	_start_break()
 		
 func _start_break()->void:
-		$CPUParticles2D.emitting = true
-		$Sprite2D.hide()
-		$CollisionShape2D.queue_free()
-	
+	if breaking:
+		return
+	breaking = true
+	$CPUParticles2D.emitting = true
+	$Sprite2D.hide()
+	$CollisionShape2D.queue_free()
+
 
 func _on_cpu_particles_2d_finished() -> void:
 	queue_free()
