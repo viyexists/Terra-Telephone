@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://baliwsi8vvqi5" path="res://features/levels/_level.gd" id="1_qyk5v"]
 [ext_resource type="PackedScene" uid="uid://8o0mlwhnv3y4" path="res://features/entities/entity_spawner.tscn" id="2_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="2_gcp4q"]
-[ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/enemy.tscn" id="3_qk0jo"]
-[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player.tscn" id="3_qyk5v"]
-[ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/walls_creator.gd" id="4_aad7h"]
+[ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="3_qk0jo"]
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="3_qyk5v"]
+[ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/environment/walls_creator.gd" id="4_aad7h"]
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="5_8w6ul"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="6_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="7_qk0jo"]
@@ -29,7 +29,6 @@ position = Vector2(-48, 323)
 position = Vector2(14, 1591)
 points = PackedVector2Array(0, 0, -306, -15, -699, 90, -924, 172, -1435, 199, -1816, 199, -2245, 193, -2885, 206, -3737, 77, -4261, -168, -4744, -427, -4989.74, -684.7572, -5153, -856, -5320.592, -1159.2622, -5405, -1312, -5388, -1594, -5521, -1871, -5529, -2106, -5529, -2435.1255, -5529, -2563, -5523, -2656, -5529, -2833, -5523, -2994, -5499, -3192, -5411, -3445, -5372, -3769, -5222, -4039, -5042, -4293, -4847, -4578, -4533, -4998, -4278, -5267, -4173, -5470, -4098, -5612, -3978, -5717, -3701, -5837, -3439, -6009, -3139, -6114, -2772, -6271, -2353, -6413, -2016, -6518, -1446, -6743, -1079, -6915, -917, -7000, -760, -7115, -554, -7404, -224, -7635, 105, -7832, 526, -8022, 1119, -8178, 1218, -8178, 1391, -8154, 1704, -8055, 2067, -7897.9995, 2157, -7808, 2240, -7552, 2281, -7379, 2297, -7223, 2273, -6876, 2215, -6555, 2190, -6357, 2145.4814, -6046.838, 2099, -5723, 2157, -5492, 2273, -5014, 2685, -4750, 3253, -4569, 3912, -4462, 4646, -4487, 4992, -4866, 5107, -5080, 5140, -5311, 5208.89, -5608.8276, 5239, -5739, 5370.865, -6078.082, 5470, -6333, 5659, -6440, 6104, -6701, 6447, -6717, 6713, -6568, 7000.7813, -6467.834, 7256, -6379, 7742, -6425, 8110, -6333, 8253, -6011, 8365.285, -5700.533, 8453, -5458, 8479, -5217, 8415.805, -4958.502, 8397, -4706, 8273.718, -4555.749, 8141, -4394, 7977, -4240, 7639, -4194, 7327, -4169, 6992.7925, -3992.0305, 6785, -3882, 6812.5547, -3583.027, 6834.0625, -3349.6387, 6852, -3155, 6863, -2822, 6786.289, -2546.0479, 6714, -2286, 6673, -1924, 6665, -1784, 6607, -1413, 6500, -1149, 6401, -1050, 6327, -894, 6014, -605, 5750, -457, 5536, -333, 4728, -111, 4555, -70, 4308, 29, 4242, 62, 4168, 70, 4053, 103, 3805, 178, 3459, 219, 3303, 235, 2882, 334, 2709, 334, 2404, 408, 2174, 449, 1704, 548, 1514, 639, 1267, 631, 938, 581, 575, 466, 188, 342, 23, 186)
 script = ExtResource("4_aad7h")
-lock_walls = null
 wall_variants = Array[PackedScene]([ExtResource("5_8w6ul"), ExtResource("6_8kuq6"), ExtResource("7_qk0jo")])
 min_wall_scale = 1.447
 max_wall_scale = 3.775
@@ -470,7 +469,6 @@ entity = ExtResource("3_qk0jo")
 position = Vector2(0, 14)
 points = PackedVector2Array(-848, 77, -2098, 454, -3433, -279, -1752, -823, -4158, -1523, -3202, -3196, -2790, -1812, -886, -2298, -1587, -3682, 644, -3699, 885, -5545, -952, -4902, 1660, -2941, 3295, -2929, 2602, -1482, 1462, -2034, 1594, -411, 1874, 974, 457, -2413, 3275, 224, 5591, -238, 5319, -1779, 4107, -2051, 5600, -4076, 5937, -4597, 6533, -4869, 6799, -4709, 7114, -4779, 7484, -4667, 7568, -4377, 7536, -3501)
 script = ExtResource("4_aad7h")
-lock_walls = null
 wall_variants = Array[PackedScene]([ExtResource("11_kjatm"), ExtResource("11_w6toh"), ExtResource("12_ggwjl")])
 min_wall_scale = 1.067
 max_wall_scale = 1.352

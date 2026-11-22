@@ -19,8 +19,8 @@ func _process(_delta: float) -> void:
 		Global.player.toggle_base_arrow(true)
 
 	$Inventory.visible = Input.is_action_pressed("show_items")
-	#if Input.is_action_just_pressed("test"):
-		#Items.buy(randi_range(0, len(Items.all_items)-1), true)
+	if Input.is_action_just_pressed("test"):
+		Items.buy(randi_range(0, len(Items.all_items)-1), true)
 
 func _on_item_bought(id:int)->void:
 	var cnode = $Inventory/GridContainer.get_node_or_null(Items.all_items[id][Items.NAME])

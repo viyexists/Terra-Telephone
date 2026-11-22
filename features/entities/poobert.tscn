@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dwp3sqcej53so"]
+[gd_scene format=3 uid="uid://dva5hu5ckdcik"]
 
-[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_5tisq"]
-[ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="2_b6o6w"]
+[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_61u8g"]
+[ext_resource type="Texture2D" uid="uid://chnvejyokkwct" path="res://assets/terra_assets/sprites/level/Poobert.webp" id="2_q28n6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
 radius = 101.0
@@ -11,19 +11,25 @@ height = 400.0
 radius = 100.0
 height = 400.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2017245619 groups=["enemies"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_klosm"]
+radius = 1777.7606
+
+[node name="Poobert" type="CharacterBody2D" unique_id=2017245619 groups=["enemies"]]
 z_index = 60
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_5tisq")
+script = ExtResource("1_61u8g")
 damage = 2.0
+attack_list = Dictionary[String, Array]({
+"envelope_throw": [6.0, 5.0, true, null]
+})
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1911799841]
-position = Vector2(-1.1920929e-07, -152.99998)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_b6o6w")
+position = Vector2(87.99999, -165.00002)
+scale = Vector2(0.22391303, 0.22391303)
+texture = ExtResource("2_q28n6")
 offset = Vector2(-409.99997, -19.999998)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=56251580]
@@ -35,6 +41,12 @@ shape = SubResource("CapsuleShape2D_1vivr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342753885]
 position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
+
+[node name="EnvelopeAttackArea" type="Area2D" parent="." unique_id=579712234]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnvelopeAttackArea" unique_id=873937998]
+position = Vector2(0, -160)
+shape = SubResource("CircleShape2D_klosm")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

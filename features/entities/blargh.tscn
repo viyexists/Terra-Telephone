@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dwp3sqcej53so"]
+
+[ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_tkx1q"]
+[ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="2_uvn5v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 101.0
+height = 400.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
+radius = 100.0
+height = 400.0
+
+[node name="Blargh" type="CharacterBody2D" unique_id=2017245619 groups=["enemies"]]
+z_index = 60
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_tkx1q")
+damage = 2.0
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1911799841]
+position = Vector2(-1.1920929e-07, -152.99998)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_uvn5v")
+offset = Vector2(-409.99997, -19.999998)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=56251580]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2060330838]
+position = Vector2(0, -163)
+shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342753885]
+position = Vector2(0, -160)
+shape = SubResource("CapsuleShape2D_klosm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

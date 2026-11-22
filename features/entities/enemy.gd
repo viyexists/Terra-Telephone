@@ -27,11 +27,14 @@ var current_cooldown = 0.0
 ## The last field should remain EMPTY or NULL
 @export var attack_list:Dictionary[String,Array] = {
 	# 'attack_name' : [COOLDOWN, AVAILABLE, TIMER_DONT_TOUCH]
-	'default_bite' : [2, 1, true, null]
+	'default_attack' : [2, 1, true, null]
 }
 
 ## How quickly the enemy recovers from knockback
 @export var knockback_resistance = 1
+
+## Player can be attacked by the specific attack if within it's area
+@export var attack_areas: Dictionary[String, Area2D]
 
 # Note that the shark has a z index of 60
 
@@ -77,7 +80,7 @@ func attempt_attack()->void:
 	
 	Callable(self, attack).call(attack)
 
-func default_bite(attack)->void:
+func default_attack(attack)->void:
 	Global.player.take_damage(attack_list[attack][0])
 	_start_cooldown(attack)
 
