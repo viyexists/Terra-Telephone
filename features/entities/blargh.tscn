@@ -2,21 +2,22 @@
 
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_tkx1q"]
 [ext_resource type="Texture2D" uid="uid://d1f5jftn1346x" path="res://assets/terra_assets/sprites/npcs/blargh/happy.webp" id="2_uvn5v"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
-radius = 101.0
-height = 400.0
+[ext_resource type="Script" uid="uid://cxgiurreftj86" path="res://features/entities/enemy_attack.gd" id="3_uvn5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
 radius = 100.0
 height = 400.0
 
-[node name="Blargh" type="CharacterBody2D" unique_id=2017245619 groups=["enemies"]]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ambiy"]
+radius = 111.91
+height = 474.47
+
+[node name="Blargh" type="CharacterBody2D" unique_id=2017245619 node_paths=PackedStringArray("attack_list") groups=["enemies"]]
 z_index = 60
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_tkx1q")
-damage = 2.0
+attack_list = [NodePath("EnemyAttack")]
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
 
@@ -26,15 +27,14 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_uvn5v")
 offset = Vector2(-409.99997, -19.999998)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=56251580]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2060330838]
-position = Vector2(0, -163)
-shape = SubResource("CapsuleShape2D_1vivr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342753885]
 position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="EnemyAttack" type="Area2D" parent="." unique_id=1922626169]
+script = ExtResource("3_uvn5v")
+metadata/_custom_type_script = "uid://cxgiurreftj86"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAttack" unique_id=2125391100]
+position = Vector2(0, -160)
+shape = SubResource("CapsuleShape2D_ambiy")

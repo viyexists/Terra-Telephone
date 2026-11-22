@@ -62,17 +62,14 @@ For particularly complicated systems please refer to the `./docs`
 - Enemy system
   - Attack system
 - Inventory display (press Tab)
+- New enemy Poobert : throws envelopes at the player
 
 ### What's next?
 
-This is what isn't working properly:
-
-- I overused get_tree().process_frame so there's random flickering sometimes especially when the level is complete.
-- Speech bubbles don't interrupt properly
-
 Here's some ideas that could be added next (these do not have to be added if you don't want to!)
 - Diverse enemy types with abilities
-- Player can attack
+- Player can attack (add more attacks?)
 - More shop items
 - More stages
 - More interactables (maybe some items that give you temporary abilities when you pick it up?)
+- Player abilities? (invisibility, dash)

@@ -88,11 +88,10 @@ func spawn_entity()->bool:
 
 
 func update_entity_display(ent: PackedScene):
-	if not ent:
-		var c = self.get_child(0)
-		if c:
-			c.free()
-		return null
+
+	if get_child_count() > 0:
+		self.get_child(0).free()
+
 	var e = ent.instantiate()
 	e.modulate.a = 0.5
 	add_child(e)

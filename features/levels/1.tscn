@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="5_8w6ul"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="6_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="7_qk0jo"]
+[ext_resource type="PackedScene" uid="uid://dva5hu5ckdcik" path="res://features/entities/poobert.tscn" id="10_0irvv"]
 [ext_resource type="PackedScene" uid="uid://bc21ffv7ellnt" path="res://features/environment/tree_willow.tscn" id="11_kjatm"]
 [ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="11_w6toh"]
 [ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="12_ggwjl"]
@@ -464,6 +465,10 @@ entity = ExtResource("3_qk0jo")
 [node name="EntitySpawner3" parent="Enemies" unique_id=1251449838 instance=ExtResource("2_8kuq6")]
 position = Vector2(7273, -4518)
 entity = ExtResource("3_qk0jo")
+
+[node name="EntitySpawner4" parent="Enemies" unique_id=210991755 instance=ExtResource("2_8kuq6")]
+position = Vector2(2517, 91)
+entity = ExtResource("10_0irvv")
 
 [node name="Trees" type="Line2D" parent="." unique_id=1731811310]
 position = Vector2(0, 14)

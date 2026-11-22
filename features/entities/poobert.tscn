@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_61u8g"]
 [ext_resource type="Texture2D" uid="uid://chnvejyokkwct" path="res://assets/terra_assets/sprites/level/Poobert.webp" id="2_q28n6"]
+[ext_resource type="Script" uid="uid://b25cfp3nfneha" path="res://features/entities/enemy_attacks/poobert_envelope.gd" id="3_q28n6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
 radius = 101.0
@@ -14,15 +15,12 @@ height = 400.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_klosm"]
 radius = 1777.7606
 
-[node name="Poobert" type="CharacterBody2D" unique_id=2017245619 groups=["enemies"]]
+[node name="Poobert" type="CharacterBody2D" unique_id=2017245619 node_paths=PackedStringArray("attack_list") groups=["enemies"]]
 z_index = 60
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_61u8g")
-damage = 2.0
-attack_list = Dictionary[String, Array]({
-"envelope_throw": [6.0, 5.0, true, null]
-})
+attack_list = [NodePath("EnvelopeAttackArea")]
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1511392565]
 
@@ -43,6 +41,7 @@ position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="EnvelopeAttackArea" type="Area2D" parent="." unique_id=579712234]
+script = ExtResource("3_q28n6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnvelopeAttackArea" unique_id=873937998]
 position = Vector2(0, -160)
