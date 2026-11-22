@@ -467,7 +467,7 @@ position = Vector2(7273, -4518)
 entity = ExtResource("3_qk0jo")
 
 [node name="EntitySpawner4" parent="Enemies" unique_id=210991755 instance=ExtResource("2_8kuq6")]
-position = Vector2(2517, 91)
+position = Vector2(-2273, -4274)
 entity = ExtResource("10_0irvv")
 
 [node name="Trees" type="Line2D" parent="." unique_id=1731811310]

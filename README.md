@@ -63,6 +63,7 @@ For particularly complicated systems please refer to the `./docs`
   - Attack system
 - Inventory display (press Tab)
 - New enemy Poobert : throws envelopes at the player
+- **New documentation for Levels and Enemies**
 
 ### What's next?
 
