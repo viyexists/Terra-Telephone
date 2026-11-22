@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://clnuwonjga1wl" path="res://features/entities/enemy.gd" id="1_61u8g"]
 [ext_resource type="Texture2D" uid="uid://chnvejyokkwct" path="res://assets/terra_assets/sprites/level/Poobert.webp" id="2_q28n6"]
-[ext_resource type="Script" uid="uid://b25cfp3nfneha" path="res://features/entities/enemy_attacks/poobert_envelope.gd" id="3_q28n6"]
+[ext_resource type="Script" uid="uid://b25cfp3nfneha" path="res://features/entities/enemy_attacks/poobert/envelope_attack.gd" id="3_q28n6"]
+[ext_resource type="PackedScene" uid="uid://iyi265ci46h1" path="res://features/entities/enemy_attacks/poobert/envelope.tscn" id="4_f7mul"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
 radius = 101.0
@@ -41,10 +42,11 @@ position = Vector2(0, -160)
 shape = SubResource("CapsuleShape2D_klosm")
 
 [node name="EnvelopeAttackArea" type="Area2D" parent="." unique_id=579712234]
+position = Vector2(0, -160)
 script = ExtResource("3_q28n6")
+envelope = ExtResource("4_f7mul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnvelopeAttackArea" unique_id=873937998]
-position = Vector2(0, -160)
 shape = SubResource("CircleShape2D_klosm")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

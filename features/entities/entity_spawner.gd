@@ -91,6 +91,9 @@ func update_entity_display(ent: PackedScene):
 
 	if get_child_count() > 0:
 		self.get_child(0).free()
+	
+	if not ent:
+		return null
 
 	var e = ent.instantiate()
 	e.modulate.a = 0.5

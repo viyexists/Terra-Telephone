@@ -16,8 +16,9 @@ var current_cooldown = 0.0
 var enemy: Enemy
 
 func _ready() -> void:
-	if not enemy:
-		self.queue_free()
+	self.connect('body_entered', _on_body_entered)
+	self.connect('body_exited', _on_body_exited)
+	
 
 func _process(delta: float) -> void:
 	current_cooldown -= delta
@@ -35,14 +36,14 @@ func attempt_attack() -> bool:
 		return true
 	return false
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area == Global.player.get_node("Hitbox"):
+func _on_body_entered(body) -> void:
+	if body == Global.player:
 		_player_in_area = true
 		# player is in at least one area, +1
 		enemy._player_in_area += 1
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area == Global.player.get_node("Hitbox"):
+func _on_body_exited(body) -> void:
+	if body == Global.player:
 		_player_in_area = false
 		# player exited at least one area, -1
 		enemy._player_in_area -= 1
