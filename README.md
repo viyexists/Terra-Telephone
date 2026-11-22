@@ -58,7 +58,10 @@ For particularly complicated systems please refer to the `./docs`
   - Once off spawning or continous
   - Single or burst spawns
   - Spawn rate, etc
-  
+  - Activation modes
+- Enemy system
+  - Attack system
+- Inventory display (press Tab)
 
 ### What's next?
 

@@ -11,9 +11,9 @@ func _ready() -> void:
 	Global.base_position = self.global_position
 	
 	$Ratticus.play("angry")
-	$SpeechBubble.say("YOU REMEMBER YOUR MISSION, RIGHT?")
-	$SpeechBubble.say("GET THE SEEDS. AVOID THE ENEMY.")
-	$SpeechBubble.say("RETURN HERE WHEN YOU ARE FINISHED.")
+	$SpeechEngine.say("YOU REMEMBER YOUR MISSION, RIGHT?")
+	$SpeechEngine.say("GET THE SEEDS. AVOID THE ENEMY.")
+	$SpeechEngine.say("RETURN HERE WHEN YOU ARE FINISHED.")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -26,6 +26,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			await get_tree().create_timer(3).timeout
 			end_stage.emit()
 		else:
-			$SpeechBubble.say("PONCHO! WHAT ARE YOU DOING? GET ME THE SEEDS, QUICK!!")
-			$SpeechBubble.say("WELL WHAT ARE YOU WAITING FOR?")
-			$SpeechBubble.say("GET ON IT AND DON'T LET IT CATCH YA")
+			$SpeechEngine.say("PONCHO! WHAT ARE YOU DOING? GET ME THE SEEDS, QUICK!!")
+			$SpeechEngine.say("WELL WHAT ARE YOU WAITING FOR?")
+			$SpeechEngine.say("GET ON IT AND DON'T LET IT CATCH YA")

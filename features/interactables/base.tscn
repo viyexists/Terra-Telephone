@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blc3jux3gfjpa" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/grudging.webp" id="5_enf25"]
 [ext_resource type="Texture2D" uid="uid://pxw061nc7wud" path="res://assets/terra_assets/sprites/npcs/sir-ratticus/happy.webp" id="6_olwbk"]
 [ext_resource type="Texture2D" uid="uid://7atbkko8ouxk" path="res://assets/terra_modified/HotAirBalloonBottom.png" id="7_6pfoq"]
-[ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="7_j3i8o"]
-[ext_resource type="Script" uid="uid://xeotyytt7sod" path="res://features/speech/speech_bubble.gd" id="8_wn4q5"]
+[ext_resource type="Script" uid="uid://bhrsaynny18uu" path="res://features/speech/speech_engine.gd" id="9_6pfoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
 radius = 326.0
@@ -83,15 +82,17 @@ scale = Vector2(0.9999997, 0.9999997)
 texture = ExtResource("7_6pfoq")
 region_rect = Rect2(0, 2262.881, 1818, 362.1189)
 
-[node name="SpeechBubble" type="Control" parent="." unique_id=1041672001]
+[node name="SpeechEngine" type="Control" parent="." unique_id=664768579]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 204.0
-offset_top = -631.5
-offset_right = 244.0
-offset_bottom = -591.5
-theme = ExtResource("7_j3i8o")
-script = ExtResource("8_wn4q5")
-metadata/_edit_use_anchors_ = true
+offset_left = 223.0
+offset_top = -601.0
+offset_right = 271.775
+offset_bottom = -513.0
+script = ExtResource("9_6pfoq")
+TIME_FOR_CHARACTER_TO_APPEAR = null
+TIME_UNTIL_SPEECH_BUBBLE_GONE = null
+TEXT_BACKGROUND_MARGIN = null
+metadata/_custom_type_script = "uid://bhrsaynny18uu"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

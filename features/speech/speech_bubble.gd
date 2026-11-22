@@ -1,80 +1,71 @@
-extends Control
+extends Panel
+class_name SpeechBubble
 
-signal _is_message_complete(message_no_complete: int)
+signal message_completed
 
-const TIME_FOR_CHARACTER_TO_APPEAR: float = 0.03
-const TIME_UNTIL_SPEECH_BUBBLE_GONE: float = 3
+# Configurable styling options.
+# Configured from SpeechEngine, but defaults are also included here.
+var TIME_FOR_CHARACTER_TO_APPEAR: float = 0.03
+var TIME_UNTIL_SPEECH_BUBBLE_GONE: float = 3.0
+var TEXT_BACKGROUND_MARGIN: float = 30
 
-const TEXT_BACKGROUND_MARGIN: float = 30
+var timer: Timer
+var label: Label
+var message: String = ''
+## Disables the typing animation. Mostly for use within the editor.
+## DO NOT SET TO TRUE WHEN USING WITH OTHER NON STATIC MESSAGES
+## IT *WILL NOT* FREE ITSELF
+var _static:bool = false
 
-var _no_of_messages: int = 0
-var _is_done_saying: bool = true
-
-var interrupt: bool = false
-var stop_incoming_messages: bool = false
-
-
-## Creates the background for the speech bubble
-func _create_speech_box() -> Node:
-	var new_panel := Panel.new()
-	# This assumes that this node has one child which is the label
-	new_panel.size = get_child(0).size + (Vector2(TEXT_BACKGROUND_MARGIN, 0))
-	new_panel.position = get_child(0).position - Vector2(TEXT_BACKGROUND_MARGIN / 2, 0)
-	add_child(new_panel)
-	return new_panel
-
-
-## This function displays the message in a text bubble.
-## It can be used one after the other as it will wait for a previous
-## message to be complete before starting itself.
-## Interrupting is not implemented properly
-func say(message: String, interrupt_previous_messages: bool = false) -> void:
-	var this_message_no: int = _no_of_messages + 1
-	_no_of_messages += 1
-	var message_complete_no: int
+func _ready():
+	# Listen to if a message intterupts others
+	self.get_parent().connect('messages_interrupted', _interrupt)
 	
-	if interrupt_previous_messages:
-		interrupt = true
-	else:
-		if this_message_no != 1:
-			while message_complete_no != this_message_no - 1:
-				message_complete_no = await self._is_message_complete
-				if interrupt:
-					return
-					
-	# This will hopefully make it so it cancels other messages without cancelling itself?
-	# I feel like this is a bit overcomplicated
-	await get_tree().create_timer(0.5).timeout
-	interrupt = false
-		
-	_is_done_saying = false
-	var label := Label.new()
+	if not _static:
+		# setup timer, a new character appears every itnerval
+		timer = Timer.new()
+		timer.autostart = false
+		timer.wait_time = TIME_FOR_CHARACTER_TO_APPEAR
+		timer.connect('timeout', _show_next_character)
+		self.add_child(timer)
+	
+	# configuring label/text
+	label = Label.new()
+	label.hide()
 	label.add_theme_font_size_override("font_size", 64)
 	label.z_index = 5
-	label.visible_characters = -1
 	label.text = message
-	add_child(label)
-	await get_tree().process_frame
-	var new_panel = _create_speech_box()
-	label.visible_characters = 0
-	label.show()
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	
-	while label.visible_characters < len(label.text):
-		if interrupt:
-			return
+	self.add_child(label)
+	# styling
+	self.size = label.size + Vector2(TEXT_BACKGROUND_MARGIN, TEXT_BACKGROUND_MARGIN/2)
+	label.size = self.size
+	
+	if not _static:
 		await get_tree().process_frame
-		if label != null and not label.is_queued_for_deletion():
-			label.visible_characters += 1
-			
-		await get_tree().create_timer(TIME_FOR_CHARACTER_TO_APPEAR).timeout
-		
-	if interrupt: 
-		new_panel.queue_free()
-		return
-	await get_tree().create_timer(TIME_UNTIL_SPEECH_BUBBLE_GONE).timeout
+		label.visible_characters = 0
+		timer.start()
 	
-	for child in get_children():
-		child.queue_free()
-	
-	_is_done_saying = true
-	_is_message_complete.emit(this_message_no)
+	label.show()
+	self.show()
+
+## Shows the next character.
+## DO NOT CALL BY ITSELF
+func _show_next_character()->void:
+	label.visible_characters += 1
+
+	if label.visible_characters >= len(message):
+		# if entire message is displayed, go through message complete routine
+		# timer is stopped for safety, it might fire while being freed
+		timer.stop()
+		await get_tree().create_timer(TIME_UNTIL_SPEECH_BUBBLE_GONE).timeout
+		message_completed.emit()
+		self.queue_free()
+
+## If a message interrupts others, kill all current SpeechBubbles
+func _interrupt()->void:
+	# timer is stopped for safety, it might fire while being freed
+	timer.stop()
+	self.queue_free()
