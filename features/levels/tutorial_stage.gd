@@ -6,12 +6,10 @@ func _ready() -> void:
 	Global.seeds_collected = 0
 	Global.current_stage_node = self
 
-
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
 		add_child(load("res://features/menus/pause_screen.tscn").instantiate())
 		self.process_mode = Node.PROCESS_MODE_DISABLED
-
 
 func _on_player_end_stage() -> void:
 	add_sibling(load("res://features/stages/death.tscn").instantiate())
