@@ -14,7 +14,7 @@ var noise_y = 0
 @export var max_offset:Vector2i=Vector2i(100,80)
 ## Maximum rotation of camera in radians
 @export var max_roll:float = 0.1
-var trauma:float=0.0
+var trauma: float = 0.0
 var trauma_power = 2.0
 
 

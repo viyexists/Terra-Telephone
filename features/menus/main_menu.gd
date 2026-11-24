@@ -5,7 +5,8 @@ const BUTTON_ROTATION_SPEED: float = 0.2
 
 ## What stage the game starts on. Defaults to "res://features/stages/tutorial_stage.tscn"
 ## But can be changed for debugging later levels.
-@export var starting_stage: PackedScene = load("res://features/stages/tutorial_stage.tscn")
+### I have no clue what starting_stage does anymore, loading is handled from res://features/menus/level_select.gd
+@export var starting_stage: PackedScene = load("res://features/levels/tutorial_stage.tscn")
 
 @onready var buttons: Array[Button] = [
 	%StartButton,
@@ -13,7 +14,8 @@ const BUTTON_ROTATION_SPEED: float = 0.2
 	%QuitButton
 ]
 
-func _ready() -> void: # Set initial button positions
+## Set initial button positions
+func _ready() -> void:
 	var offset = get_viewport_rect().size.x / 3
 	var i = 0
 	for button in buttons:
@@ -21,7 +23,7 @@ func _ready() -> void: # Set initial button positions
 		button.rotation = randf() * 360
 		i += 1
 
-
+## Scroll and rotate buttons
 func _process(delta: float) -> void:
 	for button in buttons:
 		button.position.x += delta * BUTTON_SCROLL_SPEED

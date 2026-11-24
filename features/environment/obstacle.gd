@@ -1,3 +1,6 @@
+## ! THIS HAS BEEN DEPRECATED! 
+## Y Sort does the same thing this script does, and it isn't as buggy with mountains
+
 ## This script makes it so if the player is in front of the line, the sprite
 ## will show as behind the player and vice versa.
 ## This scene should be added to the main scene, and a sprite2d should be added under it.
@@ -12,7 +15,8 @@ class_name Obstacle
 var original_z_index: int = 50
 
 func _process(_delta: float) -> void:
-	if Global.player.global_position.y < self.global_position.y:
-		self.z_index = Global.player.z_index + original_z_index
-	else:
-		self.z_index = Global.player.z_index - original_z_index
+	pass
+	# if Global.player.global_position.y < self.global_position.y:
+	# 	self.z_index = Global.player.z_index + original_z_index
+	# else:
+	# 	self.z_index = Global.player.z_index - original_z_index

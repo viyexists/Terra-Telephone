@@ -15,11 +15,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$LoadingLabel.text += ". "
+	# $LoadingLabel.text += ". " # Can be added back later, but redundant
 	var progress: Array
 	ResourceLoader.load_threaded_get_status(scene_to_change_to, progress)
 	progress_bar.value = progress[0]
 	if is_equal_approx(progress[0], 1.0):
+		set_process(false)
+		await get_tree().create_timer(1.0).timeout
 		var scene = ResourceLoader.load_threaded_get(scene_to_change_to).instantiate()
 		if scene is Node2D:
 			scene.z_index = 0

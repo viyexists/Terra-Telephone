@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://kh52hsi3iwr6"]
 
-[ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="1_7xcpl"]
+[ext_resource type="Theme" uid="uid://cf7i3mwrbf3hp" path="res://features/terra_theme.tres" id="1_82xxc"]
 [ext_resource type="Script" uid="uid://boyk1ggruugu2" path="res://features/menus/main_menu.gd" id="1_ilxdq"]
 [ext_resource type="Texture2D" uid="uid://gwvtmumck33u" path="res://assets/terrafried_logo/Terrrafried_Logo.png" id="2_ilxdq"]
-[ext_resource type="PackedScene" uid="uid://3rckugmiqiq6" path="res://features/stages/tutorial_stage.tscn" id="3_82xxc"]
+[ext_resource type="PackedScene" uid="uid://3rckugmiqiq6" path="res://features/levels/tutorial_stage.tscn" id="3_82xxc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg1c1"]
 
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_7xcpl")
+theme = ExtResource("1_82xxc")
 script = ExtResource("1_ilxdq")
 starting_stage = ExtResource("3_82xxc")
 

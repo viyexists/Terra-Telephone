@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3rckugmiqiq6"]
 
-[ext_resource type="Script" uid="uid://cvvsqrq8xugdd" path="res://features/stages/tutorial_stage.gd" id="1_7vrav"]
+[ext_resource type="Script" uid="uid://cvvsqrq8xugdd" path="res://features/levels/tutorial_stage.gd" id="1_7vrav"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="1_yfkr1"]
 [ext_resource type="Texture2D" uid="uid://ldka8qjqig8h" path="res://assets/terra_assets/sprites/level/Bush2.webp" id="2_dt4km"]
 [ext_resource type="PackedScene" uid="uid://cff753iwvfkfe" path="res://features/environment/obstacle.tscn" id="3_5ahaa"]
@@ -39,10 +39,8 @@ size = Vector2(2219, 263)
 
 [node name="TutorialStage" type="Node2D" unique_id=561291764]
 process_mode = 1
+y_sort_enabled = true
 script = ExtResource("1_7vrav")
-
-[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
-position = Vector2(-1336, 1259.55)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=289992110]
 
@@ -60,6 +58,7 @@ position = Vector2(-1351.0001, 845.00006)
 scale = Vector2(0.7189883, 0.7189883)
 
 [node name="AllWalls" type="Node2D" parent="." unique_id=1537728336]
+y_sort_enabled = true
 
 [node name="Wall" type="Line2D" parent="AllWalls" unique_id=1655896603]
 script = ExtResource("15_4ksmt")
@@ -71,226 +70,271 @@ max_wall_scale = 3.4970000000000003
 z_index = -99
 position = Vector2(3545, -2493)
 scale = Vector2(2.3983212, 2.3983212)
+script = null
 
 [node name="Rock1" parent="AllWalls/Wall" unique_id=918380053 instance=ExtResource("17_02irw")]
 z_index = -114
 position = Vector2(2734, -2874)
 scale = Vector2(2.413035, 2.413035)
+script = null
 
 [node name="Rock3" parent="AllWalls/Wall" unique_id=728731106 instance=ExtResource("19_bl74p")]
 z_index = -122
 position = Vector2(1781, -3065)
 scale = Vector2(3.3994095, 3.3994095)
+script = null
 
 [node name="@Node2D@67902" parent="AllWalls/Wall" unique_id=1582524515 instance=ExtResource("19_bl74p")]
 z_index = -125
 position = Vector2(1149, -3125)
 scale = Vector2(2.5883331, 2.5883331)
+script = null
 
 [node name="@Node2D@67903" parent="AllWalls/Wall" unique_id=1229477979 instance=ExtResource("19_bl74p")]
 z_index = -127
 position = Vector2(-102, -3184)
 scale = Vector2(2.7216198, 2.7216198)
+script = null
 
 [node name="@Node2D@67904" parent="AllWalls/Wall" unique_id=248025243 instance=ExtResource("19_bl74p")]
 z_index = -123
 position = Vector2(-1354, -3089)
 scale = Vector2(2.8941998, 2.8941998)
+script = null
 
 [node name="@Node2D@67905" parent="AllWalls/Wall" unique_id=1090368 instance=ExtResource("19_bl74p")]
 z_index = -114
 position = Vector2(-2033, -2874)
 scale = Vector2(3.2470536, 3.2470536)
+script = null
 
 [node name="@Node2D@67906" parent="AllWalls/Wall" unique_id=1127765155 instance=ExtResource("19_bl74p")]
 z_index = -108
 position = Vector2(-2498, -2708)
 scale = Vector2(3.3556123, 3.3556123)
+script = null
 
 [node name="@Node2D@67907" parent="AllWalls/Wall" unique_id=2117256492 instance=ExtResource("18_ufbuv")]
 z_index = -96
 position = Vector2(-2998, -2422)
 scale = Vector2(2.7976658, 2.7976658)
+script = null
 
 [node name="@Node2D@67908" parent="AllWalls/Wall" unique_id=137134642 instance=ExtResource("18_ufbuv")]
 z_index = -82
 position = Vector2(-3427, -2064)
 scale = Vector2(2.7248993, 2.7248993)
+script = null
 
 [node name="@Node2D@67909" parent="AllWalls/Wall" unique_id=758760579 instance=ExtResource("19_bl74p")]
 z_index = -72
 position = Vector2(-3578.7314, -1818.7827)
 scale = Vector2(3.3258832, 3.3258832)
+script = null
 
 [node name="@Node2D@67910" parent="AllWalls/Wall" unique_id=1871718627 instance=ExtResource("17_02irw")]
 z_index = -62
 position = Vector2(-3737, -1563)
 scale = Vector2(2.5419195, 2.5419195)
+script = null
 
 [node name="@Node2D@67911" parent="AllWalls/Wall" unique_id=990125273 instance=ExtResource("18_ufbuv")]
 z_index = -41
 position = Vector2(-3880, -1039)
 scale = Vector2(3.0079253, 3.0079253)
+script = null
 
 [node name="@Node2D@67912" parent="AllWalls/Wall" unique_id=936375215 instance=ExtResource("17_02irw")]
 z_index = -19
 position = Vector2(-3928, -479)
 scale = Vector2(3.0010803, 3.0010803)
+script = null
 
 [node name="@Node2D@67913" parent="AllWalls/Wall" unique_id=1895744283 instance=ExtResource("19_bl74p")]
 z_index = -6
 position = Vector2(-3945.4956, -170.64746)
 scale = Vector2(3.0887163, 3.0887163)
+script = null
 
 [node name="@Node2D@67914" parent="AllWalls/Wall" unique_id=1251048857 instance=ExtResource("19_bl74p")]
 z_index = 14
 position = Vector2(-3976, 367)
 scale = Vector2(3.3312466, 3.3312466)
+script = null
 
 [node name="@Node2D@67915" parent="AllWalls/Wall" unique_id=608209909 instance=ExtResource("18_ufbuv")]
 z_index = 24
 position = Vector2(-3964, 618)
 scale = Vector2(2.0545702, 2.0545702)
+script = null
 
 [node name="@Node2D@67916" parent="AllWalls/Wall" unique_id=910700540 instance=ExtResource("18_ufbuv")]
 z_index = 42
 position = Vector2(-3893.2378, 1050.7256)
 scale = Vector2(2.2312295, 2.2312295)
+script = null
 
 [node name="@Node2D@67917" parent="AllWalls/Wall" unique_id=456581139 instance=ExtResource("17_02irw")]
 z_index = 52
 position = Vector2(-3848.9587, 1321.501)
 scale = Vector2(2.545046, 2.545046)
+script = null
 
 [node name="@Node2D@67918" parent="AllWalls/Wall" unique_id=24275190 instance=ExtResource("17_02irw")]
 z_index = 71
 position = Vector2(-3773, 1786)
 scale = Vector2(2.4748409, 2.4748409)
+script = null
 
 [node name="@Node2D@67919" parent="AllWalls/Wall" unique_id=1685139895 instance=ExtResource("19_bl74p")]
 z_index = 94
 position = Vector2(-3487, 2370)
 scale = Vector2(2.7571979, 2.7571979)
+script = null
 
 [node name="@Node2D@67920" parent="AllWalls/Wall" unique_id=488328696 instance=ExtResource("17_02irw")]
 z_index = 116
 position = Vector2(-2987, 2906)
 scale = Vector2(2.9813395, 2.9813395)
+script = null
 
 [node name="@Node2D@67921" parent="AllWalls/Wall" unique_id=750828971 instance=ExtResource("19_bl74p")]
 z_index = 129
 position = Vector2(-2319, 3240)
 scale = Vector2(2.9280608, 2.9280608)
+script = null
 
 [node name="@Node2D@67922" parent="AllWalls/Wall" unique_id=2038562397 instance=ExtResource("19_bl74p")]
 z_index = 135
 position = Vector2(-1485, 3395)
 scale = Vector2(3.0654788, 3.0654788)
+script = null
 
 [node name="@Node2D@67923" parent="AllWalls/Wall" unique_id=569655317 instance=ExtResource("19_bl74p")]
 z_index = 142
 position = Vector2(-686, 3561)
 scale = Vector2(2.1485531, 2.1485531)
+script = null
 
 [node name="@Node2D@67924" parent="AllWalls/Wall" unique_id=1504708265 instance=ExtResource("19_bl74p")]
 z_index = 150
 position = Vector2(160, 3764)
 scale = Vector2(2.662745, 2.662745)
+script = null
 
 [node name="@Node2D@67925" parent="AllWalls/Wall" unique_id=963482889 instance=ExtResource("17_02irw")]
 z_index = 152
 position = Vector2(780, 3824)
 scale = Vector2(2.0427463, 2.0427463)
+script = null
 
 [node name="@Node2D@67926" parent="AllWalls/Wall" unique_id=236780359 instance=ExtResource("18_ufbuv")]
 z_index = 155
 position = Vector2(1542, 3883)
 scale = Vector2(3.4114113, 3.4114113)
+script = null
 
 [node name="@Node2D@67927" parent="AllWalls/Wall" unique_id=481654361 instance=ExtResource("19_bl74p")]
 z_index = 152
 position = Vector2(2555, 3800)
 scale = Vector2(3.4274333, 3.4274333)
+script = null
 
 [node name="@Node2D@67928" parent="AllWalls/Wall" unique_id=455321128 instance=ExtResource("17_02irw")]
 z_index = 143
 position = Vector2(3330, 3597)
 scale = Vector2(2.821173, 2.821173)
+script = null
 
 [node name="@Node2D@67929" parent="AllWalls/Wall" unique_id=383630106 instance=ExtResource("18_ufbuv")]
 z_index = 131
 position = Vector2(4188, 3275)
 scale = Vector2(2.7518876, 2.7518876)
+script = null
 
 [node name="@Node2D@67930" parent="AllWalls/Wall" unique_id=681514102 instance=ExtResource("19_bl74p")]
 z_index = 119
 position = Vector2(4617, 2977)
 scale = Vector2(2.0231862, 2.0231862)
+script = null
 
 [node name="@Node2D@67931" parent="AllWalls/Wall" unique_id=1392043355 instance=ExtResource("19_bl74p")]
 z_index = 98
 position = Vector2(4796, 2465)
 scale = Vector2(2.050687, 2.050687)
+script = null
 
 [node name="@Node2D@67932" parent="AllWalls/Wall" unique_id=626063363 instance=ExtResource("17_02irw")]
 z_index = 75
 position = Vector2(4975, 1893)
 scale = Vector2(2.2795293, 2.2795293)
+script = null
 
 [node name="@Node2D@67933" parent="AllWalls/Wall" unique_id=416855897 instance=ExtResource("17_02irw")]
 z_index = 56
 position = Vector2(4991.129, 1420.5459)
 scale = Vector2(2.486527, 2.486527)
+script = null
 
 [node name="@Node2D@67934" parent="AllWalls/Wall" unique_id=1981057373 instance=ExtResource("17_02irw")]
 z_index = 47
 position = Vector2(4999, 1190)
 scale = Vector2(3.3886144, 3.3886144)
+script = null
 
 [node name="@Node2D@67935" parent="AllWalls/Wall" unique_id=188392894 instance=ExtResource("18_ufbuv")]
 z_index = 23
 position = Vector2(4975, 582)
 scale = Vector2(2.7408876, 2.7408876)
+script = null
 
 [node name="@Node2D@67936" parent="AllWalls/Wall" unique_id=1225810404 instance=ExtResource("17_02irw")]
 z_index = 3
 position = Vector2(4917.835, 95.42041)
 scale = Vector2(2.640335, 2.640335)
+script = null
 
 [node name="@Node2D@67937" parent="AllWalls/Wall" unique_id=664198556 instance=ExtResource("17_02irw")]
 z_index = -5
 position = Vector2(4891, -133)
 scale = Vector2(3.0085096, 3.0085096)
+script = null
 
 [node name="@Node2D@67938" parent="AllWalls/Wall" unique_id=1303167228 instance=ExtResource("19_bl74p")]
 z_index = -36
 position = Vector2(4796, -920)
 scale = Vector2(2.9576473, 2.9576473)
+script = null
 
 [node name="@Node2D@67939" parent="AllWalls/Wall" unique_id=739751989 instance=ExtResource("17_02irw")]
 z_index = -56
 position = Vector2(4655.87, -1403.9039)
 scale = Vector2(3.2247636, 3.2247636)
+script = null
 
 [node name="@Node2D@67940" parent="AllWalls/Wall" unique_id=1596542988 instance=ExtResource("19_bl74p")]
 z_index = -66
 position = Vector2(4582, -1659)
 scale = Vector2(3.157878, 3.157878)
+script = null
 
 [node name="@Node2D@67941" parent="AllWalls/Wall" unique_id=1562598913 instance=ExtResource("18_ufbuv")]
 z_index = -81
 position = Vector2(4266.172, -2025.6761)
 scale = Vector2(2.1053202, 2.1053202)
+script = null
 
 [node name="@Node2D@67942" parent="AllWalls/Wall" unique_id=2138605565 instance=ExtResource("18_ufbuv")]
 z_index = -86
 position = Vector2(4141, -2171)
 scale = Vector2(3.205661, 3.205661)
+script = null
 
 [node name="@Node2D@67943" parent="AllWalls/Wall" unique_id=370137060 instance=ExtResource("19_bl74p")]
 z_index = -93
 position = Vector2(3878, -2326)
 scale = Vector2(3.3563898, 3.3563898)
+script = null
 
 [node name="Wall2" type="Line2D" parent="AllWalls" unique_id=772967901]
 script = ExtResource("15_4ksmt")
@@ -375,6 +419,7 @@ position = Vector2(1105, 1171)
 scale = Vector2(2.766021, 2.766021)
 
 [node name="Collectables" type="Node2D" parent="." unique_id=904412267]
+y_sort_enabled = true
 
 [node name="Collectable" parent="Collectables" unique_id=2052972169 instance=ExtResource("21_bl74p")]
 position = Vector2(-666, 1214)
@@ -424,9 +469,6 @@ position = Vector2(1036, -1976)
 [node name="Collectable16" parent="Collectables" unique_id=1001203660 instance=ExtResource("21_bl74p")]
 position = Vector2(1606, -1998)
 
-[node name="Collectable17" parent="Collectables" unique_id=78998746 instance=ExtResource("21_bl74p")]
-position = Vector2(1606, -1998)
-
 [node name="Collectable18" parent="Collectables" unique_id=1246908100 instance=ExtResource("21_bl74p")]
 position = Vector2(-876, -2303)
 
@@ -440,6 +482,7 @@ position = Vector2(-1920, -2362)
 position = Vector2(-2344, -2017)
 
 [node name="Seeds" type="Node2D" parent="." unique_id=2099769323]
+y_sort_enabled = true
 
 [node name="Seed2" parent="Seeds" unique_id=1960651934 instance=ExtResource("22_7efr7")]
 position = Vector2(2287, 1963)
@@ -450,10 +493,15 @@ position = Vector2(2090, -2066)
 [node name="Seed4" parent="Seeds" unique_id=673912765 instance=ExtResource("22_7efr7")]
 position = Vector2(-2510, -1613)
 
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_yfkr1")]
+position = Vector2(-1336, 1259.55)
+
 [node name="Obstacles" type="Node2D" parent="." unique_id=1676379918]
+y_sort_enabled = true
 
 [node name="Obstacle" parent="Obstacles" unique_id=275115240 instance=ExtResource("3_5ahaa")]
 position = Vector2(945, -19)
+script = null
 
 [node name="Bushes" type="Sprite2D" parent="Obstacles/Obstacle" unique_id=623532246]
 position = Vector2(18, -167)
@@ -471,6 +519,7 @@ position = Vector2(-186.5, 119)
 shape = SubResource("RectangleShape2D_08qqc")
 
 [node name="Obstacle2" parent="Obstacles" unique_id=1722992084 instance=ExtResource("3_5ahaa")]
+script = null
 
 [node name="Tree" type="Sprite2D" parent="Obstacles/Obstacle2" unique_id=1530197276]
 position = Vector2(4, -383)
@@ -484,6 +533,7 @@ shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle3" parent="Obstacles" unique_id=1919353344 instance=ExtResource("3_5ahaa")]
 position = Vector2(3952, -459)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle3" unique_id=194395037]
 position = Vector2(4, -383)
@@ -497,7 +547,8 @@ position = Vector2(-3, -14)
 shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle4" parent="Obstacles" unique_id=765733495 instance=ExtResource("3_5ahaa")]
-position = Vector2(303, 1842)
+position = Vector2(149, 1832)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle4" unique_id=855554112]
 position = Vector2(4, -383)
@@ -511,7 +562,8 @@ position = Vector2(-3, -14)
 shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle5" parent="Obstacles" unique_id=572677516 instance=ExtResource("3_5ahaa")]
-position = Vector2(207, 3218)
+position = Vector2(100, 3218)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle5" unique_id=1446591119]
 position = Vector2(4, -383)
@@ -526,6 +578,7 @@ shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle6" parent="Obstacles" unique_id=162634483 instance=ExtResource("3_5ahaa")]
 position = Vector2(3604, -1392)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle6" unique_id=411448427]
 position = Vector2(4, -383)
@@ -540,6 +593,7 @@ shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle7" parent="Obstacles" unique_id=1671092548 instance=ExtResource("3_5ahaa")]
 position = Vector2(1895, -2576)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle7" unique_id=885756044]
 position = Vector2(4, -383)
@@ -554,6 +608,7 @@ shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Obstacle9" parent="Obstacles" unique_id=805450985 instance=ExtResource("3_5ahaa")]
 position = Vector2(2391, -2650)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle9" unique_id=636825105]
 position = Vector2(-14, -508)
@@ -569,6 +624,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle10" parent="Obstacles" unique_id=1235405826 instance=ExtResource("3_5ahaa")]
 position = Vector2(3035, 1072)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle10" unique_id=138434986]
 position = Vector2(-14, -508)
@@ -584,6 +640,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle11" parent="Obstacles" unique_id=1353026773 instance=ExtResource("3_5ahaa")]
 position = Vector2(3435, 1427)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle11" unique_id=44745866]
 position = Vector2(-14, -508)
@@ -598,6 +655,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle12" parent="Obstacles" unique_id=599092795 instance=ExtResource("3_5ahaa")]
 position = Vector2(-332, 2500)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle12" unique_id=1148759412]
 position = Vector2(-14, -508)
@@ -612,6 +670,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle13" parent="Obstacles" unique_id=2069015116 instance=ExtResource("3_5ahaa")]
 position = Vector2(-2752, 1878)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle13" unique_id=1988384920]
 position = Vector2(-14, -508)
@@ -626,6 +685,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle14" parent="Obstacles" unique_id=173582018 instance=ExtResource("3_5ahaa")]
 position = Vector2(-3211, 1480)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle14" unique_id=1322908245]
 position = Vector2(-100, -433)
@@ -640,6 +700,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle15" parent="Obstacles" unique_id=1118805713 instance=ExtResource("3_5ahaa")]
 position = Vector2(-1854, 2586)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle15" unique_id=588320223]
 position = Vector2(-100, -433)
@@ -654,6 +715,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle16" parent="Obstacles" unique_id=1397866383 instance=ExtResource("3_5ahaa")]
 position = Vector2(2086, -467)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle16" unique_id=1043012960]
 position = Vector2(-100, -433)
@@ -668,6 +730,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle17" parent="Obstacles" unique_id=2106213942 instance=ExtResource("3_5ahaa")]
 position = Vector2(-3072, -834)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle17" unique_id=1077609943]
 position = Vector2(-100, -433)
@@ -682,6 +745,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle18" parent="Obstacles" unique_id=1618428108 instance=ExtResource("3_5ahaa")]
 position = Vector2(-1093, -2670)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle18" unique_id=1891545691]
 position = Vector2(-100, -433)
@@ -696,6 +760,7 @@ shape = SubResource("RectangleShape2D_ksr3a")
 
 [node name="Obstacle19" parent="Obstacles" unique_id=1576371300 instance=ExtResource("3_5ahaa")]
 position = Vector2(-2194, -2509)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle19" unique_id=1011868890]
 position = Vector2(7.0000153, -343)
@@ -710,6 +775,7 @@ shape = SubResource("RectangleShape2D_g35wk")
 
 [node name="Obstacle20" parent="Obstacles" unique_id=121619274 instance=ExtResource("3_5ahaa")]
 position = Vector2(-2813, -555)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle20" unique_id=502925453]
 position = Vector2(7.0000153, -343)
@@ -724,6 +790,7 @@ shape = SubResource("RectangleShape2D_g35wk")
 
 [node name="Obstacle21" parent="Obstacles" unique_id=963002999 instance=ExtResource("3_5ahaa")]
 position = Vector2(1461, -645)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle21" unique_id=359031756]
 position = Vector2(7.0000153, -343)
@@ -738,6 +805,7 @@ shape = SubResource("RectangleShape2D_g35wk")
 
 [node name="Obstacle22" parent="Obstacles" unique_id=65897050 instance=ExtResource("3_5ahaa")]
 position = Vector2(-2381, 193)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle22" unique_id=1101250502]
 position = Vector2(7.0000153, -343)
@@ -753,6 +821,7 @@ shape = SubResource("RectangleShape2D_g35wk")
 
 [node name="Obstacle8" parent="Obstacles" unique_id=1852409799 instance=ExtResource("3_5ahaa")]
 position = Vector2(324, -3016)
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle8" unique_id=1003442941]
 position = Vector2(4, -383)
@@ -769,6 +838,7 @@ shape = SubResource("RectangleShape2D_cru0g")
 [node name="Obstacle23" parent="Obstacles" unique_id=187808830 instance=ExtResource("3_5ahaa")]
 position = Vector2(-2381, 193)
 rotation = 1.4577065
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Obstacle23" unique_id=1893946910]
 position = Vector2(2985.9316, -5342.166)
@@ -781,5 +851,5 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Obstacle23/StaticBody2D" unique_id=964261736]
 polygon = PackedVector2Array(2713.7322, -3805.064, 2814.649, -4206.2383, 2909.5544, -4678.545, 2859.7588, -5090.798, 2529.679, -5454.369, 2209.087, -6131.8755, 2015.1212, -6657.119, 2017.9484, -6956.714, 2104.5273, -6956.9453, 2213.0178, -6476.6343, 2377.167, -6087.625, 2562.4106, -5653.95, 2955.7097, -5084.9326, 3092.77, -4546.023, 2846.4963, -3724.5674, 2678.4106, -3494.0632, 2546.9126, -3550.2617)
 
-[connection signal="end_stage" from="Player" to="." method="_on_player_end_stage"]
 [connection signal="end_stage" from="Base" to="." method="_on_base_end_stage"]
+[connection signal="end_stage" from="Player" to="." method="_on_player_end_stage"]

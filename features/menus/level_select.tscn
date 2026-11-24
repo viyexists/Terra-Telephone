@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c045v4cyyogtv" path="res://assets/terra-derived/ui/stitchedninebox.png" id="3_88268"]
 [ext_resource type="Texture2D" uid="uid://b6wjxqfchcidy" path="res://assets/terra_assets/sprites/ui/exit.webp" id="4_545u6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_545u6"]
+bg_color = Color(0, 0, 0, 0.54901963)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfya1"]
 bg_color = Color(0.95686275, 0.7921569, 0.58431375, 1)
 border_width_left = 3
@@ -59,7 +62,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xbh4o")
-bypass_level_lock = true
+
+[node name="Panel" type="Panel" parent="." unique_id=80358752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_545u6")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=979295134]
 layout_mode = 1
@@ -91,6 +102,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 15.0
+offset_top = 19.0
 offset_right = -15.0
 offset_bottom = -15.0
 grow_horizontal = 2

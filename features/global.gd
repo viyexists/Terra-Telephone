@@ -26,7 +26,7 @@ var stages: Array[String] = [
 ## level/stage array. Stores the available levels and their status
 ## A locked stage needs its previous stages completed first.
 var levels: Array[Dictionary] = [
-	{"name": "Tutorial", "path": "res://features/stages/tutorial_stage.tscn", "unlocked": true},
+	{"name": "Tutorial", "path": "res://features/levels/tutorial_stage.tscn", "unlocked": true},
 	{"name": "Arrival", "path": "res://features/levels/1.tscn", "unlocked": false},
 ]
 

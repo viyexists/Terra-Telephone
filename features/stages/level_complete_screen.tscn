@@ -9,17 +9,25 @@ bg_color = Color(0, 0, 0, 1)
 script = ExtResource("1_2kuqj")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=1191316138]
-offset_left = -64.0
-offset_top = -39.0
-offset_right = 1243.0
-offset_bottom = 698.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=254983225]
-offset_left = 299.0
-offset_top = 234.0
-offset_right = 854.0
-offset_bottom = 417.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = -91.5
+offset_right = 277.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=651602323]
 layout_mode = 2

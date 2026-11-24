@@ -1,8 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://cf7i3mwrbf3hp"]
 
-[ext_resource type="Texture2D" uid="uid://dcnv12jo8xm6b" path="res://assets/terra-derived/ui/grabber.png" id="1_fe0fi"]
-[ext_resource type="Texture2D" uid="uid://cv8blhfmv6e8v" path="res://assets/terra-derived/ui/grabber_disabled.png" id="2_5jklm"]
-[ext_resource type="Texture2D" uid="uid://bybdtaj6blrkc" path="res://assets/terra-derived/ui/grabber_highlighted.png" id="3_rfhd2"]
+[ext_resource type="Texture2D" uid="uid://dcoijikqo1u3v" path="res://assets/terra-derived/ui/grabber.svg" id="1_8ln31"]
+[ext_resource type="Texture2D" uid="uid://5fum43pj0cc5" path="res://assets/terra-derived/ui/grabber_disabled.svg" id="2_ycl45"]
+[ext_resource type="Texture2D" uid="uid://df3lpk74l1ocm" path="res://assets/terra-derived/ui/grabber_highlighted.svg" id="3_mr11g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwv3i"]
 bg_color = Color(0.3067622, 0.29739818, 0.2602041, 1)
@@ -158,9 +158,9 @@ Button/styles/pressed = SubResource("StyleBoxFlat_wdvjk")
 HSlider/constants/center_grabber = 0
 HSlider/constants/grabber_offset = 0
 HSlider/constants/tick_offset = 0
-HSlider/icons/grabber = ExtResource("1_fe0fi")
-HSlider/icons/grabber_disabled = ExtResource("2_5jklm")
-HSlider/icons/grabber_highlight = ExtResource("3_rfhd2")
+HSlider/icons/grabber = ExtResource("1_8ln31")
+HSlider/icons/grabber_disabled = ExtResource("2_ycl45")
+HSlider/icons/grabber_highlight = ExtResource("3_mr11g")
 HSlider/icons/tick = SubResource("DPITexture_vwv3i")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_lwlc6")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gc0sa")

@@ -17,16 +17,128 @@
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="14_0irvv"]
 
 [node name="1" type="Node2D" unique_id=296359183 node_paths=PackedStringArray("player", "base")]
+y_sort_enabled = true
 script = ExtResource("1_qyk5v")
 player = NodePath("Player")
 base = NodePath("Base")
 
 [node name="Base" parent="." unique_id=847110166 instance=ExtResource("2_gcp4q")]
 
+[node name="Interactables" type="Node2D" parent="." unique_id=1586696746]
+y_sort_enabled = true
+
+[node name="Coins" type="Node2D" parent="Interactables" unique_id=954935803]
+
+[node name="Collectable" parent="Interactables/Coins" unique_id=2052972169 instance=ExtResource("13_s6eo5")]
+position = Vector2(6264, -4375)
+
+[node name="Collectable2" parent="Interactables/Coins" unique_id=741079846 instance=ExtResource("13_s6eo5")]
+position = Vector2(6590, -4521)
+
+[node name="Collectable3" parent="Interactables/Coins" unique_id=529771834 instance=ExtResource("13_s6eo5")]
+position = Vector2(6955, -4410)
+
+[node name="Collectable4" parent="Interactables/Coins" unique_id=977128204 instance=ExtResource("13_s6eo5")]
+position = Vector2(6083, -4049)
+
+[node name="Collectable5" parent="Interactables/Coins" unique_id=1937623555 instance=ExtResource("13_s6eo5")]
+position = Vector2(6319, -3648)
+
+[node name="Collectable6" parent="Interactables/Coins" unique_id=1545911170 instance=ExtResource("13_s6eo5")]
+position = Vector2(6833, -3615)
+
+[node name="Collectable7" parent="Interactables/Coins" unique_id=768753948 instance=ExtResource("13_s6eo5")]
+position = Vector2(7050, -4031)
+
+[node name="Collectable8" parent="Interactables/Coins" unique_id=1666756597 instance=ExtResource("13_s6eo5")]
+position = Vector2(1145, -5290)
+
+[node name="Collectable9" parent="Interactables/Coins" unique_id=1244482098 instance=ExtResource("13_s6eo5")]
+position = Vector2(210, -5553)
+
+[node name="Collectable10" parent="Interactables/Coins" unique_id=1916063993 instance=ExtResource("13_s6eo5")]
+position = Vector2(-900, -4691)
+
+[node name="Collectable11" parent="Interactables/Coins" unique_id=1870521202 instance=ExtResource("13_s6eo5")]
+position = Vector2(-136, -3837)
+
+[node name="Collectable12" parent="Interactables/Coins" unique_id=98726703 instance=ExtResource("13_s6eo5")]
+position = Vector2(1182, -4136)
+
+[node name="Collectable13" parent="Interactables/Coins" unique_id=1655015664 instance=ExtResource("13_s6eo5")]
+position = Vector2(5715, -3043)
+
+[node name="Collectable14" parent="Interactables/Coins" unique_id=792798038 instance=ExtResource("13_s6eo5")]
+position = Vector2(4658, -2458)
+
+[node name="Collectable15" parent="Interactables/Coins" unique_id=1741083285 instance=ExtResource("13_s6eo5")]
+position = Vector2(5393, -46)
+
+[node name="Collectable16" parent="Interactables/Coins" unique_id=354833225 instance=ExtResource("13_s6eo5")]
+position = Vector2(3924, -1477)
+
+[node name="Collectable17" parent="Interactables/Coins" unique_id=1705096306 instance=ExtResource("13_s6eo5")]
+position = Vector2(2778, 793)
+
+[node name="Collectable18" parent="Interactables/Coins" unique_id=90689869 instance=ExtResource("13_s6eo5")]
+position = Vector2(-173, -2773)
+
+[node name="Collectable19" parent="Interactables/Coins" unique_id=438489689 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2144, -3117)
+
+[node name="Collectable20" parent="Interactables/Coins" unique_id=1889726744 instance=ExtResource("13_s6eo5")]
+position = Vector2(-1455, -1866)
+
+[node name="Collectable21" parent="Interactables/Coins" unique_id=990609093 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2174, 763)
+
+[node name="Collectable22" parent="Interactables/Coins" unique_id=139289971 instance=ExtResource("13_s6eo5")]
+position = Vector2(-4092, -992)
+
+[node name="Collectable23" parent="Interactables/Coins" unique_id=5557256 instance=ExtResource("13_s6eo5")]
+position = Vector2(-4120, -283)
+
+[node name="Collectable24" parent="Interactables/Coins" unique_id=937357951 instance=ExtResource("13_s6eo5")]
+position = Vector2(-3861, -671)
+
+[node name="Collectable25" parent="Interactables/Coins" unique_id=1698123549 instance=ExtResource("13_s6eo5")]
+position = Vector2(-2989, -1262)
+
+[node name="Seeds" type="Node2D" parent="Interactables" unique_id=272689731]
+
+[node name="Seed" parent="Interactables/Seeds" unique_id=1413849496 instance=ExtResource("14_0irvv")]
+position = Vector2(6582, -4034)
+
+[node name="Seed2" parent="Interactables/Seeds" unique_id=1297449906 instance=ExtResource("14_0irvv")]
+position = Vector2(1494, -5752)
+
+[node name="Seed3" parent="Interactables/Seeds" unique_id=534061377 instance=ExtResource("14_0irvv")]
+position = Vector2(-4513, -678)
+
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_qyk5v")]
 position = Vector2(-48, 323)
 
+[node name="Enemies" type="Node2D" parent="." unique_id=1321423134]
+y_sort_enabled = true
+
+[node name="EntitySpawner" parent="Enemies" unique_id=35382311 instance=ExtResource("2_8kuq6")]
+position = Vector2(-4058, 81)
+entity = ExtResource("3_qk0jo")
+
+[node name="EntitySpawner2" parent="Enemies" unique_id=752078732 instance=ExtResource("2_8kuq6")]
+position = Vector2(1445, -6008)
+entity = ExtResource("3_qk0jo")
+
+[node name="EntitySpawner3" parent="Enemies" unique_id=1251449838 instance=ExtResource("2_8kuq6")]
+position = Vector2(7273, -4518)
+entity = ExtResource("3_qk0jo")
+
+[node name="EntitySpawner4" parent="Enemies" unique_id=210991755 instance=ExtResource("2_8kuq6")]
+position = Vector2(-2273, -4274)
+entity = ExtResource("10_0irvv")
+
 [node name="Border" type="Line2D" parent="." unique_id=531812087]
+y_sort_enabled = true
 position = Vector2(14, 1591)
 points = PackedVector2Array(0, 0, -306, -15, -699, 90, -924, 172, -1435, 199, -1816, 199, -2245, 193, -2885, 206, -3737, 77, -4261, -168, -4744, -427, -4989.74, -684.7572, -5153, -856, -5320.592, -1159.2622, -5405, -1312, -5388, -1594, -5521, -1871, -5529, -2106, -5529, -2435.1255, -5529, -2563, -5523, -2656, -5529, -2833, -5523, -2994, -5499, -3192, -5411, -3445, -5372, -3769, -5222, -4039, -5042, -4293, -4847, -4578, -4533, -4998, -4278, -5267, -4173, -5470, -4098, -5612, -3978, -5717, -3701, -5837, -3439, -6009, -3139, -6114, -2772, -6271, -2353, -6413, -2016, -6518, -1446, -6743, -1079, -6915, -917, -7000, -760, -7115, -554, -7404, -224, -7635, 105, -7832, 526, -8022, 1119, -8178, 1218, -8178, 1391, -8154, 1704, -8055, 2067, -7897.9995, 2157, -7808, 2240, -7552, 2281, -7379, 2297, -7223, 2273, -6876, 2215, -6555, 2190, -6357, 2145.4814, -6046.838, 2099, -5723, 2157, -5492, 2273, -5014, 2685, -4750, 3253, -4569, 3912, -4462, 4646, -4487, 4992, -4866, 5107, -5080, 5140, -5311, 5208.89, -5608.8276, 5239, -5739, 5370.865, -6078.082, 5470, -6333, 5659, -6440, 6104, -6701, 6447, -6717, 6713, -6568, 7000.7813, -6467.834, 7256, -6379, 7742, -6425, 8110, -6333, 8253, -6011, 8365.285, -5700.533, 8453, -5458, 8479, -5217, 8415.805, -4958.502, 8397, -4706, 8273.718, -4555.749, 8141, -4394, 7977, -4240, 7639, -4194, 7327, -4169, 6992.7925, -3992.0305, 6785, -3882, 6812.5547, -3583.027, 6834.0625, -3349.6387, 6852, -3155, 6863, -2822, 6786.289, -2546.0479, 6714, -2286, 6673, -1924, 6665, -1784, 6607, -1413, 6500, -1149, 6401, -1050, 6327, -894, 6014, -605, 5750, -457, 5536, -333, 4728, -111, 4555, -70, 4308, 29, 4242, 62, 4168, 70, 4053, 103, 3805, 178, 3459, 219, 3303, 235, 2882, 334, 2709, 334, 2404, 408, 2174, 449, 1704, 548, 1514, 639, 1267, 631, 938, 581, 575, 466, 188, 342, 23, 186)
 script = ExtResource("4_aad7h")
@@ -452,25 +564,8 @@ scale = Vector2(2.1722744, 2.1722744)
 [node name="@CollisionPolygon2D@266055" type="CollisionPolygon2D" parent="Border/@StaticBody2D@266054" unique_id=1232653283]
 build_mode = 1
 
-[node name="Enemies" type="Node2D" parent="." unique_id=1321423134]
-
-[node name="EntitySpawner" parent="Enemies" unique_id=35382311 instance=ExtResource("2_8kuq6")]
-position = Vector2(-4058, 81)
-entity = ExtResource("3_qk0jo")
-
-[node name="EntitySpawner2" parent="Enemies" unique_id=752078732 instance=ExtResource("2_8kuq6")]
-position = Vector2(1445, -6008)
-entity = ExtResource("3_qk0jo")
-
-[node name="EntitySpawner3" parent="Enemies" unique_id=1251449838 instance=ExtResource("2_8kuq6")]
-position = Vector2(7273, -4518)
-entity = ExtResource("3_qk0jo")
-
-[node name="EntitySpawner4" parent="Enemies" unique_id=210991755 instance=ExtResource("2_8kuq6")]
-position = Vector2(-2273, -4274)
-entity = ExtResource("10_0irvv")
-
 [node name="Trees" type="Line2D" parent="." unique_id=1731811310]
+y_sort_enabled = true
 position = Vector2(0, 14)
 points = PackedVector2Array(-848, 77, -2098, 454, -3433, -279, -1752, -823, -4158, -1523, -3202, -3196, -2790, -1812, -886, -2298, -1587, -3682, 644, -3699, 885, -5545, -952, -4902, 1660, -2941, 3295, -2929, 2602, -1482, 1462, -2034, 1594, -411, 1874, 974, 457, -2413, 3275, 224, 5591, -238, 5319, -1779, 4107, -2051, 5600, -4076, 5937, -4597, 6533, -4869, 6799, -4709, 7114, -4779, 7484, -4667, 7568, -4377, 7536, -3501)
 script = ExtResource("4_aad7h")
@@ -602,93 +697,3 @@ scale = Vector2(1.2623535, 1.2623535)
 [node name="@Node2D@306903" parent="Trees" unique_id=2069446067 instance=ExtResource("11_w6toh")]
 position = Vector2(7536, -3501)
 scale = Vector2(1.3117597, 1.3117597)
-
-[node name="Interactables" type="Node2D" parent="." unique_id=1586696746]
-
-[node name="Coins" type="Node2D" parent="Interactables" unique_id=954935803]
-
-[node name="Collectable" parent="Interactables/Coins" unique_id=2052972169 instance=ExtResource("13_s6eo5")]
-position = Vector2(6264, -4375)
-
-[node name="Collectable2" parent="Interactables/Coins" unique_id=741079846 instance=ExtResource("13_s6eo5")]
-position = Vector2(6590, -4521)
-
-[node name="Collectable3" parent="Interactables/Coins" unique_id=529771834 instance=ExtResource("13_s6eo5")]
-position = Vector2(6955, -4410)
-
-[node name="Collectable4" parent="Interactables/Coins" unique_id=977128204 instance=ExtResource("13_s6eo5")]
-position = Vector2(6083, -4049)
-
-[node name="Collectable5" parent="Interactables/Coins" unique_id=1937623555 instance=ExtResource("13_s6eo5")]
-position = Vector2(6319, -3648)
-
-[node name="Collectable6" parent="Interactables/Coins" unique_id=1545911170 instance=ExtResource("13_s6eo5")]
-position = Vector2(6833, -3615)
-
-[node name="Collectable7" parent="Interactables/Coins" unique_id=768753948 instance=ExtResource("13_s6eo5")]
-position = Vector2(7050, -4031)
-
-[node name="Collectable8" parent="Interactables/Coins" unique_id=1666756597 instance=ExtResource("13_s6eo5")]
-position = Vector2(1145, -5290)
-
-[node name="Collectable9" parent="Interactables/Coins" unique_id=1244482098 instance=ExtResource("13_s6eo5")]
-position = Vector2(210, -5553)
-
-[node name="Collectable10" parent="Interactables/Coins" unique_id=1916063993 instance=ExtResource("13_s6eo5")]
-position = Vector2(-900, -4691)
-
-[node name="Collectable11" parent="Interactables/Coins" unique_id=1870521202 instance=ExtResource("13_s6eo5")]
-position = Vector2(-136, -3837)
-
-[node name="Collectable12" parent="Interactables/Coins" unique_id=98726703 instance=ExtResource("13_s6eo5")]
-position = Vector2(1182, -4136)
-
-[node name="Collectable13" parent="Interactables/Coins" unique_id=1655015664 instance=ExtResource("13_s6eo5")]
-position = Vector2(5715, -3043)
-
-[node name="Collectable14" parent="Interactables/Coins" unique_id=792798038 instance=ExtResource("13_s6eo5")]
-position = Vector2(4658, -2458)
-
-[node name="Collectable15" parent="Interactables/Coins" unique_id=1741083285 instance=ExtResource("13_s6eo5")]
-position = Vector2(5393, -46)
-
-[node name="Collectable16" parent="Interactables/Coins" unique_id=354833225 instance=ExtResource("13_s6eo5")]
-position = Vector2(3924, -1477)
-
-[node name="Collectable17" parent="Interactables/Coins" unique_id=1705096306 instance=ExtResource("13_s6eo5")]
-position = Vector2(2778, 793)
-
-[node name="Collectable18" parent="Interactables/Coins" unique_id=90689869 instance=ExtResource("13_s6eo5")]
-position = Vector2(-173, -2773)
-
-[node name="Collectable19" parent="Interactables/Coins" unique_id=438489689 instance=ExtResource("13_s6eo5")]
-position = Vector2(-2144, -3117)
-
-[node name="Collectable20" parent="Interactables/Coins" unique_id=1889726744 instance=ExtResource("13_s6eo5")]
-position = Vector2(-1455, -1866)
-
-[node name="Collectable21" parent="Interactables/Coins" unique_id=990609093 instance=ExtResource("13_s6eo5")]
-position = Vector2(-2174, 763)
-
-[node name="Collectable22" parent="Interactables/Coins" unique_id=139289971 instance=ExtResource("13_s6eo5")]
-position = Vector2(-4092, -992)
-
-[node name="Collectable23" parent="Interactables/Coins" unique_id=5557256 instance=ExtResource("13_s6eo5")]
-position = Vector2(-4120, -283)
-
-[node name="Collectable24" parent="Interactables/Coins" unique_id=937357951 instance=ExtResource("13_s6eo5")]
-position = Vector2(-3861, -671)
-
-[node name="Collectable25" parent="Interactables/Coins" unique_id=1698123549 instance=ExtResource("13_s6eo5")]
-position = Vector2(-2989, -1262)
-
-[node name="Seeds" type="Node2D" parent="Interactables" unique_id=272689731]
-
-[node name="Seed" parent="Interactables/Seeds" unique_id=1413849496 instance=ExtResource("14_0irvv")]
-position = Vector2(6582, -4034)
-
-[node name="Seed2" parent="Interactables/Seeds" unique_id=1297449906 instance=ExtResource("14_0irvv")]
-position = Vector2(1494, -5752)
-
-[node name="Seed3" parent="Interactables/Seeds" unique_id=534061377 instance=ExtResource("14_0irvv")]
-position = Vector2(-4513, -678)
