@@ -6,6 +6,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Death" type="CanvasLayer" unique_id=594509251]
+layer = 2
 script = ExtResource("1_enxef")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=1191316138]

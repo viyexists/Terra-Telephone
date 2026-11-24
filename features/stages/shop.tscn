@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bhrsaynny18uu" path="res://features/speech/speech_engine.gd" id="5_5pagp"]
 [ext_resource type="Script" uid="uid://be7h2rnk4qypr" path="res://features/stages/shop_option.gd" id="6_2p4ce"]
 [ext_resource type="Theme" uid="uid://bslva4sc3tbty" path="res://features/main_theme.tres" id="6_04lra"]
+[ext_resource type="AudioStream" uid="uid://brdocn5oxky32" path="res://assets/terra_assets/sounds/sfx/letter-library-npc.wav" id="6_iex1q"]
 [ext_resource type="Texture2D" uid="uid://f8bbifwd6qlb" path="res://assets/terra_assets/sprites/level/Egg.webp" id="7_5pagp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pagp"]
@@ -96,7 +97,7 @@ texture = ExtResource("1_0yecm")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=173916583]
 libraries/ = SubResource("AnimationLibrary_u0hag")
 
-[node name="SpeechEngine" type="Control" parent="." unique_id=571154975]
+[node name="SpeechEngine" type="Control" parent="." unique_id=571154975 node_paths=PackedStringArray("Audio")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 481.0
@@ -106,7 +107,13 @@ offset_bottom = 282.0
 theme = ExtResource("6_04lra")
 script = ExtResource("5_5pagp")
 FONT_SIZE = 32
+Audio = NodePath("HeidiAudio")
 metadata/_custom_type_script = "uid://bhrsaynny18uu"
+
+[node name="HeidiAudio" type="AudioStreamPlayer2D" parent="SpeechEngine" unique_id=237726258]
+stream = ExtResource("6_iex1q")
+pitch_scale = 2.0
+bus = &"Heidi Dialog"
 
 [node name="UI" type="Control" parent="." unique_id=265345435]
 layout_mode = 3

@@ -6,6 +6,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [node name="LevelCompleteScreen" type="CanvasLayer" unique_id=594509251]
+layer = 2
 script = ExtResource("1_2kuqj")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=1191316138]

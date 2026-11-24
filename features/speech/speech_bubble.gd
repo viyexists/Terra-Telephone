@@ -9,6 +9,7 @@ var TIME_FOR_CHARACTER_TO_APPEAR: float = 0.03
 var TIME_UNTIL_SPEECH_BUBBLE_GONE: float = 3.0
 var TEXT_BACKGROUND_MARGIN: float = 30
 var FONT_SIZE: int = 64
+var AudioInstance: AudioStreamPlayer2D
 
 var timer: Timer
 var label: Label
@@ -18,12 +19,16 @@ var message: String = ''
 ## IT *WILL NOT* FREE ITSELF
 var _static:bool = false
 
+func _init(audio):
+	AudioInstance = audio
+
 func _ready():
 	# Listen to if a message intterupts others
 	self.get_parent().connect('messages_interrupted', _interrupt)
 	
 	if not _static:
 		# setup timer, a new character appears every itnerval
+		AudioInstance.play()
 		timer = Timer.new()
 		timer.autostart = false
 		timer.wait_time = TIME_FOR_CHARACTER_TO_APPEAR
@@ -60,6 +65,7 @@ func _show_next_character()->void:
 	if label.visible_characters >= len(message):
 		# if entire message is displayed, go through message complete routine
 		# timer is stopped for safety, it might fire while being freed
+		AudioInstance.stop()
 		timer.stop()
 		await get_tree().create_timer(TIME_UNTIL_SPEECH_BUBBLE_GONE).timeout
 		message_completed.emit()

@@ -2,7 +2,7 @@
 extends Control
 class_name SpeechEngine
 
-## CHild SpeechBubbles listen to this and free themselves when emitted.
+## Child SpeechBubbles listen to this and free themselves when emitted.
 signal messages_interrupted
 
 @export_range(0.01,10,0.01) var TIME_FOR_CHARACTER_TO_APPEAR: float = 0.03
@@ -10,6 +10,7 @@ signal messages_interrupted
 @export_range(0,120,5) var TEXT_BACKGROUND_MARGIN: float = 30
 @export_range(0,96,1) var FONT_SIZE: int = 64:
 	set(s): FONT_SIZE = _set_font_size(s)
+@export var Audio: AudioStreamPlayer2D
 
 ## Holds the messages queued for playing
 var message_queue:Array = []
@@ -22,7 +23,7 @@ func _ready() -> void:
 	## Only in the editor (you do not need to add any functionality to remove it
 	## the scene loads)
 	if Engine.is_editor_hint():
-		var b = SpeechBubble.new()
+		var b = SpeechBubble.new(Audio)
 		b._static = true
 		b.message = "Message will appear here"
 		b.FONT_SIZE = FONT_SIZE
@@ -54,7 +55,7 @@ func _next_message()->void:
 		return
 		
 	# generate a new SpeechBubble
-	var bubble: SpeechBubble = SpeechBubble.new()
+	var bubble: SpeechBubble = SpeechBubble.new(Audio)
 	bubble.TIME_FOR_CHARACTER_TO_APPEAR = TIME_FOR_CHARACTER_TO_APPEAR
 	bubble.TIME_UNTIL_SPEECH_BUBBLE_GONE = TIME_UNTIL_SPEECH_BUBBLE_GONE
 	bubble.FONT_SIZE = FONT_SIZE
@@ -72,7 +73,7 @@ func _set_font_size(s):
 	if Engine.is_editor_hint():
 		if get_child_count() > 0:
 			get_child(0).free()
-		var b = SpeechBubble.new()
+		var b = SpeechBubble.new(Audio)
 		b._static = true
 		b.message = "Message will appear here"
 		b.FONT_SIZE = FONT_SIZE
