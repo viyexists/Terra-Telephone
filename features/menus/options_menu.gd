@@ -1,7 +1,7 @@
 extends Control
 
-@onready var volume_label: Label = $MarginContainer/Panel/VBoxContainer/HBoxContainer/VolumeLabel
-@onready var volume_slider: HSlider = $MarginContainer/Panel/VBoxContainer/HBoxContainer/VolumeSlider
+@onready var volume_label: Label = $MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer/VolumeLabel
+@onready var volume_slider: HSlider = $MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer/VolumeSlider
 
 
 # Called when the node enters the scene tree for the first time.

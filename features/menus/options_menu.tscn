@@ -1,6 +1,37 @@
 [gd_scene format=3 uid="uid://c7h3kb22ikjnp"]
 
 [ext_resource type="Script" uid="uid://dkvelxnk6g8wd" path="res://features/menus/options_menu.gd" id="1_8vor6"]
+[ext_resource type="Texture2D" uid="uid://c045v4cyyogtv" path="res://assets/terra-derived/ui/stitchedninebox.png" id="2_2ium1"]
+[ext_resource type="Texture2D" uid="uid://e0lvshv46ea0" path="res://assets/terra-derived/ui/primarystitchedninebox.png" id="2_ibmnm"]
+[ext_resource type="Texture2D" uid="uid://b6wjxqfchcidy" path="res://assets/terra_assets/sprites/ui/exit.webp" id="3_ibmnm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqig7"]
+bg_color = Color(0.95686275, 0.7921569, 0.58431375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5764706, 0.34509805, 0.17254902, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o5lg"]
+bg_color = Color(0.65882355, 0.4117647, 0.22745098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.27450982, 0.12941177, 0.078431375, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibmnm"]
+bg_color = Color(0.6039216, 0.34901962, 0.15686275, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.27450982, 0.12941177, 0.078431375, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [node name="OptionsMenu" type="Control" unique_id=699405027]
 layout_mode = 3
@@ -23,54 +54,105 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 100
 
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1372565910]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=111551618]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+texture = ExtResource("2_ibmnm")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel" unique_id=1217635313]
+[node name="Panel" type="Panel" parent="MarginContainer/NinePatchRect" unique_id=1403137110]
+custom_minimum_size = Vector2(0, 383.373)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tqig7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect" unique_id=1217635313]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 20.0
+offset_bottom = 128.0
 grow_horizontal = 2
 
-[node name="SettingsLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=711689396]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/NinePatchRect/VBoxContainer" unique_id=456473353]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+texture = ExtResource("2_2ium1")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect/VBoxContainer/NinePatchRect" unique_id=551926161]
+layout_mode = 1
+offset_right = 752.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = -5
+
+[node name="SettingsLabel" type="Label" parent="MarginContainer/NinePatchRect/VBoxContainer/NinePatchRect/MarginContainer" unique_id=711689396]
+custom_minimum_size = Vector2(0, 45)
+custom_maximum_size = Vector2(-1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5764706, 0.34509805, 0.17254902, 1)
+theme_override_colors/font_outline_color = Color(0.9764706, 0.9019608, 0.80784315, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 48
 text = "Settings"
-horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="DisclaimerLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=26205982]
+[node name="DisclaimerLabel" type="Label" parent="MarginContainer/NinePatchRect/VBoxContainer" unique_id=26205982]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.5764706, 0.34509805, 0.17254902, 1)
 text = "(This does nothing)"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer" unique_id=295531703]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect/VBoxContainer" unique_id=295531703]
 layout_mode = 2
 
-[node name="Spacer2" type="Control" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=1879194542]
+[node name="Spacer2" type="Control" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1879194542]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VolumeLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=406863688]
+[node name="VolumeLabel" type="Label" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=406863688]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5764706, 0.34509805, 0.17254902, 1)
 text = "Volume"
 
-[node name="VolumeSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=681540451]
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=681540451]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Spacer" type="Control" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=1447764748]
+[node name="Spacer" type="Control" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1447764748]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="CloseButton" type="Button" parent="." unique_id=1767086854]
 layout_mode = 0
-offset_left = 925.0
-offset_top = 86.0
-offset_right = 971.0
-offset_bottom = 134.0
-text = "X"
+offset_left = 866.0
+offset_top = 49.0
+offset_right = 922.0
+offset_bottom = 100.0
+theme_override_constants/icon_max_width = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8o5lg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ibmnm")
+icon = ExtResource("3_ibmnm")
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="value_changed" from="MarginContainer/Panel/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
