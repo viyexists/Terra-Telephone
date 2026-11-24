@@ -2,23 +2,47 @@
 
 [ext_resource type="Script" uid="uid://cicj48tcylijc" path="res://features/menus/loading_screen.gd" id="1_e1jdc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1jdc"]
+bg_color = Color(0.55152094, 0.41032907, 0.28611472, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2002697, 0.084733196, 0.051597178, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [node name="LoadingScreen" type="CanvasLayer" unique_id=2094900862]
 script = ExtResource("1_e1jdc")
 
 [node name="BlackBackground" type="Panel" parent="." unique_id=309091426]
-offset_left = -21.0
-offset_top = -9.0
-offset_right = 1179.0
-offset_bottom = 662.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1jdc")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=280165518]
-offset_right = 1148.0
-offset_bottom = 24.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
 max_value = 1.0
 step = 0.001
 
 [node name="LoadingLabel" type="Label" parent="." unique_id=528762687]
-offset_left = 6.0
-offset_right = 82.0
-offset_bottom = 20.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 76.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -25)
 text = "Now loading"

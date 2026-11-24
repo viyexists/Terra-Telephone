@@ -1,6 +1,7 @@
 extends Control
 
 const BUTTON_SCROLL_SPEED: float = 100
+const BUTTON_ROTATION_SPEED: float = 0.2
 
 ## What stage the game starts on. Defaults to "res://features/stages/tutorial_stage.tscn"
 ## But can be changed for debugging later levels.
@@ -12,12 +13,21 @@ const BUTTON_SCROLL_SPEED: float = 100
 	%QuitButton
 ]
 
+func _ready() -> void: # Set initial button positions
+	var offset = get_viewport_rect().size.x / 3
+	var i = 0
+	for button in buttons:
+		button.position.x = offset * (i + 0.5) - button.size.x / 2
+		button.rotation = randf() * 360
+		i += 1
+
 
 func _process(delta: float) -> void:
 	for button in buttons:
 		button.position.x += delta * BUTTON_SCROLL_SPEED
-		if button.position.x > 1200:
-			button.position.x = -300
+		button.rotation += delta * BUTTON_ROTATION_SPEED
+		if button.position.x > get_viewport_rect().size.x:
+			button.position.x = -button.size.x
 
 
 func _on_start_button_pressed() -> void:
