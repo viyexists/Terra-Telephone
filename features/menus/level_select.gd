@@ -4,14 +4,14 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(len(Global.levels)):
+	for idx in Global.levels.size():
+		var level = Global.levels[idx]
 		var b = Button.new()
-		b.connect('pressed', func():_load_level(i ,Global.levels[i][1]))
+		b.connect("pressed", func():_load_level(idx, level.path))
 		b.custom_minimum_size = Vector2(80,80)
-		b.text = '%s - %s' % [i+1, Global.levels[i][0]]
-		b.disabled = not (Global.levels[i][2] or bypass_level_lock)
+		b.text = '%s - %s' % [idx + 1, level.name]
+		b.disabled = not (level.unlocked or bypass_level_lock)
 		%ButtonContainer.add_child(b)
-		i += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

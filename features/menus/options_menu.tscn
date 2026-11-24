@@ -24,6 +24,15 @@ border_color = Color(0.27450982, 0.12941177, 0.078431375, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq8b0"]
+bg_color = Color(0.41686648, 0.23251218, 0.09255048, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.27450982, 0.12941177, 0.078431375, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibmnm"]
 bg_color = Color(0.6039216, 0.34901962, 0.15686275, 1)
 border_width_left = 4
@@ -149,7 +158,9 @@ offset_right = 922.0
 offset_bottom = 100.0
 theme_override_constants/icon_max_width = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8o5lg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cq8b0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ibmnm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cq8b0")
 icon = ExtResource("3_ibmnm")
 icon_alignment = 1
 expand_icon = true
