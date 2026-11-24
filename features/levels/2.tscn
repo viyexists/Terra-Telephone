@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c10orc0msvqjj"]
+
+[ext_resource type="Script" uid="uid://baliwsi8vvqi5" path="res://features/levels/_level.gd" id="1_4ucn2"]
+[ext_resource type="Script" uid="uid://bhrsaynny18uu" path="res://features/speech/speech_engine.gd" id="2_wqdnt"]
+[ext_resource type="AudioStream" uid="uid://brdocn5oxky32" path="res://assets/terra_assets/sounds/sfx/letter-library-npc.wav" id="3_73gke"]
+
+[node name="2" type="Node2D" unique_id=943100411]
+script = ExtResource("1_4ucn2")
+metadata/_custom_type_script = "uid://baliwsi8vvqi5"
+
+[node name="Control" type="Control" parent="." unique_id=1666478296 node_paths=PackedStringArray("Audio")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_wqdnt")
+Audio = NodePath("RatticusAudio")
+
+[node name="RatticusAudio" type="AudioStreamPlayer2D" parent="Control" unique_id=1984054506]
+stream = ExtResource("3_73gke")
+pitch_scale = 1.8
+bus = &"Ratticus Dialog"

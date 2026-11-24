@@ -26,6 +26,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			await get_tree().create_timer(3).timeout
 			end_stage.emit()
 		else:
+			if ended_stage: return
 			$SpeechEngine.say("PONCHO! WHAT ARE YOU DOING? GET ME THE SEEDS, QUICK!!")
 			$SpeechEngine.say("WELL WHAT ARE YOU WAITING FOR?")
 			$SpeechEngine.say("GET ON IT AND DON'T LET IT CATCH YA")

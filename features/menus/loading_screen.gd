@@ -2,8 +2,8 @@ extends CanvasLayer
 
 var scene_to_change_to: String
 
-@onready var progress_bar: ProgressBar = $ProgressBar
-@onready var loading_label: Label = $LoadingLabel
+@onready var progress_bar: ProgressBar = $MarginContainer/ProgressBar
+@onready var loading_label: Label = $MarginContainer/LoadingLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,9 +26,9 @@ func _process(_delta: float) -> void:
 		if scene is Node2D:
 			scene.z_index = 0
 		add_sibling(scene)
-		$ProgressBar.hide()
-		$LoadingLabel.hide()
-		var tween := get_tree().create_tween()
+		var tween := get_tree().create_tween().set_parallel(true)
 		tween.tween_property($BlackBackground, "modulate:a", 0, 1.5)
+		tween.tween_property(progress_bar, "modulate:a", 0, 1.5)
+		tween.tween_property(loading_label, "modulate:a", 0, 1.5)
 		await tween.finished
 		queue_free()
