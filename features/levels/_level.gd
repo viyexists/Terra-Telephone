@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		add_child(preload("res://features/menus/pause_screen.tscn").instantiate())
 		self.process_mode = Node.PROCESS_MODE_DISABLED
