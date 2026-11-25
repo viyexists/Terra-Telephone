@@ -10,13 +10,9 @@
 [ext_resource type="Script" uid="uid://bhrsaynny18uu" path="res://features/speech/speech_engine.gd" id="9_6pfoq"]
 [ext_resource type="AudioStream" uid="uid://brdocn5oxky32" path="res://assets/terra_assets/sounds/sfx/letter-library-npc.wav" id="9_v2400"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klosm"]
-radius = 326.0
-height = 1520.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ambiy"]
 radius = 492.99997
-height = 1936.0
+height = 2488.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o3rc"]
 animations = [{
@@ -49,15 +45,15 @@ animations = [{
 }]
 
 [node name="Base" type="Node2D" unique_id=847110166]
+y_sort_enabled = true
 script = ExtResource("1_vbhb5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=920715895]
-collision_layer = 5
+collision_layer = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=331918325]
-position = Vector2(-2, -196)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_klosm")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1602151505]
+scale = Vector2(1.3360627, 1.0706583)
+polygon = PackedVector2Array(0, 101.547, -504.789, 35.763, -736.545, -345.61, -767.467, -411.21, -744.261, -471.735, -283.455, -613.788, 502.608, -579.863, 755.079, -450.339, 784.752, -411.21, 764.787, -345.61, 539.413, 35.763)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=482368553]
 position = Vector2(0, -1217.5)
@@ -68,19 +64,23 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ambiy")
 
 [node name="BalloonBack" type="Sprite2D" parent="." unique_id=1658000714]
+z_index = -5
 position = Vector2(73, -1213.5)
 texture = ExtResource("2_6pfoq")
 
 [node name="Ratticus" type="AnimatedSprite2D" parent="." unique_id=664767980]
+z_index = -3
 position = Vector2(15.999992, -483.49988)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_8o3rc")
 animation = &"angry"
 
 [node name="BalloonFront" type="Sprite2D" parent="." unique_id=1700123810]
-position = Vector2(71, -1213)
+z_index = 10
+position = Vector2(-5.9604645e-08, -201)
 scale = Vector2(0.9999997, 0.9999997)
 texture = ExtResource("7_6pfoq")
+offset = Vector2(71.000015, -1012.00024)
 region_rect = Rect2(0, 2262.881, 1818, 362.1189)
 
 [node name="SpeechEngine" type="Control" parent="." unique_id=664768579 node_paths=PackedStringArray("Audio")]
@@ -98,5 +98,23 @@ metadata/_custom_type_script = "uid://bhrsaynny18uu"
 stream = ExtResource("9_v2400")
 pitch_scale = 1.8
 bus = &"Ratticus Dialog"
+
+[node name="Start" type="Node2D" parent="." unique_id=761364948]
+position = Vector2(0, -169)
+
+[node name="Left" type="Node2D" parent="Start" unique_id=535479369]
+position = Vector2(-1144, 0)
+
+[node name="Right" type="Node2D" parent="Start" unique_id=915632587]
+position = Vector2(1144, 0)
+
+[node name="End" type="Node2D" parent="." unique_id=1120873060]
+position = Vector2(0, -169)
+
+[node name="Left" type="Node2D" parent="End" unique_id=966311110]
+position = Vector2(-330, 0)
+
+[node name="Right" type="Node2D" parent="End" unique_id=252912446]
+position = Vector2(330, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

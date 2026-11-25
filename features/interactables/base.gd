@@ -15,12 +15,30 @@ func _ready() -> void:
 	$SpeechEngine.say("GET THE SEEDS. AVOID THE ENEMY.")
 	$SpeechEngine.say("RETURN HERE WHEN YOU ARE FINISHED.")
 
+# Back, Ratticus, Front
+const behind = [5, 6, 7]
+const inside = [-5, -3, 10]
+const front = [-7, -6, -5]
+
+func _process(dt: float) -> void:
+	var layers: Array
+	if ended_stage:
+		layers = inside
+	elif Global.player.global_position.y < global_position.y:
+		layers = behind
+	else:
+		layers = front
+	$BalloonBack.z_index = layers[0]
+	$Ratticus.z_index = layers[1]
+	$BalloonFront.z_index = layers[2]
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == Global.player:
 		if Global.seeds_collected >= Global.seeds_this_stage and not ended_stage:
 			ended_stage = true
-			await $SpeechEngine.say("FINALLY, YOU GOT THE SEEDS. LET'S LEAVE, QUICK", true)
+			Global.player.go_to_balloon(self)
+			$SpeechEngine.say("FINALLY, YOU GOT THE SEEDS. LET'S LEAVE, QUICK", true)
+			await get_tree().create_timer(2).timeout
 			get_parent().add_sibling(load("res://features/stages/level_complete_screen.tscn").instantiate())
 			Global.player_immune = true
 			await get_tree().create_timer(3).timeout

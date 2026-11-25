@@ -4,8 +4,12 @@ extends CharacterBody2D
 
 ## Sent when we want to delete this stage e.g death or continuing
 signal end_stage
+signal reached_balloon
 
 var max_health: float = 10
+var moving_to_balloon: bool = false
+var target: Vector2
+var levelBalloon
 
 # Debug
 @export var DEBUG_vignette_enabled: bool = true:
@@ -38,11 +42,11 @@ func _ready() -> void:
 	
 	# Applying the shop item effects
 	for item in Items.bought_items:
-		if Items.all_items[int(item)][Items.ITEM_EFFECT] == "slowness":
+		if Items.all_items[item][Items.ITEM_EFFECT] == "slowness":
 			speed /= 2
-		elif Items.all_items[int(item)][Items.ITEM_EFFECT] == "super speed":
+		elif Items.all_items[item][Items.ITEM_EFFECT] == "super speed":
 			speed *= 2
-		elif Items.all_items[int(item)][Items.ITEM_EFFECT] == "inverted controls":
+		elif Items.all_items[item][Items.ITEM_EFFECT] == "inverted controls":
 			is_controls_inverted = true
 
 # Annoying when you're trying to see stuff in the map, debug only
@@ -56,6 +60,15 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
+	if moving_to_balloon:
+		play_walk_animation()
+		global_position = global_position.move_toward(target, speed * 100 * delta)
+		
+		if global_position.distance_to(target) < 2.0:
+			global_position = target
+			play_idle_animation()
+			reached_balloon.emit()
+		return
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	
 	if is_controls_inverted:
@@ -139,6 +152,41 @@ func die() -> void:
 	Items.bought_items.clear()
 	
 
+
+func show_seed_collected() -> void:
+	$SeedLabel.show()
+	await get_tree().create_timer(2).timeout
+	$SeedLabel.hide()
+
+
+# Set target for moving to the balloon
+# Actually moves in _process
+func go_to_balloon(Balloon) -> void:
+	levelBalloon = Balloon
+	
+	for point in [1, 2]:
+		var posA = levelBalloon.get_node("Start/Left").global_position if point == 1 else levelBalloon.get_node("End/Left").global_position
+		var posB = levelBalloon.get_node("Start/Right").global_position if point == 1 else levelBalloon.get_node("End/Right").global_position
+		var deltA = global_position.distance_squared_to(posA)
+		var deltB = global_position.distance_squared_to(posB)
+		
+		target = posA if deltA <= deltB else posB 
+		
+		var direction = global_position.direction_to(target)
+		flip_sprite(direction.x < 0)
+			
+		self.get_node("CollisionShape2D").set_deferred("disabled", true)
+		moving_to_balloon = true
+		
+		while global_position.distance_to(target) > 2.0:
+			await get_tree().physics_frame
+		
+		global_position = target
+		# moving to balloon isnt set to false to prevent player inputs
+		# this should've been called from base.gd as part of the finishing animation stuff
+		play_idle_animation()
+
+
 # DEPRECATED
 # Was a TODO but retrying a level just uses die() which brings you back to the main menu
 # die() is fine but this can be continued if you want to use respawn
@@ -149,8 +197,3 @@ func respawn() -> void:
 	$Sprite.position = Vector2.ZERO
 	$Sprite.rotation = 0
 	self.show()
-
-func show_seed_collected() -> void:
-	$SeedLabel.show()
-	await get_tree().create_timer(2).timeout
-	$SeedLabel.hide()

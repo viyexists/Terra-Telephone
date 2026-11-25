@@ -283,6 +283,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1646932784 groups=["enemies", "player"]]
+z_index = 1
 script = ExtResource("1_yse43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
