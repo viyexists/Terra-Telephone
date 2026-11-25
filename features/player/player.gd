@@ -1,3 +1,4 @@
+@tool
 class_name Player
 extends CharacterBody2D
 
@@ -5,6 +6,12 @@ extends CharacterBody2D
 signal end_stage
 
 var max_health: float = 10
+
+# Debug
+@export var DEBUG_vignette_enabled: bool = true:
+	set(v):
+		DEBUG_vignette_enabled = v
+		set_vignette()
 
 ## How fast the player walks. This is occasionally modified by external sources.
 @export var speed: float = 5.5
@@ -21,6 +28,7 @@ var is_controls_inverted: bool = false
 var is_dead: bool = false
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	play_idle_animation()
 	Global.player = self
 	Global.player_immune = false
@@ -36,12 +44,18 @@ func _ready() -> void:
 			speed *= 2
 		elif Items.all_items[int(item)][Items.ITEM_EFFECT] == "inverted controls":
 			is_controls_inverted = true
-	
-	
+
+# Annoying when you're trying to see stuff in the map, debug only
+# or to be used on really bright maps where the vignette doesn't fit
+func set_vignette():
+	$UI/TextureRect.visible = DEBUG_vignette_enabled
+
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	$ArrowToBase.look_at(Global.base_position)
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	
 	if is_controls_inverted:

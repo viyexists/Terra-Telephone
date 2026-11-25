@@ -28,6 +28,7 @@ var stages: Array[String] = [
 var levels: Array[Dictionary] = [
 	{"name": "Tutorial", "path": "res://features/levels/tutorial_stage.tscn", "unlocked": true},
 	{"name": "Arrival", "path": "res://features/levels/1.tscn", "unlocked": false},
+	{"name": "Debug Test", "path": "res://features/levels/2.tscn", "unlocked": false},
 ]
 
 

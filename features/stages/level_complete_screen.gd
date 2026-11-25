@@ -30,14 +30,15 @@ func _ready() -> void:
 		elif tax < 0:
 			label.text += "ended up giving you " + str(-tax) + " " + coin_plural + " instead...?"
 	
+	# These three .modulate.a were moved to fix flashing when level ends
+	black_background.modulate.a = 0
+	label.modulate.a = 0
+	continue_button.modulate.a = 0
 	# Added wait a frame so the label size updates
 	# and it formats it correctly or something?
 	await get_tree().process_frame
 	$VBoxContainer.position.x = (Global.screen_size.x / 2) - ($VBoxContainer.size.x / 2)
 	
-	black_background.modulate.a = 0
-	label.modulate.a = 0
-	continue_button.modulate.a = 0
 	var tween := get_tree().create_tween()
 	tween.tween_property(black_background, "modulate:a", 1, 3)
 	tween.tween_property(label, "modulate:a", 1, 2)

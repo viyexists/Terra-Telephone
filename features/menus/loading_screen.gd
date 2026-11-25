@@ -25,7 +25,8 @@ func _process(_delta: float) -> void:
 		var scene = ResourceLoader.load_threaded_get(scene_to_change_to).instantiate()
 		if scene is Node2D:
 			scene.z_index = 0
-		add_sibling(scene)
+		get_tree().root.add_child(scene)
+		get_tree().current_scene = scene
 		var tween := get_tree().create_tween().set_parallel(true)
 		tween.tween_property($BlackBackground, "modulate:a", 0, 1.5)
 		tween.tween_property(progress_bar, "modulate:a", 0, 1.5)
