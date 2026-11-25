@@ -37,8 +37,9 @@ func say(message: String, interrupt_previous_messages: bool = false) -> void:
 	if disabled:
 		return
 	if interrupt_previous_messages:
-		# if message interrupts others, kill all child SpeechBubbles
+		message_queue.clear()
 		messages_interrupted.emit()
+		current_bubble = null
 	message_queue.append(message)
 	_next_message()
 	if interrupt_previous_messages:

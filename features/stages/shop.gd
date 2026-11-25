@@ -52,5 +52,6 @@ func option_chosen(index: int) -> void:
 	if Items.buy(cur_option.option_id):
 		cur_option.disabled = true
 		return
+	$SpeechEngine.say("You don't have enough coins to buy this :<", true)
 	print("Not enough coins to buy this")
 	

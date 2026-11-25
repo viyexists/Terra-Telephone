@@ -68,6 +68,8 @@ func _show_next_character()->void:
 		AudioInstance.stop()
 		timer.stop()
 		await get_tree().create_timer(TIME_UNTIL_SPEECH_BUBBLE_GONE).timeout
+		if not is_inside_tree():
+			return
 		message_completed.emit()
 		self.queue_free()
 
