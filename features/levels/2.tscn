@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="4_usuwq"]
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="5_ip4ls"]
 [ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="6_ip4ls"]
+[ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="7_kr10t"]
 
 [node name="2" type="Node2D" unique_id=943100411 node_paths=PackedStringArray("player", "base")]
 script = ExtResource("1_4ucn2")
@@ -34,3 +35,15 @@ DEBUG_vignette_enabled = false
 
 [node name="Blargh" parent="." unique_id=2017245619 instance=ExtResource("6_ip4ls")]
 position = Vector2(-304, 911)
+
+[node name="Seeds" type="Node2D" parent="." unique_id=1947102374]
+y_sort_enabled = true
+
+[node name="Seed2" parent="Seeds" unique_id=1413849496 instance=ExtResource("7_kr10t")]
+position = Vector2(2287, 1963)
+
+[node name="Seed3" parent="Seeds" unique_id=458538998 instance=ExtResource("7_kr10t")]
+position = Vector2(2090, -2066)
+
+[node name="Seed4" parent="Seeds" unique_id=1227769844 instance=ExtResource("7_kr10t")]
+position = Vector2(-2510, -1613)
