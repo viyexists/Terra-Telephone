@@ -7,7 +7,8 @@ func test_seed_nonzero(level = use_parameters(Global.levels)):
 	add_child(game)
 	
 	# Wait for game to do something
-	await get_tree().process_frame
+	for i in 5:
+		await get_tree().process_frame
 	
 	assert_ne(Global.seeds_this_stage, 0, "Seed should be nonzero")
 	
