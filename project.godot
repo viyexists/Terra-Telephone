@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://c2kdr8y4vtefb"
 
 Global="*uid://cjml3xae06gtc"
 Items="*uid://dmth655r264rg"
+Magic="*uid://bwu5bnqv565mo"
 
 [display]
 
@@ -37,6 +38,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res:/
 
 enemies=""
 player=""
+apple_tree=""
+orange_tree=""
 
 [gui]
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjsud"]
 size = Vector2(205.5, 20)
 
-[node name="TreeOrange" type="Node2D" unique_id=275115240]
+[node name="TreeOrange" type="Node2D" unique_id=275115240 groups=["orange_tree"]]
 script = ExtResource("1_4qkpv")
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=1506657549]

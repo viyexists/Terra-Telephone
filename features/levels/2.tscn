@@ -5,7 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://brdocn5oxky32" path="res://assets/terra_assets/sounds/sfx/letter-library-npc.wav" id="3_73gke"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="4_usuwq"]
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="5_ip4ls"]
+[ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="7_fiivu"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="7_kr10t"]
+[ext_resource type="PackedScene" uid="uid://y8rgrh1ermx4" path="res://features/interactables/grimoire.tscn" id="8_fiivu"]
 
 [node name="2" type="Node2D" unique_id=943100411 node_paths=PackedStringArray("player", "base")]
 y_sort_enabled = true
@@ -32,11 +34,23 @@ bus = &"Ratticus Dialog"
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("4_usuwq")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(-1300, 777)
+position = Vector2(45, 1201)
 DEBUG_vignette_enabled = false
 
 [node name="Seeds" type="Node2D" parent="." unique_id=1947102374]
 y_sort_enabled = true
 
 [node name="Seed2" parent="Seeds" unique_id=1413849496 instance=ExtResource("7_kr10t")]
-position = Vector2(1259, -24)
+position = Vector2(-394, 451)
+
+[node name="TreeOrange" parent="." unique_id=275115240 instance=ExtResource("7_fiivu")]
+position = Vector2(609, 1163)
+
+[node name="TreeOrange2" parent="." unique_id=1882321937 instance=ExtResource("7_fiivu")]
+position = Vector2(1434, 1662)
+
+[node name="TreeOrange3" parent="." unique_id=1667867606 instance=ExtResource("7_fiivu")]
+position = Vector2(489, 1899)
+
+[node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("8_fiivu")]
+position = Vector2(-152, 1407)

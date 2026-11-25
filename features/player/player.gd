@@ -89,6 +89,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		print("magicking apple tree")
+		Magic.TurnOrangeTreesIntoAppleTrees()
+
+
 func play_idle_animation() -> void:
 	player_body.play("idle")
 	player_clothes.play("idle")
