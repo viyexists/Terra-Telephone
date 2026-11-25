@@ -139,7 +139,9 @@ func die() -> void:
 	Items.bought_items.clear()
 	
 
-# TODO
+# DEPRECATED
+# Was a TODO but retrying a level just uses die() which brings you back to the main menu
+# die() is fine but this can be continued if you want to use respawn
 func respawn() -> void:
 	# Resetting everything that was changed
 	$Hitbox.set_deferred("monitoring", true)
