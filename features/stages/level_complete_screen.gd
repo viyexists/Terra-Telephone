@@ -6,9 +6,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var nextLevel = Global.levels[Global.current_stage + 1]
-	if nextLevel in Global.levels:
-		nextLevel.unlocked = true # unlock next scene
+	if Global.current_stage + 1 < Global.levels.size():
+		Global.levels[Global.current_stage + 1].unlocked = true # unlock next scene
 	
 	var tax: float = round(Global.coins / 2)
 	var did_item_reduce_tax: bool = false

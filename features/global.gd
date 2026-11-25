@@ -27,7 +27,7 @@ var stages: Array[String] = [
 ## A locked stage needs its previous stages completed first.
 var levels: Array[Dictionary] = [
 	{"name": "Tutorial", "path": "res://features/levels/tutorial_stage.tscn", "unlocked": true},
-	{"name": "Arrival", "path": "res://features/levels/1.tscn", "unlocked": false},
+	{"name": "Arrival", "path": "res://features/levels/1.tscn", "unlocked": true},
 	{"name": "Debug Test", "path": "res://features/levels/2.tscn", "unlocked": false},
 ]
 
@@ -45,10 +45,6 @@ var screen_size: Vector2
 
 func _ready() -> void:
 	screen_size = get_viewport().get_visible_rect().size
-
-
-func _process(_delta: float) -> void:
-	current_stage %= stages.size()
 
 
 func coin_collected(value: float = 1) -> void:

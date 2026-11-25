@@ -42,8 +42,12 @@ func opening_animation() -> void:
 
 
 func _on_continue_button_pressed() -> void:
-	Global.load_new_scene(Global.levels[Global.next_stage].path, self)
-	Global.current_stage = Global.next_stage
+	if Global.current_stage + 1 < Global.levels.size():
+		Global.load_new_scene(Global.levels[Global.next_stage].path, self)
+		Global.current_stage = Global.next_stage
+	else:
+		Global.load_new_scene("res://features/menus/main_menu.tscn", self)
+		Global.current_stage = 0
 	self.queue_free()
 
 
