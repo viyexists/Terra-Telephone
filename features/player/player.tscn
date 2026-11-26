@@ -342,4 +342,5 @@ script = ExtResource("7_q1etv")
 tomato = ExtResource("8_gj24u")
 
 [node name="UI" parent="." unique_id=1434014047 instance=ExtResource("2_ray8b")]
+visible = false
 metadata/_edit_use_anchors_ = true

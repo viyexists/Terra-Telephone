@@ -133,7 +133,7 @@ offset_top = -100.0
 offset_right = 101.0
 grow_vertical = 0
 
-[node name="Magic1" type="Panel" parent="Magic" unique_id=680151938]
+[node name="Magic2" type="Panel" parent="Magic" unique_id=680151938]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -146,7 +146,24 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(10, -40)
 theme_override_styles/panel = SubResource("StyleBoxFlat_itajw")
 
-[node name="Magic2" type="Panel" parent="Magic" unique_id=1051626810]
+[node name="icon" type="TextureRect" parent="Magic/Magic2" unique_id=1561379208]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-0.473, -0.75)
+
+[node name="Magic1" type="Panel" parent="Magic" unique_id=1051626810]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -159,15 +176,32 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(40, -10)
 theme_override_styles/panel = SubResource("StyleBoxFlat_itajw")
 
+[node name="icon" type="TextureRect" parent="Magic/Magic1" unique_id=754602174]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-0.473, -0.75)
+
 [node name="TextureRect2" type="TextureRect" parent="Magic" unique_id=603195022]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 74.0
-offset_top = -97.0
-offset_right = 140.0
-offset_bottom = -11.0
+offset_left = 19.000002
+offset_top = -37.0
+offset_right = 85.0
+offset_bottom = 49.0
 grow_vertical = 0
 scale = Vector2(0.2706238, 0.2706238)
 texture = ExtResource("4_jq3q8")

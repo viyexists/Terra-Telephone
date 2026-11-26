@@ -8,7 +8,29 @@ extends CanvasLayer
 func _ready() -> void:
 	$AllSeedsCollectedLabel.hide()
 	Items.connect('item_bought', _on_item_bought)
+	
+	Magic.magic_update.connect(setup_magic_icons)
+	if Magic.unlocked:
+		setup_magic_icons()
 
+func setup_magic_icons() -> void:
+	# Set up the two icons for magic
+	if not Magic.unlocked: return
+	var Magic1 = $Magic/Magic1/icon
+	var Magic2 = $Magic/Magic2/icon
+	Magic1.texture = null
+	Magic2.texture = null
+	var Slot1
+	var Slot2
+	for spell in Magic.spells:
+		if Magic.spells[spell].slot == 1:
+			Slot1 = spell
+		if Magic.spells[spell].slot == 2:
+			Slot2 = spell
+	if Slot1 != null:
+		Magic1.texture = load(Magic.spells[Slot1].icon)
+	if Slot2 != null:
+		Magic2.texture = load(Magic.spells[Slot2].icon)
 
 func _process(_delta: float) -> void:
 	coins_label.text = "Coins: " + str(Global.coins)
@@ -17,6 +39,8 @@ func _process(_delta: float) -> void:
 	if Global.seeds_collected >= Global.seeds_this_stage:
 		$AllSeedsCollectedLabel.show()
 		Global.player.toggle_base_arrow(true)
+
+	$Magic.visible = Magic.unlocked
 
 	$Inventory.visible = Input.is_action_pressed("show_items")
 	if Input.is_action_just_pressed("test"):

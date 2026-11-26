@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="7_fiivu"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="7_kr10t"]
 [ext_resource type="PackedScene" uid="uid://y8rgrh1ermx4" path="res://features/interactables/grimoire.tscn" id="8_fiivu"]
+[ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="9_pjgkq"]
 
 [node name="2" type="Node2D" unique_id=943100411 node_paths=PackedStringArray("player", "base")]
 y_sort_enabled = true
@@ -53,4 +54,8 @@ position = Vector2(1434, 1662)
 position = Vector2(489, 1899)
 
 [node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("8_fiivu")]
-position = Vector2(-152, 1407)
+position = Vector2(929, 1386)
+spell = "Turn Oranges into Apples"
+
+[node name="TreeApple" parent="." unique_id=1133187099 instance=ExtResource("9_pjgkq")]
+position = Vector2(1269, 963)

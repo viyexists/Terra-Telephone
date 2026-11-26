@@ -1,21 +1,57 @@
 extends Node
+signal magic_update
 
-# "NAME": {"image": path, "cooldown": float, "unlocked": bool, "slot": int}
+# "NAME": {"icon": path, "cooldown": float, "unlocked": bool, "slot": int}
 # Slots which are not [0, 1] aren't usable in game
 # Players can only hold two spells at once
 var spells = {
 	"Turn Oranges into Apples": {
+		"icon": "res://assets/custom/orangetoappleicon.png",
 		"cooldown": 2.0, # seconds
-		"unlocked": false, # unused
-		"slot": 1
+		"unlocked": false,
+		"slot": 0,
+		"function": TurnOrangeTreesIntoAppleTrees
 	}
 }
 
-const heldSpells = [
-	"Turn Oranges into Apples"
-]
+# If any spells are unlocked (faster to access than looping through EVERY spell)
+var unlocked = false
 
+# Literally just unlocks it in there this did not need a separate function
+# But conventions from `coin.gd` made me do it
+func collect_grimoire(spell):
+	var highestSlot = -INF
+	for spellf in spells: # spell was already used so i just labeled it spellf
+		if spells[spell].slot > highestSlot:
+			highestSlot = spells[spell].slot
+	highestSlot += 1
+	spells[spell].unlocked = true
+	spells[spell].slot = highestSlot
+	unlocked = true
+	magic_update.emit()
+
+# Actions for magic
+func _input(event):
+	if event.is_action_pressed("activate_magic"):
+		for spell in spells:
+			if spells[spell].slot == 1 and spells[spell].unlocked:
+				spells[spell].function.call()
+	
+	if event.is_action_pressed("switch_magic"):
+		print("switched")
+		for spell in spells:
+			if spells[spell].slot == 1 and spells[spell].unlocked:
+				spells[spell].slot = 2
+				magic_update.emit()
+			elif spells[spell].slot == 2 and spells[spell].unlocked:
+				spells[spell].slot = 1
+				magic_update.emit()
+
+# Spell that turns the nearest orange tree into an apple tree
+# TODO: Add range
+# TODO: Tie cooldown into UI
 func TurnOrangeTreesIntoAppleTrees():
+	if not spells["Turn Oranges into Apples"].unlocked: return
 	if not is_instance_valid(spells["Turn Oranges into Apples"].get("cooldownTimer")):
 		var timer = Timer.new()
 		timer.wait_time = spells["Turn Oranges into Apples"]["cooldown"]
@@ -52,7 +88,7 @@ func TurnOrangeTreesIntoAppleTrees():
 		orange_tree.get_parent().add_child(apple_tree)
 		apple_tree.global_position = initial_tree_position
 		orange_tree.queue_free()
-	
+
 func get_nearest_in_group_from_player(group: String) -> Node:
 	var nearest_node: Node = null
 	var shortest_distance = INF

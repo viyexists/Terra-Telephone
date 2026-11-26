@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var spell: String = ""
 
 func _ready() -> void:
 	await get_tree().create_timer(randf_range(0, 2)).timeout
@@ -12,6 +13,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func collected() -> void:
-	return
-	Global.coin_collected()
+	Magic.collect_grimoire(spell)
 	queue_free()

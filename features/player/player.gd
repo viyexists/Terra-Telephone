@@ -34,6 +34,7 @@ var is_dead: bool = false
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	play_idle_animation()
+	$UI.visible = true
 	Global.player = self
 	Global.player_immune = false
 	health = max_health
@@ -87,12 +88,6 @@ func _physics_process(delta: float) -> void:
 		play_idle_animation()
 
 	move_and_slide()
-
-
-func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-		print("magicking apple tree")
-		Magic.TurnOrangeTreesIntoAppleTrees()
 
 
 func play_idle_animation() -> void:
