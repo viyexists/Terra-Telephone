@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 	var player = get_parent().get_node("Player")
 	await get_tree().process_frame
-	player.set_physics_process(false)
+	# player.set_physics_process(false)
 	player.flip_sprite(true)
 	for enemy in get_parent().get_node("Enemies").get_children():
 		enemy.speed = 0
@@ -23,5 +23,3 @@ func _ready() -> void:
 			
 	await $SpeechEngine.say("IT'S ALSO RADIOACTIVE SO HURRY", true)
 	await $SpeechEngine.say("RETURN HERE WHEN YOU ARE FINISHED", true)
-
-	

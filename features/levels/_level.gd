@@ -9,15 +9,15 @@ var current_enemies:Dictionary[String, Enemy] = {}
 
 
 # Reset seed count (seed count automatically calculated in seed.gd)
+# Also do other stuff
 func _enter_tree() -> void:
 	Global.seeds_this_stage = 0
+	Global.seeds_collected = 0
+	Global.current_stage_node = self
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.seeds_collected = 0
-	Global.current_stage_node = self
-	
 	# since we assign the player and base vars, and this script is shared,
 	# we cant use godot's inbuilt signal connection and have to manually connect 
 	# to the signals

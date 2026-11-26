@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://42v5pri44n8m" path="res://features/interactables/base.tscn" id="5_ip4ls"]
 [ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="7_fiivu"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="7_kr10t"]
+[ext_resource type="PackedScene" uid="uid://y8rgrh1ermx4" path="res://features/interactables/grimoire.tscn" id="8_fiivu"]
 [ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="9_pjgkq"]
 [ext_resource type="Texture2D" uid="uid://gx31cg1qjr1l" path="res://assets/custom/chernobyl.png" id="10_wl4hu"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/environment/walls_creator.gd" id="11_lmjt3"]
@@ -283,3 +284,7 @@ z_index = 0
 y_sort_enabled = true
 position = Vector2(891, 5)
 DEBUG_vignette_enabled = false
+
+[node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("8_fiivu")]
+position = Vector2(372, 637)
+spell = "Turn Oranges into Apples"

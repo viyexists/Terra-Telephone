@@ -1,5 +1,6 @@
 extends Node
 signal magic_update
+signal mana_update
 
 # "NAME": {"icon": path, "cooldown": float, "unlocked": bool, "slot": int}
 # Slots which are not [1, 2] aren't usable in game
@@ -9,14 +10,20 @@ var spells = {
 	"Turn Oranges into Apples": {
 		"icon": "res://assets/custom/orangetoappleicon.png",
 		"cooldown": 2.0, # seconds
-		"unlocked": true,
-		"slot": 1,
-		"function": TurnOrangeTreesIntoAppleTrees
+		"unlocked": false,
+		"slot": 0,
+		"function": TurnOrangeTreesIntoAppleTrees,
+		"mana": 5
 	}
 }
 
+var mana: float = 100.0
+var maxMana: float = 100.0
+var experience: float = 0.0 # Invisible to the player, used with stuff like items
+							# The more experience, the less mana the player spends on spells
+
 # If any spells are unlocked (faster to access than looping through EVERY spell)
-var unlocked = true
+var unlocked = false
 
 # Literally just unlocks it in there this did not need a separate function
 # But conventions from `coin.gd` made me do it
@@ -49,6 +56,11 @@ func _input(event):
 				spells[spell].slot = 1
 				magic_update.emit()
 
+func _process(dt: float):
+	mana += 0.5 * (1.0 - experience) * dt
+	mana = min(mana, maxMana)
+	mana_update.emit()
+
 # Spell that turns the nearest orange tree into an apple tree
 # TODO: Add range
 # TODO: Tie cooldown into UI
@@ -61,12 +73,15 @@ func TurnOrangeTreesIntoAppleTrees():
 		add_child(timer)
 		spells["Turn Oranges into Apples"]["cooldownTimer"] = timer
 	if spells["Turn Oranges into Apples"]["cooldownTimer"].is_stopped():
+		if mana < spells["Turn Oranges into Apples"].mana: return
 		var nearest = get_nearest_in_group_from_player("orange_tree")
 		var orange_tree = nearest[0] # node
 		var closest_distance = nearest[1] # distance
 		if orange_tree == null: return
 		if closest_distance > (400.0 * 400.0): return  # compensate for squared distance
 		orange_tree.add_to_group("changing")
+		mana -= spells["Turn Oranges into Apples"].mana * (1.0 - experience) # Subtract some mana
+		mana_update.emit()
 		spells["Turn Oranges into Apples"]["cooldownTimer"].start()
 
 		var initial_tree_position = orange_tree.global_position

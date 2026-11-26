@@ -10,14 +10,22 @@ func _ready() -> void:
 	Items.connect('item_bought', _on_item_bought)
 	
 	Magic.magic_update.connect(setup_magic_icons)
+	Magic.mana_update.connect(update_magic_mana)
 	if Magic.unlocked:
 		setup_magic_icons()
+	
+	if Global.current_stage_node.get("supports_radiation") == true:
+		$BottomLeftUI/HBoxContainer/Radiation.visible = true
+
+func update_magic_mana() -> void:
+	$BottomLeftUI/HBoxContainer/Mana.value = Magic.mana
+	pass
 
 func setup_magic_icons() -> void:
 	# Set up the two icons for magic
 	if not Magic.unlocked: return
-	var Magic1 = $Magic/Magic1/icon
-	var Magic2 = $Magic/Magic2/icon
+	var Magic1 = $BottomLeftUI/HBoxContainer/Magic/Magic1/icon
+	var Magic2 = $BottomLeftUI/HBoxContainer/Magic/Magic2/icon
 	Magic1.texture = null
 	Magic2.texture = null
 	var Slot1
@@ -40,7 +48,7 @@ func _process(_delta: float) -> void:
 		$AllSeedsCollectedLabel.show()
 		Global.player.toggle_base_arrow(true)
 
-	$Magic.visible = Magic.unlocked
+	$BottomLeftUI/HBoxContainer/Magic.visible = Magic.unlocked
 
 	$Inventory.visible = Input.is_action_pressed("show_items")
 	if Input.is_action_just_pressed("test"):

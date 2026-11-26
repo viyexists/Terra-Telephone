@@ -29,6 +29,42 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6vuv"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi6es"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.51136726, 0.72962105, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6e2d"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(2.9841065e-06, 0.7404797, 0.7411756, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq3q8"]
 bg_color = Color(0.39670733, 0.2870928, 0.1922724, 1)
 border_width_left = 1
@@ -52,42 +88,6 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6vuv"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6e2d"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(2.9841065e-06, 0.7404797, 0.7411756, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi6es"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.5019135, 0.7301633, 1.1551381e-06, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 6
 
 [node name="UI" type="CanvasLayer" unique_id=948076409]
 script = ExtResource("1_3ucda")
@@ -172,30 +172,101 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 10
 
-[node name="Magic" type="Control" parent="." unique_id=1493371692]
+[node name="BottomLeftUI" type="Control" parent="." unique_id=662967778]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
-offset_right = 121.0
+offset_left = 4.0
+offset_top = -98.0
+offset_right = 204.0
 grow_vertical = 0
 
-[node name="Magic2" type="Panel" parent="Magic" unique_id=680151938]
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeftUI" unique_id=344304786]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Radiation" type="ProgressBar" parent="BottomLeftUI/HBoxContainer" unique_id=37605847]
+visible = false
+custom_minimum_size = Vector2(12, 94)
+layout_mode = 2
+tooltip_text = "Mana"
+theme_override_styles/background = SubResource("StyleBoxFlat_y6vuv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bi6es")
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="BottomLeftUI/HBoxContainer/Radiation" unique_id=1299034451]
+custom_maximum_size = Vector2(12.33, -1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -6
+theme_override_font_sizes/font_size = 12
+text = "R
+A
+D
+I
+A
+T
+I
+O
+N"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
+
+[node name="Mana" type="ProgressBar" parent="BottomLeftUI/HBoxContainer" unique_id=220838891]
+custom_minimum_size = Vector2(12, 94)
+layout_mode = 2
+tooltip_text = "Mana"
+theme_override_styles/background = SubResource("StyleBoxFlat_y6vuv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k6e2d")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="BottomLeftUI/HBoxContainer/Mana" unique_id=1684727163]
+custom_maximum_size = Vector2(12.33, -1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -6
+theme_override_font_sizes/font_size = 12
+text = "M
+A
+N
+A"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
+
+[node name="Magic" type="Control" parent="BottomLeftUI/HBoxContainer" unique_id=1493371692]
+layout_mode = 2
+
+[node name="Magic2" type="Panel" parent="BottomLeftUI/HBoxContainer/Magic" unique_id=680151938]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -60.0
-offset_right = 85.0
+offset_left = -10.0
+offset_top = -54.0
+offset_right = 50.0
+offset_bottom = 6.0
 grow_vertical = 0
 pivot_offset = Vector2(70, 20)
 offset_transform_enabled = true
 offset_transform_position = Vector2(10, -40)
 theme_override_styles/panel = SubResource("StyleBoxFlat_jq3q8")
 
-[node name="icon" type="TextureRect" parent="Magic/Magic2" unique_id=1561379208]
+[node name="icon" type="TextureRect" parent="BottomLeftUI/HBoxContainer/Magic/Magic2" unique_id=1561379208]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -212,21 +283,22 @@ grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(-0.473, -0.75)
 
-[node name="Magic1" type="Panel" parent="Magic" unique_id=1051626810]
+[node name="Magic1" type="Panel" parent="BottomLeftUI/HBoxContainer/Magic" unique_id=1051626810]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -60.0
-offset_right = 85.0
+offset_left = -10.0
+offset_top = -54.0
+offset_right = 50.0
+offset_bottom = 6.0
 grow_vertical = 0
 pivot_offset = Vector2(40, -10)
 offset_transform_enabled = true
 offset_transform_position = Vector2(40, -10)
 theme_override_styles/panel = SubResource("StyleBoxFlat_itajw")
 
-[node name="icon" type="TextureRect" parent="Magic/Magic1" unique_id=754602174]
+[node name="icon" type="TextureRect" parent="BottomLeftUI/HBoxContainer/Magic/Magic1" unique_id=754602174]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -243,21 +315,21 @@ grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(-0.473, -0.75)
 
-[node name="TextureRect2" type="TextureRect" parent="Magic" unique_id=603195022]
+[node name="TextureRect2" type="TextureRect" parent="BottomLeftUI/HBoxContainer/Magic" unique_id=603195022]
 custom_maximum_size = Vector2(90, 100)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -37.0
-offset_right = 130.0
-offset_bottom = 63.0
+offset_left = 5.0
+offset_top = -31.0
+offset_right = 95.0
+offset_bottom = 69.0
 grow_vertical = 0
 scale = Vector2(0.2706238, 0.2706238)
 texture = ExtResource("4_jq3q8")
 
-[node name="F" type="Label" parent="Magic/TextureRect2" unique_id=366546452]
+[node name="F" type="Label" parent="BottomLeftUI/HBoxContainer/Magic/TextureRect2" unique_id=366546452]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -270,27 +342,3 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.4509804, 0.23137255, 0.06666667, 1)
 theme_override_font_sizes/font_size = 72
 text = "F"
-
-[node name="Mana" type="ProgressBar" parent="Magic" unique_id=220838891]
-layout_mode = 0
-offset_left = 19.0
-offset_right = 31.0
-offset_bottom = 94.0
-tooltip_text = "Mana"
-theme_override_styles/background = SubResource("StyleBoxFlat_y6vuv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_k6e2d")
-value = 69.22
-fill_mode = 3
-show_percentage = false
-
-[node name="Radiation" type="ProgressBar" parent="Magic" unique_id=1797570646]
-layout_mode = 0
-offset_left = 4.0
-offset_right = 16.0
-offset_bottom = 94.0
-tooltip_text = "Radiation"
-theme_override_styles/background = SubResource("StyleBoxFlat_y6vuv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_bi6es")
-value = 0.73
-fill_mode = 3
-show_percentage = false

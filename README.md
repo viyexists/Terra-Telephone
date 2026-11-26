@@ -79,3 +79,4 @@ Here's some ideas that could be added next (these do not have to be added if you
 - Player abilities? (invisibility, dash)
 - Collectables and achievements?
 - Balloon cutscene with ratticus and lore in between levels
+- Fix Z levels for mountains and enemies
