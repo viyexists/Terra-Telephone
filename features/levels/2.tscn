@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="7_kr10t"]
 [ext_resource type="PackedScene" uid="uid://y8rgrh1ermx4" path="res://features/interactables/grimoire.tscn" id="8_fiivu"]
 [ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="9_pjgkq"]
+[ext_resource type="Texture2D" uid="uid://gx31cg1qjr1l" path="res://assets/custom/chernobyl.png" id="10_wl4hu"]
 
 [node name="2" type="Node2D" unique_id=943100411 node_paths=PackedStringArray("player", "base")]
 y_sort_enabled = true
@@ -59,3 +60,9 @@ spell = "Turn Oranges into Apples"
 
 [node name="TreeApple" parent="." unique_id=1133187099 instance=ExtResource("9_pjgkq")]
 position = Vector2(1269, 963)
+
+[node name="Chernobyl" type="Sprite2D" parent="." unique_id=1059571757]
+position = Vector2(2329, 821)
+scale = Vector2(1.8393555, 1.5938101)
+texture = ExtResource("10_wl4hu")
+offset = Vector2(849.75415, -351.35913)

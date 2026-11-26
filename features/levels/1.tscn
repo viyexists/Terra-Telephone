@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="6_8kuq6"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="7_qk0jo"]
 [ext_resource type="PackedScene" uid="uid://dva5hu5ckdcik" path="res://features/entities/poobert.tscn" id="10_0irvv"]
+[ext_resource type="PackedScene" uid="uid://y8rgrh1ermx4" path="res://features/interactables/grimoire.tscn" id="11_jwvnq"]
 [ext_resource type="PackedScene" uid="uid://bc21ffv7ellnt" path="res://features/environment/tree_willow.tscn" id="11_kjatm"]
 [ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="11_w6toh"]
 [ext_resource type="PackedScene" uid="uid://dglhrt4qwxc5r" path="res://features/environment/tree_orange.tscn" id="12_ggwjl"]
@@ -547,6 +548,11 @@ position = Vector2(-3861, -671)
 
 [node name="Collectable25" parent="Coins" unique_id=1698123549 instance=ExtResource("13_s6eo5")]
 position = Vector2(-2989, -1262)
+
+[node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("11_jwvnq")]
+z_index = -100
+position = Vector2(1604, -3053)
+spell = "Turn Oranges into Apples"
 
 [node name="Seeds" type="Node2D" parent="." unique_id=272689731]
 y_sort_enabled = true

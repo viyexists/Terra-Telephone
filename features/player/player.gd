@@ -172,6 +172,7 @@ func go_to_balloon(Balloon) -> void:
 		var deltB = global_position.distance_squared_to(posB)
 		
 		target = posA if deltA <= deltB else posB 
+		z_index = 20 if point == 1 else 1
 		
 		var direction = global_position.direction_to(target)
 		flip_sprite(direction.x < 0)

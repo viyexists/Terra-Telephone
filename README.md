@@ -78,3 +78,4 @@ Here's some ideas that could be added next (these do not have to be added if you
 - More interactables (maybe some items that give you temporary abilities when you pick it up?)
 - Player abilities? (invisibility, dash)
 - Collectables and achievements?
+- Balloon cutscene with ratticus and lore in between levels

@@ -2,28 +2,30 @@ extends Node
 signal magic_update
 
 # "NAME": {"icon": path, "cooldown": float, "unlocked": bool, "slot": int}
-# Slots which are not [0, 1] aren't usable in game
+# Slots which are not [1, 2] aren't usable in game
 # Players can only hold two spells at once
+# Other spells are just...in inventory i guess
 var spells = {
 	"Turn Oranges into Apples": {
 		"icon": "res://assets/custom/orangetoappleicon.png",
 		"cooldown": 2.0, # seconds
-		"unlocked": false,
-		"slot": 0,
+		"unlocked": true,
+		"slot": 1,
 		"function": TurnOrangeTreesIntoAppleTrees
 	}
 }
 
 # If any spells are unlocked (faster to access than looping through EVERY spell)
-var unlocked = false
+var unlocked = true
 
 # Literally just unlocks it in there this did not need a separate function
 # But conventions from `coin.gd` made me do it
 func collect_grimoire(spell):
+	if spells[spell].unlocked: return
 	var highestSlot = -INF
 	for spellf in spells: # spell was already used so i just labeled it spellf
-		if spells[spell].slot > highestSlot:
-			highestSlot = spells[spell].slot
+		if spells[spellf].slot > highestSlot:
+			highestSlot = spells[spellf].slot
 	highestSlot += 1
 	spells[spell].unlocked = true
 	spells[spell].slot = highestSlot
@@ -59,8 +61,11 @@ func TurnOrangeTreesIntoAppleTrees():
 		add_child(timer)
 		spells["Turn Oranges into Apples"]["cooldownTimer"] = timer
 	if spells["Turn Oranges into Apples"]["cooldownTimer"].is_stopped():
-		var orange_tree = get_nearest_in_group_from_player("orange_tree")
+		var nearest = get_nearest_in_group_from_player("orange_tree")
+		var orange_tree = nearest[0] # node
+		var closest_distance = nearest[1] # distance
 		if orange_tree == null: return
+		if closest_distance > (400.0 * 400.0): return  # compensate for squared distance
 		orange_tree.add_to_group("changing")
 		spells["Turn Oranges into Apples"]["cooldownTimer"].start()
 
@@ -89,7 +94,7 @@ func TurnOrangeTreesIntoAppleTrees():
 		apple_tree.global_position = initial_tree_position
 		orange_tree.queue_free()
 
-func get_nearest_in_group_from_player(group: String) -> Node:
+func get_nearest_in_group_from_player(group: String) -> Array:
 	var nearest_node: Node = null
 	var shortest_distance = INF
 	
@@ -99,4 +104,4 @@ func get_nearest_in_group_from_player(group: String) -> Node:
 			if dist < shortest_distance:
 				shortest_distance = dist
 				nearest_node = node
-	return nearest_node
+	return [nearest_node, shortest_distance]

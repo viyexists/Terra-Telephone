@@ -29,6 +29,18 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq3q8"]
+bg_color = Color(0.39670733, 0.2870928, 0.1922724, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2002697, 0.084733196, 0.051597178, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itajw"]
 bg_color = Color(0.54509807, 0.40392157, 0.28235295, 1)
 border_width_left = 1
@@ -144,7 +156,7 @@ grow_vertical = 0
 pivot_offset = Vector2(70, 20)
 offset_transform_enabled = true
 offset_transform_position = Vector2(10, -40)
-theme_override_styles/panel = SubResource("StyleBoxFlat_itajw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jq3q8")
 
 [node name="icon" type="TextureRect" parent="Magic/Magic2" unique_id=1561379208]
 custom_maximum_size = Vector2(64, 64)
@@ -194,14 +206,29 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(-0.473, -0.75)
 
 [node name="TextureRect2" type="TextureRect" parent="Magic" unique_id=603195022]
+custom_maximum_size = Vector2(90, 100)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 19.000002
+offset_left = 15.0
 offset_top = -37.0
-offset_right = 85.0
-offset_bottom = 49.0
+offset_right = 105.0
+offset_bottom = 63.0
 grow_vertical = 0
 scale = Vector2(0.2706238, 0.2706238)
 texture = ExtResource("4_jq3q8")
+
+[node name="F" type="Label" parent="Magic/TextureRect2" unique_id=366546452]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.304832
+offset_top = 25.866165
+offset_right = -17.30483
+offset_bottom = 112.866165
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4509804, 0.23137255, 0.06666667, 1)
+theme_override_font_sizes/font_size = 72
+text = "F"
