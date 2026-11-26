@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dadnvegoeuodn" path="res://features/environment/tree_apple.tscn" id="9_pjgkq"]
 [ext_resource type="Texture2D" uid="uid://gx31cg1qjr1l" path="res://assets/custom/chernobyl.png" id="10_wl4hu"]
 [ext_resource type="Script" uid="uid://du03pqqpwdkty" path="res://features/environment/walls_creator.gd" id="11_lmjt3"]
+[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="12_ahhyw"]
 [ext_resource type="PackedScene" uid="uid://8h0gl6br5do4" path="res://features/environment/rock_3.tscn" id="12_n5irl"]
 [ext_resource type="PackedScene" uid="uid://8uip4v5vhv3s" path="res://features/environment/rock_1.tscn" id="13_x8f5v"]
 [ext_resource type="PackedScene" uid="uid://cvas6ohx78wjb" path="res://features/environment/rock_2.tscn" id="14_oa7c6"]
@@ -84,6 +85,23 @@ position = Vector2(2074, 467.00003)
 scale = Vector2(1.8393555, 1.5938101)
 texture = ExtResource("10_wl4hu")
 offset = Vector2(849.75415, -351.35913)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Chernobyl" unique_id=1203877133]
+collision_layer = 7
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Chernobyl/StaticBody2D" unique_id=335173772]
+scale = Vector2(1.3360627, 1.0706583)
+polygon = PackedVector2Array(-37.029602, -9.376343, 370.70282, 62.704132, 546.0848, -83.21489, 546.0848, -124.82233, -37.436523, -120.720184)
+
+[node name="EntryArea" type="Area2D" parent="Chernobyl" unique_id=1805645396]
+position = Vector2(0, -1217.5)
+script = ExtResource("12_ahhyw")
+area = "uid://d1q8d5wonbxqd"
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Chernobyl/EntryArea" unique_id=530878325]
+position = Vector2(-82.63764, 1265.1844)
+scale = Vector2(1.5842828, 1.3392749)
+polygon = PackedVector2Array(-110.84198, 43.100433, 375.42133, 157.41025, 586.12396, -44.505875, 580.2902, -465.672, -95.74274, -424.4455)
 
 [node name="WallCreator" type="Line2D" parent="." unique_id=218521869]
 points = PackedVector2Array(-1652, 962, -1786.0459, 553.8783, -1907.9536, 174.44312, -1964, 0, -2022, -238, -1842, -754, -1298, -1213, -750, -1652, -33, -1669, 635.6494, -1686.1448, 1059, -1697, 1809, -1756, 2648, -1683, 3180.0957, -1617.1951, 3683, -1555, 4250.2383, -1366.4749, 4706, -1215, 4958.824, -977.1168, 5349, -610, 5385, -319, 5882, 155, 5854.7104, 444.66602, 5822.8604, 782.73816, 5786, 1174, 5697.158, 1507.5078, 5595, 1891, 5014, 2399, 4850.38, 2507.4917, 4272, 2891, 3438, 3109, 2831.5518, 3177.124, 2165, 3252, 1255, 3152, 792.0747, 3123.1519, 228, 3088, -382, 2725, -668.72656, 2504.4736, -1062, 2202, -1266.4187, 1865.3105, -1391.7188, 1658.9338, -1614, 1140)

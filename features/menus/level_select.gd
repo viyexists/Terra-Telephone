@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _load_level(level_idx, level_path)->void:
-	Global.load_new_scene(level_path, self)
+	Global.load_new_scene_reset_seeds(level_path, self)
 	Global.current_stage = level_idx
 
 func _on_close_button_pressed() -> void:

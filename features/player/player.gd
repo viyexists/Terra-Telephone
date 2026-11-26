@@ -49,6 +49,12 @@ func _ready() -> void:
 			speed *= 2
 		elif Items.all_items[item][Items.ITEM_EFFECT] == "inverted controls":
 			is_controls_inverted = true
+	
+	# Subarea handling
+	if Global.pending_spawn != null:
+		global_position = Global.pending_spawn
+		Global.pending_spawn = null
+		$Camera2D.reset_smoothing()
 
 # Annoying when you're trying to see stuff in the map, debug only
 # or to be used on really bright maps where the vignette doesn't fit

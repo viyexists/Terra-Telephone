@@ -57,7 +57,7 @@ func _input(event):
 				magic_update.emit()
 
 func _process(dt: float):
-	mana += 0.5 * (1.0 - experience) * dt
+	mana += 0.5 * (1.0 + experience) * dt
 	mana = min(mana, maxMana)
 	mana_update.emit()
 

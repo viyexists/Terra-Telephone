@@ -6,9 +6,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area == Global.player.get_node("Hitbox") and has_been_collected == false:
 		collected()
 
-func _ready() -> void:
-	Global.seeds_this_stage += 1
-
 func collected() -> void:
 	Global.seed_collected()
 	has_been_collected = true

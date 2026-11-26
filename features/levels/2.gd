@@ -1,6 +1,6 @@
 extends Level
 
-var supports_radiation = true
+const supports_radiation = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -316,7 +316,8 @@ sprite_frames = SubResource("SpriteFrames_8vrlf")
 animation = &"walk"
 
 [node name="ArrowToBase" type="Node2D" parent="." unique_id=706496138]
-position = Vector2(29, -462)
+visible = false
+position = Vector2(0, -454)
 
 [node name="Arrow" type="Label" parent="ArrowToBase" unique_id=238373559]
 offset_left = -54.0
@@ -328,12 +329,36 @@ text = ">"
 metadata/_edit_use_anchors_ = true
 
 [node name="SeedLabel" type="Label" parent="." unique_id=1339469464]
+visible = false
+z_index = 1
 offset_left = -82.0
 offset_top = -394.0
 offset_right = 177.0
 offset_bottom = -334.0
 theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
+metadata/_edit_use_anchors_ = true
+
+[node name="SubareaLabel" type="Label" parent="." unique_id=716433646]
+visible = false
+z_index = 1
+offset_left = -82.0
+offset_top = -394.0
+offset_right = 177.0
+offset_bottom = -334.0
+theme_override_font_sizes/font_size = 50
+text = "[E] Enter Subarea"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitLabel" type="Label" parent="." unique_id=1153663819]
+visible = false
+z_index = 1
+offset_left = -82.0
+offset_top = -394.0
+offset_right = 177.0
+offset_bottom = -334.0
+theme_override_font_sizes/font_size = 50
+text = "[E] Exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="AttackOrigin" type="Marker2D" parent="." unique_id=829152701]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d1q8d5wonbxqd"]
+
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="1_3cq45"]
+[ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_16vot"]
+[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="3_fqmcf"]
+[ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="4_hw8fq"]
+
+[node name="2Chernobyl" type="Node2D" unique_id=1752542949]
+script = ExtResource("1_16vot")
+
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_3cq45")]
+position = Vector2(7, -12)
+
+[node name="EntryArea" type="Area2D" parent="." unique_id=1409645809]
+position = Vector2(0, -1217.5)
+script = ExtResource("3_fqmcf")
+area = "uid://c10orc0msvqjj"
+isExit = true
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="EntryArea" unique_id=2117210533]
+position = Vector2(-82.63764, 1265.1844)
+scale = Vector2(1.5842828, 1.3392749)
+polygon = PackedVector2Array(-110.84198, 43.100433, 375.42133, 157.41025, 586.12396, -44.505875, 580.2902, -465.672, -95.74274, -424.4455)
+
+[node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("4_hw8fq")]
+position = Vector2(-607, 407)
+
+[node name="Seed2" parent="." unique_id=1568272594 instance=ExtResource("4_hw8fq")]
+position = Vector2(-1080, -683)

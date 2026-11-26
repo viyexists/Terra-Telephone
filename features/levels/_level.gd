@@ -8,13 +8,9 @@ class_name Level
 var current_enemies:Dictionary[String, Enemy] = {}
 
 
-# Reset seed count (seed count automatically calculated in seed.gd)
-# Also do other stuff
 func _enter_tree() -> void:
-	Global.seeds_this_stage = 0
-	Global.seeds_collected = 0
 	Global.current_stage_node = self
-
+	Global.seeds_this_stage = Global.levels[Global.current_stage].seeds
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

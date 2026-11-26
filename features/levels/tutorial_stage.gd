@@ -2,8 +2,7 @@ extends Node2D
 
 
 func _enter_tree() -> void:
-	Global.seeds_this_stage = 0
-	Global.seeds_collected = 0
+	Global.seeds_this_stage = Global.levels[Global.current_stage].seeds
 	Global.current_stage_node = self
 	
 
