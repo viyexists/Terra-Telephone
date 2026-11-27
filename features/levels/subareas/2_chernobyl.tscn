@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://egpp5tlehvl1" path="res://assets/custom/2_stairs_front.png" id="6_4tv3b"]
 [ext_resource type="Texture2D" uid="uid://0j26mrxhx0ae" path="res://assets/custom/3_hall_floor.png" id="7_oen3x"]
 [ext_resource type="Script" uid="uid://qb08kc0tvwm2" path="res://features/levels/subareas/stair_anim.gd" id="8_yqy32"]
+[ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="9_4tv3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
 size = Vector2(676, 890)
@@ -55,6 +56,7 @@ metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_3cq45")]
 position = Vector2(7, -12)
+camera_y_offset = 0.0
 
 [node name="EntryArea" type="Area2D" parent="." unique_id=1409645809]
 z_index = 1
@@ -93,7 +95,7 @@ z_index = 1
 position = Vector2(7333, -5785)
 script = ExtResource("3_fqmcf")
 area = "uid://cjtwyxf1n8hd6"
-areaName = "the Reacetor Hall"
+areaName = "the Reactor Hall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea4" unique_id=1331697272]
 position = Vector2(313.5, 1221.5)
@@ -315,3 +317,38 @@ shape = SubResource("RectangleShape2D_jsjby")
 [node name="Area" type="CollisionShape2D" parent="StairAnim3/Up" unique_id=403366521]
 position = Vector2(1839.5, -52.5)
 shape = SubResource("RectangleShape2D_jsjby")
+
+[node name="Coins" type="Node2D" parent="." unique_id=78040130]
+
+[node name="Coin" parent="Coins" unique_id=2052972169 instance=ExtResource("9_4tv3b")]
+position = Vector2(5377, 54)
+
+[node name="Coin2" parent="Coins" unique_id=737049504 instance=ExtResource("9_4tv3b")]
+position = Vector2(5641, 138)
+
+[node name="Coin3" parent="Coins" unique_id=1190837660 instance=ExtResource("9_4tv3b")]
+position = Vector2(5917, 39)
+
+[node name="Coin4" parent="Coins" unique_id=711558523 instance=ExtResource("9_4tv3b")]
+position = Vector2(6181, 123)
+
+[node name="Coin7" parent="Coins" unique_id=1993821035 instance=ExtResource("9_4tv3b")]
+position = Vector2(10166, -1350)
+
+[node name="Coin8" parent="Coins" unique_id=304872012 instance=ExtResource("9_4tv3b")]
+position = Vector2(10430, -1266)
+
+[node name="Coin9" parent="Coins" unique_id=1453987212 instance=ExtResource("9_4tv3b")]
+position = Vector2(7762, -2803)
+
+[node name="Coin10" parent="Coins" unique_id=1935816416 instance=ExtResource("9_4tv3b")]
+position = Vector2(8026, -2719)
+
+[node name="Coin11" parent="Coins" unique_id=2056920023 instance=ExtResource("9_4tv3b")]
+position = Vector2(10253, -4214)
+
+[node name="Coin12" parent="Coins" unique_id=2142339667 instance=ExtResource("9_4tv3b")]
+position = Vector2(10517, -4130)
+
+[node name="Coin13" parent="Coins" unique_id=1869663462 instance=ExtResource("9_4tv3b")]
+position = Vector2(1836, -170)

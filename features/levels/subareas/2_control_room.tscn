@@ -1,7 +1,80 @@
 [gd_scene format=3 uid="uid://d0qxhinbydgwp"]
 
 [ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_l65lh"]
+[ext_resource type="Texture2D" uid="uid://bocsohlm1utnt" path="res://assets/custom/chernobyl_control_room.png" id="2_7ae6n"]
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="3_24s66"]
+[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="4_4fhgk"]
+[ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="5_uom5x"]
+[ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="6_adhn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
+size = Vector2(931, 1607)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fhgk"]
+size = Vector2(7306.5, 1607)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uom5x"]
+size = Vector2(955, 890)
 
 [node name="2ControlRoom" type="Node2D" unique_id=484717760]
 script = ExtResource("1_l65lh")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=416068906]
+z_index = 100
+offset_left = -6327.0
+offset_top = -11828.0
+offset_right = 18640.0
+offset_bottom = -1409.0
+color = Color(0.23157659, 0.24642256, 0.24866575, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=660114052]
+z_index = -100
+offset_left = -6327.0
+offset_top = -11828.0
+offset_right = 18640.0
+offset_bottom = 5882.0
+color = Color(0.104511924, 0.051149152, 0, 1)
+
+[node name="ChernobylControlRoom" type="Sprite2D" parent="." unique_id=717238962]
+position = Vector2(3377.9634, -715.75)
+scale = Vector2(3.296083, 3.296083)
+texture = ExtResource("2_7ae6n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2023156402]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=925214087]
+position = Vector2(-247, -804)
+shape = SubResource("RectangleShape2D_c1lg8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=344698457]
+position = Vector2(3295, -849)
+shape = SubResource("RectangleShape2D_4fhgk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1170008500]
+position = Vector2(3472, 799)
+shape = SubResource("RectangleShape2D_4fhgk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=278395241]
+position = Vector2(7215, -593)
+shape = SubResource("RectangleShape2D_c1lg8")
+
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_24s66")]
+position = Vector2(486, -8)
+camera_y_offset = -620.0
+
+[node name="EntryArea" type="Area2D" parent="." unique_id=576148683]
+z_index = 1
+position = Vector2(173, -1543)
+script = ExtResource("4_4fhgk")
+isExit = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea" unique_id=1410845575]
+position = Vector2(305.5, 1096.5)
+shape = SubResource("RectangleShape2D_uom5x")
+
+[node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("5_uom5x")]
+position = Vector2(3528, -43)
+
+[node name="Coin" parent="." unique_id=2052972169 instance=ExtResource("6_adhn7")]
+position = Vector2(5499, -130)

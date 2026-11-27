@@ -20,6 +20,7 @@ var levelBalloon
 ## How fast the player walks. This is occasionally modified by external sources.
 @export var speed: float = 5.5
 @export var health: float
+@export var camera_y_offset: float = 0.0
 
 # The player body and clothes are separate sprites.
 @onready var player_body: AnimatedSprite2D = $Sprite/PlayerBody
@@ -32,6 +33,7 @@ var is_controls_inverted: bool = false
 var is_dead: bool = false
 
 func _ready() -> void:
+	$Camera2D.offset.y = camera_y_offset
 	if Engine.is_editor_hint(): return
 	play_idle_animation()
 	$UI.visible = true
