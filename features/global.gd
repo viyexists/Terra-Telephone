@@ -72,9 +72,11 @@ func load_new_scene(scene_to_load: String, scene_came_from: Node) -> void:
 
 func _drop_parked() -> void:
 	for entry in return_position:
-		for key in ["node", "subarea"]:
-			if is_instance_valid(entry.get(key)):
-				entry[key].queue_free()
+		if is_instance_valid(entry.get("node")):
+			entry.node.queue_free()
+		for parked in entry.subarea.values():
+			if is_instance_valid(parked):
+				parked.queue_free()
 	return_position.clear()
 	pending_spawn = null
 
@@ -94,13 +96,16 @@ func _show_scene(node: Node) -> void:
 func enter_subarea(path: String, from: Node) -> void:
 	var entry = _entry_for(from)
 	if entry == null:
-		entry = {"scene": from.scene_file_path, "node": from, "pos": Vector2.ZERO, "subarea": null, "inside": false}
+		entry = {"scene": from.scene_file_path, "node": from, "pos": Vector2.ZERO, "subarea": {}, "inside": false}
 		return_position.push_back(entry)
 	entry.pos = player.global_position
 	entry.inside = true
 	get_tree().root.remove_child(from)
-	if is_instance_valid(entry.subarea):
-		_show_scene.call_deferred(entry.subarea)
+	var key = ResourceUID.ensure_path(path)
+	if is_instance_valid(entry.subarea.get(key)):
+		var parked: Node = entry.subarea[key]
+		entry.subarea.erase(key)
+		_show_scene.call_deferred(parked)
 		return
 	var loading_screen: CanvasLayer = load("res://features/menus/loading_screen.tscn").instantiate()
 	loading_screen.scene_to_change_to = path
@@ -112,7 +117,7 @@ func exit_subarea(from: Node) -> void:
 		if not entry.inside: continue
 		
 		entry.inside = false
-		entry.subarea = from
+		entry.subarea[from.scene_file_path] = from
 		get_tree().root.remove_child(from)
 		_show_scene.call_deferred(entry.node)
 		return

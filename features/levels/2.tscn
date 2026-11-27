@@ -303,6 +303,7 @@ z_index = 0
 y_sort_enabled = true
 position = Vector2(891, 5)
 DEBUG_vignette_enabled = false
+camera_y_offset = 0.0
 
 [node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("8_fiivu")]
 position = Vector2(372, 637)
