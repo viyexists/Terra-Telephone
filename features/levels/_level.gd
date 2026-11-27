@@ -11,6 +11,7 @@ var current_enemies:Dictionary[String, Enemy] = {}
 func _enter_tree() -> void:
 	Global.current_stage_node = self
 	Global.seeds_this_stage = Global.levels[Global.current_stage].seeds
+	Global.seeds_collected = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

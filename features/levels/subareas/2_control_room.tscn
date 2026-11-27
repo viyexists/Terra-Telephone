@@ -18,6 +18,7 @@ size = Vector2(955, 890)
 
 [node name="2ControlRoom" type="Node2D" unique_id=484717760]
 script = ExtResource("1_l65lh")
+supports_radiation = true
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=416068906]
