@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d0qxhinbydgwp"]
+
+[ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_l65lh"]
+
+[node name="2ControlRoom" type="Node2D" unique_id=484717760]
+script = ExtResource("1_l65lh")
+metadata/_custom_type_script = "uid://cp0bugx5amlf0"

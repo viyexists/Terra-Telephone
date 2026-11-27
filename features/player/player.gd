@@ -194,6 +194,22 @@ func go_to_balloon(Balloon) -> void:
 		# this should've been called from base.gd as part of the finishing animation stuff
 		play_idle_animation()
 
+# This function was written by john
+func walk_path(points: Array[Vector2], z_during: int = -1, z_after: int = -1, z_path: Array[int] = []) -> void:
+	get_node("CollisionShape2D").set_deferred("disabled", true)
+	if z_during != -1: z_index = z_during
+	for i in points.size():
+		if i < z_path.size(): z_index = z_path[i]
+		target = points[i]
+		flip_sprite(global_position.direction_to(points[i]).x < 0)
+		moving_to_balloon = true
+		while global_position.distance_to(target) > 2.0:
+			await get_tree().physics_frame
+	moving_to_balloon = false
+	play_idle_animation()
+	get_node("CollisionShape2D").set_deferred("disabled", false)
+	if z_after != -1: z_index = z_after
+
 
 # DEPRECATED
 # Was a TODO but retrying a level just uses die() which brings you back to the main menu

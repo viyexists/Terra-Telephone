@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bej7je2ickpmd"]
+
+[ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_g1ymv"]
+
+[node name="2TurbineHall" type="Node2D" unique_id=749627674]
+script = ExtResource("1_g1ymv")
+metadata/_custom_type_script = "uid://cp0bugx5amlf0"

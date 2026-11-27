@@ -1,6 +1,7 @@
+class_name Subarea
 extends Node2D
 
-const supports_radiation = true
+@export var supports_radiation = false
 
 func _enter_tree() -> void:
 	Global.current_stage_node = self

@@ -97,6 +97,7 @@ polygon = PackedVector2Array(-37.029602, -9.376343, 370.70282, 62.704132, 546.08
 position = Vector2(0, -1217.5)
 script = ExtResource("12_ahhyw")
 area = "uid://d1q8d5wonbxqd"
+areaName = "Chernobylskaya Block 4"
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Chernobyl/EntryArea" unique_id=530878325]
 position = Vector2(-82.63764, 1265.1844)
