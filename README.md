@@ -65,6 +65,29 @@ For particularly complicated systems please refer to the `./docs`
 - New enemy Poobert : throws envelopes at the player
 - **New documentation for Levels and Enemies**
 
+### Week 3 Features (Lemion)
+- Stylised some more UI (Stole the terra UI riiight out of terra)
+- Various fixes:
+  - Fullscreen menus to be fullscreen and centered
+  - Pause menu `Esc` key press
+  - Extra ratticus lines after level ends
+  - Level unlock, Next level, and Seed count
+  - Some shop UI anchoring fixes
+  - Random UI flash on death
+  - SpeechEngine interrupt
+- Added audio to `SpeechEngine`
+- Made the settings menu do something at all
+- Unit tests with Godot Unit Tests
+  - Levels finishable test
+  - Pausing test
+  - Seed count test
+- Balloon boarding animation on level finished
+- Magic system
+  - Grimoires
+  - Mana
+  - UI for mana and spell switching on slots 1 and 2
+- Kiev Oblast level
+
 ### What's next?
 
 Broken things
@@ -72,12 +95,13 @@ Broken things
 
 Here's some ideas that could be added next (these do not have to be added if you don't want to!)
 - Diverse enemy types with abilities
-- Player can attack (add more attacks?)
+- Player can attack (add more attacks?) <- Preferably add them to magic
 - More shop items
 - More stages/levels
 - More interactables (maybe some items that give you temporary abilities when you pick it up?)
-- Player abilities? (invisibility, dash)
+- Player abilities? (invisibility, dash) <- Can also be added to magic
 - Collectables and achievements?
 - Balloon cutscene with ratticus and lore in between levels
 - Fix Z levels for mountains and enemies
 - Collected seed sprite so the player knows which seeds are collected
+- ADDING JOHN INTO THE GAME
