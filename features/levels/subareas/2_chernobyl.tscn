@@ -50,13 +50,14 @@ b = Vector2(10681, -1458)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsjby"]
 size = Vector2(211.5, 147)
 
-[node name="2Chernobyl" type="Node2D" unique_id=1783230172]
+[node name="2Chernobyl" type="Node2D" unique_id=1783230172 node_paths=PackedStringArray("player")]
 script = ExtResource("1_16vot")
 supports_radiation = true
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_3cq45")]
-position = Vector2(7, -12)
+position = Vector2(3325, -1377)
 camera_y_offset = 0.0
 
 [node name="EntryArea" type="Area2D" parent="." unique_id=1409645809]

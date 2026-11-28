@@ -4,13 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="1_vuto6"]
 [ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="2_ge4jy"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="3_0dlet"]
+[ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="4_0dlet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7cpj"]
 size = Vector2(248.5, 488.25)
 
-[node name="2ReactorHall" type="Node2D" unique_id=66817321]
+[node name="2ReactorHall" type="Node2D" unique_id=66817321 node_paths=PackedStringArray("player")]
 script = ExtResource("1_ge4jy")
 supports_radiation = true
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_vuto6")]
@@ -25,6 +27,9 @@ isExit = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea2" unique_id=2104948128]
 position = Vector2(105.75, 976.625)
 shape = SubResource("RectangleShape2D_h7cpj")
+
+[node name="Blargh" parent="EntryArea2" unique_id=2017245619 instance=ExtResource("4_0dlet")]
+position = Vector2(766, 986)
 
 [node name="Seed2" parent="." unique_id=1413849496 instance=ExtResource("3_0dlet")]
 position = Vector2(-1080, -683)

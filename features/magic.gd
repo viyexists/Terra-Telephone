@@ -1,11 +1,17 @@
 extends Node
 signal magic_update
 signal mana_update
+# TODO: Menu to switch magic between slots
+# TODO: UI to indicate to the player a grimoire has been picked up 
+# TODO: MAYBE adding spells into heidi's shop
+# These TODOs are listed within `docs/Magic.md` as well,
+# If you've completed any of them, please update the TODO items accordingly
 
 # "NAME": {"icon": path, "cooldown": float, "unlocked": bool, "slot": int}
 # Slots which are not [1, 2] aren't usable in game
 # Players can only hold two spells at once
 # Other spells are just...in inventory i guess
+# Please put the slot as 0 initially, otherwise it will probably break grimoire collection
 var spells = {
 	"Turn Oranges into Apples": {
 		"icon": "res://assets/custom/orangetoappleicon.png",
@@ -62,8 +68,6 @@ func _process(dt: float):
 	mana_update.emit()
 
 # Spell that turns the nearest orange tree into an apple tree
-# TODO: Add range
-# TODO: Tie cooldown into UI
 func TurnOrangeTreesIntoAppleTrees():
 	if not spells["Turn Oranges into Apples"].unlocked: return
 	if not is_instance_valid(spells["Turn Oranges into Apples"].get("cooldownTimer")):

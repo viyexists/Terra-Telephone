@@ -1,5 +1,8 @@
 @tool
 extends Area2D
+# TODO: `exit_to_root` to exit all the way to the root node from a subarea
+# These TODOs are listed within `docs/Subareas.md` as well,
+# If you've completed any of them, please update the TODO items accordingly
 
 @export var isExit: bool = false:
 	set(v):

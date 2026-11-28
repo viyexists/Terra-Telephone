@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://bej7je2ickpmd"]
 
 [ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_g1ymv"]
+[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="2_3u3le"]
+[ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="3_egq8y"]
 
-[node name="2TurbineHall" type="Node2D" unique_id=749627674]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
+size = Vector2(114, 137)
+
+[node name="2TurbineHall" type="Node2D" unique_id=749627674 node_paths=PackedStringArray("player")]
 script = ExtResource("1_g1ymv")
 supports_radiation = true
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
+
+[node name="EntryZone" type="Area2D" parent="." unique_id=1502423089]
+script = ExtResource("2_3u3le")
+isExit = true
+metadata/_custom_type_script = "uid://2yhbs3qwprq8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntryZone" unique_id=1972769477]
+position = Vector2(47, 58.5)
+shape = SubResource("RectangleShape2D_c1lg8")
+
+[node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_egq8y")]
+position = Vector2(-147, 81)
+camera_y_offset = -620.0

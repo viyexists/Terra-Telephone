@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cykmspb7scy53"]
+
+[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="1_3dhxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uom5x"]
+size = Vector2(955, 890)
+
+[node name="EntryArea" type="Area2D" unique_id=160488140]
+z_index = 1
+script = ExtResource("1_3dhxw")
+isExit = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538184975]
+position = Vector2(305.5, 1096.5)
+shape = SubResource("RectangleShape2D_uom5x")

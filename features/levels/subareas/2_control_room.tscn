@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_l65lh"]
 [ext_resource type="Texture2D" uid="uid://bocsohlm1utnt" path="res://assets/custom/chernobyl_control_room.png" id="2_7ae6n"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="3_24s66"]
-[ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="4_4fhgk"]
+[ext_resource type="PackedScene" uid="uid://cykmspb7scy53" path="res://features/levels/subareas/EntryArea.tscn" id="4_adhn7"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="5_uom5x"]
 [ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="6_adhn7"]
 
@@ -13,12 +13,10 @@ size = Vector2(931, 1607)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fhgk"]
 size = Vector2(7306.5, 1607)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uom5x"]
-size = Vector2(955, 890)
-
-[node name="2ControlRoom" type="Node2D" unique_id=484717760]
+[node name="2ControlRoom" type="Node2D" unique_id=484717760 node_paths=PackedStringArray("player")]
 script = ExtResource("1_l65lh")
 supports_radiation = true
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=416068906]
@@ -64,15 +62,8 @@ shape = SubResource("RectangleShape2D_c1lg8")
 position = Vector2(486, -8)
 camera_y_offset = -620.0
 
-[node name="EntryArea" type="Area2D" parent="." unique_id=576148683]
-z_index = 1
+[node name="EntryArea" parent="." unique_id=160488140 instance=ExtResource("4_adhn7")]
 position = Vector2(173, -1543)
-script = ExtResource("4_4fhgk")
-isExit = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea" unique_id=1410845575]
-position = Vector2(305.5, 1096.5)
-shape = SubResource("RectangleShape2D_uom5x")
 
 [node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("5_uom5x")]
 position = Vector2(2823, -335)
