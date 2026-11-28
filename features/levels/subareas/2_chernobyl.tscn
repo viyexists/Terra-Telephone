@@ -206,10 +206,10 @@ texture = ExtResource("7_oen3x")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1919926355]
 z_index = -100
-offset_left = -6327.0
-offset_top = -11828.0
-offset_right = 18640.0
-offset_bottom = 5882.0
+offset_left = -7065.0
+offset_top = -11751.0
+offset_right = 17902.0
+offset_bottom = 5959.0
 color = Color(0.104511924, 0.051149152, 0, 1)
 
 [node name="StairAnim" type="Node2D" parent="." unique_id=784953098]

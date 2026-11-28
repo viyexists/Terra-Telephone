@@ -11,6 +11,7 @@ const generationTime: float = 0.06
 
 var annLit: bool = false
 var annTime: float = 0.0
+var l2: bool = false
 
 static var AZ5Initiated: bool = false
 var timeSinceAZ5Initiated: float = 0.0
@@ -78,8 +79,9 @@ func _physics_process(delta: float) -> void:
 	if annLit:
 		if AZ5Initiated:
 			$az5Ann.texture = az5_lit
-		if neutronPopulation / ratedNeutronPopulation > 1.25:
+		if (neutronPopulation / ratedNeutronPopulation > 1.25) or l2:
 			$larAnn.texture = lar_l2
+			l2 = true
 		elif neutronPopulation / ratedNeutronPopulation > 1.08:
 			$larAnn.texture = lar_l1
 	else:

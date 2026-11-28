@@ -73,15 +73,16 @@ position = Vector2(3472, 799)
 shape = SubResource("RectangleShape2D_4fhgk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=278395241]
-position = Vector2(7215, -593)
+position = Vector2(6974, -626)
 shape = SubResource("RectangleShape2D_c1lg8")
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_24s66")]
 position = Vector2(486, -8)
-camera_y_offset = -620.0
+camera_y_offset = -521.914
 
 [node name="Camera2D" parent="Player" index="1" unique_id=702460402]
-offset = Vector2(0, -620)
+offset = Vector2(0, -378.672)
+zoom = Vector2(0.46, 0.46)
 decay = 0.35
 max_offset = Vector2i(440, 280)
 max_roll = 0.06
@@ -91,7 +92,7 @@ visible = false
 position = Vector2(173, -1543)
 
 [node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("5_uom5x")]
-position = Vector2(2823, -335)
+position = Vector2(2921, -268)
 
 [node name="Coin" parent="." unique_id=2052972169 instance=ExtResource("6_adhn7")]
 position = Vector2(5499, -130)
@@ -573,20 +574,20 @@ width = 2.0
 default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
 
 [node name="POWER" type="Label" parent="." unique_id=46824315]
-offset_left = 2021.0
-offset_top = -369.0
-offset_right = 2068.0
-offset_bottom = -349.0
+offset_left = 2024.0
+offset_top = -378.0
+offset_right = 2071.0
+offset_bottom = -358.0
 theme_override_fonts/font = SubResource("FontVariation_jsjby")
 text = "00000"
 label_settings = SubResource("LabelSettings_c1lg8")
 
 [node name="Label2" type="Label" parent="." unique_id=1482684672]
-offset_left = 2019.0
-offset_top = -374.0
-offset_right = 2131.0
-offset_bottom = -354.0
-scale = Vector2(0.45468748, 0.41734374)
+offset_left = 2025.0
+offset_top = -381.0
+offset_right = 2137.0
+offset_bottom = -361.0
+scale = Vector2(0.38116786, 0.32701477)
 text = "POWER VIA SKFRE-R"
 
 [node name="MosaicPanelLeft" type="Sprite2D" parent="." unique_id=1220679701]
