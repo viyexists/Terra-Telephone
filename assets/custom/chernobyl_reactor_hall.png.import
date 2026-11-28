@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvt0f4tj8arjs"
-path="res://.godot/imported/tile_0_1.png-71000f0d2d59983a81e2e844ea784f7b.ctex"
+uid="uid://ddaf3dcjls12x"
+path="res://.godot/imported/chernobyl_reactor_hall.png-6e6e952cdf4e3c0b94c6eed2aa10c4b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temporary/tile_0_1.png"
-dest_files=["res://.godot/imported/tile_0_1.png-71000f0d2d59983a81e2e844ea784f7b.ctex"]
+source_file="res://assets/custom/chernobyl_reactor_hall.png"
+dest_files=["res://.godot/imported/chernobyl_reactor_hall.png-6e6e952cdf4e3c0b94c6eed2aa10c4b3.ctex"]
 
 [params]
 

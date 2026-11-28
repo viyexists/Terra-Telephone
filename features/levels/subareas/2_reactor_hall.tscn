@@ -1,35 +1,217 @@
 [gd_scene format=3 uid="uid://cjtwyxf1n8hd6"]
 
-[ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_ge4jy"]
+[ext_resource type="Script" uid="uid://cplannwr4bo45" path="res://features/levels/subareas/2_reactor_hall.gd" id="1_h7cpj"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="1_vuto6"]
 [ext_resource type="Script" uid="uid://2yhbs3qwprq8" path="res://features/levels/entryArea.gd" id="2_ge4jy"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="3_0dlet"]
 [ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="4_0dlet"]
+[ext_resource type="Texture2D" uid="uid://ddaf3dcjls12x" path="res://assets/custom/chernobyl_reactor_hall.png" id="4_ge4jy"]
+[ext_resource type="Shader" uid="uid://c05psaq7ve2cp" path="res://features/levels/subareas/smoke_uv.gdshader" id="7_1dk2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7cpj"]
-size = Vector2(248.5, 488.25)
+size = Vector2(1064, 715.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
+size = Vector2(5774, 846)
+
+[sub_resource type="Gradient" id="Gradient_lh4k5"]
+colors = PackedColorArray(0.3647059, 0.3647059, 0.3647059, 0.6117647, 0.6784314, 0.6784314, 0.6784314, 0.49019608)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m2a4b"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oelft"]
+width = 10
+height = 10
+noise = SubResource("FastNoiseLite_m2a4b")
+color_ramp = SubResource("Gradient_lh4k5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c1lg8"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, -50, 0)
+linear_accel_min = -99.69
+linear_accel_max = 99.99999
+radial_accel_min = -37.210003
+radial_accel_max = 65.63
+tangential_accel_min = -15.950002
+tangential_accel_max = 26.269997
+scale_max = 3.72
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1lg8"]
+radius = 684.08844
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkmfk"]
+radius = 293.01535
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkmfk"]
+size = Vector2(673.5, 371.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bkmfk"]
+shader = ExtResource("7_1dk2y")
+shader_parameter/scroll_speed = 0.2
+
+[sub_resource type="Gradient" id="Gradient_bxmbg"]
+colors = PackedColorArray(0.24313726, 0.24313726, 0.24313726, 0.7647059, 0.41960785, 0.41960785, 0.41960785, 0.78431374)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jsjby"]
+frequency = 0.003
+offset = Vector3(1000, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c1lg8"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_jsjby")
+color_ramp = SubResource("Gradient_bxmbg")
+seamless = true
 
 [node name="2ReactorHall" type="Node2D" unique_id=66817321 node_paths=PackedStringArray("player")]
-script = ExtResource("1_ge4jy")
+script = ExtResource("1_h7cpj")
 supports_radiation = true
 player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_vuto6")]
-position = Vector2(7, -12)
-camera_y_offset = 0.0
+position = Vector2(408, 144)
+camera_y_offset = -300.0
 
 [node name="EntryArea2" type="Area2D" parent="." unique_id=1493692659]
+z_index = 10
 position = Vector2(26, -1223)
 script = ExtResource("2_ge4jy")
 isExit = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea2" unique_id=2104948128]
-position = Vector2(105.75, 976.625)
+position = Vector2(123, 1085.375)
 shape = SubResource("RectangleShape2D_h7cpj")
 
-[node name="Blargh" parent="EntryArea2" unique_id=2017245619 instance=ExtResource("4_0dlet")]
-position = Vector2(766, 986)
+[node name="ChernobylReactorHall" type="Sprite2D" parent="." unique_id=829855248]
+position = Vector2(-1394, -890)
+scale = Vector2(2.4569445, 2.4569445)
+texture = ExtResource("4_ge4jy")
 
-[node name="Seed2" parent="." unique_id=1413849496 instance=ExtResource("3_0dlet")]
-position = Vector2(-1080, -683)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=579066057]
+z_index = -100
+offset_left = -13742.0
+offset_top = -9183.0
+offset_right = 11225.0
+offset_bottom = 8527.0
+color = Color(0.104511924, 0.051149152, 0, 1)
+
+[node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("3_0dlet")]
+position = Vector2(-3477, 360)
+
+[node name="Seed2" parent="." unique_id=272614526 instance=ExtResource("3_0dlet")]
+position = Vector2(1054, 559)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=351991580]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=488284586]
+position = Vector2(-1338, -413)
+shape = SubResource("RectangleShape2D_c1lg8")
+debug_color = Color(0.65620434, 0.3786207, 0.8934604, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1459606544]
+position = Vector2(-1321, 1053)
+shape = SubResource("RectangleShape2D_c1lg8")
+debug_color = Color(0.65620434, 0.3786207, 0.8934604, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1749845453]
+position = Vector2(4111, 304)
+shape = SubResource("RectangleShape2D_c1lg8")
+debug_color = Color(0.65620434, 0.3786207, 0.8934604, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2104000087]
+position = Vector2(-6884, 272)
+shape = SubResource("RectangleShape2D_c1lg8")
+debug_color = Color(0.65620434, 0.3786207, 0.8934604, 0.41960785)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1088145602]
+position = Vector2(-910, 205)
+
+[node name="Blargh" parent="Enemies" unique_id=2017245619 instance=ExtResource("4_0dlet")]
+position = Vector2(-2908, 178)
+
+[node name="Blargh2" parent="Enemies" unique_id=1201159226 instance=ExtResource("4_0dlet")]
+position = Vector2(3364, 2787)
+
+[node name="Explosion" type="Node2D" parent="." unique_id=1930845446]
+visible = false
+
+[node name="Smoke" type="Node2D" parent="Explosion" unique_id=623106608]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Explosion/Smoke" unique_id=656003600]
+position = Vector2(-896, 149)
+scale = Vector2(36.515, 57.657)
+amount = 2189
+texture = SubResource("NoiseTexture2D_oelft")
+lifetime = 7.3
+speed_scale = 8.11
+explosiveness = 0.1
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_c1lg8")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Explosion/Smoke" unique_id=1414472519]
+position = Vector2(-760.00006, 343)
+scale = Vector2(36.515, 57.657)
+amount = 2189
+texture = SubResource("NoiseTexture2D_oelft")
+lifetime = 7.3
+speed_scale = 8.11
+explosiveness = 0.1
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_c1lg8")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="Explosion/Smoke" unique_id=1479005919]
+position = Vector2(-882.00006, 293)
+scale = Vector2(36.515, 57.657)
+amount = 2189
+texture = SubResource("NoiseTexture2D_oelft")
+lifetime = 7.3
+speed_scale = 8.11
+explosiveness = 0.1
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_c1lg8")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="Explosion/Smoke" unique_id=472368613]
+position = Vector2(-827, 358)
+scale = Vector2(36.515, 57.657)
+amount = 2189
+texture = SubResource("NoiseTexture2D_oelft")
+lifetime = 7.3
+speed_scale = 8.11
+explosiveness = 0.1
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_c1lg8")
+
+[node name="ExplisionCollsiions" type="StaticBody2D" parent="Explosion" unique_id=1936173789]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Explosion/ExplisionCollsiions" unique_id=2021719250]
+position = Vector2(-347, -151)
+shape = SubResource("CircleShape2D_c1lg8")
+disabled = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Explosion/ExplisionCollsiions" unique_id=900619219]
+position = Vector2(-823, 195)
+shape = SubResource("CircleShape2D_bkmfk")
+disabled = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Explosion/ExplisionCollsiions" unique_id=1680427501]
+position = Vector2(-1474, 749)
+shape = SubResource("CircleShape2D_bkmfk")
+disabled = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Explosion/ExplisionCollsiions" unique_id=1837632282]
+position = Vector2(-3097.25, 35.25)
+shape = SubResource("RectangleShape2D_bkmfk")
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="Explosion" unique_id=387156612]
+z_index = 200
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bkmfk")
+offset_left = -13788.0
+offset_top = -9202.0
+offset_right = 11081.0
+offset_bottom = 8442.0
+texture = SubResource("NoiseTexture2D_c1lg8")

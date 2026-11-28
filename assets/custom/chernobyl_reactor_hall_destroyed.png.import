@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds82dpay4kxji"
-path="res://.godot/imported/chernobyl_staircase.png-151f99d8971ed72cd1c6eb3791955f9c.ctex"
+uid="uid://d2n0cci1clt5l"
+path="res://.godot/imported/chernobyl_reactor_hall_destroyed.png-0b6f3ec71f6b7b737d261226004d7b41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temporary/chernobyl_staircase.png"
-dest_files=["res://.godot/imported/chernobyl_staircase.png-151f99d8971ed72cd1c6eb3791955f9c.ctex"]
+source_file="res://assets/custom/chernobyl_reactor_hall_destroyed.png"
+dest_files=["res://.godot/imported/chernobyl_reactor_hall_destroyed.png-0b6f3ec71f6b7b737d261226004d7b41.ctex"]
 
 [params]
 

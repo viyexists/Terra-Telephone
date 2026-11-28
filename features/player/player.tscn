@@ -285,7 +285,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1646932784 groups=["enemies", "player"]]
 z_index = 1
 script = ExtResource("1_yse43")
-camera_y_offset = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545758620]
 position = Vector2(34, -17)
@@ -318,7 +317,7 @@ animation = &"walk"
 
 [node name="ArrowToBase" type="Node2D" parent="." unique_id=706496138]
 visible = false
-position = Vector2(0, -454)
+position = Vector2(0, -503)
 
 [node name="Arrow" type="Label" parent="ArrowToBase" unique_id=238373559]
 offset_left = -54.0
@@ -333,9 +332,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 z_index = 1
 offset_left = -82.0
-offset_top = -394.0
+offset_top = -443.0
 offset_right = 177.0
-offset_bottom = -334.0
+offset_bottom = -383.0
 theme_override_font_sizes/font_size = 50
 text = "Seed collected!"
 metadata/_edit_use_anchors_ = true

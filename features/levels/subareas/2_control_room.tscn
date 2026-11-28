@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0qxhinbydgwp"]
 
-[ext_resource type="Script" uid="uid://cp0bugx5amlf0" path="res://features/levels/subareas/subarea.gd" id="1_l65lh"]
+[ext_resource type="Script" uid="uid://1ulfy34gn1m1" path="res://features/levels/subareas/2_control_room.gd" id="1_adhn7"]
 [ext_resource type="Texture2D" uid="uid://bocsohlm1utnt" path="res://assets/custom/chernobyl_control_room.png" id="2_7ae6n"]
 [ext_resource type="PackedScene" uid="uid://chxngu7rkfdyv" path="res://features/player/player.tscn" id="3_24s66"]
 [ext_resource type="PackedScene" uid="uid://cykmspb7scy53" path="res://features/levels/subareas/EntryArea.tscn" id="4_adhn7"]
@@ -14,7 +14,7 @@ size = Vector2(931, 1607)
 size = Vector2(7306.5, 1607)
 
 [node name="2ControlRoom" type="Node2D" unique_id=484717760 node_paths=PackedStringArray("player")]
-script = ExtResource("1_l65lh")
+script = ExtResource("1_adhn7")
 supports_radiation = true
 player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
@@ -41,6 +41,7 @@ scale = Vector2(3.296083, 3.296083)
 texture = ExtResource("2_7ae6n")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2023156402]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=925214087]
 position = Vector2(-247, -804)
@@ -63,6 +64,7 @@ position = Vector2(486, -8)
 camera_y_offset = -620.0
 
 [node name="EntryArea" parent="." unique_id=160488140 instance=ExtResource("4_adhn7")]
+visible = false
 position = Vector2(173, -1543)
 
 [node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("5_uom5x")]
