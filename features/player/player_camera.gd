@@ -2,7 +2,7 @@ extends Camera2D
 """
 Holds functions for camera effects. E.g. camera shake.
 """
-
+var base_offset := Vector2.ZERO
 @onready var noise = FastNoiseLite.new()
 var noise_y = 0
 
@@ -15,7 +15,7 @@ var noise_y = 0
 ## Maximum rotation of camera in radians
 @export var max_roll:float = 0.1
 var trauma: float = 0.0
-var trauma_power = 2.0
+var trauma_power = 1.0
 
 
 func _ready() -> void:
@@ -24,8 +24,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if trauma:
+		if base_offset == Vector2.ZERO and offset != Vector2.ZERO: base_offset = offset
 		trauma = max(trauma - decay * delta, 0)
 		_shake()
+		if trauma == 0:
+			offset = base_offset
+			rotation = 0.0
 
 func add_trauma(amount:float=1.0)->void:
 	## Adds trauma, and starts camera shake
@@ -39,7 +43,7 @@ func _shake()->void:
 	Shakes the camera.
 	"""
 	var amount = pow(trauma, trauma_power)
-	noise_y += 1
-	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
-	offset.x = max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
-	offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
+	noise_y += 4
+	rotation = max_roll * amount * noise.get_noise_2d(0.0, noise_y)
+	offset.x = base_offset.x + max_offset.x * amount * noise.get_noise_2d(100.0, noise_y)
+	offset.y = base_offset.y + max_offset.y * amount * noise.get_noise_2d(200.0, noise_y)

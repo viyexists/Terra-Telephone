@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://b21mxk4wnhtn" path="res://assets/custom/annunciators/az5_unlit.png" id="8_mdp6q"]
 [ext_resource type="Texture2D" uid="uid://d4ein1xs4jait" path="res://assets/custom/annunciators/lar_unlit.png" id="9_r873i"]
 [ext_resource type="AudioStream" uid="uid://dxtxr2cs1701r" path="res://assets/terra_assets/sounds/sfx/az5-loop.wav" id="10_r873i"]
+[ext_resource type="FontFile" uid="uid://bd3pnhvp8f5yx" path="res://assets/terra_assets/fonts/ATP-Pleasurize.woff2" id="11_oxtoy"]
+[ext_resource type="Texture2D" uid="uid://b5odyum02qtcf" path="res://assets/custom/mosaic/mosaic_panel_unlit.png" id="12_ijbrq"]
+[ext_resource type="Texture2D" uid="uid://otlgywtel408" path="res://assets/custom/mosaic/mosaic_panel_normal.png" id="12_kxdlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
 size = Vector2(931, 1607)
@@ -19,6 +22,13 @@ size = Vector2(7306.5, 1607)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsjby"]
 size = Vector2(326, 340)
+
+[sub_resource type="FontVariation" id="FontVariation_jsjby"]
+base_font = ExtResource("11_oxtoy")
+spacing_glyph = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_c1lg8"]
+font_color = Color(0.88656557, 0.3124394, 0.06726853, 1)
 
 [node name="2ControlRoom" type="Node2D" unique_id=484717760 node_paths=PackedStringArray("player")]
 script = ExtResource("1_adhn7")
@@ -70,6 +80,12 @@ shape = SubResource("RectangleShape2D_c1lg8")
 position = Vector2(486, -8)
 camera_y_offset = -620.0
 
+[node name="Camera2D" parent="Player" index="1" unique_id=702460402]
+offset = Vector2(0, -620)
+decay = 0.35
+max_offset = Vector2i(440, 280)
+max_roll = 0.06
+
 [node name="EntryArea" parent="." unique_id=160488140 instance=ExtResource("4_adhn7")]
 visible = false
 position = Vector2(173, -1543)
@@ -90,12 +106,14 @@ position = Vector2(84, 140)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="az5Ann" type="Sprite2D" parent="." unique_id=1333830122]
-position = Vector2(1162, -1221)
-scale = Vector2(2.1499097, 2.5160444)
+position = Vector2(1166.3154, -1221)
+rotation = -0.01314825
+scale = Vector2(2.2189555, 2.5160444)
 texture = ExtResource("8_mdp6q")
 
 [node name="larAnn" type="Sprite2D" parent="." unique_id=1028457830]
 position = Vector2(1811, -1233)
+rotation = 0.020558817
 scale = Vector2(2.0320005, 2.4000022)
 texture = ExtResource("9_r873i")
 
@@ -103,3 +121,486 @@ texture = ExtResource("9_r873i")
 position = Vector2(1144, -1213)
 stream = ExtResource("10_r873i")
 max_distance = 8000.0
+
+[node name="Gauges" type="Node2D" parent="." unique_id=1449444297]
+
+[node name="Line2D" type="Line2D" parent="Gauges" unique_id=555764894]
+position = Vector2(1480, -707)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D2" type="Line2D" parent="Gauges" unique_id=1408380917]
+position = Vector2(1604, -709)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D3" type="Line2D" parent="Gauges" unique_id=582285623]
+position = Vector2(1754, -719.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D4" type="Line2D" parent="Gauges" unique_id=1477879481]
+position = Vector2(1895.0001, -730.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D5" type="Line2D" parent="Gauges" unique_id=975841028]
+position = Vector2(1956, -653.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D6" type="Line2D" parent="Gauges" unique_id=662709942]
+position = Vector2(1822.0002, -656.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D7" type="Line2D" parent="Gauges" unique_id=20840523]
+position = Vector2(1685, -650.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D8" type="Line2D" parent="Gauges" unique_id=1407017722]
+position = Vector2(1534, -630)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D9" type="Line2D" parent="Gauges" unique_id=1468116877]
+position = Vector2(1413, -626.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D10" type="Line2D" parent="Gauges" unique_id=700530857]
+position = Vector2(1305, -618.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D11" type="Line2D" parent="Gauges" unique_id=1019863245]
+position = Vector2(1198.0001, -614.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D12" type="Line2D" parent="Gauges" unique_id=1009963350]
+position = Vector2(1077.0001, -606.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D13" type="Line2D" parent="Gauges" unique_id=658599372]
+position = Vector2(1014.0001, -519.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D14" type="Line2D" parent="Gauges" unique_id=837406027]
+position = Vector2(1078, -463)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D15" type="Line2D" parent="Gauges" unique_id=260216179]
+position = Vector2(1135, -528)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D16" type="Line2D" parent="Gauges" unique_id=2137266801]
+position = Vector2(1197.0001, -473)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D17" type="Line2D" parent="Gauges" unique_id=797032968]
+position = Vector2(1251.0001, -526.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D18" type="Line2D" parent="Gauges" unique_id=1256845236]
+position = Vector2(1312.0001, -469.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D19" type="Line2D" parent="Gauges" unique_id=993993042]
+position = Vector2(1350, -546)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D20" type="Line2D" parent="Gauges" unique_id=787746805]
+position = Vector2(1410, -485.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D21" type="Line2D" parent="Gauges" unique_id=507114288]
+position = Vector2(1470, -547)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D22" type="Line2D" parent="Gauges" unique_id=1705716370]
+position = Vector2(1529.0001, -496.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D23" type="Line2D" parent="Gauges" unique_id=1823104958]
+position = Vector2(1604.0001, -553.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D24" type="Line2D" parent="Gauges" unique_id=269261362]
+position = Vector2(1670.0001, -504)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D25" type="Line2D" parent="Gauges" unique_id=1175061764]
+position = Vector2(1747, -567.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D26" type="Line2D" parent="Gauges" unique_id=269028904]
+position = Vector2(1806, -504.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D27" type="Line2D" parent="Gauges" unique_id=790168652]
+position = Vector2(1871, -566)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D28" type="Line2D" parent="Gauges" unique_id=1821659855]
+position = Vector2(1370.0001, -706.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D29" type="Line2D" parent="Gauges" unique_id=109906842]
+position = Vector2(1253.0001, -696.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D30" type="Line2D" parent="Gauges" unique_id=1416528181]
+position = Vector2(1131, -682)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D31" type="Line2D" parent="Gauges" unique_id=400961528]
+position = Vector2(1021.0001, -668.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D32" type="Line2D" parent="Gauges" unique_id=7510913]
+position = Vector2(1084, -760.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D33" type="Line2D" parent="Gauges" unique_id=1747446746]
+position = Vector2(1189, -770.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D34" type="Line2D" parent="Gauges" unique_id=1221162921]
+position = Vector2(1309, -777)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D35" type="Line2D" parent="Gauges" unique_id=364713898]
+position = Vector2(1431, -788)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D36" type="Line2D" parent="Gauges" unique_id=440044470]
+position = Vector2(1548, -780.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D37" type="Line2D" parent="Gauges" unique_id=109492220]
+position = Vector2(1682.0001, -790.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D38" type="Line2D" parent="Gauges" unique_id=1742230365]
+position = Vector2(1833, -802.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D39" type="Line2D" parent="Gauges" unique_id=852697743]
+position = Vector2(1957, -817.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D40" type="Line2D" parent="Gauges" unique_id=753670110]
+position = Vector2(1891.0001, -870.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D41" type="Line2D" parent="Gauges" unique_id=1297881683]
+position = Vector2(1763.0001, -858.99994)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D42" type="Line2D" parent="Gauges" unique_id=1882460745]
+position = Vector2(1612.9999, -843.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D43" type="Line2D" parent="Gauges" unique_id=1536197797]
+position = Vector2(1498.0001, -844)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D44" type="Line2D" parent="Gauges" unique_id=2084537307]
+position = Vector2(1378.0001, -844.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D45" type="Line2D" parent="Gauges" unique_id=1763435351]
+position = Vector2(1253, -842)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D46" type="Line2D" parent="Gauges" unique_id=148089326]
+position = Vector2(1129, -834.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D47" type="Line2D" parent="Gauges" unique_id=460167274]
+position = Vector2(1029, -828.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D48" type="Line2D" parent="Gauges" unique_id=1374160312]
+position = Vector2(1080, -895)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D49" type="Line2D" parent="Gauges" unique_id=1229477825]
+position = Vector2(1202, -898)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D50" type="Line2D" parent="Gauges" unique_id=1283426702]
+position = Vector2(1338.0001, -906.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D51" type="Line2D" parent="Gauges" unique_id=1897585859]
+position = Vector2(1454, -900.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D52" type="Line2D" parent="Gauges" unique_id=981033119]
+position = Vector2(1560.0001, -907.00006)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D53" type="Line2D" parent="Gauges" unique_id=1298996057]
+position = Vector2(1697.0001, -912.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D54" type="Line2D" parent="Gauges" unique_id=1228687290]
+position = Vector2(1840, -936)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D55" type="Line2D" parent="Gauges" unique_id=396811147]
+position = Vector2(1762.0001, -991)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D56" type="Line2D" parent="Gauges" unique_id=889490126]
+position = Vector2(1623.0001, -976.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D57" type="Line2D" parent="Gauges" unique_id=1790781395]
+position = Vector2(1511.0001, -980.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D58" type="Line2D" parent="Gauges" unique_id=1043093777]
+position = Vector2(1403, -972)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D59" type="Line2D" parent="Gauges" unique_id=2063504113]
+position = Vector2(1259.9999, -961)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D60" type="Line2D" parent="Gauges" unique_id=2077788552]
+position = Vector2(1146.0001, -956.0001)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D61" type="Line2D" parent="Gauges" unique_id=1406616611]
+position = Vector2(1343, -1031)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D62" type="Line2D" parent="Gauges" unique_id=967827760]
+position = Vector2(1465, -1042)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D63" type="Line2D" parent="Gauges" unique_id=1985666411]
+position = Vector2(1560, -1048)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="Line2D64" type="Line2D" parent="Gauges" unique_id=763864974]
+position = Vector2(1690, -1047)
+rotation = 6.981317
+points = PackedVector2Array(0, 0, 0, 15.183)
+width = 2.0
+default_color = Color(0.11404549, 0.11404549, 0.11404549, 1)
+
+[node name="POWER" type="Label" parent="." unique_id=46824315]
+offset_left = 2021.0
+offset_top = -369.0
+offset_right = 2068.0
+offset_bottom = -349.0
+theme_override_fonts/font = SubResource("FontVariation_jsjby")
+text = "00000"
+label_settings = SubResource("LabelSettings_c1lg8")
+
+[node name="Label2" type="Label" parent="." unique_id=1482684672]
+offset_left = 2019.0
+offset_top = -374.0
+offset_right = 2131.0
+offset_bottom = -354.0
+scale = Vector2(0.45468748, 0.41734374)
+text = "POWER VIA SKFRE-R"
+
+[node name="MosaicPanelLeft" type="Sprite2D" parent="." unique_id=1220679701]
+position = Vector2(620, -809.99994)
+rotation = 0.09854303
+scale = Vector2(1.9266406, 1.9588275)
+skew = -0.019198623
+texture = ExtResource("12_ijbrq")
+
+[node name="MosaicPanelRight" type="Sprite2D" parent="." unique_id=1644116891]
+position = Vector2(2546.2932, -873.6881)
+rotation = 0.024840474
+scale = Vector2(2.1200588, 1.9476228)
+skew = 0.17453292
+texture = ExtResource("12_kxdlm")
+
+[editable path="Player"]
