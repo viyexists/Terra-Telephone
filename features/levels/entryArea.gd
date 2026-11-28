@@ -31,14 +31,14 @@ func _input(event):
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player: return
 	if not isExit:
-		body.get_node("SubareaLabel").visible = true
-		body.get_node("SubareaLabel").text = "[E] Enter " + areaName
+		body.get_node("InteractionLabel").visible = true
+		body.get_node("InteractionLabel").text = "[E] Enter " + areaName
 		body.get_node("ExitLabel").visible = false
 	elif isExit:
-		body.get_node("SubareaLabel").visible = false
+		body.get_node("InteractionLabel").visible = false
 		body.get_node("ExitLabel").visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if not body is Player: return
-	body.get_node("SubareaLabel").visible = false
+	body.get_node("InteractionLabel").visible = false
 	body.get_node("ExitLabel").visible = false

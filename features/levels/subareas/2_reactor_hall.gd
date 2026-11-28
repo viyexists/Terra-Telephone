@@ -3,12 +3,8 @@ extends Subarea
 var controlRoom
 var exploded: bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	controlRoom = Global.return_position[-1].subarea.get("res://features/levels/subareas/2_control_room.tscn")
-
 func _process(dt) -> void:
-	if controlRoom.exploded == true and not exploded:
+	if level_2_chernobyl_control_room.exploded == true and not exploded:
 		explode()
 		exploded = true
 

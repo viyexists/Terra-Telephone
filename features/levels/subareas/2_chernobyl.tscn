@@ -57,8 +57,7 @@ player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_3cq45")]
-position = Vector2(3325, -1377)
-camera_y_offset = 0.0
+position = Vector2(3292, -2815)
 
 [node name="EntryArea" type="Area2D" parent="." unique_id=1409645809]
 z_index = 1
@@ -239,7 +238,7 @@ position = Vector2(1993, -1300)
 [node name="Down" type="Area2D" parent="StairAnim" unique_id=1157350958]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim/Down" unique_id=503613146]
-position = Vector2(1871, -1285)
+position = Vector2(1923, -1301)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="Up" type="Area2D" parent="StairAnim" unique_id=1685561654]
@@ -275,13 +274,13 @@ position = Vector2(1975, -1287)
 [node name="Down" type="Area2D" parent="StairAnim2" unique_id=163079687]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim2/Down" unique_id=1972507426]
-position = Vector2(1863, -1291)
+position = Vector2(1956, -1301)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="Up" type="Area2D" parent="StairAnim2" unique_id=337935377]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim2/Up" unique_id=233288668]
-position = Vector2(1839.5, -52.5)
+position = Vector2(1934, -71)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="StairAnim3" type="Node2D" parent="." unique_id=2040318970]
@@ -311,13 +310,13 @@ position = Vector2(1976, -1294)
 [node name="Down" type="Area2D" parent="StairAnim3" unique_id=1609862690]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim3/Down" unique_id=1878192034]
-position = Vector2(1876, -1284)
+position = Vector2(1961, -1290)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="Up" type="Area2D" parent="StairAnim3" unique_id=1100887764]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim3/Up" unique_id=403366521]
-position = Vector2(1839.5, -52.5)
+position = Vector2(1928, -60)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="Coins" type="Node2D" parent="." unique_id=78040130]

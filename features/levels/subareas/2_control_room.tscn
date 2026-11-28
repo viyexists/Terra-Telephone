@@ -6,12 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://cykmspb7scy53" path="res://features/levels/subareas/EntryArea.tscn" id="4_adhn7"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="5_uom5x"]
 [ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="6_adhn7"]
+[ext_resource type="Script" uid="uid://c0q3elgdh381m" path="res://features/levels/subareas/az_5.gd" id="7_wif8r"]
+[ext_resource type="Texture2D" uid="uid://b21mxk4wnhtn" path="res://assets/custom/annunciators/az5_unlit.png" id="8_mdp6q"]
+[ext_resource type="Texture2D" uid="uid://d4ein1xs4jait" path="res://assets/custom/annunciators/lar_unlit.png" id="9_r873i"]
+[ext_resource type="AudioStream" uid="uid://dxtxr2cs1701r" path="res://assets/terra_assets/sounds/sfx/az5-loop.wav" id="10_r873i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
 size = Vector2(931, 1607)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fhgk"]
 size = Vector2(7306.5, 1607)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsjby"]
+size = Vector2(326, 340)
 
 [node name="2ControlRoom" type="Node2D" unique_id=484717760 node_paths=PackedStringArray("player")]
 script = ExtResource("1_adhn7")
@@ -72,3 +79,27 @@ position = Vector2(2823, -335)
 
 [node name="Coin" parent="." unique_id=2052972169 instance=ExtResource("6_adhn7")]
 position = Vector2(5499, -130)
+
+[node name="AZ5Switch" type="Area2D" parent="." unique_id=1717987756]
+z_index = 2
+position = Vector2(1867, -316)
+script = ExtResource("7_wif8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AZ5Switch" unique_id=2074370429]
+position = Vector2(84, 140)
+shape = SubResource("RectangleShape2D_jsjby")
+
+[node name="az5Ann" type="Sprite2D" parent="." unique_id=1333830122]
+position = Vector2(1162, -1221)
+scale = Vector2(2.1499097, 2.5160444)
+texture = ExtResource("8_mdp6q")
+
+[node name="larAnn" type="Sprite2D" parent="." unique_id=1028457830]
+position = Vector2(1811, -1233)
+scale = Vector2(2.0320005, 2.4000022)
+texture = ExtResource("9_r873i")
+
+[node name="AZ5Audio" type="AudioStreamPlayer2D" parent="." unique_id=297861805]
+position = Vector2(1144, -1213)
+stream = ExtResource("10_r873i")
+max_distance = 8000.0
