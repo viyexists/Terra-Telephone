@@ -75,7 +75,7 @@ position = Vector2(305.5, 1096.5)
 shape = SubResource("RectangleShape2D_uom5x")
 
 [node name="Seed" parent="." unique_id=1413849496 instance=ExtResource("5_uom5x")]
-position = Vector2(3528, -43)
+position = Vector2(2823, -335)
 
 [node name="Coin" parent="." unique_id=2052972169 instance=ExtResource("6_adhn7")]
 position = Vector2(5499, -130)
