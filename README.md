@@ -82,16 +82,17 @@ For particularly complicated systems please refer to the `./docs`
   - Pausing test
   - Seed count test
 - Balloon boarding animation on level finished
-- Magic system
+- [Magic system](docs/Magic.md)
   - Grimoires
   - Mana
   - UI for mana and spell switching on slots 1 and 2
+- [Subareas](docs/Subareas.md)
 - Kiev Oblast level
 
 ### What's next?
 
 Broken things
-- Camera shake, located in the `player_camera.gd` script. It does actually work, but for some reason the offset is really large and the camera ends up teleporting everywhere instead of a nice shake.
+- ~~Camera shake, located in the `player_camera.gd` script. It does actually work, but for some reason the offset is really large and the camera ends up teleporting everywhere instead of a nice shake.~~ FIXED 👍
 
 Here's some ideas that could be added next (these do not have to be added if you don't want to!)
 - Diverse enemy types with abilities
@@ -102,6 +103,6 @@ Here's some ideas that could be added next (these do not have to be added if you
 - Player abilities? (invisibility, dash) <- Can also be added to magic
 - Collectables and achievements?
 - Balloon cutscene with ratticus and lore in between levels
-- Fix Z levels for mountains and enemies
+- Fix Z levels for mountains and enemies (see: [FORGETDONTREADME](FORGETDONTREADME.md))
 - Collected seed sprite so the player knows which seeds are collected
-- ADDING JOHN INTO THE GAME
+- ADDING JOHN INTO THE GAME >:(

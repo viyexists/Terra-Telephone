@@ -10,12 +10,10 @@
 [ext_resource type="Script" uid="uid://qb08kc0tvwm2" path="res://features/levels/subareas/stair_anim.gd" id="8_yqy32"]
 [ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="9_4tv3b"]
 [ext_resource type="PackedScene" uid="uid://bfccrxeehyra2" path="res://features/interactables/seed.tscn" id="10_oen3x"]
+[ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="11_oni0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1lg8"]
 size = Vector2(676, 890)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l65lh"]
-size = Vector2(2171, 1062)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ae6n"]
 size = Vector2(846, 839)
@@ -25,6 +23,10 @@ size = Vector2(1413, 1061)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_c1lg8"]
 a = Vector2(-183, -91)
+b = Vector2(-180, 334)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dsmno"]
+a = Vector2(-882, -232)
 b = Vector2(-180, 334)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_12bod"]
@@ -48,7 +50,7 @@ a = Vector2(10633, 5193)
 b = Vector2(10681, -1458)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsjby"]
-size = Vector2(211.5, 147)
+size = Vector2(211.5, 225.5)
 
 [node name="2Chernobyl" type="Node2D" unique_id=1783230172 node_paths=PackedStringArray("player")]
 script = ExtResource("1_16vot")
@@ -57,7 +59,7 @@ player = NodePath("Player")
 metadata/_custom_type_script = "uid://cp0bugx5amlf0"
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("1_3cq45")]
-position = Vector2(3292, -2815)
+position = Vector2(355, 138)
 
 [node name="EntryArea" type="Area2D" parent="." unique_id=1409645809]
 z_index = 1
@@ -68,17 +70,6 @@ isExit = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea" unique_id=278761906]
 position = Vector2(166, 1096.5)
 shape = SubResource("RectangleShape2D_c1lg8")
-
-[node name="EntryArea2" type="Area2D" parent="." unique_id=328033225]
-z_index = 1
-position = Vector2(3900, -2776)
-script = ExtResource("3_fqmcf")
-area = "uid://bej7je2ickpmd"
-areaName = "the Turbine Hall"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EntryArea2" unique_id=2127503535]
-position = Vector2(702.5, 1086)
-shape = SubResource("RectangleShape2D_l65lh")
 
 [node name="EntryArea3" type="Area2D" parent="." unique_id=75374224]
 z_index = 1
@@ -108,6 +99,12 @@ shape = SubResource("RectangleShape2D_24s66")
 z_index = 1
 position = Vector2(136, 0)
 shape = SubResource("SegmentShape2D_c1lg8")
+debug_color = Color(0.99466115, 0, 0.22589743, 0.41960785)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=635752471]
+z_index = 1
+position = Vector2(1919, -254)
+shape = SubResource("SegmentShape2D_dsmno")
 debug_color = Color(0.99466115, 0, 0.22589743, 0.41960785)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=630562191]
@@ -244,7 +241,7 @@ shape = SubResource("RectangleShape2D_jsjby")
 [node name="Up" type="Area2D" parent="StairAnim" unique_id=1685561654]
 
 [node name="Area" type="CollisionShape2D" parent="StairAnim/Up" unique_id=1679258036]
-position = Vector2(1839.5, -52.5)
+position = Vector2(1851, -61)
 shape = SubResource("RectangleShape2D_jsjby")
 
 [node name="StairAnim2" type="Node2D" parent="." unique_id=1684812799]
@@ -356,3 +353,26 @@ position = Vector2(1836, -170)
 
 [node name="Seed" parent="Coins" unique_id=1413849496 instance=ExtResource("10_oen3x")]
 position = Vector2(700, -2115)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=702112995]
+
+[node name="Blargh" parent="Enemies" unique_id=2017245619 instance=ExtResource("11_oni0p")]
+position = Vector2(8869, 17)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" parent="Enemies/Blargh" index="1" unique_id=342753885]
+position = Vector2(5.000001, 215.00002)
+scale = Vector2(1, 0.107186675)
+
+[node name="Blargh2" parent="Enemies" unique_id=1829219030 instance=ExtResource("11_oni0p")]
+position = Vector2(7936, -1487)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" parent="Enemies/Blargh2" index="1" unique_id=342753885]
+position = Vector2(5.000001, 215.00002)
+scale = Vector2(1, 0.107186675)
+
+[editable path="Enemies/Blargh"]
+[editable path="Enemies/Blargh2"]

@@ -31,7 +31,7 @@ var stages: Array[String] = [
 var levels: Array[Dictionary] = [
 	{"name": "Tutorial", "path": "res://features/levels/tutorial_stage.tscn", "seeds": 3, "unlocked": true},
 	{"name": "Arrival", "path": "res://features/levels/1.tscn", "seeds": 3, "unlocked": true},
-	{"name": "Kiev Oblast", "path": "res://features/levels/2.tscn", "seeds": 8, "unlocked": false},
+	{"name": "Kiev Oblast", "path": "res://features/levels/2.tscn", "seeds": 4, "unlocked": false},
 	# Feel free to move the Kiev Oblast level further down, it's a little bit long
 ]
 

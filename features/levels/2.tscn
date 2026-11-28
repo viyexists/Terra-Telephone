@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://bc21ffv7ellnt" path="res://features/environment/tree_willow.tscn" id="16_oa7c6"]
 [ext_resource type="PackedScene" uid="uid://dwp3sqcej53so" path="res://features/entities/blargh.tscn" id="17_cvk23"]
 [ext_resource type="PackedScene" uid="uid://chfgf0hbq3770" path="res://features/interactables/coin.tscn" id="18_oa7c6"]
+[ext_resource type="Script" uid="uid://dyk6a3hrom0cm" path="res://features/levels/rubble.gd" id="21_ay4ih"]
+[ext_resource type="Texture2D" uid="uid://d3lg5fwwfedst" path="res://assets/custom/rubble.png" id="22_gxrny"]
 
 [node name="2" type="Node2D" unique_id=943100411 node_paths=PackedStringArray("player", "base")]
 y_sort_enabled = true
@@ -51,6 +53,7 @@ y_sort_enabled = true
 position = Vector2(892, 817)
 
 [node name="Trees" type="Node2D" parent="." unique_id=558760627]
+z_index = 1
 y_sort_enabled = true
 
 [node name="TreeOrange" parent="Trees" unique_id=275115240 instance=ExtResource("7_fiivu")]
@@ -81,6 +84,7 @@ position = Vector2(3675, -788)
 position = Vector2(4120, -508)
 
 [node name="Chernobyl" type="Sprite2D" parent="." unique_id=1059571757]
+z_index = 1
 position = Vector2(2074, 467.00003)
 scale = Vector2(1.8393555, 1.5938101)
 texture = ExtResource("10_wl4hu")
@@ -105,6 +109,7 @@ scale = Vector2(1.5842828, 1.3392749)
 polygon = PackedVector2Array(-110.84198, 43.100433, 375.42133, 157.41025, 586.12396, -44.505875, 580.2902, -465.672, -95.74274, -424.4455)
 
 [node name="WallCreator" type="Line2D" parent="." unique_id=218521869]
+z_index = 1
 points = PackedVector2Array(-1652, 962, -1786.0459, 553.8783, -1907.9536, 174.44312, -1964, 0, -2022, -238, -1842, -754, -1298, -1213, -750, -1652, -33, -1669, 635.6494, -1686.1448, 1059, -1697, 1809, -1756, 2648, -1683, 3180.0957, -1617.1951, 3683, -1555, 4250.2383, -1366.4749, 4706, -1215, 4958.824, -977.1168, 5349, -610, 5385, -319, 5882, 155, 5854.7104, 444.66602, 5822.8604, 782.73816, 5786, 1174, 5697.158, 1507.5078, 5595, 1891, 5014, 2399, 4850.38, 2507.4917, 4272, 2891, 3438, 3109, 2831.5518, 3177.124, 2165, 3252, 1255, 3152, 792.0747, 3123.1519, 228, 3088, -382, 2725, -668.72656, 2504.4736, -1062, 2202, -1266.4187, 1865.3105, -1391.7188, 1658.9338, -1614, 1140)
 script = ExtResource("11_lmjt3")
 lock_walls = false
@@ -299,12 +304,573 @@ y_sort_enabled = true
 position = Vector2(5116, -2837)
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("4_usuwq")]
-z_index = 0
 y_sort_enabled = true
 position = Vector2(891, 5)
 DEBUG_vignette_enabled = false
-camera_y_offset = 0.0
 
 [node name="Grimoire" parent="." unique_id=1292788300 instance=ExtResource("8_fiivu")]
 position = Vector2(372, 637)
 spell = "Turn Oranges into Apples"
+
+[node name="Rubble" type="Node2D" parent="." unique_id=424475762]
+z_index = -60
+position = Vector2(2848, 570)
+script = ExtResource("21_ay4ih")
+sheet = ExtResource("22_gxrny")
+
+[node name="@Sprite2D@24809" type="Sprite2D" parent="Rubble" unique_id=1084614324]
+position = Vector2(-681.7637, -536.17236)
+rotation = -0.100574225
+scale = Vector2(1.0738488, 1.0738488)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24810" type="Sprite2D" parent="Rubble" unique_id=1920076912]
+position = Vector2(-858.56555, 1.5517578)
+rotation = 0.12463542
+scale = Vector2(0.64469504, 0.64469504)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24811" type="Sprite2D" parent="Rubble" unique_id=1315797294]
+position = Vector2(1470.6396, -1021.09973)
+rotation = 0.10909654
+scale = Vector2(1.1991817, 1.1991817)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24812" type="Sprite2D" parent="Rubble" unique_id=28566801]
+position = Vector2(-934.70056, -678.31647)
+rotation = 0.09162379
+scale = Vector2(0.9390795, 0.9390795)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24813" type="Sprite2D" parent="Rubble" unique_id=1053372584]
+position = Vector2(-521.2311, -592.258)
+rotation = -0.11659502
+scale = Vector2(1.1046618, 1.1046618)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24814" type="Sprite2D" parent="Rubble" unique_id=1183357477]
+position = Vector2(1645.0024, 355.38354)
+rotation = -0.10025152
+scale = Vector2(1.0090885, 1.0090885)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24815" type="Sprite2D" parent="Rubble" unique_id=2083361298]
+position = Vector2(-1605.5752, 320.8086)
+rotation = -0.083664104
+scale = Vector2(1.0190363, 1.0190363)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24816" type="Sprite2D" parent="Rubble" unique_id=352360596]
+position = Vector2(-1349.6848, 245.75574)
+rotation = -0.035122436
+scale = Vector2(0.7507832, 0.7507832)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24817" type="Sprite2D" parent="Rubble" unique_id=55755271]
+position = Vector2(849.67725, 429.91345)
+rotation = -0.088452585
+scale = Vector2(0.62564963, 0.62564963)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24818" type="Sprite2D" parent="Rubble" unique_id=1637560436]
+position = Vector2(-1666.1464, -119.8811)
+rotation = 0.008760901
+scale = Vector2(0.81689507, 0.81689507)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24819" type="Sprite2D" parent="Rubble" unique_id=1145196109]
+position = Vector2(105.851074, -430.9619)
+rotation = -0.033105273
+scale = Vector2(0.62387073, 0.62387073)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24820" type="Sprite2D" parent="Rubble" unique_id=2029645861]
+position = Vector2(-311.43994, 720.9573)
+rotation = -0.07838707
+scale = Vector2(0.74615574, 0.74615574)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24821" type="Sprite2D" parent="Rubble" unique_id=1083456487]
+position = Vector2(-712.62354, -919.9634)
+rotation = -0.058637023
+scale = Vector2(0.7090814, 0.7090814)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24822" type="Sprite2D" parent="Rubble" unique_id=1167060957]
+position = Vector2(1654.8384, -1069.9247)
+rotation = 0.06417374
+scale = Vector2(0.9648742, 0.9648742)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24823" type="Sprite2D" parent="Rubble" unique_id=2043125912]
+position = Vector2(1979.4578, 551.8257)
+rotation = -0.010153734
+scale = Vector2(0.7140488, 0.7140488)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24824" type="Sprite2D" parent="Rubble" unique_id=1753112667]
+position = Vector2(-536.4114, 755.30115)
+rotation = 0.10349913
+scale = Vector2(1.141986, 1.141986)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24825" type="Sprite2D" parent="Rubble" unique_id=1241443555]
+position = Vector2(1086.335, 121.855225)
+rotation = 0.025154306
+scale = Vector2(1.0589826, 1.0589826)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24826" type="Sprite2D" parent="Rubble" unique_id=1082442109]
+position = Vector2(-256.53906, 330.37207)
+rotation = 0.036311936
+scale = Vector2(1.0035639, 1.0035639)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24827" type="Sprite2D" parent="Rubble" unique_id=850084862]
+position = Vector2(503.6626, -336.27167)
+rotation = -0.04732725
+scale = Vector2(1.0514253, 1.0514253)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24828" type="Sprite2D" parent="Rubble" unique_id=221572556]
+position = Vector2(-187.65039, 915.9575)
+rotation = -0.054332647
+scale = Vector2(0.86440563, 0.86440563)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24829" type="Sprite2D" parent="Rubble" unique_id=2095410396]
+position = Vector2(858.7102, 34.65222)
+rotation = 0.0069838236
+scale = Vector2(1.0407159, 1.0407159)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24830" type="Sprite2D" parent="Rubble" unique_id=664988664]
+position = Vector2(330.92017, 14.526123)
+rotation = -0.028669644
+scale = Vector2(1.0119351, 1.0119351)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24831" type="Sprite2D" parent="Rubble" unique_id=1832128190]
+position = Vector2(-1453.9565, -381.04236)
+rotation = 0.09334787
+scale = Vector2(0.67941415, 0.67941415)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24832" type="Sprite2D" parent="Rubble" unique_id=787923114]
+position = Vector2(-1656.8177, -838.4072)
+rotation = 0.012399295
+scale = Vector2(0.9109175, 0.9109175)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24833" type="Sprite2D" parent="Rubble" unique_id=860267679]
+position = Vector2(-844.28394, -46.244873)
+rotation = 0.13714798
+scale = Vector2(1.1298361, 1.1298361)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24834" type="Sprite2D" parent="Rubble" unique_id=615567818]
+position = Vector2(1033.8958, 55.679688)
+rotation = 0.11026917
+scale = Vector2(0.93913174, 0.93913174)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="@Sprite2D@24835" type="Sprite2D" parent="Rubble" unique_id=960457359]
+position = Vector2(-654.31177, 57.459473)
+rotation = 0.08040237
+scale = Vector2(0.95275265, 0.95275265)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24836" type="Sprite2D" parent="Rubble" unique_id=1511822021]
+position = Vector2(-359.00476, 708.9353)
+rotation = 0.07584273
+scale = Vector2(0.94819826, 0.94819826)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24837" type="Sprite2D" parent="Rubble" unique_id=1209412530]
+position = Vector2(-1838.9808, 832.20447)
+rotation = 0.014595455
+scale = Vector2(0.7473361, 0.7473361)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24838" type="Sprite2D" parent="Rubble" unique_id=872784472]
+position = Vector2(724.1135, 243.75574)
+rotation = -0.09310709
+scale = Vector2(0.9462105, 0.9462105)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24839" type="Sprite2D" parent="Rubble" unique_id=1094801248]
+position = Vector2(1293.5134, 1007.40234)
+rotation = -0.040079925
+scale = Vector2(0.8453182, 0.8453182)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24840" type="Sprite2D" parent="Rubble" unique_id=1704242711]
+position = Vector2(-813.30994, -287.9134)
+rotation = 0.13329114
+scale = Vector2(0.81237924, 0.81237924)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="@Sprite2D@24841" type="Sprite2D" parent="Rubble" unique_id=275214898]
+position = Vector2(-1858.3059, 1063.1775)
+rotation = -0.13031422
+scale = Vector2(1.1308167, 1.1308167)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24842" type="Sprite2D" parent="Rubble" unique_id=750148562]
+position = Vector2(-1587.9874, 12.779053)
+rotation = 0.1282535
+scale = Vector2(0.8177585, 0.8177585)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24843" type="Sprite2D" parent="Rubble" unique_id=1526883621]
+position = Vector2(-520.0282, 75.32385)
+rotation = -0.11178446
+scale = Vector2(1.1067729, 1.1067729)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24844" type="Sprite2D" parent="Rubble" unique_id=845729602]
+position = Vector2(658.3025, 368.693)
+rotation = 0.06467197
+scale = Vector2(0.67964476, 0.67964476)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24845" type="Sprite2D" parent="Rubble" unique_id=1527749715]
+position = Vector2(-1204.3887, 448.22827)
+rotation = -0.017835956
+scale = Vector2(0.9983849, 0.9983849)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="@Sprite2D@24846" type="Sprite2D" parent="Rubble" unique_id=632783909]
+position = Vector2(-1427.5569, 388.07275)
+rotation = 0.013925486
+scale = Vector2(0.9052194, 0.9052194)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24847" type="Sprite2D" parent="Rubble" unique_id=761707741]
+position = Vector2(303.19067, -530.8328)
+rotation = -0.012313283
+scale = Vector2(1.1444262, 1.1444262)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="@Sprite2D@24848" type="Sprite2D" parent="Rubble" unique_id=2095936661]
+position = Vector2(1935.7249, -19.443481)
+rotation = 0.005235808
+scale = Vector2(1.0222828, 1.0222828)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24849" type="Sprite2D" parent="Rubble" unique_id=139721085]
+position = Vector2(-1094.0999, 495.34558)
+rotation = 0.12510134
+scale = Vector2(0.6237737, 0.6237737)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24850" type="Sprite2D" parent="Rubble" unique_id=140769831]
+position = Vector2(-1376.8798, -1138.6892)
+rotation = 0.11768384
+scale = Vector2(0.9226457, 0.9226457)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24851" type="Sprite2D" parent="Rubble" unique_id=1658765375]
+position = Vector2(-1255.3647, 78.21716)
+rotation = 0.108523235
+scale = Vector2(0.75887704, 0.75887704)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24852" type="Sprite2D" parent="Rubble" unique_id=145581067]
+position = Vector2(1139.4094, -952.7141)
+rotation = -0.03145889
+scale = Vector2(0.97232854, 0.97232854)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+
+[node name="@Sprite2D@24853" type="Sprite2D" parent="Rubble" unique_id=579885821]
+position = Vector2(-535.4834, 539.3762)
+rotation = 0.0362116
+scale = Vector2(0.62994254, 0.62994254)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24854" type="Sprite2D" parent="Rubble" unique_id=408085146]
+position = Vector2(1937.1897, 626.8058)
+rotation = -0.0012664163
+scale = Vector2(0.7428702, 0.7428702)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24855" type="Sprite2D" parent="Rubble" unique_id=1532629938]
+position = Vector2(-585.80115, -1142.0775)
+rotation = 0.08366842
+scale = Vector2(1.1567177, 1.1567177)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24856" type="Sprite2D" parent="Rubble" unique_id=517559534]
+position = Vector2(-1055.0232, 402.49402)
+rotation = 0.08996892
+scale = Vector2(0.6806983, 0.6806983)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24857" type="Sprite2D" parent="Rubble" unique_id=1604567928]
+position = Vector2(-1714.02, -387.8828)
+rotation = -0.04779436
+scale = Vector2(0.92897314, 0.92897314)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24858" type="Sprite2D" parent="Rubble" unique_id=818957490]
+position = Vector2(74.0564, -857.14246)
+rotation = 0.05284727
+scale = Vector2(0.6945336, 0.6945336)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="@Sprite2D@24859" type="Sprite2D" parent="Rubble" unique_id=42738689]
+position = Vector2(-1803.89, 677.4148)
+rotation = -0.08205716
+scale = Vector2(1.0322887, 1.0322887)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24860" type="Sprite2D" parent="Rubble" unique_id=118577859]
+position = Vector2(-1737.2214, 138.65552)
+rotation = -0.03713421
+scale = Vector2(1.0803003, 1.0803003)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="@Sprite2D@24861" type="Sprite2D" parent="Rubble" unique_id=1949272902]
+position = Vector2(765.81665, 322.10925)
+rotation = -0.09284806
+scale = Vector2(0.929091, 0.929091)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="@Sprite2D@24862" type="Sprite2D" parent="Rubble" unique_id=951724889]
+position = Vector2(-786.55505, 1121.1592)
+rotation = -0.030209726
+scale = Vector2(1.0690681, 1.0690681)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24863" type="Sprite2D" parent="Rubble" unique_id=4755798]
+position = Vector2(669.4114, -881.2373)
+rotation = 0.09310506
+scale = Vector2(0.6385647, 0.6385647)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="@Sprite2D@24864" type="Sprite2D" parent="Rubble" unique_id=2007284298]
+position = Vector2(1730.7178, 924.9177)
+rotation = 0.060335048
+scale = Vector2(1.0045006, 1.0045006)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="@Sprite2D@24865" type="Sprite2D" parent="Rubble" unique_id=1952597016]
+position = Vector2(-1838.713, -37.00952)
+rotation = -0.0859094
+scale = Vector2(1.1339047, 1.1339047)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24866" type="Sprite2D" parent="Rubble" unique_id=443867073]
+position = Vector2(-296.9735, 293.2433)
+rotation = -0.11058137
+scale = Vector2(1.0800028, 1.0800028)
+texture = ExtResource("22_gxrny")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="@Sprite2D@24867" type="Sprite2D" parent="Rubble" unique_id=1889185740]
+position = Vector2(-1988.4983, 17.455566)
+rotation = 0.056821786
+scale = Vector2(0.90724254, 0.90724254)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="@Sprite2D@24868" type="Sprite2D" parent="Rubble" unique_id=1082890229]
+position = Vector2(59.016846, 1178.7344)
+rotation = 0.022396237
+scale = Vector2(0.842375, 0.842375)
+texture = ExtResource("22_gxrny")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 7

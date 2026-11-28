@@ -41,8 +41,8 @@ func setup_magic_icons() -> void:
 		Magic2.texture = load(Magic.spells[Slot2].icon)
 
 func _process(_delta: float) -> void:
-	coins_label.text = "Coins: " + str(Global.coins)
-	seeds_label.text = "Seeds: " + str(Global.seeds_collected)
+	coins_label.text = "Coins: %d" % Global.coins
+	seeds_label.text = "Seeds: %d / %d" % [Global.seeds_collected, Global.seeds_this_stage]
 	$HealthBar.value = (Global.player.health / Global.player.max_health) * 100
 	if Global.seeds_collected >= Global.seeds_this_stage:
 		$AllSeedsCollectedLabel.show()
