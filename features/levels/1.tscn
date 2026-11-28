@@ -568,6 +568,7 @@ position = Vector2(-4513, -678)
 
 [node name="Player" parent="." unique_id=1646932784 instance=ExtResource("3_qyk5v")]
 position = Vector2(-48, 323)
+camera_y_offset = 0.0
 
 [node name="Trees" type="Line2D" parent="." unique_id=1731811310]
 y_sort_enabled = true

@@ -18,6 +18,6 @@ You need to append your level to the `levels` variable, in the format `{"name": 
 The order in which the levels appear in this array determines their order in the level selection and future gameplay. The tutorial should alwyas be at the top, since it is the first stage a player should play.
 
 
-To playtest your levels faster, go the the LevelSelect scene and tick the `Bypass Level Lock` property. Make sure to reset it when exporting for production.
+To playtest your levels faster, go the the LevelSelect scene and tick the `Bypass Level Lock` property. ~~Make sure to reset it when exporting for production~~ < This has been fixed to use `OS.is_debug_build()`.
 
-^ Lemion: HII! If you don't do this i will burn down your github release and add in fixed binaries. Remember, I am always watching!
+~~^ Lemion: HII! If you don't do this i will burn down your github release and add in fixed binaries. Remember, I am always watching!~~
